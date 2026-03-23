@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Ação — Mateus Junger | Viral Pro</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --card: #ffffff;
+  --card-border: #e8e8ed;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --ig-purple: #833AB4;
+  --ig-pink: #E1306C;
+  --ig-orange: #F77737;
+  --ig-yellow: #FCAF45;
+  --ig-blue: #405DE6;
+  --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+  --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+  --green: #00C853;
+  --green-soft: rgba(0, 200, 83, 0.08);
+  --red: #E1306C;
+  --red-soft: rgba(225, 48, 108, 0.07);
+  --yellow: #F77737;
+  --yellow-soft: rgba(247, 119, 55, 0.07);
+  --blue: #405DE6;
+  --blue-soft: rgba(64, 93, 230, 0.07);
+  --purple: #833AB4;
+  --purple-soft: rgba(131, 58, 180, 0.07);
+  --pink: #E1306C;
+  --pink-soft: rgba(225, 48, 108, 0.07);
+  --cyan: #00B4D8;
+  --cyan-soft: rgba(0, 180, 216, 0.07);
+  --orange: #F77737;
+  --orange-soft: rgba(247, 119, 55, 0.07);
+  --text: #1a1a2e;
+  --text-secondary: #4a4a5a;
+  --text-muted: #8e8e9a;
+  --text-dim: #b0b0b8;
+}
+
+body { font-family: 'Inter', sans-serif; background: var(--bg-soft); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+.hero { position: relative; padding: 56px 40px 40px; text-align: center; background: var(--bg); border-bottom: 1px solid var(--card-border); overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--ig-gradient); }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--ig-gradient); border-radius: 100px; padding: 8px 22px; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 24px; }
+.hero h1 { font-size: 44px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-sub { font-size: 17px; color: var(--text-secondary); font-weight: 400; max-width: 620px; margin: 0 auto 20px; line-height: 1.65; }
+.hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+.hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+.hero-meta { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+.hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+.hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1200px; margin: -28px auto 0; padding: 0 40px; position: relative; z-index: 2; }
+.stat-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px; text-align: center; box-shadow: var(--card-shadow); position: relative; overflow: hidden; }
+.stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--ig-gradient); }
+.stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+.stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+.stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+.stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+.stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+.stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+.section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+.section-header:first-child { margin-top: 0; }
+.section-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+.section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+.priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.action-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px 24px; display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 18px; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+.action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+.action-number { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+.action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+.action-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+.urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+.urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+.urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+.urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+.urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+.urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.compare-col { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); }
+.compare-col h3 { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
+.compare-col.bad h3 { color: var(--red); }
+.compare-col.good h3 { color: var(--green); }
+.compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+.compare-item span { flex-shrink: 0; font-size: 13px; }
+.rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.rule-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; text-align: center; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+.rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+.rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+.rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+.ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.idea-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+.idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+.idea-type { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px; }
+.idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+.idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.type-reels { background: var(--pink-soft); color: var(--pink); }
+.type-carousel { background: var(--purple-soft); color: var(--purple); }
+.type-series { background: var(--cyan-soft); color: var(--cyan); }
+.type-bastidor { background: var(--orange-soft); color: var(--orange); }
+.type-juridico { background: var(--blue-soft); color: var(--blue); }
+.hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.hook-item { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 22px; display: flex; align-items: start; gap: 14px; box-shadow: var(--card-shadow); }
+.hook-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--ig-gradient); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 800; }
+.hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+.hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+.before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.ba-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow); }
+.ba-header { padding: 16px 22px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--card-border); background: var(--bg-soft); }
+.ba-header .ba-video-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px; background: var(--purple-soft); color: var(--purple); }
+.ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+.ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+.ba-col { padding: 18px 22px; }
+.ba-col:first-child { border-right: 1px solid var(--card-border); }
+.ba-col-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.ba-col:first-child .ba-col-label { color: var(--red); }
+.ba-col:last-child .ba-col-label { color: var(--green); }
+.ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+.ba-col p strong { color: var(--text); font-weight: 600; }
+.script-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); margin-bottom: 14px; }
+.script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+.script-step { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--card-border); }
+.script-step:last-child { border-bottom: none; }
+.script-step-label { flex-shrink: 0; width: 90px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding-top: 2px; }
+.script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+.script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+.script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+.script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+.script-step:nth-child(5) .script-step-label { color: var(--green); }
+.script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+.script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+.workflow { display: flex; gap: 0; align-items: stretch; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow); }
+.workflow-step { flex: 1; padding: 20px 16px; text-align: center; position: relative; border-right: 1px solid var(--card-border); }
+.workflow-step:last-child { border-right: none; }
+.workflow-step::after { content: '→'; position: absolute; right: -8px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--text-dim); z-index: 1; background: var(--card); padding: 2px; }
+.workflow-step:last-child::after { display: none; }
+.workflow-num { width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px; background: var(--ig-gradient); }
+.workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+.ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.ref-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start; }
+.ref-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--ig-gradient); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+.ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+.ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+.cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.cta-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; box-shadow: var(--card-shadow); text-align: center; }
+.cta-when { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px; border-radius: 6px; display: inline-block; }
+.cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+.cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+.cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+.cta-card blockquote { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.5; font-style: italic; margin-bottom: 8px; }
+.cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+.checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.check-item { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; font-size: 13.5px; font-weight: 500; color: var(--text-secondary); box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease; user-select: none; }
+.check-item:hover { border-color: var(--ig-purple); }
+.check-box { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--text-dim); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s ease; }
+.check-item.done { background: var(--green-soft); border-color: var(--green); }
+.check-item.done .check-box { background: var(--green); border-color: var(--green); }
+.check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+.filming-checklist { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); }
+.filming-checklist h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; color: var(--text); }
+.filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.filming-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px; font-size: 13.5px; font-weight: 500; color: var(--text-secondary); cursor: pointer; user-select: none; transition: all 0.15s ease; border: 1px solid transparent; }
+.filming-item:hover { background: var(--bg-soft); }
+.filming-check { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--text-dim); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s ease; }
+.filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+.filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+.filming-item.done { color: var(--text-muted); }
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px; background: var(--ig-gradient); border-radius: 2px; }
+.timeline-item { position: relative; padding: 0 0 28px 24px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot { position: absolute; left: -23px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid; }
+.timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+.timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+.timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+.timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+.timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+.timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+.timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+.timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+.timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+.timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+.footer { text-align: center; padding: 36px 40px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--card-border); max-width: 1200px; margin: 0 auto; background: var(--bg); }
+.footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+@media (max-width: 768px) {
+  .hero { padding: 40px 20px 24px; }
+  .hero h1 { font-size: 28px; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+  .main { padding: 24px 20px 60px; }
+  .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+  .ba-body { grid-template-columns: 1fr; }
+  .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+  .workflow { flex-direction: column; }
+  .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+  .workflow-step::after { display: none; }
+  .action-card { grid-template-columns: auto 1fr; }
+  .action-tag { grid-column: 2; }
+}
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-badge">📊 Análise Viral Pro</div>
+        <h1>Plano de Ação — Mateus Junger</h1>
+        <p class="hero-sub">Especialista em Aposentadoria e Benefícios do INSS | Escritório Advoguei | @mateusjunger.adv</p>
+        <div class="hero-video">
+            <iframe src="https://www.youtube.com/embed/pQjT-ypMd8k" title="Análise Viral Pro — Mateus Junger" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                23 de Março, 2026
+            </div>
+            <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Mentoria com Oney Araújo
+            </div>
+            <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                Advocacia — Aposentadoria e INSS
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Ações Urgentes</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Post/dia Meta</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">40–60s</div>
+            <div class="stat-label">Duração Ideal</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Foco em Utilidade</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- SEÇÃO 1: CORREÇÕES IMEDIATAS -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--red-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div>
+                <h2>Correções Imediatas do Perfil</h2>
+                <p>6 ações prioritárias para otimizar conversão</p>
+            </div>
+        </div>
+
+        <div class="priority-grid">
+            <div class="action-card urgency-now">
+                <div class="action-number">1</div>
+                <div class="action-content">
+                    <h3>Aproximar a Foto de Perfil</h3>
+                    <p>Sua foto está muito distante. Precisa ser um retrato close, destacando o rosto. Considere investir em sessão com retratista profissional para uma imagem de qualidade superior.</p>
+                    <div class="action-tag">FAZER AGORA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-now">
+                <div class="action-number">2</div>
+                <div class="action-content">
+                    <h3>Adicionar Link do WhatsApp na Bio</h3>
+                    <p>Sua bio não tem nenhum link de contato. Use <strong>link.me/wa/+55XXXXXXXXXXX</strong> para redirecionar direto para WhatsApp. Isso é essencial para prospectar clientes.</p>
+                    <div class="action-tag">FAZER AGORA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-now">
+                <div class="action-number">3</div>
+                <div class="action-content">
+                    <h3>Adicionar CTA na Bio</h3>
+                    <p>Sua bio é boa ("Advoguei, te ajudo a se aposentar sem burocracia, +1000 benefícios concedidos"), mas falta chamada para ação. Adicione: <strong>"Clique abaixo e fale comigo agora"</strong> ou <strong>"Tire sua dúvida abaixo"</strong>.</p>
+                    <div class="action-tag">FAZER AGORA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-week">
+                <div class="action-number">4</div>
+                <div class="action-content">
+                    <h3>Remover Logos e Marcas d'Água</h3>
+                    <p>Seus vídeos têm dois logos do Enxote e outras marcas desnecessárias. O vídeo precisa parecer orgânico, não amador. Remove tudo para melhorar credibilidade.</p>
+                    <div class="action-tag">ESTA SEMANA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-week">
+                <div class="action-number">5</div>
+                <div class="action-content">
+                    <h3>Melhorar Qualidade de Imagem</h3>
+                    <p>Alguns vídeos foram gravados com iluminação ruim, ficam escuros e desagradáveis. Grave sempre de dia, com boa iluminação natural. Qualidade ruim faz as pessoas pularem.</p>
+                    <div class="action-tag">ESTA SEMANA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-week">
+                <div class="action-number">6</div>
+                <div class="action-content">
+                    <h3>Vídeo em Tela Cheia (Vertical)</h3>
+                    <p>Seus vídeos têm bordas pretas laterais. Gravar em formato vertical 9:16 sem bordas. O vídeo deve ocupar 100% da tela do Instagram para melhor engajamento.</p>
+                    <div class="action-tag">ESTA SEMANA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2: ANTES VS DEPOIS -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--purple-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div>
+                <h2>Análise de Vídeos — Antes vs Depois</h2>
+                <p>4 vídeos analisados com feedback e melhorias</p>
+            </div>
+        </div>
+
+        <div class="before-after-grid">
+            <div class="ba-card">
+                <div class="ba-header">
+                    <span class="ba-video-tag">Vídeo 1</span>
+                    <h3>"Advogado perde de mil a R$3.000"</h3>
+                </div>
+                <div class="ba-body">
+                    <div class="ba-col">
+                        <div class="ba-col-label">❌ ERRADO</div>
+                        <p>Gancho comparativo <strong>mão-contra-mão</strong> (face to face) — estilo 2019/2020, parece manipulador. Muita gente acha "é óbvio" e pula rápido.</p>
+                    </div>
+                    <div class="ba-col">
+                        <div class="ba-col-label">✅ CERTO</div>
+                        <p>Gancho direto e simples, sem barreira visual comparativa. <strong>Ir direto ao ponto:</strong> contar a história ou dar a informação logo no primeiro segundo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ba-card">
+                <div class="ba-header">
+                    <span class="ba-video-tag">Vídeo 2</span>
+                    <h3>"Caso do cara que perdeu um braço" (Reação)</h3>
+                </div>
+                <div class="ba-body">
+                    <div class="ba-col">
+                        <div class="ba-col-label">❌ ERRADO</div>
+                        <p>Apenas reagir e se indignar como outros advogados ("um absurdo!"). <strong>Falta dar solução.</strong> Você fica como mais um indignado no feed.</p>
+                    </div>
+                    <div class="ba-col">
+                        <div class="ba-col-label">✅ CERTO</div>
+                        <p>Reagir, se indignar brevemente, e depois <strong>entrar como herói dando a solução.</strong> Explicar a lei, o caminho jurídico, marcar a pessoa e oferecer ajuda.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ba-card">
+                <div class="ba-header">
+                    <span class="ba-video-tag">Vídeo 3</span>
+                    <h3>"Férias coletivas e benefícios"</h3>
+                </div>
+                <div class="ba-body">
+                    <div class="ba-col">
+                        <div class="ba-col-label">✅ BOM</div>
+                        <p><strong>Gancho maravilhoso</strong> — novidade, urgência, identificação. Toda mudança de benefício do governo = vídeo quase certeiro para viralizar.</p>
+                    </div>
+                    <div class="ba-col">
+                        <div class="ba-col-label">📈 MELHORAR</div>
+                        <p>Manter essa abordagem para mais conteúdos sobre novidades do governo. Esse tipo de vídeo tem taxa alta de visualização e compartilhamento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ba-card">
+                <div class="ba-header">
+                    <span class="ba-video-tag">Vídeo 4</span>
+                    <h3>"Receita Federal monitorando Pix e cartão"</h3>
+                </div>
+                <div class="ba-body">
+                    <div class="ba-col">
+                        <div class="ba-col-label">✅ BOM</div>
+                        <p>Informação boa, edição show, gancho bom. Estrutura correta e engajante.</p>
+                    </div>
+                    <div class="ba-col">
+                        <div class="ba-col-label">📈 MELHORAR</div>
+                        <p><strong>Gancho tinha muitas palavras (15)</strong> na tela. Ideal: <strong>3-6 palavras no máximo.</strong> Exemplo: "Bolsa Família cancelado" em vez de "BPC LOAS cancelado".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3: CERTO VS ERRADO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--green-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+                <h2>Certo vs Errado — Regras de Ouro</h2>
+                <p>O que fazer e o que deixar de fazer imediatamente</p>
+            </div>
+        </div>
+
+        <div class="compare-grid">
+            <div class="compare-col bad">
+                <h3>❌ Pare de Fazer</h3>
+                <div class="compare-item"><span>·</span> Ganchos comparativos "face to face" (estilo 2019)</div>
+                <div class="compare-item"><span>·</span> Vídeos sem solução (só indignação)</div>
+                <div class="compare-item"><span>·</span> Logos e marcas d'água nos vídeos</div>
+                <div class="compare-item"><span>·</span> Ganchos longos com muitas palavras na tela</div>
+                <div class="compare-item"><span>·</span> Termos técnicos no gancho (BPC LOAS, etc.)</div>
+                <div class="compare-item"><span>·</span> Vídeos com imagem escura/baixa qualidade</div>
+                <div class="compare-item"><span>·</span> Vídeos que não ocupam tela cheia</div>
+                <div class="compare-item"><span>·</span> Ficar sem postar por dias</div>
+            </div>
+            <div class="compare-col good">
+                <h3>✅ Comece a Fazer</h3>
+                <div class="compare-item"><span>·</span> Ganchos curtos: 3-6 palavras no máximo</div>
+                <div class="compare-item"><span>·</span> Fórmula: Indignar → Dar solução (virar o herói)</div>
+                <div class="compare-item"><span>·</span> Usar linguagem simples que qualquer pessoa entende</div>
+                <div class="compare-item"><span>·</span> Gravar de dia com boa iluminação</div>
+                <div class="compare-item"><span>·</span> Vídeo 100% vertical sem bordas</div>
+                <div class="compare-item"><span>·</span> Reagir a vídeos pesados/impactantes do nicho jurídico</div>
+                <div class="compare-item"><span>·</span> Pedir ajuda do ChatGPT para encurtar ganchos</div>
+                <div class="compare-item"><span>·</span> Postar no mínimo 1 vídeo por dia</div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4: ESTRATÉGIA DE CONTEÚDO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--purple-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <div>
+                <h2>Estratégia de Conteúdo — 6 Pilares</h2>
+                <p>Fundação para crescimento viral sustentado</p>
+            </div>
+        </div>
+
+        <div class="rules-grid">
+            <div class="rule-card">
+                <span class="rule-emoji">🎯</span>
+                <h3>Conteúdo Útil</h3>
+                <p>Todo vídeo entrega informação prática. A pessoa pensa "preciso salvar isso". Lei, documento, caminho — sempre prático.</p>
+            </div>
+            <div class="rule-card">
+                <span class="rule-emoji">🪝</span>
+                <h3>Gancho de 3-6 Palavras</h3>
+                <p>Texto na tela deve caber numa leitura só. Usar ChatGPT para encurtar. Versão controversa, urgente, viral.</p>
+            </div>
+            <div class="rule-card">
+                <span class="rule-emoji">🦸</span>
+                <h3>Seja o Herói</h3>
+                <p>Reaja a vídeos pesados, se indigne brevemente, depois entregue a solução jurídica. Marca a pessoa, oferece ajuda.</p>
+            </div>
+            <div class="rule-card">
+                <span class="rule-emoji">📹</span>
+                <h3>Formato Remix/Reação</h3>
+                <p>Pegue vídeos impactantes do nicho jurídico (INSS, perícias negadas, injustiças). Remixe e reaja com seu rosto.</p>
+            </div>
+            <div class="rule-card">
+                <span class="rule-emoji">🗣️</span>
+                <h3>Linguagem Simples</h3>
+                <p>Não use termos jurídicos no gancho. "Bolsa Família cancelado" > "BPC LOAS cancelado". Qualquer pessoa precisa entender.</p>
+            </div>
+            <div class="rule-card">
+                <span class="rule-emoji">🔄</span>
+                <h3>Consistência Diária</h3>
+                <p>Mínimo 1 post por dia. Grave em lote no sábado (7 vídeos) ou 3 segunda + 3 quarta + 1 sexta.</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5: ROTEIROS-MODELO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--orange-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div>
+                <h2>Roteiros-Modelo Prontos</h2>
+                <p>3 estruturas testadas para gerar conteúdo viral</p>
+            </div>
+        </div>
+
+        <div class="script-card">
+            <h3>📹 Modelo 1 — Reação a Caso Pesado</h3>
+            <div class="script-step">
+                <div class="script-step-label">GANCHO</div>
+                <div class="script-step-text">Mostrar vídeo impactante (ex: "INSS negou pra ele")</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">REAÇÃO</div>
+                <div class="script-step-text">"Meu, que absurdo isso. Não é possível que nenhum advogado viu isso."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">SOLUÇÃO</div>
+                <div class="script-step-text">"A lei X garante que esse rapaz tem direito a Y. O caminho é entrar com mandato de Z."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">CTA</div>
+                <div class="script-step-text">"Marca ele aqui que eu posso dar uma orientação. Me segue pra mais dicas."</div>
+            </div>
+        </div>
+
+        <div class="script-card">
+            <h3>📢 Modelo 2 — Novidade do Governo</h3>
+            <div class="script-step">
+                <div class="script-step-label">GANCHO</div>
+                <div class="script-step-text">"Bolsa Família cancelado" (3 palavras na tela)</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">CONTEXTO</div>
+                <div class="script-step-text">"A Receita Federal tá cruzando dados e cancelando benefícios de quem..."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">EDUCAÇÃO</div>
+                <div class="script-step-text">Explicar as 2-3 regras novas de forma simples, sem jargão jurídico</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">CTA</div>
+                <div class="script-step-text">"Compartilha pra avisar quem você conhece. Me segue pra ficar atualizado."</div>
+            </div>
+        </div>
+
+        <div class="script-card">
+            <h3>📋 Modelo 3 — Passo a Passo Jurídico</h3>
+            <div class="script-step">
+                <div class="script-step-label">GANCHO</div>
+                <div class="script-step-text">"Aposentadoria negada? Faz isso" (na tela)</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">PASSO 1</div>
+                <div class="script-step-text">"Primeiro, levanta esses documentos: X, Y, Z"</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">PASSO 2</div>
+                <div class="script-step-text">"Segundo, protocola no INSS dessa forma..."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">PASSO 3</div>
+                <div class="script-step-text">"Se negarem, entra com isso aqui..." <em>(Lei tal, procedimento tal)</em></div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">CTA</div>
+                <div class="script-step-text">"Na legenda eu deixei a lista completa. Me segue pra não perder nada."</div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6: WORKFLOW DE PRODUÇÃO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--blue-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+                <h2>Workflow de Produção Diário</h2>
+                <p>5 passos para produzir conteúdo rápido e consistente</p>
+            </div>
+        </div>
+
+        <div class="workflow">
+            <div class="workflow-step">
+                <div class="workflow-num">1</div>
+                <h4>Mapear</h4>
+                <p>Abrir grupo "Ideias" no WhatsApp e escolher o vídeo/assunto do dia</p>
+            </div>
+            <div class="workflow-step">
+                <div class="workflow-num">2</div>
+                <h4>Roteirizar</h4>
+                <p>Escrever gancho de 3-6 palavras + estrutura. Usar ChatGPT</p>
+            </div>
+            <div class="workflow-step">
+                <div class="workflow-num">3</div>
+                <h4>Gravar</h4>
+                <p>De dia, boa luz, vertical, tela cheia. Rosto aparecendo. 40-60s</p>
+            </div>
+            <div class="workflow-step">
+                <div class="workflow-num">4</div>
+                <h4>Editar</h4>
+                <p>CapCut: legendas automáticas + cortes. Sem logo, sem @</p>
+            </div>
+            <div class="workflow-step">
+                <div class="workflow-num">5</div>
+                <h4>Publicar</h4>
+                <p>Postar + legenda com CTA + lista de documentos se aplicável</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 7: FÓRMULAS DE GANCHO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--orange-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+                <h2>Fórmulas de Gancho — 7 Tipos Virais</h2>
+                <p>Modelos prontos com 3-6 palavras para copiar e adaptar</p>
+            </div>
+        </div>
+
+        <div class="hooks-list">
+            <div class="hook-item">
+                <div class="hook-icon">1</div>
+                <div class="hook-text"><em>Urgência:</em> "Bolsa Família cancelado por isso"</div>
+            </div>
+            <div class="hook-item">
+                <div class="hook-icon">2</div>
+                <div class="hook-text"><em>Injustiça:</em> "INSS negou o benefício dele. Olha o que aconteceu."</div>
+            </div>
+            <div class="hook-item">
+                <div class="hook-icon">3</div>
+                <div class="hook-text"><em>Novidade:</em> "Nova regra do governo vai afetar sua aposentadoria"</div>
+            </div>
+            <div class="hook-item">
+                <div class="hook-icon">4</div>
+                <div class="hook-text"><em>Dor + Solução:</em> "Aposentadoria negada? Faz isso agora"</div>
+            </div>
+            <div class="hook-item">
+                <div class="hook-icon">5</div>
+                <div class="hook-text"><em>Polêmica:</em> "Seu advogado devia ter te falado isso"</div>
+            </div>
+            <div class="hook-item">
+                <div class="hook-icon">6</div>
+                <div class="hook-text"><em>Revelação:</em> "O INSS não quer que você saiba disso"</div>
+            </div>
+            <div class="hook-item">
+                <div class="hook-icon">7</div>
+                <div class="hook-text"><em>Se + Então:</em> "Se você recebe benefício, cuidado com seu Pix"</div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 8: BANCO DE IDEIAS -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--cyan-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+            </div>
+            <div>
+                <h2>Banco de Ideias — 12 Conceitos Prontos</h2>
+                <p>Temas testados no nicho de advocacia e INSS</p>
+            </div>
+        </div>
+
+        <div class="ideas-grid">
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>3 documentos que o INSS exige e ninguém te conta</h3>
+                <p>Listar os documentos essenciais que faltam na maioria dos pedidos de benefício.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Reagindo a caso de benefício negado injustamente</h3>
+                <p>Encontrar vídeo viral de alguém reclamando de negativa do INSS e virar herói.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Nova regra da Receita Federal sobre Pix e benefícios</h3>
+                <p>Sempre que sair notícia de mudança de governo, criar vídeo urgente explicando.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Aposentadoria por invalidez: passo a passo completo</h3>
+                <p>Tutorial jurídico mostrando como pleitear aposentadoria por invalidez.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-carousel">Carrossel</div>
+                <h3>5 erros que fazem seu benefício ser cancelado</h3>
+                <p>Carousel com 5 deslizes comuns que resultam em cancelamento de benefício.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-carousel">Carrossel</div>
+                <h3>Documentos para pedir aposentadoria — lista completa</h3>
+                <p>Checklist visual de cada documento necessário para montar pedido de aposentadoria.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Meu cliente perdeu o braço e o INSS disse que pode trabalhar</h3>
+                <p>Reação emocionada a caso real de perícia negada indevidamente.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-series">Série</div>
+                <h3>Série: Injustiças do INSS — caso 1, 2, 3...</h3>
+                <p>Série semanal analisando casos reais de clientes com decisões injustas.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Salário maternidade: como pedir por contribuição única</h3>
+                <p>Educacional: explicar alternativa de salário maternidade para autônomas.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-bastidor">Bastidor</div>
+                <h3>Bastidor: como eu preparo um caso de aposentadoria</h3>
+                <p>Behind-the-scenes mostrando seu processo de análise e preparação de casos.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Férias coletivas vão bagunçar esse benefício</h3>
+                <p>Alerta sobre como períodos de férias coletivas afetam cálculo de benefícios.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Emprestar Pix pode cancelar seu BPC — entenda</h3>
+                <p>Alertar sobre risco de cancelamento de BPC por ter movimentação bancária.</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 9: PERFIS DE REFERÊNCIA -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--pink-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+                <h2>Perfis de Referência — Inspiração</h2>
+                <p>Estudar para entender o que funciona no seu nicho</p>
+            </div>
+        </div>
+
+        <div class="ref-grid">
+            <div class="ref-card">
+                <div class="ref-avatar">⚖️</div>
+                <div>
+                    <h3>Advogados Virais</h3>
+                    <div class="ref-niche">Nicho Jurídico</div>
+                    <p>Advogados que reagem a casos pesados e viralizam com ganchos curtos e informação útil. Inspiração para o formato reação + solução.</p>
+                </div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-avatar">📚</div>
+                <div>
+                    <h3>Criadores de Conteúdo Jurídico</h3>
+                    <div class="ref-niche">Educação Legal</div>
+                    <p>Perfis que transformam leis complexas em linguagem simples com vídeos verticais de 40-60s. Estude a estrutura deles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 10: GUIA DE CTAs -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--purple-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+                <h2>Guia de CTAs — 3 Variações</h2>
+                <p>Call-to-Actions testadas para aumentar follow e engajamento</p>
+            </div>
+        </div>
+
+        <div class="cta-grid">
+            <div class="cta-card">
+                <div class="cta-when">Final de Vídeo Útil</div>
+                <blockquote>"Me segue pra não perder essas dicas. Clica no link da bio pra falar comigo."</blockquote>
+                <p class="cta-note">Use quando entregar informação prática sem pedir ação imediata.</p>
+            </div>
+            <div class="cta-card">
+                <div class="cta-when">Vídeo de Reação/Caso</div>
+                <blockquote>"Marca alguém que precisa saber disso. Compartilha pra avisar."</blockquote>
+                <p class="cta-note">Use em vídeos emocionais ou de injustiça. Pede compartilhamento e marca.</p>
+            </div>
+            <div class="cta-card">
+                <div class="cta-when">Vídeo de Novidade</div>
+                <blockquote>"Compartilha esse vídeo pra avisar quem você conhece que recebe esses benefícios."</blockquote>
+                <p class="cta-note">Use quando informação é urgente e pode afetar muita gente.</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 11: TÉCNICA DE VENDA -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--pink-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+                <h2>Técnica de Venda — Regra Principal</h2>
+                <p>Como converter seguidores em clientes sem parecer desesperad</p>
+            </div>
+        </div>
+
+        <div class="compare-col good" style="max-width: 100%; margin-bottom: 0;">
+            <h3 style="border: none; padding-bottom: 0; margin-bottom: 16px;">💰 Sirva Primeiro, Venda por Consequência</h3>
+            <p style="font-size: 14px; line-height: 1.7; color: var(--text-secondary);">Seu perfil existe para <strong>servir</strong>. Se for melhor que qualquer advogado que a pessoa tenha, ela vai te procurar naturalmente. <strong>Não faça vídeos que pareçam anúncio.</strong></p>
+            <p style="font-size: 14px; line-height: 1.7; color: var(--text-secondary); margin-top: 12px;">Entregue o passo a passo de graça: "a lei é essa, o caminho é esse, os documentos são esses". Quando a pessoa precisar de um advogado, vai lembrar de você como o cara ético que entrega conteúdo <strong>sem medo</strong>.</p>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 14px; font-style: italic;">Resultado: Follow consistente, DMs de prospectação, propostas de parcerias e clientes que chegam pelo seu conteúdo de qualidade.</p>
+        </div>
+
+        <!-- SEÇÃO 12: CHECKLIST DE GRAVAÇÃO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--green-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+                <h2>Checklist de Gravação — 8 Itens</h2>
+                <p>Verificação antes de publicar cada vídeo</p>
+            </div>
+        </div>
+
+        <div class="filming-checklist">
+            <h3>✓ Antes de Publicar</h3>
+            <div class="filming-grid">
+                <div class="filming-item" onclick="this.classList.toggle('done');">
+                    <div class="filming-check"></div>
+                    <span>O gancho tem no máximo 6 palavras?</span>
+                </div>
+                <div class="filming-item" onclick="this.classList.toggle('done');">
+                    <div class="filming-check"></div>
+                    <span>Qualquer pessoa leiga entende o gancho?</span>
+                </div>
+                <div class="filming-item" onclick="this.classList.toggle('done');">
+                    <div class="filming-check"></div>
+                    <span>Estou gravando de dia, com boa iluminação?</span>
+                </div>
+                <div class="filming-item" onclick="this.classList.toggle('done');">
+                    <div class="filming-check"></div>
+                    <span>Formato vertical (9:16) sem bordas?</span>
+                </div>
+                <div class="filming-item" onclick="this.classList.toggle('done');">
+                    <div class="filming-check"></div>
+                    <span>Tem narração com minha voz ou ElevenLabs?</span>
+                </div>
+                <div class="filming-item" onclick="this.classList.toggle('done');">
+                    <div class="filming-check"></div>
+                    <span>Vídeo entre 40-60 segundos?</span>
+                </div>
+                <div class="filming-item" onclick="this.classList.toggle('done');">
+                    <div class="filming-check"></div>
+                    <span>Tem CTA pedindo pra seguir no final?</span>
+                </div>
+                <div class="filming-item" onclick="this.classList.toggle('done');">
+                    <div class="filming-check"></div>
+                    <span>NÃO tem logo, @, ou marca d'água?</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 13: FERRAMENTAS RECOMENDADAS -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--blue-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div>
+                <h2>Ferramentas Recomendadas — 6 Essenciais</h2>
+                <p>Stack de produção para criar conteúdo rápido</p>
+            </div>
+        </div>
+
+        <div class="ideas-grid">
+            <div class="idea-card">
+                <div class="idea-type type-reels">Ferramenta</div>
+                <h3>CapCut</h3>
+                <p>Edição de vídeo: legendas automáticas, cortes automáticos, transições. Essencial para produção em lote.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Ferramenta</div>
+                <h3>ChatGPT</h3>
+                <p>Encurtar ganchos, criar versões mais virais/controversas/urgentes. "Me dá 3 ganchos de 4 palavras pra..."</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Ferramenta</div>
+                <h3>WhatsApp (Grupo Ideias)</h3>
+                <p>Salvar vídeos de inspiração para reagir depois. Funciona como banco de ideias e inspiração rápida.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Ferramenta</div>
+                <h3>Instagram (Perfil de Ideias)</h3>
+                <p>@mateus.ideias.adv — treinar algoritmo a sugerir conteúdo do nicho. Foco em reels de advogados.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Ferramenta</div>
+                <h3>ElevenLabs</h3>
+                <p>Narração com voz clonada quando não puder gravar sua voz. Qualidade alta, naturalidade garantida.</p>
+            </div>
+            <div class="idea-card">
+                <div class="idea-type type-reels">Ferramenta</div>
+                <h3>Criatividade Sintética (Código Viral)</h3>
+                <p>Aula do módulo 1 para mapear temas e formatos virais. Base teórica para entender algoritmo de IA.</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 14: CRONOGRAMA DE EXECUÇÃO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--purple-soft);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div>
+                <h2>Cronograma de Execução — 4 Semanas</h2>
+                <p>Roadmap concretopara os próximos 30 dias</p>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-label">Hoje (Dia 1)</div>
+                <div class="timeline-title">Corrigir Perfil + Preparação</div>
+                <div class="timeline-desc">
+                    ✓ Corrigir bio (link WhatsApp + CTA)<br>
+                    ✓ Trocar foto de perfil (aproximar mais)<br>
+                    ✓ Assistir aula Criatividade Sintética<br>
+                    ✓ Listar 10-30 ideias de conteúdo<br>
+                    ✓ Criar grupo "Ideias" no WhatsApp
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">Semana 1</div>
+                <div class="timeline-title">Preparação + Lançamento</div>
+                <div class="timeline-desc">
+                    ✓ Criar perfil secundário @mateus.ideias.adv<br>
+                    ✓ Treinar algoritmo (seguir advogados e conteúdo jurídico)<br>
+                    ✓ Gravar primeiros 7 vídeos em lote (formato reação a casos)<br>
+                    ✓ Postar 1 vídeo/dia (consistência começada)
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">Semana 2-3</div>
+                <div class="timeline-title">Teste e Otimização</div>
+                <div class="timeline-desc">
+                    ✓ Manter ritmo de 1 vídeo/dia (mínimo)<br>
+                    ✓ Testar ganchos curtos de 3-6 palavras<br>
+                    ✓ Reagir a novidades do governo/benefícios<br>
+                    ✓ Ajustar formato com base no que performa melhor<br>
+                    ✓ Aumentar para 2 posts/dia se possível
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">Mês 1+</div>
+                <div class="timeline-title">Consolidação e Escala</div>
+                <div class="timeline-desc">
+                    ✓ Consolidar formato que mais viraliza<br>
+                    ✓ Aumentar para 2 posts/dia (mínimo)<br>
+                    ✓ Começar série "Injustiças do INSS" semanal<br>
+                    ✓ Análise de métricas e ajustes contínuos<br>
+                    ✓ Preparar parceria com criadores para ampliar reach
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Março 2026
+    </div>
+
+    <script>
+        // Interatividade de checkboxes
+        document.querySelectorAll('.check-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('done');
+            });
+        });
+
+        document.querySelectorAll('.filming-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('done');
+            });
+        });
+    </script>
+</body>
+</html>
