@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Eizzi Melgarejo | UJAMB Advogados</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    border: 3px solid transparent;
+    background-image: linear-gradient(#fff, #fff), var(--ig-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .hero-video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    border: none;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+  }
+
+  .script-step-label {
+    display: flex; align-items: center; justify-content: center;
+    width: 50px; height: 50px; background: var(--ig-gradient);
+    border-radius: 12px; color: #fff; font-size: 12px; font-weight: 700;
+    text-align: center; line-height: 1.2; flex-shrink: 0;
+  }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* Timeline */
+  .timeline-container { position: relative; padding-left: 20px; }
+  .timeline-container::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--ig-gradient); }
+
+  .timeline-item {
+    position: relative; padding-bottom: 24px;
+  }
+
+  .timeline-item::before {
+    content: ''; position: absolute; left: -28px; top: 4px;
+    width: 12px; height: 12px; border-radius: 50%; background: var(--ig-gradient);
+    border: 3px solid var(--bg-soft);
+  }
+
+  .timeline-item h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* Checklist */
+  .filming-checklist { display: grid; grid-template-columns: 1fr; gap: 8px; }
+
+  .check-item, .filming-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    cursor: pointer; transition: all 0.2s ease;
+    font-size: 13.5px; color: var(--text-secondary);
+  }
+
+  .check-item:hover, .filming-item:hover { background: var(--bg-soft); }
+
+  .check-item.done, .filming-item.done { background: var(--green-soft); }
+  .check-item.done::before, .filming-item.done::before { content: '✓'; }
+
+  .check-item::before, .filming-item::before {
+    content: '';
+    width: 20px; height: 20px; border: 2px solid var(--card-border);
+    border-radius: 6px; flex-shrink: 0; display: flex;
+    align-items: center; justify-content: center;
+  }
+
+  .check-item.done::before, .filming-item.done::before {
+    background: var(--green); border-color: var(--green); color: #fff; font-size: 12px;
+  }
+
+  /* Profiles Grid */
+  .profiles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .profile-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow);
+  }
+
+  .profile-handle { font-size: 14px; font-weight: 700; color: var(--ig-purple); margin-bottom: 8px; }
+  .profile-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* CTA Cards */
+  .cta-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px 24px;
+    display: flex; align-items: start; gap: 16px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .cta-icon { font-size: 24px; flex-shrink: 0; }
+  .cta-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .cta-card p { font-size: 13px; color: var(--text-secondary); }
+
+  /* Selling Card */
+  .selling-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .selling-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .selling-step {
+    display: flex; gap: 14px; padding: 12px 0;
+  }
+
+  .selling-step-label {
+    display: flex; align-items: center; justify-content: center;
+    width: 50px; height: 50px; background: var(--ig-gradient);
+    border-radius: 12px; color: #fff; font-size: 12px; font-weight: 700;
+    text-align: center; line-height: 1.2; flex-shrink: 0;
+  }
+
+  .selling-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .rules-grid { grid-template-columns: repeat(2, 1fr); }
+    .compare-grid { grid-template-columns: 1fr; }
+    .profiles-grid { grid-template-columns: repeat(2, 1fr); }
+    .ideas-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 30px; }
+    .hero h1 { font-size: 32px; }
+    .main { padding: 24px 20px 60px; }
+    .stats-row { grid-template-columns: 1fr; padding: 0 20px; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .action-card { grid-template-columns: 1fr; }
+    .action-number { margin: 0; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .profiles-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+  }
+
+  /* Footer */
+  .footer {
+    max-width: 1200px; margin: 0 auto; padding: 32px 40px;
+    text-align: center; border-top: 1px solid var(--card-border);
+    color: var(--text-muted); font-size: 13px;
+  }
+
+  .footer strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <span class="hero-badge">🚀 Viral Pro — Análise de Perfil</span>
+  <h1>Plano de Ação<br>Eizzi Melgarejo — UJAMB Advogados</h1>
+  <p class="hero-sub">Advogada especializada em Direito Médico, LGPD e proteção patrimonial para médicos e clínicas. Plano completo para escalar de 8K para 50K+ seguidores usando conteúdo educacional confrontacional.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/k2FrFarzphQ" title="Análise Viral Pro — Eizzi Melgarejo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="8" cy="8" r="7"></circle>
+        <path d="M8 3v5l4 2.5"></path>
+      </svg>
+      24 de Março, 2026
+    </div>
+    <div class="hero-meta-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M2 4h12M2 4v10a1 1 0 001 1h10a1 1 0 001-1V4M6 7v5M10 7v5"></path>
+      </svg>
+      Mentoria com Oney Araújo
+    </div>
+    <div class="hero-meta-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M8 1c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7 3.134-7 7-7z"></path>
+        <path d="M8 4v4l3 1.5"></path>
+      </svg>
+      Nicho: Direito Médico & LGPD
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">6</div>
+    <div class="stat-label">Ações Urgentes</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">1/dia</div>
+    <div class="stat-label">Meta de Posts</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">60s</div>
+    <div class="stat-label">Duração Ideal</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">80%</div>
+    <div class="stat-label">Foco em Educação</div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+  <!-- Section 1: Correções Imediatas -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(225, 48, 108, 0.1); color: var(--red);">🔴</div>
+    <div>
+      <h2>Correções Imediatas do Perfil</h2>
+      <p>6 ações que devem ser implementadas agora mesmo</p>
+    </div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now">
+      <div class="action-number">1</div>
+      <div class="action-content">
+        <h3>Trocar a Foto de Perfil (AI → Real)</h3>
+        <p>Sua foto atual é gerada por IA. Isso destrói confiança com médicos. Precisa ser uma foto REAL: close-up, 70%+ rosto visível, fundo neutro, expressão profissional.</p>
+        <span class="action-tag">🔴 AGORA</span>
+      </div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">2</div>
+      <div class="action-content">
+        <h3>Reescrever a Bio</h3>
+        <p>Sua bio atual foca em credenciais. Médicos não ligam pra isso. Mude para: "Protejo médicos de processos e multas | LGPD, Holding, Sucessão | Advogada @ujamb" — comunicar O QUE ele ganha seguindo.</p>
+        <span class="action-tag">🔴 AGORA</span>
+      </div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">3</div>
+      <div class="action-content">
+        <h3>Padronizar Ganchos Confrontacionais</h3>
+        <p>Todo vídeo tem 3 segundos pra prender. Seus ganchos informativos ("5 dicas sobre...") falham. Reescreva como confrontacional: "Seu consultório pode ser multado em R$50 milhões amanhã. E você nem sabe por quê."</p>
+        <span class="action-tag">🔴 AGORA</span>
+      </div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">4</div>
+      <div class="action-content">
+        <h3>Gravar 3 Vídeos Informais</h3>
+        <p>Seu tom é muito formal ("apresentadora de programa"). Grave no celular, na mão, escritório ou carro. Tom de conversa com um amigo médico. Sem teleprompter, sem palestra.</p>
+        <span class="action-tag">🟡 ESTA SEMANA</span>
+      </div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">5</div>
+      <div class="action-content">
+        <h3>Separar Educacional (80%) de Autoridade (20%)</h3>
+        <p>Não venda nos vídeos educacionais. Eduque primeiro, mostre expertise. Deixe o médico descobrir sozinho que precisa de você. Confiança vira em consultoria depois.</p>
+        <span class="action-tag">🟡 ESTA SEMANA</span>
+      </div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">6</div>
+      <div class="action-content">
+        <h3>Criar Série "Caso Real da Semana"</h3>
+        <p>Histórias reais (anonimizadas) de médicos que tiveram problemas jurídicos. "Um médico foi processado por..." funciona 10x melhor que conteúdo genérico.</p>
+        <span class="action-tag">🟡 ESTA SEMANA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Análise de Vídeos -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(131, 58, 180, 0.1); color: var(--purple);">📹</div>
+    <div>
+      <h2>Análise de Vídeos — Before/After</h2>
+      <p>Como melhorar seus 3 vídeos mais importantes</p>
+    </div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header">
+        <span class="ba-video-tag">VÌDEO</span>
+        <h3>LGPD para Clínicas Médicas</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ ERRADO</div>
+          <p>Gancho: <strong>"5 pontos que todo médico precisa saber sobre LGPD"</strong> — Informativo, não prende. O médico passa direto.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ MELHOR</div>
+          <p>Gancho: <strong>"Seu consultório pode ser multado em R$50 milhões amanhã. E você nem sabe por quê."</strong> — Confrontacional, cria curiosidade.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header">
+        <span class="ba-video-tag">VÍDEO</span>
+        <h3>Holding Patrimonial para Médicos</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ ERRADO</div>
+          <p>Tom: <strong>Apresentadora de programa.</strong> Você fala como se estivesse num estúdio ensinando. Distante.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ MELHOR</div>
+          <p>Tom: <strong>Conversacional.</strong> "Esse médico perdeu R$2 milhões por não fazer uma coisa simples" — como se contasse pra um amigo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header">
+        <span class="ba-video-tag">VÍDEO</span>
+        <h3>Planejamento Sucessório</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ ERRADO</div>
+          <p>Formato: <strong>Studio, apresentação formal.</strong> Distante, pouca conexão pessoal. Médico pensa: "Mais uma palestra".</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ MELHOR</div>
+          <p>Formato: <strong>Close-up, conversando.</strong> Câmera no rosto, olho no olho. Tira a formalidade, cria intimidade.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Certo vs Errado -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(225, 48, 108, 0.1); color: var(--red);">✅</div>
+    <div>
+      <h2>Certo vs Errado — Guia Prático</h2>
+      <p>O que funciona e o que não funciona para advogados crescerem</p>
+    </div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3>❌ NUNCA FAÇA ISSO</h3>
+      <div class="compare-item"><span>❌</span> Usar foto de perfil gerada por IA</div>
+      <div class="compare-item"><span>❌</span> Ganchos informativos/descritivos ("5 dicas de...")</div>
+      <div class="compare-item"><span>❌</span> Tom de apresentadora/palestra</div>
+      <div class="compare-item"><span>❌</span> Vender serviço no início do vídeo</div>
+      <div class="compare-item"><span>❌</span> Falar só de credenciais na bio</div>
+      <div class="compare-item"><span>❌</span> Conteúdo genérico sobre direito</div>
+      <div class="compare-item"><span>❌</span> Vídeos longos sem gancho forte</div>
+    </div>
+
+    <div class="compare-col good">
+      <h3>✅ SEMPRE FAÇA ISSO</h3>
+      <div class="compare-item"><span>✅</span> Foto real, close-up, expressiva</div>
+      <div class="compare-item"><span>✅</span> Ganchos negativos/confrontacionais</div>
+      <div class="compare-item"><span>✅</span> Tom conversacional, próximo, como amigo</div>
+      <div class="compare-item"><span>✅</span> Educar primeiro, autoridade depois</div>
+      <div class="compare-item"><span>✅</span> Bio focada no benefício para o médico</div>
+      <div class="compare-item"><span>✅</span> Conteúdo específico para médicos e clínicas</div>
+      <div class="compare-item"><span>✅</span> Vídeos 40-60s com storytelling de casos reais</div>
+    </div>
+  </div>
+
+  <!-- Section 4: Estratégia de Conteúdo -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(131, 58, 180, 0.1); color: var(--purple);">🎯</div>
+    <div>
+      <h2>Estratégia de Conteúdo — 6 Regras Ouro</h2>
+      <p>As regras que você DEVE seguir pra crescer de 8K para 50K+</p>
+    </div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <span class="rule-emoji">🎯</span>
+      <h3>Gancho Confrontacional</h3>
+      <p>"Esse médico quase perdeu o CRM" funciona melhor que "3 dicas sobre CRM médico". Confronte, não informe.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">🪝</span>
+      <h3>Caso Real Sempre</h3>
+      <p>Toda semana conte um caso real (anonimizado). Médico processado, clínica multada, patrimônio perdido. Histórias vendem.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">⏱️</span>
+      <h3>40 a 60 Segundos</h3>
+      <p>Vídeos curtos e diretos. Entra no caso, entrega o impacto, fecha com CTA. Nada de 5 minutos de palestra.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">🗣️</span>
+      <h3>Tom de Conversa</h3>
+      <p>Grave como se estivesse explicando pra um amigo. Nada de teleprompter ou tom de palestra. Natural é 10x melhor.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">📹</span>
+      <h3>Mix de Formatos</h3>
+      <p>60% informal (celular, escritório, carro) + 40% profissional (estúdio). O informal humaniza, o profissional valida.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">🔄</span>
+      <h3>Poste Todo Dia</h3>
+      <p>1 conteúdo por dia. Se não tiver tempo, grave takes de 60s com casos rápidos. Consistência &gt; qualidade perfeita.</p>
+    </div>
+  </div>
+
+  <!-- Section 5: Roteiros-Modelo -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(225, 48, 108, 0.1); color: var(--pink);">✍️</div>
+    <div>
+      <h2>Roteiros-Modelo — 3 Templates Prontos</h2>
+      <p>Copie e adapte esses roteiros para seus vídeos</p>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <h3>📌 Modelo 1: Caso Real + Lição</h3>
+    <div class="script-step">
+      <div class="script-step-label">Gancho</div>
+      <div class="script-step-text">"Um médico foi processado por algo que ele fazia TODO dia no consultório. E o pior: ele nem sabia que era ilegal."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Contexto</div>
+      <div class="script-step-text">"Ele atendia 30 pacientes por dia, anotava tudo numa planilha... sem consentimento LGPD. Dados desprotegidos."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Educação</div>
+      <div class="script-step-text">"E sabe o que isso nos ensina? Que o prontuário eletrônico SEM adequação é uma bomba-relógio. Todo dia que passa é risco."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">CTA</div>
+      <div class="script-step-text">"Se você é médico, me segue. Toda semana eu trago um caso real como esse. Sua clínica precisa disso."</div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <h3>📌 Modelo 2: Confronto + Revelação</h3>
+    <div class="script-step">
+      <div class="script-step-label">Gancho</div>
+      <div class="script-step-text">"Se você é médico e não fez isso ainda, seu consultório pode ser fechado amanhã."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Desenvolvimento</div>
+      <div class="script-step-text">"A maioria dos médicos acha que estar regular no CRM é suficiente. Mas a LGPD exige adequação COMPLETA dos dados dos pacientes. Coisa que 95% não faz."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Prova</div>
+      <div class="script-step-text">"Na última semana, 3 clínicas da minha região foram notificadas. Nenhuma estava adequada. Uma pagou R$80 mil em multa."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">CTA</div>
+      <div class="script-step-text">"Comenta 'LGPD' que eu te mando o checklist gratuito. Segue pra mais conteúdo de proteção médica."</div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <h3>📌 Modelo 3: Mito vs Realidade</h3>
+    <div class="script-step">
+      <div class="script-step-label">Gancho</div>
+      <div class="script-step-text">"Médico não precisa de holding patrimonial. Será?"</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Desenvolvimento</div>
+      <div class="script-step-text">"Todo médico que ganha acima de R$30 mil por mês está exposto. Processo de paciente, ex-cônjuge, sócio... Seu patrimônio está descoberto."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Prova</div>
+      <div class="script-step-text">"Eu já vi médico perder consultório, carro e apartamento num processo trabalhista. Holding protege tudo isso. É blindagem jurídica."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">CTA</div>
+      <div class="script-step-text">"Segue pra aprender a proteger o que é seu. Link na bio pra consultoria sobre blindagem patrimonial."</div>
+    </div>
+  </div>
+
+  <!-- Section 6: Workflow de Produção -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(247, 119, 55, 0.1); color: var(--orange);">🔄</div>
+    <div>
+      <h2>Workflow de Produção — 5 Passos</h2>
+      <p>Seu processo diário pra gravar, editar e postar</p>
+    </div>
+  </div>
+
+  <div class="rules-grid" style="grid-template-columns: 1fr;">
+    <div class="rule-card">
+      <span class="rule-emoji">1️⃣</span>
+      <h3>Identifique o Caso</h3>
+      <p>Escolha um caso real (anonimizado) ou dúvida comum de médicos que você resolve constantemente.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">2️⃣</span>
+      <h3>Extraia o Gancho</h3>
+      <p>Qual o ponto mais chocante? Qual a consequência mais grave? Use isso como abertura confrontacional.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">3️⃣</span>
+      <h3>Grave Informal</h3>
+      <p>Celular na mão, olhando pra câmera, tom de conversa. Faça 2-3 takes. A natureza vence a perfeição.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">4️⃣</span>
+      <h3>Edite em 60s</h3>
+      <p>Corte o excesso, mantenha ritmo rápido, ative legenda automática. Quanto mais rápido, mais engajamento.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">5️⃣</span>
+      <h3>Publique + CTA</h3>
+      <p>Poste com CTA claro. "Comenta", "Segue", "Link na bio". Direcione pra ação específica.</p>
+    </div>
+  </div>
+
+  <!-- Section 7: Fórmulas de Gancho -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(247, 119, 55, 0.1); color: var(--orange);">🪝</div>
+    <div>
+      <h2>Fórmulas de Gancho — 7 Templates Prontos</h2>
+      <p>Use esses ganchos como inspiração para seus vídeos</p>
+    </div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item">
+      <div class="hook-icon">1</div>
+      <div class="hook-text">"<em>Esse médico quase perdeu o CRM</em> por causa de [situação comum]."</div>
+    </div>
+
+    <div class="hook-item">
+      <div class="hook-icon">2</div>
+      <div class="hook-text">"Se você é médico e <em>faz [prática comum]</em>, você pode ser processado amanhã."</div>
+    </div>
+
+    <div class="hook-item">
+      <div class="hook-icon">3</div>
+      <div class="hook-text">"<em>Seu consultório pode ser multado em R$50 milhões</em>. E você nem sabe por quê."</div>
+    </div>
+
+    <div class="hook-item">
+      <div class="hook-icon">4</div>
+      <div class="hook-text">"Um médico <em>me ligou desesperado</em>. Ele tinha acabado de receber [notificação/processo]."</div>
+    </div>
+
+    <div class="hook-item">
+      <div class="hook-icon">5</div>
+      <div class="hook-text">"<em>Médico não precisa de [proteção]</em>. Será? Vou te contar o que aconteceu com [caso]."</div>
+    </div>
+
+    <div class="hook-item">
+      <div class="hook-icon">6</div>
+      <div class="hook-text">"Isso que <em>todo médico faz</em> no consultório é <em>ilegal</em>. E ninguém avisa."</div>
+    </div>
+
+    <div class="hook-item">
+      <div class="hook-icon">7</div>
+      <div class="hook-text">"<em>3 médicos foram processados</em> na mesma semana. Todos cometeram <em>o mesmo erro</em>."</div>
+    </div>
+  </div>
+
+  <!-- Section 8: Banco de Ideias -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(252, 175, 69, 0.1); color: var(--yellow);">💡</div>
+    <div>
+      <h2>Banco de Ideias — 12 Conteúdos Prontos</h2>
+      <p>Copie e adapte para seus próximos 2 meses</p>
+    </div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card">
+      <span class="idea-type type-reels">REELS</span>
+      <h3>Pare de anotar dados em Excel</h3>
+      <p>"Médico: pare de anotar dados do paciente em planilha Excel — LGPD não permite sem criptografia."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-reels">REELS</span>
+      <h3>Teste LGPD em 30s</h3>
+      <p>"Seu consultório está adequado à LGPD? Teste em 30 segundos — responda 5 perguntas."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-carousel">CARROSSEL</span>
+      <h3>5 Erros Jurídicos</h3>
+      <p>"5 erros jurídicos que todo médico comete sem saber — e as consequências legais de cada um."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-reels">REELS</span>
+      <h3>Você PRECISA de Holding</h3>
+      <p>"Médico que ganha mais de R$30 mil: você PRECISA de uma holding agora — aqui por quê."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-series">SÉRIE</span>
+      <h3>Caso Real da Semana</h3>
+      <p>"Série semanal: médico processado por paciente, como tudo aconteceu e como resolvi o caso."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-reels">REELS</span>
+      <h3>Timeline de Processo</h3>
+      <p>"O que acontece quando um médico é processado? Timeline completa de 0 a 100."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-bastidor">BASTIDOR</span>
+      <h3>Um Dia no Escritório</h3>
+      <p>"Um dia no escritório resolvendo caso de médico notificado pela ANVISA — o que eu fiz."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-carousel">CARROSSEL</span>
+      <h3>Holding: Antes vs Depois</h3>
+      <p>"Holding patrimonial: antes vs depois da proteção — qual era a situação do meu cliente."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-reels">REELS</span>
+      <h3>Ex-cônjuge pode tomar</h3>
+      <p>"Médico, seu ex-cônjuge pode tomar metade do consultório. Sabia? É assim que funciona."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-series">SÉRIE</span>
+      <h3>Perguntas de Médicos</h3>
+      <p>"Perguntas que médicos me fazem toda semana — e as respostas práticas pra cada uma."</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-reels">REELS</span>
+      <h3>Planejamento Sucessório</h3>
+      <p>"Planejamento sucessório: o que acontece com sua clínica se algo acontecer com você?"</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="idea-type type-bastidor">BASTIDOR</span>
+      <h3>Como Funciona Consultoria</h3>
+      <p>"Como funciona uma consultoria jurídica para clínica médica — o passo a passo completo."</p>
+    </div>
+  </div>
+
+  <!-- Section 9: Perfis de Referência -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(64, 93, 230, 0.1); color: var(--blue);">👥</div>
+    <div>
+      <h2>Perfis de Referência — Estude Esses</h2>
+      <p>Advogados que cresceram com estratégia similar à sua</p>
+    </div>
+  </div>
+
+  <div class="profiles-grid">
+    <div class="profile-card">
+      <div class="profile-handle">@tfraga.adv</div>
+      <p>Advocacia + conteúdo confrontacional. Tom direto, ganchos fortes, cresceu com storytelling jurídico.</p>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-handle">@felipebecariadvogado</div>
+      <p>Conteúdo jurídico acessível, formato informal, ganchos negativos que retém. Tom próximo, conversacional.</p>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-handle">@oneyaraujo</div>
+      <p>Referência de estratégia. Estude os formatos de gancho, storytelling e como ele vende sem vender.</p>
+    </div>
+  </div>
+
+  <!-- Section 10: Guia de CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(0, 200, 83, 0.1); color: var(--green);">📢</div>
+    <div>
+      <h2>Guia de CTAs — 3 Modelos</h2>
+      <p>Como fechar seus vídeos com ação clara</p>
+    </div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-icon">🎯</div>
+      <div>
+        <h3>Para Engajamento</h3>
+        <p>"Comenta 'LGPD' que eu te mando o checklist gratuito." — Objetivo: aumentar comentários e tempo na tela.</p>
+      </div>
+    </div>
+
+    <div class="cta-card">
+      <div class="cta-icon">👥</div>
+      <div>
+        <h3>Para Seguidores</h3>
+        <p>"Segue pra não perder o próximo caso real. Toda semana tem um novo." — Objetivo: aumentar follow rate.</p>
+      </div>
+    </div>
+
+    <div class="cta-card">
+      <div class="cta-icon">💰</div>
+      <div>
+        <h3>Para Conversão</h3>
+        <p>"Se você quer proteger seu consultório, link na bio pra agendar uma consultoria." — Objetivo: vender.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 11: Técnica de Venda -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(0, 200, 83, 0.1); color: var(--green);">💰</div>
+    <div>
+      <h2>Venda Sem Vender — Método Educacional</h2>
+      <p>Como converter seguidores em clientes sem parecer desesperado</p>
+    </div>
+  </div>
+
+  <div class="selling-card">
+    <h3>💰 O Método em 4 Passos</h3>
+    <div class="selling-step">
+      <div class="selling-step-label">Passo 1</div>
+      <div class="selling-step-text"><strong>Eduque com Casos Reais</strong> — Conte o problema do médico, a consequência legal, a solução. Mostre que você sabe resolver.</div>
+    </div>
+    <div class="selling-step">
+      <div class="selling-step-label">Passo 2</div>
+      <div class="selling-step-text"><strong>Mostre Autoridade Natural</strong> — "Eu resolvi esse caso em 3 semanas" (sem forçar credencial). Deixe a expertise aparecer naturalmente.</div>
+    </div>
+    <div class="selling-step">
+      <div class="selling-step-label">Passo 3</div>
+      <div class="selling-step-text"><strong>CTA Suave</strong> — "Se quiser saber se você está protegido, link na bio." Não é "compre agora", é "clique se quiser saber mais".</div>
+    </div>
+    <div class="selling-step">
+      <div class="selling-step-label">Passo 4</div>
+      <div class="selling-step-text"><strong>Nunca Venda Direto</strong> — O médico que aprende com você vai te procurar. Confie no processo. Venda indireta &gt; venda direta.</div>
+    </div>
+  </div>
+
+  <!-- Section 12: Checklist de Gravação -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(0, 200, 83, 0.1); color: var(--green);">✅</div>
+    <div>
+      <h2>Checklist de Gravação — 8 Itens</h2>
+      <p>Antes de publicar, verifique tudo isso</p>
+    </div>
+  </div>
+
+  <div class="filming-checklist">
+    <div class="filming-item">Gancho confrontacional nos 3 primeiros segundos?</div>
+    <div class="filming-item">Tom conversacional (não formal/palestra)?</div>
+    <div class="filming-item">Caso real ou exemplo concreto incluído?</div>
+    <div class="filming-item">Duração entre 40-60 segundos?</div>
+    <div class="filming-item">CTA claro no final?</div>
+    <div class="filming-item">Legenda automática ativada?</div>
+    <div class="filming-item">Iluminação boa (natural ou ring light)?</div>
+    <div class="filming-item">Enquadramento close-up (rosto visível)?</div>
+  </div>
+
+  <!-- Section 13: Ferramentas Recomendadas -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(0, 180, 216, 0.1); color: var(--cyan);">🛠️</div>
+    <div>
+      <h2>Ferramentas Recomendadas — 6 Apps</h2>
+      <p>Stack de produção que você precisa para crescer</p>
+    </div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <span class="rule-emoji">📱</span>
+      <h3>CapCut</h3>
+      <p>Edição de vídeo rápida com legendas automáticas e templates prontos. Indispensável pra 1 vídeo/dia.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">📊</span>
+      <h3>Metricool</h3>
+      <p>Agendamento e métricas de Instagram. Poste enquanto dorme, analise o que funciona.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">📝</span>
+      <h3>Notion</h3>
+      <p>Organização de banco de ideias e casos reais. Documenta tudo que você pode viralizar.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">🎙️</span>
+      <h3>Teleprompter App</h3>
+      <p>Para gravar com roteiro sem parecer que está lendo. Ajuda com scripts mais longos.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">💡</span>
+      <h3>ChatGPT/Claude</h3>
+      <p>Gerar ideias de ganchos e adaptar roteiros rapidamente. IA acelera criação.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">📸</span>
+      <h3>Canva</h3>
+      <p>Criar capas de Reels e carrosséis. Templates prontos economizam tempo de design.</p>
+    </div>
+  </div>
+
+  <!-- Section 14: Cronograma de Execução -->
+  <div class="section-header">
+    <div class="section-icon" style="background: rgba(64, 93, 230, 0.1); color: var(--blue);">📅</div>
+    <div>
+      <h2>Cronograma de Execução — Timeline 4 Semanas</h2>
+      <p>Roadmap passo-a-passo para implementar tudo isso</p>
+    </div>
+  </div>
+
+  <div class="timeline-container">
+    <div class="timeline-item">
+      <h3>🔴 HOJE</h3>
+      <p>Trocar foto de perfil (remover AI), reescrever bio, definir 3 primeiros ganchos confrontacionais e estruturar roteiros básicos.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>🟡 SEMANA 1</h3>
+      <p>Gravar 7 vídeos (5 informais + 2 profissionais), criar série "Caso Real da Semana", começar a postar 1/dia. Medir o que funciona.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>🟠 SEMANA 2-3</h3>
+      <p>Manter 1 post/dia, testar formatos (Reels vs Carrossel), analisar quais ganchos retêm mais. Otimizar baseado em dados.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>🟢 MÊS 1+</h3>
+      <p>Consolidar estilo confrontacional, criar isca digital (checklist LGPD gratuito), começar funil de consultoria. Escalar para 50K seguidores.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Março 2026
+</div>
+
+<script>
+  document.querySelectorAll('.check-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('done'));
+  });
+  document.querySelectorAll('.filming-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('done'));
+  });
+</script>
+
+</body>
+</html>
