@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Ação — Ana Júlia — Viral Pro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #ffffff;
+            --bg-soft: #fafafa;
+            --card: #ffffff;
+            --card-border: #e8e8ed;
+            --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+            --ig-purple: #833AB4;
+            --ig-pink: #E1306C;
+            --ig-orange: #F77737;
+            --ig-yellow: #FCAF45;
+            --ig-blue: #405DE6;
+            --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+            --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+            --green: #00C853;
+            --green-soft: rgba(0, 200, 83, 0.08);
+            --red: #E1306C;
+            --red-soft: rgba(225, 48, 108, 0.07);
+            --yellow: #F77737;
+            --yellow-soft: rgba(247, 119, 55, 0.07);
+            --blue: #405DE6;
+            --blue-soft: rgba(64, 93, 230, 0.07);
+            --purple: #833AB4;
+            --purple-soft: rgba(131, 58, 180, 0.07);
+            --pink: #E1306C;
+            --pink-soft: rgba(225, 48, 108, 0.07);
+            --cyan: #00B4D8;
+            --cyan-soft: rgba(0, 180, 216, 0.07);
+            --orange: #F77737;
+            --orange-soft: rgba(247, 119, 55, 0.07);
+            --text: #1a1a2e;
+            --text-secondary: #4a4a5a;
+            --text-muted: #8e8e9a;
+            --text-dim: #b0b0b8;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-soft); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+        .hero { position: relative; padding: 56px 40px 40px; text-align: center; background: var(--bg); border-bottom: 1px solid var(--card-border); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--ig-gradient); }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--ig-gradient); border-radius: 100px; padding: 8px 22px; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 24px; }
+        .hero h1 { font-size: 44px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-sub { font-size: 17px; color: var(--text-secondary); font-weight: 400; max-width: 620px; margin: 0 auto 20px; line-height: 1.65; }
+        .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+        .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+        .hero-meta { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+        .hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+        .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1200px; margin: -28px auto 0; padding: 0 40px; position: relative; z-index: 2; }
+        .stat-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px; text-align: center; box-shadow: var(--card-shadow); position: relative; overflow: hidden; }
+        .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--ig-gradient); }
+        .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+        .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+        .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+        .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+        .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+        .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+        .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+        .section-header:first-child { margin-top: 0; }
+        .section-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+        .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+        .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .action-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px 24px; display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 18px; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+        .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+        .action-number { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+        .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+        .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+        .action-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+        .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+        .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+        .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+        .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+        .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+        .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .compare-col { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); }
+        .compare-col h3 { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
+        .compare-col.bad h3 { color: var(--red); }
+        .compare-col.good h3 { color: var(--green); }
+        .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+        .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+        .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .rule-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; text-align: center; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+        .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+        .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+        .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+        .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+        .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .idea-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+        .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+        .idea-type { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px; }
+        .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+        .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+        .type-reels { background: var(--pink-soft); color: var(--pink); }
+        .type-carousel { background: var(--purple-soft); color: var(--purple); }
+        .type-series { background: var(--cyan-soft); color: var(--cyan); }
+        .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+        .type-educacao { background: var(--blue-soft); color: var(--blue); }
+
+        .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .hook-item { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 22px; display: flex; align-items: start; gap: 14px; box-shadow: var(--card-shadow); }
+        .hook-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--ig-gradient); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 800; }
+        .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+        .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+        .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+        .ba-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow); }
+        .ba-header { padding: 16px 22px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--card-border); background: var(--bg-soft); }
+        .ba-header .ba-video-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px; background: var(--purple-soft); color: var(--purple); }
+        .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+        .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+        .ba-col { padding: 18px 22px; }
+        .ba-col:first-child { border-right: 1px solid var(--card-border); }
+        .ba-col-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .ba-col:first-child .ba-col-label { color: var(--red); }
+        .ba-col:last-child .ba-col-label { color: var(--green); }
+        .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+        .ba-col p strong { color: var(--text); font-weight: 600; }
+
+        .script-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); margin-bottom: 14px; }
+        .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+        .script-step { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--card-border); }
+        .script-step:last-child { border-bottom: none; }
+        .script-step-label { flex-shrink: 0; width: 90px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding-top: 2px; }
+        .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+        .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+        .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+        .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+        .script-step:nth-child(5) .script-step-label { color: var(--green); }
+        .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+        .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+        .workflow { display: flex; gap: 0; align-items: stretch; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow); }
+        .workflow-step { flex: 1; padding: 20px 16px; text-align: center; position: relative; border-right: 1px solid var(--card-border); }
+        .workflow-step:last-child { border-right: none; }
+        .workflow-step::after { content: '→'; position: absolute; right: -8px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--text-dim); z-index: 1; background: var(--card); padding: 2px; }
+        .workflow-step:last-child::after { display: none; }
+        .workflow-num { width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px; background: var(--ig-gradient); }
+        .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+        .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+        .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .ref-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start; }
+        .ref-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--ig-gradient); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+        .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+        .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+        .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .cta-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; box-shadow: var(--card-shadow); text-align: center; }
+        .cta-when { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px; border-radius: 6px; display: inline-block; }
+        .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+        .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+        .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+        .cta-card blockquote { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.5; font-style: italic; margin-bottom: 8px; }
+        .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+        .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .check-item { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; font-size: 13.5px; font-weight: 500; color: var(--text-secondary); box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease; user-select: none; }
+        .check-item:hover { border-color: var(--ig-purple); }
+        .check-box { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--text-dim); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s ease; }
+        .check-item.done { background: var(--green-soft); border-color: var(--green); }
+        .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+        .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+        .filming-checklist { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); }
+        .filming-checklist h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; color: var(--text); }
+        .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .filming-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px; font-size: 13.5px; font-weight: 500; color: var(--text-secondary); cursor: pointer; user-select: none; transition: all 0.15s ease; border: 1px solid transparent; }
+        .filming-item:hover { background: var(--bg-soft); }
+        .filming-check { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--text-dim); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s ease; }
+        .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+        .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+        .filming-item.done { color: var(--text-muted); }
+
+        .timeline { position: relative; padding-left: 32px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px; background: var(--ig-gradient); border-radius: 2px; }
+        .timeline-item { position: relative; padding: 0 0 28px 24px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-dot { position: absolute; left: -23px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid; }
+        .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+        .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+        .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+        .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+        .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+        .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+        .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+        .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+        .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+        .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+        .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+        .footer { text-align: center; padding: 36px 40px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--card-border); max-width: 1200px; margin: 0 auto; background: var(--bg); }
+        .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 40px 20px 24px; }
+            .hero h1 { font-size: 28px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+            .main { padding: 24px 20px 60px; }
+            .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+            .ba-body { grid-template-columns: 1fr; }
+            .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+            .workflow { flex-direction: column; }
+            .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+            .workflow-step::after { display: none; }
+            .action-card { grid-template-columns: auto 1fr; }
+            .action-tag { grid-column: 2; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span>✨</span> Viral Pro — Análise de Perfil
+        </div>
+        <h1>Plano de Ação<br>Ana Júlia — Educação &amp; Histórias Inspiradoras</h1>
+        <p class="hero-sub">Criadora de conteúdo sobre educação e histórias reais de superação. Tudo o que precisa fazer para escalar de 25K para 100K+ seguidores com storytelling que conecta.</p>
+
+        <div class="hero-video">
+            <iframe src="https://www.youtube.com/embed/n2PJWUhou-U" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="8" cy="8" r="7"></circle>
+                    <path d="M8 4v4l3 2"></path>
+                </svg>
+                24 de Março, 2026
+            </div>
+            <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M8 1c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7z"></path>
+                    <path d="M8 3v5l4 2"></path>
+                </svg>
+                Mentoria com Oney Araújo
+            </div>
+            <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8z"></path>
+                    <path d="M8 4v4l2.5 1.5"></path>
+                </svg>
+                Nicho: Educação e Storytelling
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Ações Urgentes</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">/dia Meta de Posts</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">60s</div>
+            <div class="stat-label">Duração Ideal</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Foco em Storytelling</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- SECTION 1: CORREÇÕES IMEDIATAS -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--red-soft); color: var(--red); font-size: 20px;">🔴</div>
+            <div>
+                <h2>Correções Imediatas</h2>
+                <p>Mudanças essenciais para começar hoje mesmo</p>
+            </div>
+        </div>
+
+        <div class="priority-grid">
+            <div class="action-card urgency-now">
+                <div class="action-number">1</div>
+                <div class="action-content">
+                    <h3>Aproximar a foto de perfil</h3>
+                    <p>Está longe do rosto. Crop para mostrar 70%+ do rosto. Referência: perfis como Taidanta e Rodrigo.</p>
+                    <div class="action-tag">🔴 AGORA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-now">
+                <div class="action-number">2</div>
+                <div class="action-content">
+                    <h3>Ajustar a bio</h3>
+                    <p>Comunicar claramente o que a pessoa vai encontrar no perfil: histórias reais de superação ligadas à educação.</p>
+                    <div class="action-tag">🔴 AGORA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-now">
+                <div class="action-number">3</div>
+                <div class="action-content">
+                    <h3>Padronizar os ganchos</h3>
+                    <p>Todo vídeo precisa de gancho negativo/confrontacional nos 3 primeiros segundos. Não usar ganchos descritivos.</p>
+                    <div class="action-tag">🔴 AGORA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-week">
+                <div class="action-number">4</div>
+                <div class="action-content">
+                    <h3>Criar identidade visual nos vídeos</h3>
+                    <p>Manter o formato dentro do carro que está funcionando, mas garantir boa iluminação e enquadramento consistente.</p>
+                    <div class="action-tag">⏰ ESTA SEMANA</div>
+                </div>
+            </div>
+
+            <div class="action-card urgency-week">
+                <div class="action-number">5</div>
+                <div class="action-content">
+                    <h3>Separar conteúdo pessoal de conteúdo da universidade</h3>
+                    <p>Menções à universidade devem ser naturais, breves (2 frases) e só depois da metade do vídeo.</p>
+                    <div class="action-tag">⏰ ESTA SEMANA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: ANTES vs DEPOIS -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--purple-soft); color: var(--purple); font-size: 20px;">📹</div>
+            <div>
+                <h2>Análise de Vídeos</h2>
+                <p>O que está funcionando e o que precisa melhorar</p>
+            </div>
+        </div>
+
+        <div class="before-after-grid">
+            <div class="ba-card">
+                <div class="ba-header">
+                    <span class="ba-video-tag">Vídeo 1</span>
+                    <h3>Pesquisadora ignorada por 25 anos (Tatiana)</h3>
+                </div>
+                <div class="ba-body">
+                    <div class="ba-col">
+                        <div class="ba-col-label">✓ CERTO</div>
+                        <p><strong>Gancho:</strong> "Essa mulher passou 25 anos sendo ignorada pela academia..."</p>
+                        <p style="margin-top: 10px;">Confronta a realidade. Gera curiosidade imediata. Intriga o espectador.</p>
+                    </div>
+                    <div class="ba-col">
+                        <div class="ba-col-label">✓ CONTINUE ASSIM</div>
+                        <p>Mantenha esse padrão de gancho negativo/confrontacional em todos os vídeos futuros.</p>
+                        <p style="margin-top: 10px;">Esse tipo de abertura é o que mais retém visualizações na sua plataforma.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ba-card">
+                <div class="ba-header">
+                    <span class="ba-video-tag">Vídeo 2</span>
+                    <h3>Meninas cearenses na escola</h3>
+                </div>
+                <div class="ba-body">
+                    <div class="ba-col">
+                        <div class="ba-col-label">✓ CERTO</div>
+                        <p><strong>Gancho:</strong> "Não deveriam estar na escola brincando..."</p>
+                        <p style="margin-top: 10px;">Gancho negativo que funciona. Confronta expectativas.</p>
+                    </div>
+                    <div class="ba-col">
+                        <div class="ba-col-label">✓ CONTINUE ASSIM</div>
+                        <p>Esse padrão gera engagement alto. Mantenha a confrontação e a curiosidade como marca registrada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ba-card">
+                <div class="ba-header">
+                    <span class="ba-video-tag">Vídeo 3</span>
+                    <h3>Alessandra — 3 graduações e 9 pós</h3>
+                </div>
+                <div class="ba-body">
+                    <div class="ba-col">
+                        <div class="ba-col-label">✗ ERRADO</div>
+                        <p><strong>Gancho atual:</strong> "Disseram que a surdez seria um fator limitante..."</p>
+                        <p style="margin-top: 10px;">Descritivo. Não confronta. Apenas lista informação.</p>
+                    </div>
+                    <div class="ba-col">
+                        <div class="ba-col-label">✓ MELHOR</div>
+                        <p><strong>Gancho reescrito:</strong> "Cearense passou 15 anos estudando sem conseguir ouvir nenhum professor."</p>
+                        <p style="margin-top: 10px;">Agora confronta, gera curiosidade, intriga. Qual será o final? O espectador continua vendo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: CERTO vs ERRADO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--blue-soft); color: var(--blue); font-size: 20px;">⚖️</div>
+            <div>
+                <h2>O Que Fazer vs O Que Evitar</h2>
+                <p>Padrões que funcionam e padrões que não funcionam</p>
+            </div>
+        </div>
+
+        <div class="compare-grid">
+            <div class="compare-col bad">
+                <h3>🚫 NUNCA FAÇA ISSO</h3>
+                <div class="compare-item">
+                    <span>❌</span> Hooks descritivos ("Ela respondeu com 3 graduações")
+                </div>
+                <div class="compare-item">
+                    <span>❌</span> Contar a história de forma linear sem drama
+                </div>
+                <div class="compare-item">
+                    <span>❌</span> Vender a universidade no começo do vídeo
+                </div>
+                <div class="compare-item">
+                    <span>❌</span> Fazer pitch longo da faculdade
+                </div>
+                <div class="compare-item">
+                    <span>❌</span> Ganchos que não confrontam
+                </div>
+                <div class="compare-item">
+                    <span>❌</span> Postar sem consistência
+                </div>
+                <div class="compare-item">
+                    <span>❌</span> Começar o vídeo explicando contexto demais
+                </div>
+            </div>
+
+            <div class="compare-col good">
+                <h3>✅ SEMPRE FAÇA ISSO</h3>
+                <div class="compare-item">
+                    <span>✓</span> Ganchos negativos/confrontacionais
+                </div>
+                <div class="compare-item">
+                    <span>✓</span> Puxar o momento mais dramático para o início
+                </div>
+                <div class="compare-item">
+                    <span>✓</span> Mencionar universidade só depois da metade (2 frases max)
+                </div>
+                <div class="compare-item">
+                    <span>✓</span> Gravar dentro do carro (está funcionando)
+                </div>
+                <div class="compare-item">
+                    <span>✓</span> Contar histórias que intrigam antes de revelar
+                </div>
+                <div class="compare-item">
+                    <span>✓</span> Postar todo dia sem exceção
+                </div>
+                <div class="compare-item">
+                    <span>✓</span> Buscar o que tem de DIFERENTE em cada história
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: ESTRATÉGIA DE CONTEÚDO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--purple-soft); color: var(--purple); font-size: 20px;">🎯</div>
+            <div>
+                <h2>Estratégia de Conteúdo</h2>
+                <p>Princípios que vão escalar seu perfil</p>
+            </div>
+        </div>
+
+        <div class="rules-grid">
+            <div class="rule-card">
+                <span class="rule-emoji">🎯</span>
+                <h3>Gancho Negativo Sempre</h3>
+                <p>O gancho que confronta é o que segura. "Essa pessoa não deveria estar aqui" funciona melhor que descrever conquistas.</p>
+            </div>
+
+            <div class="rule-card">
+                <span class="rule-emoji">🪝</span>
+                <h3>Puxe o Momento Mais Dramático</h3>
+                <p>Cada pessoa tem um momento difícil. Pergunte: "qual foi o pior momento?" e use como gancho.</p>
+            </div>
+
+            <div class="rule-card">
+                <span class="rule-emoji">⏱️</span>
+                <h3>40 a 60 Segundos</h3>
+                <p>Vídeos curtos e diretos. Entra na história, entrega o impacto, fecha com CTA.</p>
+            </div>
+
+            <div class="rule-card">
+                <span class="rule-emoji">🗣️</span>
+                <h3>Storytelling Confrontacional</h3>
+                <p>Não conte a história de forma linear. Comece pelo conflito, pela dor, pelo que choca.</p>
+            </div>
+
+            <div class="rule-card">
+                <span class="rule-emoji">📹</span>
+                <h3>Formato Carro</h3>
+                <p>Continua gravando dentro do carro. Tá funcionando. Autêntico e próximo.</p>
+            </div>
+
+            <div class="rule-card">
+                <span class="rule-emoji">🔄</span>
+                <h3>Todo Dia, Sem Exceção</h3>
+                <p>1 conteúdo por dia. Se tiver pouco tempo, grave takes de 60s com histórias rápidas.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 5: ROTEIROS-MODELO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--pink-soft); color: var(--pink); font-size: 20px;">✍️</div>
+            <div>
+                <h2>Roteiros-Modelo</h2>
+                <p>Estruturas prontas para usar em seus vídeos</p>
+            </div>
+        </div>
+
+        <div class="script-card">
+            <h3>📖 Modelo 1: História de Superação</h3>
+            <div class="script-step">
+                <div class="script-step-label">Gancho</div>
+                <div class="script-step-text">"[Pessoa] passou [X anos] em [situação difícil]. Ninguém acreditava nela."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">Conflito</div>
+                <div class="script-step-text">"O momento mais difícil foi quando [evento dramático]. Todo mundo virou as costas."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">Virada</div>
+                <div class="script-step-text">"Até que [acontecimento surpreendente]. E aí tudo mudou."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">Resultado</div>
+                <div class="script-step-text">"Hoje ela [conquista impressionante]. E tudo começou quando ela decidiu não desistir."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">CTA</div>
+                <div class="script-step-text">"Se essa história te inspirou, segue esse perfil. Toda semana eu trago histórias assim."</div>
+            </div>
+        </div>
+
+        <div class="script-card">
+            <h3>📖 Modelo 2: Gancho Negativo + Revelação</h3>
+            <div class="script-step">
+                <div class="script-step-label">Gancho</div>
+                <div class="script-step-text">"[Pessoa] não deveria estar [fazendo algo comum]. O que ela fez vai te chocar."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">Contexto</div>
+                <div class="script-step-text">"Enquanto todo mundo [fazia o normal], ela estava [fazendo algo extraordinário]."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">Educação</div>
+                <div class="script-step-text">"E sabe o que isso nos ensina? Que [lição prática sobre educação/vida]."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">CTA</div>
+                <div class="script-step-text">"Se você quer pensar diferente, me segue. E se quiser ir mais fundo, dá uma olhada na bio."</div>
+            </div>
+        </div>
+
+        <div class="script-card">
+            <h3>📖 Modelo 3: Confronto + Verdade Dura</h3>
+            <div class="script-step">
+                <div class="script-step-label">Gancho</div>
+                <div class="script-step-text">"Vou te contar uma verdade que ninguém quer ouvir sobre [tema educação]."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">Desenvolvimento</div>
+                <div class="script-step-text">"A maioria das pessoas acredita que [crença comum]. Mas a realidade é que [verdade confrontadora]."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">Prova</div>
+                <div class="script-step-text">"E eu sei disso porque [história real/dado concreto]."</div>
+            </div>
+            <div class="script-step">
+                <div class="script-step-label">CTA</div>
+                <div class="script-step-text">"Comenta aqui se você concorda. Segue pra mais conteúdo que te faz pensar."</div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: WORKFLOW -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--orange-soft); color: var(--orange); font-size: 20px;">🔄</div>
+            <div>
+                <h2>Workflow de Produção</h2>
+                <p>Processo completo de ideação até publicação</p>
+            </div>
+        </div>
+
+        <div class="workflow">
+            <div class="workflow-step">
+                <div class="workflow-num">1</div>
+                <h4>Encontre a história</h4>
+                <p>Converse com a pessoa, descubra o momento mais difícil</p>
+            </div>
+            <div class="workflow-step">
+                <div class="workflow-num">2</div>
+                <h4>Extraia o gancho</h4>
+                <p>Qual o ponto mais dramático? Use como abertura</p>
+            </div>
+            <div class="workflow-step">
+                <div class="workflow-num">3</div>
+                <h4>Grave no carro</h4>
+                <p>Celular no suporte, boa iluminação, conte a história</p>
+            </div>
+            <div class="workflow-step">
+                <div class="workflow-num">4</div>
+                <h4>Edite em 60s</h4>
+                <p>Corte o excesso, mantenha ritmo, adicione legenda</p>
+            </div>
+            <div class="workflow-step">
+                <div class="workflow-num">5</div>
+                <h4>Poste e repita</h4>
+                <p>Publique no Reels, analise o que funciona, repita</p>
+            </div>
+        </div>
+
+        <!-- SECTION 7: FÓRMULAS DE GANCHO -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--cyan-soft); color: var(--cyan); font-size: 20px;">🎣</div>
+            <div>
+                <h2>Banco de Ganchos</h2>
+                <p>Fórmulas prontas que já funcionaram</p>
+            </div>
+        </div>
+
+        <div class="hooks-list">
+            <div class="hook-item">
+                <div class="hook-icon">1</div>
+                <div class="hook-text"><em>Gancho negativo:</em> "[Pessoa] não deveria estar [situação comum]. O que aconteceu vai te chocar."</div>
+            </div>
+
+            <div class="hook-item">
+                <div class="hook-icon">2</div>
+                <div class="hook-text"><em>Confronto temporal:</em> "[Pessoa] passou [X anos] sendo ignorada. Até que [evento surpreendente]."</div>
+            </div>
+
+            <div class="hook-item">
+                <div class="hook-icon">3</div>
+                <div class="hook-text"><em>Verdade dura:</em> "Ninguém te conta isso sobre [tema educação], mas eu vou contar agora."</div>
+            </div>
+
+            <div class="hook-item">
+                <div class="hook-icon">4</div>
+                <div class="hook-text"><em>Dor + Superação:</em> "Disseram que ela nunca conseguiria. Ela provou que todos estavam errados."</div>
+            </div>
+
+            <div class="hook-item">
+                <div class="hook-icon">5</div>
+                <div class="hook-text"><em>Provocação:</em> "Se você acha que [crença comum], precisa ouvir essa história."</div>
+            </div>
+
+            <div class="hook-item">
+                <div class="hook-icon">6</div>
+                <div class="hook-text"><em>Bastidor emocional:</em> "Eu chorei gravando esse vídeo. Essa é a história da [pessoa]."</div>
+            </div>
+
+            <div class="hook-item">
+                <div class="hook-icon">7</div>
+                <div class="hook-text"><em>Se + Então:</em> "Se você já pensou em desistir de alguma coisa, precisa conhecer essa pessoa."</div>
+            </div>
+        </div>
+
+        <!-- SECTION 8: BANCO DE IDEIAS -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--green-soft); color: var(--green); font-size: 20px;">💡</div>
+            <div>
+                <h2>Banco de Ideias</h2>
+                <p>12 formatos prontos para criar conteúdo esse mês</p>
+            </div>
+        </div>
+
+        <div class="ideas-grid">
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Histórias de superação na educação</h3>
+                <p>Foco em pessoas que venceram obstáculos ligados à educação. Use ganchos negativos.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>"Verdades que ninguém conta sobre a faculdade"</h3>
+                <p>Série de vídeos curtos confrontando mitos sobre educação superior.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-series">Série</div>
+                <h3>"Pessoas que provaram que todos estavam errados"</h3>
+                <p>Minissérie de 3-4 vídeos cada sobre pessoas que não seguiram o caminho esperado.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Momentos mais difíceis de profissionais de sucesso</h3>
+                <p>Entrevistas rápidas sobre o pior momento de cada pessoa que a moldou.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-carousel">Carousel</div>
+                <h3>"5 lições que a escola não ensina"</h3>
+                <p>Carrossel com dados, insights e lições práticas sobre educação.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>"O que acontece quando você não desiste"</h3>
+                <p>Compilação de resultados de pessoas que persistiram apesar das dificuldades.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-bastidor">Bastidor</div>
+                <h3>Bastidores de entrevistas com histórias reais</h3>
+                <p>Momentos emocionais das gravações, conversas behind-the-scenes.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-series">Série</div>
+                <h3>"De onde vieram, para onde foram" — antes e depois</h3>
+                <p>Série visual mostrando a transformação de pessoas ao longo do tempo.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Confronto de crenças populares sobre educação</h3>
+                <p>Desmentir mitos comuns com histórias reais e dados concretos.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-carousel">Carousel</div>
+                <h3>Dados surpreendentes sobre educação no Brasil</h3>
+                <p>Infográficos visuais com estatísticas que chocam e chamam atenção.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-bastidor">Bastidor</div>
+                <h3>Gravando dentro do carro — processo criativo</h3>
+                <p>Mostre como você planeja, grava e edita seus conteúdos na rotina.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-type type-reels">Reels</div>
+                <h3>Reações a histórias inspiradoras</h3>
+                <p>Reaja com emoção genuína a histórias que seus seguidores compartilham.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 9: PERFIS DE REFERÊNCIA -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--yellow-soft); color: var(--yellow); font-size: 20px;">👥</div>
+            <div>
+                <h2>Referências de Perfil</h2>
+                <p>Criadores que já dominam essas técnicas</p>
+            </div>
+        </div>
+
+        <div class="ref-grid">
+            <div class="ref-card">
+                <div class="ref-avatar">📚</div>
+                <div>
+                    <h3>Taidanta</h3>
+                    <div class="ref-niche">Foto de Perfil &amp; Proximidade</div>
+                    <p>Referência de foto de perfil com proximidade do rosto e comunicação de conexão. Estude o enquadramento.</p>
+                </div>
+            </div>
+
+            <div class="ref-card">
+                <div class="ref-avatar">🎬</div>
+                <div>
+                    <h3>Rodrigo</h3>
+                    <div class="ref-niche">Formato &amp; Storytelling Visual</div>
+                    <p>Referência de formato e enquadramento. Storytelling visual que conecta de forma autêntica e próxima.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: CTAs -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--pink-soft); color: var(--pink); font-size: 20px;">📢</div>
+            <div>
+                <h2>Chamadas para Ação</h2>
+                <p>CTAs testados que funcionam no seu nicho</p>
+            </div>
+        </div>
+
+        <div class="cta-grid">
+            <div class="cta-card">
+                <div class="cta-when">CTA Geral</div>
+                <blockquote>"Se essa história te inspirou, segue esse perfil."</blockquote>
+                <div class="cta-note">Use no final de TODOS os vídeos. Simples e direto.</div>
+            </div>
+
+            <div class="cta-card">
+                <div class="cta-when">Quando mencionar universidade</div>
+                <blockquote>"Se você quer se preparar melhor pro mercado, dá uma olhada na bio."</blockquote>
+                <div class="cta-note">2 frases no máximo. Desapegado e natural.</div>
+            </div>
+
+            <div class="cta-card">
+                <div class="cta-when">Quando pedir engajamento</div>
+                <blockquote>"Comenta aqui a história que mais te marcou."</blockquote>
+                <div class="cta-note">Gera comentários e entrega algorítmica alta.</div>
+            </div>
+        </div>
+
+        <!-- SECTION 11: TÉCNICA DE VENDA -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--blue-soft); color: var(--blue); font-size: 20px;">🎓</div>
+            <div>
+                <h2>Técnica de Venda</h2>
+                <p>Regra de ouro: menção de 2 frases, desapegada, só depois da metade do vídeo</p>
+            </div>
+        </div>
+
+        <div class="script-card" style="background: var(--blue-soft);">
+            <p style="font-size: 14.5px; color: var(--text); line-height: 1.7;">Quando o assunto encaixar naturalmente, mencione a universidade de forma breve: <strong>"Se você quer pensar fora da caixa e se preparar pro mercado de trabalho, dá uma olhada na bio."</strong> — e volta pro conteúdo imediatamente.</p>
+            <p style="font-size: 14.5px; color: var(--text); line-height: 1.7; margin-top: 14px;">Nunca no começo. Nunca mais de 2 frases. As pessoas percebem quando é anúncio e pulam. A venda acontece pelo volume de menções naturais, não por um pitch longo.</p>
+        </div>
+
+        <!-- SECTION 12: PRÉ-PUBLICAÇÃO CHECKLIST -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--purple-soft); color: var(--purple); font-size: 20px;">✅</div>
+            <div>
+                <h2>Checklist Pré-Publicação</h2>
+                <p>Verifique antes de postar para garantir qualidade</p>
+            </div>
+        </div>
+
+        <div class="checklist-grid">
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>O gancho é negativo/confrontacional? (3 primeiros segundos)</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Contei a história pelo ponto mais dramático?</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Tem legenda na tela?</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Ficou entre 40-60 segundos?</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>A menção à universidade é breve e natural? (se houver)</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>A pessoa leiga se identifica com a história?</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Tem CTA no final?</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>O vídeo termina no conteúdo (sem logo/@ extra)?</span>
+            </div>
+        </div>
+
+        <!-- SECTION 13: FERRAMENTAS -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--orange-soft); color: var(--orange); font-size: 20px;">🛠️</div>
+            <div>
+                <h2>Ferramentas Recomendadas</h2>
+                <p>Stack de tecnologia para otimizar sua produção</p>
+            </div>
+        </div>
+
+        <div class="filming-checklist">
+            <h3>📱 Tech Stack Completo</h3>
+            <div class="filming-grid">
+                <div class="filming-item">
+                    <div class="filming-check"></div>
+                    <span><strong>CapCut</strong> — edição rápida com legendas automáticas</span>
+                </div>
+                <div class="filming-item">
+                    <div class="filming-check"></div>
+                    <span><strong>Suporte de celular</strong> — gravação estável no formato carro</span>
+                </div>
+                <div class="filming-item">
+                    <div class="filming-check"></div>
+                    <span><strong>Microfone de lapela</strong> — áudio limpo nas gravações</span>
+                </div>
+                <div class="filming-item">
+                    <div class="filming-check"></div>
+                    <span><strong>ElevenLabs</strong> — narração por IA se precisar de voz off</span>
+                </div>
+                <div class="filming-item">
+                    <div class="filming-check"></div>
+                    <span><strong>Canva</strong> — criação de carrosséis com dados e histórias</span>
+                </div>
+                <div class="filming-item">
+                    <div class="filming-check"></div>
+                    <span><strong>OpusClip</strong> — corta vídeos longos em clipes com legenda</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 14: CRONOGRAMA -->
+        <div class="section-header">
+            <div class="section-icon" style="background: var(--cyan-soft); color: var(--cyan); font-size: 20px;">📅</div>
+            <div>
+                <h2>Cronograma de Ação</h2>
+                <p>Roadmap de 30 dias para atingir 100K</p>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-label">Hoje</div>
+                <div class="timeline-title">Preparação Imediata</div>
+                <div class="timeline-desc">Ajustar foto de perfil (mais próxima), revisar bio, gravar 1 vídeo com gancho negativo forte.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">Semana 1</div>
+                <div class="timeline-title">Padronização e Teste</div>
+                <div class="timeline-desc">1 post por dia. Foco em histórias com ganchos confrontacionais. Padronizar formato carro. Testar ganchos diferentes. Analisar quais funcionam melhor.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">Semanas 2-3</div>
+                <div class="timeline-title">Diversificação de Formatos</div>
+                <div class="timeline-desc">Diversificar formatos (Reels + Carrosséis). Série "Pessoas que provaram todos errados". Mencionar universidade de forma natural em 1-2 vídeos. Começar a ganhar velocidade.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">Mês 1+</div>
+                <div class="timeline-title">Escala e Consolidação</div>
+                <div class="timeline-desc">Escalar para 2+ posts/dia. Analisar quais ganchos geram mais engajamento. Repetir padrões vencedores. Meta: 100K seguidores.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Março 2026</p>
+    </footer>
+
+    <script>
+        // Interatividade: Checklist items
+        document.querySelectorAll('.check-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('done');
+            });
+        });
+
+        // Interatividade: Filming items
+        document.querySelectorAll('.filming-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('done');
+            });
+        });
+    </script>
+</body>
+</html>
