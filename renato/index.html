@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Renato | Supermercados</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 28px;
+    line-height: 1.65;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  .hero-video {
+    max-width: 640px;
+    margin: 28px auto 0;
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(var(--bg), var(--bg)) padding-box,
+                var(--ig-gradient) border-box;
+    border-radius: 20px;
+    padding: 8px;
+  }
+
+  .hero-video iframe {
+    width: 100%;
+    height: 360px;
+    border-radius: 16px;
+    border: none;
+    display: block;
+  }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* Selling Technique */
+  .selling-cards {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  }
+
+  .selling-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .selling-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .selling-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 8px; }
+  .selling-card ul { font-size: 13px; color: var(--text-secondary); margin-left: 18px; line-height: 1.65; }
+  .selling-card li { margin-bottom: 4px; }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .filming-item.done .filming-check {
+    background: var(--green); border-color: var(--green);
+  }
+
+  .filming-item.done .filming-check::after {
+    content: '✓'; color: #fff; font-size: 11px; font-weight: 700;
+  }
+
+  /* Schedule */
+  .schedule-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 8px; background: var(--card);
+    border: 1px solid var(--card-border); border-radius: 14px;
+    padding: 16px; box-shadow: var(--card-shadow);
+  }
+
+  .schedule-day {
+    text-align: center; padding: 14px 8px; border: 1px solid var(--card-border);
+    border-radius: 10px; background: var(--bg-soft);
+  }
+
+  .schedule-day.active { background: var(--ig-gradient); color: #fff; border-color: transparent; }
+
+  .schedule-day-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .schedule-day-content { font-size: 12px; font-weight: 600; }
+
+  /* Tools Grid */
+  .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .tool-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 18px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .tool-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .tool-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .rules-grid { grid-template-columns: repeat(2, 1fr); }
+    .ideas-grid { grid-template-columns: 1fr; }
+    .ref-grid { grid-template-columns: 1fr; }
+    .cta-grid { grid-template-columns: repeat(2, 1fr); }
+    .selling-cards { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 32px 20px 24px; }
+    .hero h1 { font-size: 32px; }
+    .stats-row { grid-template-columns: 1fr; padding: 0 20px; }
+    .main { padding: 24px 20px 40px; }
+    .section-header { gap: 12px; }
+    .section-header h2 { font-size: 18px; }
+    .rule-card { grid-template-columns: 1fr; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .cta-grid { grid-template-columns: 1fr; }
+    .selling-cards { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-badge">📊 Análise Viral PRO</span>
+  <h1>Renato</h1>
+  <p class="hero-sub">Supermercados & Varejo — Posicionamento & Estratégia de Crescimento</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/></svg>
+      Niche: Supermercados
+    </div>
+    <div class="hero-meta-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Meta: 100K-200K
+    </div>
+    <div class="hero-meta-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8z" stroke="currentColor" stroke-width="1.5"/></svg>
+      Status: Reformulação
+    </div>
+  </div>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/e-flH3Zo7oM" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">3K+</div>
+    <div class="stat-label">Supermercados Atendidos</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">Público</div>
+    <div class="stat-label">Alvo Atual</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">Massa</div>
+    <div class="stat-label">Novo Posicionamento</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">60%</div>
+    <div class="stat-label">Aumento Potencial</div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- CORREÇÕES IMEDIATAS -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--red-soft); color: var(--red);">⚡</div>
+  <div>
+    <h2>Correções Imediatas do Perfil</h2>
+    <p>Mudanças que precisam acontecer HOJE para começar a crescer</p>
+  </div>
+</div>
+
+<div class="priority-grid">
+  <div class="action-card urgency-now">
+    <div class="action-number">1</div>
+    <div class="action-content">
+      <h3>Reposicione a Bio</h3>
+      <p>Altere de "Venda mais e refina perdas com tecnologia" para algo direto ao público: "Tradutor de Supermercado | Desvendo os segredos das prateleiras pra você"</p>
+      <span class="action-tag">AGORA</span>
+    </div>
+  </div>
+
+  <div class="action-card urgency-now">
+    <div class="action-number">2</div>
+    <div class="action-content">
+      <h3>Altere o CTA Padrão</h3>
+      <p>De "Quer ser acompanhado? Chama no Zap" para "Me chama no DM ou clica no link da bio" — deixe direto ao ponto e sem ter que fazer suposições.</p>
+      <span class="action-tag">AGORA</span>
+    </div>
+  </div>
+
+  <div class="action-card urgency-week">
+    <div class="action-number">3</div>
+    <div class="action-content">
+      <h3>Revise Todos os Hooks</h3>
+      <p>Todos os seus vídeos precisam começar focando no que o público comum quer saber, não no gerente de loja. Exemplo: "Se no supermercado que você vai tem essa tabelinha..."</p>
+      <span class="action-tag">ESTA SEMANA</span>
+    </div>
+  </div>
+
+  <div class="action-card urgency-week">
+    <div class="action-number">4</div>
+    <div class="action-content">
+      <h3>Mude a Terminologia</h3>
+      <p>Use "prateleira" em vez de "gôndula" (termo muito técnico). Explique sempre o que significam códigos de barras e tabelas de preço em linguagem clara.</p>
+      <span class="action-tag">ESTA SEMANA</span>
+    </div>
+  </div>
+
+  <div class="action-card urgency-soon">
+    <div class="action-number">5</div>
+    <div class="action-content">
+      <h3>Inclua o Público na Conversa</h3>
+      <p>Mude de "tecnologia para gerentes" para "segredos que os supermercados usam pra você comprar mais". Tornará seu conteúdo 3x mais viral.</p>
+      <span class="action-tag">PRÓXIMA SEMANA</span>
+    </div>
+  </div>
+</div>
+
+<!-- ANTES vs DEPOIS -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--purple-soft); color: var(--purple);">🎬</div>
+  <div>
+    <h2>Antes vs Depois — Estrutura de Vídeo</h2>
+    <p>Como os vídeos deveriam ser reposicionados para ressoar com seu público</p>
+  </div>
+</div>
+
+<div class="before-after-grid">
+  <div class="ba-card">
+    <div class="ba-header">
+      <span class="ba-video-tag">Estratégia Atual</span>
+      <h3>Vídeo 1: "Prateleira para Gerentes"</h3>
+    </div>
+    <div class="ba-body">
+      <div class="ba-col">
+        <div class="ba-col-label">❌ PROBLEMA</div>
+        <p>"Olá pessoal, vamos falar sobre <strong>gôndula estratégica</strong> e colocação de produtos próximos ao vencimento. Essa é uma <strong>técnica de parrada</strong> utilizada pelos gerentes para...")
+        <p style="margin-top: 8px;">Foca em tecnicidades para lojistas.</p>
+      </div>
+      <div class="ba-col">
+        <div class="ba-col-label">✅ SOLUÇÃO</div>
+        <p>"Se no supermercado que você vai <strong>tem essa tabelinha</strong> numa prateleira, saiba que o mercado está testando os preços que você está disposto a pagar. <strong>Deixa eu explicar...</strong>"
+        <p style="margin-top: 8px;">Começa com curiosidade do público (consumer), depois explica.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ba-card">
+    <div class="ba-header">
+      <span class="ba-video-tag">Posicionamento Novo</span>
+      <h3>Vídeo 2: "Código de Barras Duplo"</h3>
+    </div>
+    <div class="ba-body">
+      <div class="ba-col">
+        <div class="ba-col-label">❌ PROBLEMA</div>
+        <p>"Vocês criaram um código interno para esse produto, que é outra técnica..."</p>
+        <p style="margin-top: 8px;">Técnico demais, sem contexto para quem compra.</p>
+      </div>
+      <div class="ba-col">
+        <div class="ba-col-label">✅ SOLUÇÃO</div>
+        <p>"O que fazer quando você for no supermercado e ele tiver <strong>dois códigos de barras</strong>? Bom, pessoal, isso significa que o produto está perto de vencer e o supermercado quer vender rápido."</p>
+        <p style="margin-top: 8px;">Começa com ação (o que fazer), depois explica o significado.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTO vs ERRADO -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--blue-soft); color: var(--blue);">✂️</div>
+  <div>
+    <h2>Certo vs Errado — Linguagem & Tom</h2>
+    <p>Ajustes que fazem toda a diferença no engajamento</p>
+  </div>
+</div>
+
+<div class="compare-grid">
+  <div class="compare-col bad">
+    <h3>❌ Errado (Técnico Demais)</h3>
+    <div class="compare-item">
+      <span>🔴</span>
+      <div>"A prateleira final de ciclo de vida..."</div>
+    </div>
+    <div class="compare-item">
+      <span>🔴</span>
+      <div>"Implementar código de parrada para produtos..."</div>
+    </div>
+    <div class="compare-item">
+      <span>🔴</span>
+      <div>"Gôndula estratégica de reposicionamento..."</div>
+    </div>
+    <div class="compare-item">
+      <span>🔴</span>
+      <div>"Métodos de gestão de estoque paralelo..."</div>
+    </div>
+    <div class="compare-item">
+      <span>🔴</span>
+      <div>"Para aplicar essa solução no seu PDV..."</div>
+    </div>
+  </div>
+
+  <div class="compare-col good">
+    <h3>✅ Certo (Linguagem Clara)</h3>
+    <div class="compare-item">
+      <span>🟢</span>
+      <div>"Aquela prateleira ali da frente onde eles colocam os produtos vencendo..."</div>
+    </div>
+    <div class="compare-item">
+      <span>🟢</span>
+      <div>"Quando tem dois preços diferentes no mesmo produto..."</div>
+    </div>
+    <div class="compare-item">
+      <span>🟢</span>
+      <div>"Aquela prateleira estratégica pra vender rápido..."</div>
+    </div>
+    <div class="compare-item">
+      <span>🟢</span>
+      <div>"O supermercado usa essa jogada pra se livrar do produto..."</div>
+    </div>
+    <div class="compare-item">
+      <span>🟢</span>
+      <div>"Na próxima vez que você for ao mercado, procure por isso..."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ESTRATÉGIA DE CONTEÚDO -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--orange-soft); color: var(--orange);">📋</div>
+  <div>
+    <h2>6 Regras de Estratégia de Conteúdo</h2>
+    <p>Princípios que guiam TODOS os seus vídeos daqui em diante</p>
+  </div>
+</div>
+
+<div class="rules-grid">
+  <div class="rule-card">
+    <span class="rule-emoji">👥</span>
+    <h3>Fale para o Público, Não para Lojistas</h3>
+    <p>Sempre comece pelo "por quê" o consumidor comum deveria se importar. Depois contextualize para negócio.</p>
+  </div>
+
+  <div class="rule-card">
+    <span class="rule-emoji">🤝</span>
+    <h3>Hook = Pergunta ou Ação</h3>
+    <p>"Se você vê isso no supermercado..." ou "O que fazer quando..." Captura atenção em 1 segundo.</p>
+  </div>
+
+  <div class="rule-card">
+    <span class="rule-emoji">📱</span>
+    <h3>Mostre, Não Explique</h3>
+    <p>Leve a câmera pro supermercado. Mostre a prateleira, o código duplo, o preço. Audience entende visual.</p>
+  </div>
+
+  <div class="rule-card">
+    <span class="rule-emoji">💡</span>
+    <h3>Traduz Jargão Automaticamente</h3>
+    <p>Sempre que usar termo técnico ("prateleira", "código de barras"), explique o que significa em linguagem simples.</p>
+  </div>
+
+  <div class="rule-card">
+    <span class="rule-emoji">🧘</span>
+    <h3>Use Satisfação como Elemento</h3>
+    <p>"Olha que satisfação incrível" quando mostra uma aplicação bem-feita. Cria conexão emocional.</p>
+  </div>
+
+  <div class="rule-card">
+    <span class="rule-emoji">🔗</span>
+    <h3>CTA Sempre Claro</h3>
+    <p>No final: "Me chama no DM se quiser aprender mais" ou "Link na bio pra consultar". Sem ambiguidade.</p>
+  </div>
+</div>
+
+<!-- ROTEIROS-MODELO -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--cyan-soft); color: var(--cyan);">🎥</div>
+  <div>
+    <h2>3 Roteiros-Modelo Prontos</h2>
+    <p>Templates que você pode usar imediatamente nos seus próximos vídeos</p>
+  </div>
+</div>
+
+<div class="script-card">
+  <h3>🎬 Roteiro 1: "Segredo da Prateleira"</h3>
+  <div class="script-step">
+    <div class="script-step-label">HOOK (0s)</div>
+    <div class="script-step-text">"Se no supermercado que você vai tem <em>essa tabelinha pra frente</em> de uma prateleira cheia de produtos, saiba que tem algo acontecendo ali..."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">INTRIGA (3s)</div>
+    <div class="script-step-text">"Essa é uma estratégia que os supermercados usam toda semana. E quando você souber, nunca mais vai <em>comprar do mesmo jeito</em>."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">EXPLICAÇÃO (8s)</div>
+    <div class="script-step-text">"Eles colocam os produtos que estão perto de vencer nessa prateleira pra frente. Aí colocam uma tabela de preço <em>muito menor</em> pra você comprar rápido antes que vença."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">APLICAÇÃO (18s)</div>
+    <div class="script-step-text">"Na próxima vez que você for ao supermercado, procura por <em>tabelinhas na frente das prateleiras</em>. Se tiver, é porque <em>eles querem vender rápido</em>. E não é porque o produto é ruim, é porque está perto de vencer."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">CTA (28s)</div>
+    <div class="script-step-text">"Quer aprender mais segredos dos supermercados? Me chama no DM ou clica no link da bio. Eu tenho um método completo de como <em>economizar mais</em> na hora de comprar."</div>
+  </div>
+</div>
+
+<div class="script-card">
+  <h3>🎬 Roteiro 2: "O Código de Barras Duplo"</h3>
+  <div class="script-step">
+    <div class="script-step-label">HOOK (0s)</div>
+    <div class="script-step-text">"O que fazer quando você vai no supermercado e <em>tem dois códigos de barras</em> no mesmo produto? Deixa eu te explicar..."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">REVELAÇÃO (4s)</div>
+    <div class="script-step-text">"Isso aqui não é erro, é <em>estratégia</em>. Quando você vê dois preços, um mais barato que o outro, é porque o supermercado está <em>liquidando estoque</em>."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">CONTEXTO (10s)</div>
+    <div class="script-step-text">"Produtos com data de vencimento próxima recebem um novo código. Isso deixa a compra mais fácil no caixa, mas também marca que está em <em>promoção de liquidação</em>."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">DICA PRÁTICA (18s)</div>
+    <div class="script-step-text">"Sempre procure por <em>dois códigos</em>. Geralmente o produto é bom, está só <em>mais barato</em> porque está vencendo logo. Economia garantida!"</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">CTA (24s)</div>
+    <div class="script-step-text">"Gostou dessa dica? Manda um like e me segue pra mais segredos de supermercado. Link na bio!"</div>
+  </div>
+</div>
+
+<div class="script-card">
+  <h3>🎬 Roteiro 3: "Visita ao Aluno — Aplicação Real"</h3>
+  <div class="script-step">
+    <div class="script-step-label">HOOK (0s)</div>
+    <div class="script-step-text">"Venho aqui visitar um aluno meu que aplicou <em>tudo que ensinei</em> sobre gestão de prateleira. Vê só que satisfação..."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">CENA (6s)</div>
+    <div class="script-step-text">"Olha como as prateleiras estão organizadas. Tem <em>tabelinha pra frente</em>, produtos em ordem, e uma estratégia bem clara de <em>vender mais</em> sem desperdiçar."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">DEPOIMENTO (15s)</div>
+    <div class="script-step-text">"Meu aluno aqui viu os resultados em <em>30 dias</em>. Menos desperdício, mais vendas. Produto indo embora antes de vencer. Supermercado saudável."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">LIÇÃO (24s)</div>
+    <div class="script-step-text">"A ideia é simples: <em>estratégia correta de prateleira</em> = menos produto no lixo, mais dinheiro no caixa. Eu tenho um <em>método provado</em> com 3 mil supermercados."</div>
+  </div>
+  <div class="script-step">
+    <div class="script-step-label">CTA (32s)</div>
+    <div class="script-step-text">"Seu supermercado quer crescer assim também? Me chama no DM. Só neste mês vou aceitar mais 5 alunos pro programa de mentoria."</div>
+  </div>
+</div>
+
+<!-- WORKFLOW DIÁRIO -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--green-soft); color: var(--green);">⏰</div>
+  <div>
+    <h2>Workflow de Produção Diário</h2>
+    <p>Processo sistemático para criar 1-2 vídeos por dia sem burnout</p>
+  </div>
+</div>
+
+<div class="workflow">
+  <div class="workflow-step">
+    <div class="workflow-num">1</div>
+    <h4>Escolha Tema</h4>
+    <p>Pega uma técnica de supermercado que você conhece (prateleira, preço, estoque)</p>
+  </div>
+  <div class="workflow-step">
+    <div class="workflow-num">2</div>
+    <h4>Escreva Hook</h4>
+    <p>Usa um dos templates: "Se você vê... ou O que fazer quando..."</p>
+  </div>
+  <div class="workflow-step">
+    <div class="workflow-num">3</div>
+    <h4>Vá pro Mercado</h4>
+    <p>Registre a cena real — prateleira, código, preço. Vídeo na mão.</p>
+  </div>
+  <div class="workflow-step">
+    <div class="workflow-num">4</div>
+    <h4>Gravação em Casa</h4>
+    <p>Fale o roteiro enquanto mostra as cenas. Rápido e natural.</p>
+  </div>
+  <div class="workflow-step">
+    <div class="workflow-num">5</div>
+    <h4>Edição Rápida</h4>
+    <p>Corta seções desnecessárias, deixa bem dinâmico — 10min de edição.</p>
+  </div>
+  <div class="workflow-step">
+    <div class="workflow-num">6</div>
+    <h4>Post & CTA</h4>
+    <p>Publica com CTA claro (DM, link da bio) e pin o comentário com resumo.</p>
+  </div>
+</div>
+
+<!-- FÓRMULAS DE GANCHO -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--pink-soft); color: var(--pink);">🧠</div>
+  <div>
+    <h2>7 Fórmulas Testadas de Hook</h2>
+    <p>Use uma dessas para começar CADA vídeo. Comprovadamente eficiente.</p>
+  </div>
+</div>
+
+<div class="hooks-list">
+  <div class="hook-item">
+    <div class="hook-icon">1</div>
+    <div class="hook-text">"Se no supermercado que você vai tem <em>[ELEMENTO]</em>, saiba que..."</div>
+  </div>
+
+  <div class="hook-item">
+    <div class="hook-icon">2</div>
+    <div class="hook-text">"O que fazer quando você vê <em>[SITUAÇÃO]</em> no mercado..."</div>
+  </div>
+
+  <div class="hook-item">
+    <div class="hook-icon">3</div>
+    <div class="hook-text">"Você sabia que o supermercado usa essa jogada <em>[TÁTICA]</em> pra você comprar..."</div>
+  </div>
+
+  <div class="hook-item">
+    <div class="hook-icon">4</div>
+    <div class="hook-text">"Quando você ver <em>[PISTA VISUAL]</em>, significa que <em>[SIGNIFICADO]</em>..."</div>
+  </div>
+
+  <div class="hook-item">
+    <div class="hook-icon">5</div>
+    <div class="hook-text">"Vou te mostrar um segredo que <em>[BENEFÍCIO]</em> na hora de comprar..."</div>
+  </div>
+
+  <div class="hook-item">
+    <div class="hook-icon">6</div>
+    <div class="hook-text">"Deixa eu te contar o que acontece quando o supermercado <em>[AÇÃO]</em>..."</div>
+  </div>
+
+  <div class="hook-item">
+    <div class="hook-icon">7</div>
+    <div class="hook-text">"Nunca mais você vai comprar do mesmo jeito depois que souber <em>[REVELAÇÃO]</em>..."</div>
+  </div>
+</div>
+
+<!-- BANCO DE IDEIAS -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--yellow-soft); color: var(--yellow);">💡</div>
+  <div>
+    <h2>Banco de 12 Ideias de Conteúdo</h2>
+    <p>Tópicos prontos para criar vídeos nos próximos 30 dias</p>
+  </div>
+</div>
+
+<div class="ideas-grid">
+  <div class="idea-card">
+    <span class="idea-type type-reels">REELS</span>
+    <h3>"Prateleira de Liquidação"</h3>
+    <p>Explica o que significa aquela prateleira na frente com tabela de desconto. Por que está lá? O quão barato fica?</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-reels">REELS</span>
+    <h3>"Código de Barras Duplo Explicado"</h3>
+    <p>Mostra dois códigos no mesmo produto e revela que significa vencimento próximo + desconto automático.</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-carousel">CAROUSEL</span>
+    <h3>"5 Sinais que o Produto Vai Vencer"</h3>
+    <p>Dicas práticas: código duplo, prateleira frontal, tabela de desconto, aviso no caixa, promoção agressiva.</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-reels">REELS</span>
+    <h3>"Por que O Supermercado Faz Isso?"</h3>
+    <p>Explica a lógica de negócio: espaço em prateleira é ouro. Produto vencendo = prejuízo. Liquidar é lucrar.</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-series">SÉRIE</span>
+    <h3>"Segredos de Cada Seção"</h3>
+    <p>Ep 1: Frutas & Vegetais | Ep 2: Bebidas | Ep 3: Congelados. Revela tática de cada departamento.</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-bastidor">BASTIDOR</span>
+    <h3>"Dia de Reposição de Prateleira"</h3>
+    <p>Mostra por trás das câmeras: como funcionário organiza produtos, onde coloca os que vencem, dinâmica real.</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-reels">REELS</span>
+    <h3>"App Para Descobrir Descontos"</h3>
+    <p>Mostra ferramentas/apps que ajudam a encontrar produtos em liquidação. Tornando a vida mais fácil.</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-carousel">CAROUSEL</span>
+    <h3>"Horário Ideal Para Comprar Barato"</h3>
+    <p>Qual hora do dia os descontos aparecem? Quando repõem as prateleiras? Quando é melhor ir.</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-reels">REELS</span>
+    <h3>"Comparação: Marca vs Genérico"</h3>
+    <p>Mostra produtos similares, explica por que um sai mais barato. Qualidade é a mesma?</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-hotel">DEPOIMENTO</span>
+    <h3>"Supermercado Que Aplicou Minhas Dicas"</h3>
+    <p>Visita um cliente, mostra antes/depois. Como cresceu vendas com menos desperdício. Prova social.</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-reels">REELS</span>
+    <h3>"Erro de Preço? O Que Fazer?"</h3>
+    <p>Tem um preço marcado errado na prateleira. Posso pagar esse preço? Direto na caixa tem que ser respeitado?</p>
+  </div>
+
+  <div class="idea-card">
+    <span class="idea-type type-series">SÉRIE</span>
+    <h3>"Mentoria Semanal: Cases de Alunos"</h3>
+    <p>Pequenos depoimentos de donos que ganharam dinheiro aplicando suas estratégias. Inspiração & validação.</p>
+  </div>
+</div>
+
+<!-- PERFIS DE REFERÊNCIA -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--purple-soft); color: var(--purple);">👀</div>
+  <div>
+    <h2>Perfis de Referência Para Estudar</h2>
+    <p>Creators que fazem posicionamento similar — estude o formato deles</p>
+  </div>
+</div>
+
+<div class="ref-grid">
+  <div class="ref-card">
+    <div class="ref-avatar">🏪</div>
+    <div>
+      <h3>@foodfacts.brasil</h3>
+      <div class="ref-niche">Segredos de Supermercado</div>
+      <p>Revela técnicas de produtos, preços e marcas. Linguagem acessível, muito engajamento. Estude o hook.</p>
+    </div>
+  </div>
+
+  <div class="ref-card">
+    <div class="ref-avatar">💰</div>
+    <div>
+      <h3>@financasdodia</h3>
+      <div class="ref-niche">Educação Financeira</div>
+      <p>Como economizar em compras, descontos, cashback. Público que compra — mesma audiência que você quer.</p>
+    </div>
+  </div>
+
+  <div class="ref-card">
+    <div class="ref-avatar">🛒</div>
+    <div>
+      <h3>@dicasdecompras</h3>
+      <div class="ref-niche">Dicas Práticas de Mercado</div>
+      <p>Mostra técnicas direto no supermercado. Vídeos curtos, diretos. Formato a ser copiado.</p>
+    </div>
+  </div>
+
+  <div class="ref-card">
+    <div class="ref-avatar">📚</div>
+    <div>
+      <h3>@educaçaodeconsumo</h3>
+      <div class="ref-niche">Consumer Awareness</div>
+      <p>Traduz jargão de varejo pra público comum. Tom descontraído. Revela "segredos" que ninguém sabe.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GUIA DE CTAS -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--orange-soft); color: var(--orange);">📱</div>
+  <div>
+    <h2>Guia de CTAs — Quando Usar Cada Uma</h2>
+    <p>Diferentes calls-to-action para diferentes momentos do vídeo</p>
+  </div>
+</div>
+
+<div class="cta-grid">
+  <div class="cta-card">
+    <div class="cta-when">Pós Hook</div>
+    <blockquote>"Se isso faz sentido pra você, manda um like antes de arrastar"</blockquote>
+    <p>Posiciona como "dar like = aprovação". Cria hábito de interagir logo no início.</p>
+  </div>
+
+  <div class="cta-card">
+    <div class="cta-when">Final do Vídeo</div>
+    <blockquote>"Me chama no DM pra falar mais sobre isso ou clica no link da bio"</blockquote>
+    <p>Direto, sem rodeios. Deixa claro os dois caminhos (DM ou link).</p>
+  </div>
+
+  <div class="cta-card">
+    <div class="cta-when">Conteúdo Valioso</div>
+    <blockquote>"Gostou? Manda um follow e compartilha com quem precisa saber disso"</blockquote>
+    <p>Pede follow + share. Maximiza alcance orgânico entre amigos.</p>
+  </div>
+</div>
+
+<!-- TÉCNICA DE VENDA -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--cyan-soft); color: var(--cyan);">💼</div>
+  <div>
+    <h2>Técnica de Venda — Como Converter DMs em Clientes</h2>
+    <p>Quando alguém DM você pedindo ajuda, use essa estrutura</p>
+  </div>
+</div>
+
+<div class="selling-cards">
+  <div class="selling-card">
+    <h3>🤝 Etapa 1: Qualificar</h3>
+    <p>Antes de vender, entenda:</p>
+    <ul>
+      <li>Qual é o supermercado? (tamanho, localização)</li>
+      <li>Qual é o maior problema AGORA?</li>
+      <li>Já tentou algo antes?</li>
+      <li>Qual é o orçamento aproximado?</li>
+    </ul>
+  </div>
+
+  <div class="selling-card">
+    <h3>💡 Etapa 2: Ofereça Solução Específica</h3>
+    <p>Com base nas respostas:</p>
+    <ul>
+      <li>Mostre 1-2 cases similares (alunos seus que cresceram)</li>
+      <li>Explique como você resolveu o problema deles</li>
+      <li>Deixe claro: "Posso fazer o mesmo pro seu mercado"</li>
+    </ul>
+  </div>
+
+  <div class="selling-card">
+    <h3>📅 Etapa 3: Proposta com Urgência</h3>
+    <p>Feche rápido:</p>
+    <ul>
+      <li>"Este mês vou aceitar só mais 3-5 alunos"</li>
+      <li>"Depois fecha até mês que vem"</li>
+      <li>Menção: programa de mentoria / coaching específico</li>
+    </ul>
+  </div>
+
+  <div class="selling-card">
+    <h3>✅ Etapa 4: Onboarding Claro</h3>
+    <p>Depois que vender:</p>
+    <ul>
+      <li>1ª semana: diagnóstico + plano de ação</li>
+      <li>2-4 semana: implementação + acompanhamento semanal</li>
+      <li>Garantia de resultado em 30 dias ou reembolso</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CHECKLIST DE GRAVAÇÃO -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--red-soft); color: var(--red);">✅</div>
+  <div>
+    <h2>Checklist de Gravação — Qualidade Garantida</h2>
+    <p>Antes de publicar qualquer vídeo, varre essa lista</p>
+  </div>
+</div>
+
+<div class="filming-checklist">
+  <h3>🎬 Antes de Gravar</h3>
+  <div class="filming-grid">
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Hook é claro e impactante em 1s</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Roteiro está memorizado ou escrito</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Câmera em 9:16 (vertical) e boa luz</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Som está ligado e testado</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Pano de fundo limpo ou supermercado real</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Props/elementos visuais separados</span>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 20px;">🎞️ Durante a Gravação</h3>
+  <div class="filming-grid">
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Fale natural, sem ler muito</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Mostre produtos/prateleiras em close</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Seu rosto aparece no hook</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Corta pausas e titubeios na edição</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Mínimo 2-3 planos diferentes</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>CTA está falado claramente</span>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 20px;">🎨 Após Edição</h3>
+  <div class="filming-grid">
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Vídeo tem menos de 60s (ideal 30-45s)</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Transições são suaves, não abruptas</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Legendas em branco descrevem ações</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Áudio está balanceado (voz + fundo)</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Primeira 3s estão PERFEITAS (thumb)</span>
+    </div>
+    <div class="filming-item">
+      <div class="filming-check"></div>
+      <span>Já assistiu do início ao fim 2x</span>
+    </div>
+  </div>
+</div>
+
+<!-- FERRAMENTAS RECOMENDADAS -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--blue-soft); color: var(--blue);">🛠️</div>
+  <div>
+    <h2>Ferramentas Recomendadas</h2>
+    <p>Stack mínima para produzir vídeos em massa sem complicação</p>
+  </div>
+</div>
+
+<div class="tools-grid">
+  <div class="tool-card">
+    <h3>📱 CapCut</h3>
+    <p>Edição rápida de vídeos no celular. Template pronto, música, transições. Grátis e eficiente.</p>
+  </div>
+
+  <div class="tool-card">
+    <h3>📹 DaVinci Resolve</h3>
+    <p>Edição profissional no PC. Melhor qualidade se tiver setup. Grátis versão comunitária.</p>
+  </div>
+
+  <div class="tool-card">
+    <h3>🎵 YouTube Audio Library</h3>
+    <p>Músicas livres de direito autoral. Escolha por ritmo: dinâmico, calmo, motivador.</p>
+  </div>
+
+  <div class="tool-card">
+    <h3>🤖 InShot</h3>
+    <p>Alternativa ao CapCut. Interface intuitiva, bom pra iniciantes. Grátis com marca d'água.</p>
+  </div>
+
+  <div class="tool-card">
+    <h3>📊 Meta Business Suite</h3>
+    <p>Agendador de posts e análise de engagement. Veja qual horário seu público está mais ativo.</p>
+  </div>
+
+  <div class="tool-card">
+    <h3>💬 Later ou Buffer</h3>
+    <p>Agenda posts para semanas. Permite batch editing e planejamento estratégico.</p>
+  </div>
+</div>
+
+<!-- CRONOGRAMA DE EXECUÇÃO -->
+<div class="section-header">
+  <div class="section-icon" style="background: var(--yellow-soft); color: var(--yellow);">📅</div>
+  <div>
+    <h2>Cronograma de Execução — Próximos 30 Dias</h2>
+    <p>Roadmap semana-a-semana para atingir 100K-200K de seguidores</p>
+  </div>
+</div>
+
+<div class="schedule-grid">
+  <div class="schedule-day active">
+    <div class="schedule-day-label">Semana 1</div>
+    <div class="schedule-day-content">Reformulação Bio + 5 vídeos (novo posicionamento)</div>
+  </div>
+  <div class="schedule-day">
+    <div class="schedule-day-label">Semana 2</div>
+    <div class="schedule-day-content">7 vídeos + 1 visita ao cliente (bastidor)</div>
+  </div>
+  <div class="schedule-day">
+    <div class="schedule-day-label">Semana 3</div>
+    <div class="schedule-day-content">7 vídeos + carrossel (5 dicas)</div>
+  </div>
+  <div class="schedule-day">
+    <div class="schedule-day-label">Semana 4</div>
+    <div class="schedule-day-content">7 vídeos + case de cliente + review geral</div>
+  </div>
+</div>
+
+<div style="background: var(--purple-soft); padding: 24px; border-radius: 14px; margin-top: 20px; text-align: center; color: var(--purple);">
+  <strong>Expectativa realista:</strong> Com consistência de 5-7 vídeos/semana de alta qualidade, você deve atingir 50K em 60 dias e 100K+ em 90 dias.
+</div>
+
+</div><!-- end main -->
+
+<script>
+  // Checklist interativo
+  document.querySelectorAll('.check-item').forEach(item => {
+    item.addEventListener('click', function() {
+      this.classList.toggle('done');
+    });
+  });
+
+  // Filming checklist
+  document.querySelectorAll('.filming-item').forEach(item => {
+    item.addEventListener('click', function() {
+      this.classList.toggle('done');
+    });
+  });
+
+  // Schedule day highlight
+  const days = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'];
+  const today = new Date().getDay();
+  document.querySelectorAll('.schedule-day').forEach((day, idx) => {
+    if (idx === today) day.classList.add('active');
+  });
+</script>
+
+</body>
+  </html>
