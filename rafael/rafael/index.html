@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Rafael | Cripto sem Complicação</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --bg: #ffffff; --bg-soft: #fafafa; --card: #ffffff; --card-border: #e8e8ed; --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04); --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04); --ig-purple: #833AB4; --ig-pink: #E1306C; --ig-orange: #F77737; --ig-yellow: #FCAF45; --ig-blue: #405DE6; --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45); --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08)); --green: #00C853; --green-soft: rgba(0, 200, 83, 0.08); --red: #E1306C; --red-soft: rgba(225, 48, 108, 0.07); --yellow: #F77737; --yellow-soft: rgba(247, 119, 55, 0.07); --blue: #405DE6; --blue-soft: rgba(64, 93, 230, 0.07); --purple: #833AB4; --purple-soft: rgba(131, 58, 180, 0.07); --pink: #E1306C; --pink-soft: rgba(225, 48, 108, 0.07); --cyan: #00B4D8; --cyan-soft: rgba(0, 180, 216, 0.07); --orange: #F77737; --orange-soft: rgba(247, 119, 55, 0.07); --text: #1a1a2e; --text-secondary: #4a4a5a; --text-muted: #8e8e9a; --text-dim: #b0b0b8; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg-soft); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+  .hero { position: relative; padding: 56px 40px 40px; text-align: center; background: var(--bg); border-bottom: 1px solid var(--card-border); overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--ig-gradient); }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--ig-gradient); border-radius: 100px; padding: 8px 22px; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 24px; }
+  .hero h1 { font-size: 44px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-sub { font-size: 17px; color: var(--text-secondary); font-weight: 400; max-width: 620px; margin: 0 auto 20px; line-height: 1.65; }
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+  .hero-meta { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+  .hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1200px; margin: -28px auto 0; padding: 0 40px; position: relative; z-index: 2; }
+  .stat-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px; text-align: center; box-shadow: var(--card-shadow); position: relative; overflow: hidden; }
+  .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--ig-gradient); }
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+  .section-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .action-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px 24px; display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 18px; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .action-number { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+  .action-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .compare-col { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); }
+  .compare-col h3 { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .rule-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; text-align: center; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .idea-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+  .idea-type { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px; }
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-crypto { background: var(--blue-soft); color: var(--blue); }
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .hook-item { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 22px; display: flex; align-items: start; gap: 14px; box-shadow: var(--card-shadow); }
+  .hook-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--ig-gradient); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 800; }
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .ba-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow); }
+  .ba-header { padding: 18px 22px; border-bottom: 1px solid var(--card-border); }
+  .ba-header .ba-video-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--purple-soft); color: var(--purple); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px; margin-bottom: 8px; }
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+  .ba-col { padding: 18px 22px; border-right: 1px solid var(--card-border); }
+  .ba-col:last-child { border-right: none; }
+  .ba-col-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 10px; color: var(--text-muted); }
+  .ba-col p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+  .scripts-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .script-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); }
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .script-step { margin-bottom: 14px; }
+  .script-step:last-child { margin-bottom: 0; }
+  .script-step-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 6px; padding: 4px 10px; border-radius: 6px; }
+  .script-card .script-step:nth-child(1) .script-step-label { background: rgba(225, 48, 108, 0.1); color: var(--pink); }
+  .script-card .script-step:nth-child(2) .script-step-label { background: rgba(131, 58, 180, 0.1); color: var(--purple); }
+  .script-card .script-step:nth-child(3) .script-step-label { background: rgba(247, 119, 55, 0.1); color: var(--orange); }
+  .script-card .script-step:nth-child(4) .script-step-label { background: rgba(64, 93, 230, 0.1); color: var(--blue); }
+  .script-card .script-step:nth-child(5) .script-step-label { background: rgba(0, 200, 83, 0.1); color: var(--green); }
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+  .script-step-text em { display: block; margin-top: 4px; font-style: italic; color: var(--text-muted); font-size: 12.5px; }
+  .workflow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .workflow-step { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px; text-align: center; box-shadow: var(--card-shadow); }
+  .workflow-num { width: 40px; height: 40px; border-radius: 10px; background: var(--ig-gradient); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; margin: 0 auto 10px; }
+  .workflow-step h4 { font-size: 13px; font-weight: 700; margin-bottom: 5px; color: var(--text); }
+  .workflow-step p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+  .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .ref-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; display: flex; align-items: start; gap: 14px; box-shadow: var(--card-shadow); }
+  .ref-avatar { width: 50px; height: 50px; border-radius: 12px; background: var(--ig-gradient); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 3px; color: var(--text); }
+  .ref-niche { font-size: 12px; color: var(--text-muted); font-weight: 500; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .cta-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; box-shadow: var(--card-shadow); }
+  .cta-card:nth-child(1) { border-left: 3px solid var(--pink); }
+  .cta-card:nth-child(2) { border-left: 3px solid var(--purple); }
+  .cta-card:nth-child(3) { border-left: 3px solid var(--orange); }
+  .cta-when { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-muted); margin-bottom: 8px; }
+  .cta-card blockquote { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; padding: 12px; background: var(--bg-soft); border-radius: 8px; border-left: 3px solid var(--text-muted); }
+  .cta-card:nth-child(1) blockquote { border-left-color: var(--pink); color: var(--pink); }
+  .cta-card:nth-child(2) blockquote { border-left-color: var(--purple); color: var(--purple); }
+  .cta-card:nth-child(3) blockquote { border-left-color: var(--orange); color: var(--orange); }
+  .cta-note { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; }
+  .filming-checklist { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); }
+  .filming-checklist h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); }
+  .filming-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .filming-item { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; cursor: pointer; transition: all 0.2s ease; font-size: 13.5px; color: var(--text-secondary); background: var(--card); border: 1px solid var(--card-border); }
+  .filming-item:hover { background: var(--bg-soft); }
+  .filming-item.done { color: var(--green); text-decoration: line-through; }
+  .filming-check { width: 18px; height: 18px; border: 2px solid var(--text-dim); border-radius: 5px; flex-shrink: 0; transition: all 0.2s ease; }
+  .filming-item.done .filming-check { background: var(--green); border-color: var(--green); }
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .check-item { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px; cursor: pointer; transition: all 0.2s ease; font-size: 13.5px; color: var(--text-secondary); background: var(--card); border: 1px solid var(--card-border); }
+  .check-item:hover { background: var(--bg-soft); transform: translateX(2px); }
+  .check-item.done { color: var(--green); }
+  .check-box { width: 18px; height: 18px; border: 2px solid var(--text-dim); border-radius: 5px; flex-shrink: 0; transition: all 0.2s ease; }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .timeline { display: grid; grid-template-columns: 1fr; gap: 0; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 20px; top: 32px; bottom: 0; width: 2px; background: var(--card-border); }
+  .timeline-item { padding: 12px 0 12px 68px; position: relative; background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; margin-bottom: 10px; padding: 18px 22px 18px 68px; }
+  .timeline-dot { position: absolute; left: 12px; top: 20px; width: 18px; height: 18px; border-radius: 50%; background: var(--ig-gradient); border: 3px solid var(--bg); box-shadow: var(--card-shadow); }
+  .timeline-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-muted); margin-bottom: 4px; }
+  .timeline-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+  .footer { text-align: center; padding: 32px 40px; border-top: 1px solid var(--card-border); color: var(--text-muted); font-size: 12px; }
+  @media (max-width: 1024px) { .rules-grid { grid-template-columns: repeat(2, 1fr); } .ideas-grid { grid-template-columns: repeat(2, 1fr); } .cta-grid { grid-template-columns: repeat(2, 1fr); } .stats-row { grid-template-columns: repeat(2, 1fr); } .compare-grid { grid-template-columns: 1fr; } .workflow { grid-template-columns: repeat(3, 1fr); gap: 10px; } }
+  @media (max-width: 768px) { .hero { padding: 40px 20px 30px; } .hero h1 { font-size: 32px; } .stats-row { grid-template-columns: 1fr; padding: 0 20px; } .main { padding: 24px 20px 60px; } .section-header { gap: 12px; } .rules-grid { grid-template-columns: 1fr; } .ideas-grid { grid-template-columns: 1fr; } .cta-grid { grid-template-columns: 1fr; } .compare-grid { grid-template-columns: 1fr; } .workflow { grid-template-columns: repeat(2, 1fr); } .checklist-grid { grid-template-columns: 1fr; } .ref-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">✨ Viral Pro — Análise de Perfil</div>
+  <h1>Plano de Ação<br>Rafael — Cripto sem Complicação</h1>
+  <p class="hero-sub">Análise completa do seu perfil com recomendações práticas para chegar a 100K seguidores focando em educação cripto para iniciantes. Simplificar a linguagem é a chave.</p>
+
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/HUPkQBrMDjo" title="Análise Viral Pro — Rafael" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 14 seções do plano</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> 8 ações urgentes</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 1 vídeo/dia ideal</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> 100% educacional</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">8</div>
+    <div class="stat-label">Ações Urgentes</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">1/dia</div>
+    <div class="stat-label">Posts Recomendados</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">40-60s</div>
+    <div class="stat-label">Duração Ideal</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Simplicidade no Gancho</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Mudanças urgentes para começar hoje</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now">
+      <div class="action-number">1</div>
+      <div class="action-content">
+        <h3>Mudar nome do perfil e bio</h3>
+        <p>Trocar "Web 3" por "Cripto" ou "Bitcoin". Bio: "Cripto sem complicação — Traduzindo o mundo cripto para iniciantes". Foto está excelente, mantém.</p>
+      </div>
+      <div class="action-tag">Fazer agora</div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">2</div>
+      <div class="action-content">
+        <h3>Criar destaques organizados</h3>
+        <p>Destaques: "Quem sou eu", "Sobre Cripto", "Dúvidas", "Notícias", "Resultados". Cada um com cover visualmente diferenciado para facilitar navegação.</p>
+      </div>
+      <div class="action-tag">Fazer agora</div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">3</div>
+      <div class="action-content">
+        <h3>Simplificar todo conteúdo anterior</h3>
+        <p>Revisar vídeos publicados. Remover termos técnicos como "stablecoins", "tokens lastreados", "resolução 520", "misturadores". Repostar com legendas simplificadas ou deixar privados.</p>
+      </div>
+      <div class="action-tag">Fazer agora</div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">4</div>
+      <div class="action-content">
+        <h3>Estabelecer frequência: 1 vídeo/dia</h3>
+        <p>O algoritmo do Instagram adora frequência. Comprometer com 1 post por dia no mínimo. Se não conseguir gravar, pelo menos 5 por semana. Sem falhas na primeira semana.</p>
+      </div>
+      <div class="action-tag">Esta semana</div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">5</div>
+      <div class="action-content">
+        <h3>Preparar formato: vídeos de rua</h3>
+        <p>Comece a gravar andando na rua com câmera na mão. Mais dinâmico, mais autêntico, mais engajador que ficar sentado em frente à câmera. Misture com print de notícia na tela.</p>
+      </div>
+      <div class="action-tag">Esta semana</div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">6</div>
+      <div class="action-content">
+        <h3>Encontrar parceiro para perguntas</h3>
+        <p>Busque amigo ou colega que NÃO entende nada de cripto. Ele faz as perguntas "burras" (O que sou eu? Como compro? Posso perder tudo?). Você responde simples, claro, sem jargão.</p>
+      </div>
+      <div class="action-tag">Esta semana</div>
+    </div>
+
+    <div class="action-card urgency-soon">
+      <div class="action-number">7</div>
+      <div class="action-content">
+        <h3>Investir em produção mínima</h3>
+        <p>Tripé de celular + microfone de lapela. Melhora áudio drasticamente e permite filmar com as duas mãos livres. Misture com print de notícia na tela. Total: menos de R$200. Diferença gigante na qualidade.</p>
+      </div>
+      <div class="action-tag">Em breve</div>
+    </div>
+
+    <div class="action-card urgency-soon">
+      <div class="action-number">8</div>
+      <div class="action-content">
+        <h3>Documentar progresso com stats</h3>
+        <p>Crie série mostrando resultados: "Saí de 5K para 15K em um mês" com print dos insights do Instagram. Pessoas amam ver crescimento real. Prova que a estratégia funciona.</p>
+      </div>
+      <div class="action-tag">Em breve</div>
+    </div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+    <div><h2>Antes vs Depois — Vídeos Analisados</h2><p>Exemplos reais de como transformar seu conteúdo</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header">
+        <span class="ba-video-tag">Vídeo 1</span>
+        <h3>Sobre regulamentação de criptmoedas</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ O que estava errado</div>
+          <p>Usar termos técnicos como "Resolução 520 da Bacen", "stablecoins lastreadas em commodities", "requisitos de listagem". 90% das pessoas não sabe o que é isso. A pessoa desiste de assistir no título.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ Como deveria ser</div>
+          <p>"<strong>Você sabia que algumas criptmoedas podem ser proibidas no Brasil? E talvez a sua esteja na lista.</strong>" Depois explica a pergunta técnica traduzida. Todo mundo que tem cripto vai assistir. Depois responde a pergunta técnica traduzida.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header">
+        <span class="ba-video-tag">Vídeo 2</span>
+        <h3>Pergunta técnica sobre blockchain</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ O que estava errado</div>
+          <p>Começar com: "Como vai ficar as stablecoins lastreadas em ouro?" 90% das pessoas não sabe nem o que é stablecoin. Já perdeu a audiência no título.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ Como deveria ser</div>
+          <p>Reformular a pergunta: "<strong>Algumas criptos estão sendo banidas no Brasil. A sua pode ser a próxima?</strong>" Todo mundo que tem cripto vai assistir. Depois explica a pergunta técnica traduzida.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header">
+        <span class="ba-video-tag">Vídeo 3</span>
+        <h3>Headline do reels</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ O que estava errado</div>
+          <p>"Resolução 520 e o impacto nas stablecoins". Técnico, inacessível, ninguém para a tela para ler isso.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ Como deveria ser</div>
+          <p>"<strong>Governo pode proibir sua criptmoeda.</strong>" Impactante, acessível, gera curiosidade imediata. Todo mundo que tem cripto vai assistir. Aqui é notícia em si, não termo técnico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado</h2><p>O que parar de fazer vs o que começar a fazer</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3>❌ Pare de fazer</h3>
+      <div class="compare-item"><span>❌</span> Usar termos técnicos (blockchain, token, smart contract)</div>
+      <div class="compare-item"><span>❌</span> Começar vídeo com "e aí, galera, tudo bem?"</div>
+      <div class="compare-item"><span>❌</span> Fazer apenas vídeos sentado em frente à câmera</div>
+      <div class="compare-item"><span>❌</span> Não ter CTA no final (salvar, comentar, compartilhar)</div>
+      <div class="compare-item"><span>❌</span> Usar siglas como USDT, DeFi, NFT sem explicar</div>
+      <div class="compare-item"><span>❌</span> Postar sem frequência definida</div>
+      <div class="compare-item"><span>❌</span> Fazer apenas vídeos sentado em frente à câmera</div>
+      <div class="compare-item"><span>❌</span> Ter headline técnico no reels</div>
+    </div>
+    <div class="compare-col good">
+      <h3>✅ Comece a fazer</h3>
+      <div class="compare-item"><span>✅</span> Traduzir tudo: "moeda digital", "carteira digital", "investimento"</div>
+      <div class="compare-item"><span>✅</span> Gancho forte nos 3 primeiros segundos com curiosidade/urgência</div>
+      <div class="compare-item"><span>✅</span> Filmando andando na rua com câmera na mão + news print</div>
+      <div class="compare-item"><span>✅</span> Sempre pedir algo ao final (salva, manda pra amigo, comenta aqui)</div>
+      <div class="compare-item"><span>✅</span> Explicar o que significa em linguagem de avó</div>
+      <div class="compare-item"><span>✅</span> Postar 1 vídeo por dia, mínimo 5 por semana</div>
+      <div class="compare-item"><span>✅</span> Mencionan naturalmente: "Tem guia completo no link da bio"</div>
+      <div class="compare-item"><span>✅</span> Headline impactante que gera curiosidade imediata</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>6 regras de ouro para sua produção</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <span class="rule-emoji">🧠</span>
+      <h3>Explique para sua avó</h3>
+      <p>Se sua avó não entender, está difícil demais. Pode falar de assuntos complexos, mas de um jeito que qualquer pessoa entende. Simplicidade é a chave.</p>
+    </div>
+    <div class="rule-card">
+      <span class="rule-emoji">🎯</span>
+      <h3>Gancho nos 3 primeiros segundos</h3>
+      <p>Se você não prende atenção nos primeiros 3 segundos, a pessoa vai embora. Comece com algo que gere curiosidade e urgência, nunca com apresentação.</p>
+    </div>
+    <div class="rule-card">
+      <span class="rule-emoji">⏱️</span>
+      <h3>Formato: 40-60 segundos</h3>
+      <p>Vídeo curto, direto, sem discurso, puro entretenimento + educação. Comece na rua (mais autêntico), mostre a notícia (more context), explique simples. Sem diálogos, pura ação.</p>
+    </div>
+    <div class="rule-card">
+      <span class="rule-emoji">🎬</span>
+      <h3>Traga para o mundo real</h3>
+      <p>"Você pode perder dinheiro se não souber isso" ou "Isso afeta diretamente seu bolso". Quando encaixa na realidade do cara, ele para e assiste.</p>
+    </div>
+    <div class="rule-card">
+      <span class="rule-emoji">🔥</span>
+      <h3>Frequência é algoritmo</h3>
+      <p>Quanto mais você posta, mais o algoritmo te entrega. 1 vídeo por dia é ideal. Se não der, mínimo 5 por semana. Consistência mata talento.</p>
+    </div>
+    <div class="rule-card">
+      <span class="rule-emoji">📢</span>
+      <h3>CTA em tudo que fizer</h3>
+      <p>Sempre peça algo no final: salva esse vídeo, manda pra amigo, comenta aqui. Aumenta engajamento e o algoritmo entrega muito mais pra mais pessoas.</p>
+    </div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="13" x2="12" y2="17"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>3 formatos que funcionam para seu nicho</p></div>
+  </div>
+
+  <div class="scripts-grid">
+    <div class="script-card">
+      <h3>🔥 Modelo 1 — Notícia + Curiosidade</h3>
+      <div class="script-step">
+        <div class="script-step-label">Gancho</div>
+        <div class="script-step-text">"O governo ACABOU DE regulamentar as criptmoedas no Brasil. E isso muda TUDO." <em>Use tom de urgência, apareça na tela andando.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">Contexto</div>
+        <div class="script-step-text">Explica a notícia com 2-3 frases simples. O que significa? "Basicamente, o governo criou uma lei para proteger quem investe em cripto. " <em>Print da notícia aparece na tela enquanto você fala.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">Impacto</div>
+        <div class="script-step-text">"Isso afeta diretamente seu bolso. Se você tem Bitcoin, isso pode fazer o preço subir bastante". <em>Mostre gráfico simples ou seu portfólio.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">CTA</div>
+        <div class="script-step-text">"Salva esse vídeo pra compartilhar com aquele amigo que tem medo de começar a investir em cripto". <em>Fim: botão de link na bio para guia gratuito.</em></div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <h3>❓ Modelo 2 — Pergunta Iniciante Respondida</h3>
+      <div class="script-step">
+        <div class="script-step-label">Gancho</div>
+        <div class="script-step-text">"A pergunta que TODO iniciante tem: <strong>Posso perder TODO meu dinheiro em cripto?</strong>" <em>Direto, sem rodeios, deixa o cara curioso.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">Resposta Simples</div>
+        <div class="script-step-text">"A resposta é: pode, SIM. Mas SÓ se você não souber o que está fazendo". <em>Mantém tom conversacional, como explicando para um amigo.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">Proteção</div>
+        <div class="script-step-text">"O segredo é: nunca invista mais do que você pode perder. Comece com R$10, entenda, depois aumenta". <em>Prático, concreto, acionável.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">CTA</div>
+        <div class="script-step-text">"Se você tá com medo de começar, tenho um guia gratuito no link da bio que te mostra passo a passo". <em>Natural, sem parecer venda agressiva.</em></div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <h3>🎬 Modelo 3 — Mito vs Realidade</h3>
+      <div class="script-step">
+        <div class="script-step-label">Gancho</div>
+        <div class="script-step-text">"MITO: Se a corretora quebrar, você perde toda sua cripto. REALIDADE: Você NÃO perde nada." <em>Crie confronto visual: lado errado vs lado correto.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">Explicação</div>
+        <div class="script-step-text">"A Lei protege seu ativo mesmo que a corretora vá à falência. Seu Bitcoin continua sendo SEU." <em>Mostre a lei ou print de fonte confiável.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">Por que importa</div>
+        <div class="script-step-text">"Isso significa que é SEGURO investir. Aquela cripto que você tá pensando em comprar? Você não vai perder". <em>Tranquiliza e encoraja ação.</em></div>
+      </div>
+      <div class="script-step">
+        <div class="script-step-label">CTA</div>
+        <div class="script-step-text">"Manda esse vídeo pra aquele amigo que tem medo de começar a investir em cripto". <em>Transforma em conteúdo viral através do compartilhamento.</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. WORKFLOW DE PRODUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>5 passos para gravar e publicar vídeos consistentemente</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step">
+      <div class="workflow-num">1</div>
+      <h4>Escolha a notícia</h4>
+      <p>Todo dia, veja o que saiu sobre cripto. Bitcoin dispara? Governo anuncia lei? Qual é a notícia de hoje que afeta seu público?</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">2</div>
+      <h4>Roteiro em 5 min</h4>
+      <p>Não precisa de script perfeito. Apenas: gancho (1 frase), explicação simples (3 frases), impacto (1 frase), CTA (1 frase). Jota rápido no celular.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">3</div>
+      <h4>Grave na rua ou em casa</h4>
+      <p>40-60 segundos no máximo. Celular no tripé, microfone de lapela, início com gancho forte. Grave 2-3 takes se necessário. Depois escolha o melhor.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">4</div>
+      <h4>Edição simples</h4>
+      <p>Adicione legenda (texto on screen), print da notícia quando menciona (metadata do meio da tela), música de fundo baixa. Use CapCut (gratuito) – máximo 10 minutos.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">5</div>
+      <h4>Publish com headline</h4>
+      <p>Headline impactante (notícia bruta). CTA na caption. Poste entre 17h-19h (melhor horário). Responda comentários nos primeiros 30 minutos para aumentar algoritmo.</p>
+    </div>
+  </div>
+
+  <!-- 7. FÓRMULAS DE GANCHO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+    <div><h2>Fórmulas de Gancho</h2><p>7 tipos prontos para usar nos seus vídeos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item">
+      <div class="hook-icon">1</div>
+      <div class="hook-text"><em>Notícia Urgente:</em> "O governo ACABOU DE regulamentar as criptmoedas no Brasil. E isso muda TUDO."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">2</div>
+      <div class="hook-text"><em>Ganho de Dormir:</em> "Se você tem Bitcoin, precisa ver ISSO antes que seja TARDE. O preço pode disparar."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">3</div>
+      <div class="hook-text"><em>Curiosidade:</em> "Você sabia que algumas criptmoedas podem ser proibidas no Brasil? E talvez a sua esteja na lista."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">4</div>
+      <div class="hook-text"><em>Desafio Direto:</em> "A pergunta que TODO iniciante tem: Posso perder TODO meu dinheiro em cripto?"</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">5</div>
+      <div class="hook-text"><em>Mito vs Realidade:</em> "MITO: Se a corretora quebrar, você perde tudo. REALIDADE: Você NÃO perde nada."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">6</div>
+      <div class="hook-text"><em>Impacto no Bolso:</em> "Essa notícia vai fazer o Bitcoin DISPARAR. Aqui está o motivo..."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">7</div>
+      <div class="hook-text"><em>Confissão/Bastidor:</em> "Muitos dizem que Web 3 é complicado. Eu discordo. Aqui está o motivo..."</div>
+    </div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>12 ideias concretas para os próximos 12 dias</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card">
+      <div class="idea-type type-reels">Reels</div>
+      <h3>O que é Bitcoin em 60 segundos?</h3>
+      <p>Explicação para leigo: "é dinheiro digital que ninguém controla. Você envia direto pra alguém". Simples, prados, iniciante entende.</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-reels">Reels</div>
+      <h3>Quanto você precisa para começar?</h3>
+      <p>Responde: "Você pode começar com R$1, R$10, R$100. Não precisa de muito". Quebra mito de que é investimento de grana grande.</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-reels">Reels</div>
+      <h3>Posso perder TUDO?</h3>
+      <p>Honesto: "Sim, pode. MAIS SÓ se você não fizer pesquisa". Depois explica como se proteger. Confiança + realismo.</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-reels">Reels</div>
+      <h3>Será que minha corretora é segura?</h3>
+      <p>Critérios simples: "Procure por regulação, suporte, reviews reais". Liste as brasileiras mais confiáveis (Binance, Coinbase, Coincmercap).</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-carousel">Carrossel</div>
+      <h3>Guia: Os 5 primeiros passos</h3>
+      <p>Slide 1-5: Abrir conta, Verificar identidade, Depositar R$10, Comprar Bitcoin, Guardar seguro. Simples, direto, não técnico.</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-carousel">Carrossel</div>
+      <h3>Termos cripto traduzidos</h3>
+      <p>Slide 1-5: "Blockchain = Registro", "Token = Moeda", "Wallet = Carteira", "Smart Contract = Acordo automático", "DeFi = Investimento".</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-series">Série</div>
+      <h3>Histórias de quem ganhou</h3>
+      <p>Série de 7 dias: entreviste/documente pessoas reais que ganharam dinheiro investindo em cripto. Prova social poderosa.</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-series">Série</div>
+      <h3>Notícias cripto explicadas</h3>
+      <p>Série diária: cada notícia importante do dia explicada de forma leiga. Segunda-feira a sexta-feira: "Bitcoin de hoje" ou "Regulação do dia".</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-bastidor">Bastidor</div>
+      <p>Mostrar seus apps e sites que acompanha (CoinMarketCap, Twitter de analistas, etc.). Pessoas se identificam: mostra como você estuda.</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-type type-crypto">Educação</div>
+      <h3>Perguntas burras respondidas</h3>
+      <p>Colaboração com amigo: ele faz 12 perguntas iniciante, você responde cada uma em 1 vídeo de 40s. As mais burras geram mais engajamento.</p>
+    </div>
+  </div>
+
+  <!-- 9. PERFIS DE REFERÊNCIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Criadores que funcionam bem no nicho de cripto educacional</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🧠</div>
+      <div>
+        <h3>Analistas de cripto na TikTok</h3>
+        <div class="ref-niche">Cripto / Educação / TikTok</div>
+        <p>Procure por criadores que explicam cripto de forma SIMPLES. Veja como eles ganham gancho: notícia + curiosidade + simplicidade. Copie a fórmula, não o conteúdo.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">💡</div>
+      <div>
+        <h3>Educadores financeiros populares</h3>
+        <div class="ref-niche">Finanças / YouTube / Reel</div>
+        <p>Tipo "Como investir R$100", "Dividendos para iniciantes". Veja como eles tornam complexo em simples. Notícia real + impacto no bolso = fórmula deles também.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">📰</div>
+      <div>
+        <h3>Jornalistas de tecnologia</h3>
+        <div class="ref-niche">Tech / Notícias / Instagram</div>
+        <p>Veja como jornalistas tech cobrem cripto para o público geral (não técnico). Headline impactante, explica simples, mostra prova. Estrutura deles = sua estrutura.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs</h2><p>3 call-to-actions para diferentes momentos</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Para Aumento de Engajamento</div>
+      <blockquote>"Salva esse vídeo pra compartilhar com alguém que tá começando em cripto"</blockquote>
+      <div class="cta-note">Use em vídeos educacionais simples. Pessoas compartilham com amigos = mais alcance orgânico + algoritmo entrega mais. Win-win.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Para Construir Comunidade</div>
+      <blockquote>"Comenta aqui: qual foi sua maior dúvida sobre cripto? Respondo nos Stories."</blockquote>
+      <div class="cta-note">Perguntas diretas aumentam comentários (métrica importante). Você responde = comunidade engajada = algoritmo te ama.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Para Venda Suave</div>
+      <blockquote>"Se quer aprender TUDO isso de forma estruturada, tenho um guia gratuito no link da bio."</blockquote>
+      <div class="cta-note">NATURAL, sem parecer venda agressiva. Quem tem interesse clica. Quem não tem, continua aproveitando o conteúdo grátis. Win-win.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+    <div><h2>Técnica de Venda</h2><p>Como monetizar sem parecer que está vendendo</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra de Ouro: Ensine muito, venda pouco</h3>
+      <p>Sua estratégia: entrega 95% de valor GRÁTIS. Reels educacionais, simples, todos entendem. Carrosséis explicativos, bastidores, dicas. Quando a pessoa viral faz, AÍ você menciona: "Inclusive, se quer aprender TUDO isso de forma estruturada, tenho um guia completo no link da bio". Não é venda agressiva — é recompensa para quem quer aprofundar. Quem tem interesse clica. Quem não tem, continua consumindo conteúdo grátis. Win-win.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div><h2>Checklist de Gravação</h2><p>Passe por cada item antes de publicar</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Passe por cada item antes de publicar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho é forte o suficiente? (3 primeiros segundos — é notícia, curiosidade ou dor?)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem narração clara? (Você falando ou ElevenLabs se for envergonhado?)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A legenda está aparecendo na tela? (Título e explicação com fonte grande).</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Ficou entre 40-60 segundos? (Curto, direto, sem rodeios)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Mostrei a notícia ou a prova? (Print, gráfico, ou você demonstrando).</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A pessoa leiga entende o que está acontecendo? (Nenhuma sigla, nenhum termo técnico).</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA no final? ("Salva, manda pra amigo, comenta aqui").</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Não tem logo, @ ou marca desnecessária? (Limpo, sem poluição visual).</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS RECOMENDADAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 1 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O mínimo essencial para produzir com qualidade</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>CapCut — edição de vídeo gratuita (legenda, música, efeitos)</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>ElevenLabs — narração por IA com qualidade natural (se envergonhado da voz)</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Microfone de lapela — áudio limpo nas gravações (R$50-100, muda tudo)</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Tripé de celular — filmagem estável sem ajuda (R$30-50, essencial)</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>CoinMarketCap ou CoinGecko — acompanhar notícias e preços em tempo real</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Twitter/X para criptografia — maiores analistas e notícias primeiro</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA DE EXECUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Passo a passo para implementar tudo em 4 semanas</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Hoje</div>
+      <div class="timeline-title">Preparar o perfil e primeiros vídeos</div>
+      <div class="timeline-desc">1) Mudar nome do perfil (tira "Web 3", coloca "Cripto"). 2) Reescrever bio: "Cripto sem complicação — Traduzindo o mundo cripto para iniciantes". 3) Gravar 1 vídeo de 40s teste com gancho forte + publicar. 4) Criar 5 destaques: Quem sou eu, Sobre Cripto, Dúvidas, Notícias, Resultados.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 1</div>
+      <div class="timeline-title">Estabelecer frequência e padrão</div>
+      <div class="timeline-desc">1) Postar 1 vídeo por dia (mínimo 5 em 7 dias). Foco: educação de cripto simples. 2) Usar os 3 roteiros-modelo (Notícia, Pergunta, Mito). Começar a filmar na rua com tripé + microfone. 4) Encontrar amigo para fazer perguntas iniciantes. 5) Responder TODOS os comentários nos primeiros 30 minutos de cada post.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 2-3</div>
+      <div class="timeline-title">Testar formatos e escalar</div>
+      <div class="timeline-desc">1) Variar entre Reels (educação), Carrosséis (guias), Stories (notícias do dia ideal). 2) Testar ganchos diferentes — ver qual gera mais salvamentos. 3) Começar série "Perguntas Burras Respondidas" com o amigo (1 pergunta = 1 vídeo). 4) Analisar insights: qual tipo de vídeo converte melhor? Qual gancho faz parar a tela? 5) Repetir o que funciona, descartar o que não deu.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Mês 1+</div>
+      <div class="timeline-title">Escalar frequência e monetizar</div>
+      <div class="timeline-desc">1) Subir para 2-3 posts/dia (se conseguir gravar). Pode usar Opus Clip para cortar 1 vídeo longo em 5 clips menores. 2) Começar a mencionar guia na bio de forma natural. Quem tem interesse clica. 3) Documentar crescimento: "Saí de 5K para 15K em um mês" com print dos insights. 4) Meta final: 100K seguidores através de consistência + simplicidade + valor genuíno.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Março 2026</div>
+
+</body>
+</html>
