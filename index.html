@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planos de Ação — Viral Pro | Oney Araújo</title>
-  <meta name="description" content="Planos de ação personalizados do Viral Pro — mentoria com Oney Araújo para crescer no Instagram com estratégia.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="Planos de ação personalizados do Viral Pro — mentoria de crescimento no Instagram com Oney Araújo">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23833AB4'/%3E%3Cstop offset='50%25' stop-color='%23E1306C'/%3E%3Cstop offset='100%25' stop-color='%23F77737'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='62' font-size='40' fill='white' text-anchor='middle' font-weight='bold'%3EVP%3C/text%3E%3C/svg%3E">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -15,492 +15,440 @@
       --yellow: #FCAF45;
       --blue: #405DE6;
       --cyan: #0891b2;
-      --green: #16a34a;
-      --bg: #ffffff;
-      --bg-subtle: #f8f9fa;
-      --card-bg: #ffffff;
-      --card-border: #e5e7eb;
+      --green: #10b981;
       --text: #1a1a2e;
       --text-muted: #6b7280;
+      --bg: #ffffff;
       --gradient-ig: linear-gradient(135deg, #833AB4, #E1306C, #F77737, #FCAF45);
       --gradient-subtle: linear-gradient(135deg, rgba(131,58,180,0.06), rgba(225,48,108,0.06), rgba(247,119,55,0.06));
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-      --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.1);
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Inter', -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* Subtle background pattern */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(ellipse at 20% 0%, rgba(131,58,180,0.04) 0%, transparent 50%),
-                  radial-gradient(ellipse at 80% 100%, rgba(247,119,55,0.03) 0%, transparent 50%);
-      z-index: -1;
-    }
-
-    /* Header */
-    .header {
+    /* Hero */
+    .hero {
       text-align: center;
-      padding: 60px 20px 20px;
+      padding: 60px 20px 40px;
       position: relative;
     }
-
-    .header-badge {
-      display: inline-block;
-      padding: 8px 24px;
-      border-radius: 50px;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
       background: var(--gradient-ig);
-      color: white;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
     }
-
-    .header h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 16px;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient-subtle);
+      border: 1px solid rgba(131,58,180,0.12);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--purple);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .hero h1 span {
       background: var(--gradient-ig);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
-    .header p {
-      font-size: clamp(1rem, 2vw, 1.15rem);
+    .hero p {
+      font-size: 17px;
       color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 12px;
-      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
     }
-
-    .header-stats {
+    .hero-stats {
       display: flex;
       justify-content: center;
-      gap: 48px;
-      margin-top: 32px;
+      gap: 40px;
       flex-wrap: wrap;
     }
-
     .stat {
       text-align: center;
     }
-
     .stat-number {
-      font-size: 2.2rem;
+      font-size: 32px;
       font-weight: 800;
       background: var(--gradient-ig);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     .stat-label {
-      font-size: 0.85rem;
+      font-size: 13px;
       color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    /* Divider */
-    .divider {
-      width: 80px;
-      height: 3px;
-      background: var(--gradient-ig);
-      margin: 40px auto;
-      border-radius: 2px;
+      font-weight: 500;
+      margin-top: 2px;
     }
 
     /* Cards Grid */
-    .cards-section {
+    .section-cards {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px 60px;
+      padding: 20px 20px 60px;
     }
-
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
     }
-
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      cursor: pointer;
+      display: block;
       text-decoration: none;
       color: inherit;
-      display: block;
-      box-shadow: var(--shadow-sm);
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+      background: #fff;
+      animation: fadeUp 0.5s ease both;
     }
-
     .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(225, 48, 108, 0.25);
-      box-shadow: 0 20px 50px rgba(225, 48, 108, 0.12),
-                  0 0 0 1px rgba(225, 48, 108, 0.08);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(225,48,108,0.3);
     }
-
     .card-gradient {
-      height: 6px;
+      height: 4px;
       background: var(--gradient-ig);
     }
-
     .card-body {
-      padding: 28px 24px;
+      padding: 24px;
     }
-
     .card-nicho {
       display: inline-block;
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 12px;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .nicho-educacao { background: rgba(64,93,230,0.1); color: #405DE6; }
+    .nicho-direito { background: rgba(225,48,108,0.1); color: #E1306C; }
+    .nicho-advocacia { background: rgba(8,145,178,0.1); color: #0891b2; }
+    .nicho-pets { background: rgba(252,175,69,0.1); color: #d97706; }
+    .nicho-psicologia { background: rgba(131,58,180,0.1); color: #833AB4; }
+    .nicho-dev-pessoal { background: rgba(247,119,55,0.1); color: #F77737; }
+    .nicho-financas { background: rgba(16,185,129,0.1); color: #059669; }
+    .nicho-saude { background: rgba(239,68,68,0.1); color: #dc2626; }
+    .nicho-beleza { background: rgba(236,72,153,0.1); color: #db2777; }
+    .nicho-tech { background: rgba(99,102,241,0.1); color: #6366f1; }
+    .nicho-limpeza { background: rgba(6,182,212,0.1); color: #0891b2; }
+    .nicho-supermercados { background: rgba(34,197,94,0.1); color: #16a34a; }
+    .nicho-cripto { background: rgba(245,158,11,0.1); color: #d97706; }
+    .card-name {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .card-brand {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.5;
       margin-bottom: 16px;
     }
-
-    .nicho-educacao { background: rgba(64, 93, 230, 0.1); color: #405DE6; }
-    .nicho-pets { background: rgba(234, 148, 20, 0.1); color: #b45309; }
-    .nicho-direito { background: rgba(225, 48, 108, 0.1); color: #E1306C; }
-    .nicho-financas { background: rgba(22, 163, 74, 0.1); color: #16a34a; }
-    .nicho-psicologia { background: rgba(131, 58, 180, 0.1); color: #833AB4; }
-    .nicho-advocacia { background: rgba(8, 145, 178, 0.1); color: #0891b2; }
-    .nicho-dev-pessoal { background: rgba(247, 119, 55, 0.1); color: #ea580c; }
-
-    .card-name {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-      line-height: 1.2;
-      color: var(--text);
-    }
-
-    .card-brand {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-      font-weight: 500;
-    }
-
-    .card-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
     .card-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-top: 16px;
-      border-top: 1px solid var(--card-border);
+      border-top: 1px solid #f3f4f6;
     }
-
     .card-growth {
-      font-size: 0.8rem;
+      font-size: 13px;
       font-weight: 600;
       color: var(--green);
+    }
+    .card-cta {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--pink);
       display: flex;
       align-items: center;
       gap: 4px;
     }
-
-    .card-cta {
-      font-size: 0.82rem;
-      font-weight: 700;
-      background: var(--gradient-ig);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
     .card-cta::after {
-      content: '→';
-      font-size: 1.1rem;
-      background: var(--gradient-ig);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* CTA Section */
-    .cta-section {
-      text-align: center;
-      padding: 60px 20px 80px;
-      position: relative;
-    }
-
-    .cta-box {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 48px 40px;
-      border-radius: 24px;
-      background: var(--gradient-subtle);
-      border: 1px solid rgba(225, 48, 108, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--gradient-ig);
-    }
-
-    .cta-box h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .cta-box p {
-      color: var(--text-muted);
-      margin-bottom: 28px;
-      line-height: 1.7;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      padding: 14px 40px;
-      border-radius: 50px;
-      background: var(--gradient-ig);
-      color: white;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 30px rgba(225, 48, 108, 0.25);
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(225, 48, 108, 0.35);
+      content: '\2192';
     }
 
     /* Footer */
     .footer {
       text-align: center;
       padding: 30px 20px;
+      border-top: 1px solid #e5e7eb;
       color: var(--text-muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--card-border);
+      font-size: 13px;
     }
-
     .footer a {
       color: var(--pink);
       text-decoration: none;
+      font-weight: 600;
     }
 
-    /* Responsive */
-    @media (max-width: 700px) {
-      .header { padding: 40px 16px 16px; }
-      .cards-grid { grid-template-columns: 1fr; gap: 16px; }
-      .cards-section { padding: 0 16px 40px; }
-      .header-stats { gap: 24px; }
-      .cta-box { padding: 32px 24px; }
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
+    /* Animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .card:nth-child(1) { animation-delay: 0s; }
+    .card:nth-child(2) { animation-delay: 0.1s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.3s; }
+    .card:nth-child(5) { animation-delay: 0.4s; }
+    .card:nth-child(6) { animation-delay: 0.5s; }
+    .card:nth-child(7) { animation-delay: 0.6s; }
+    .card:nth-child(8) { animation-delay: 0.7s; }
+    .card:nth-child(9) { animation-delay: 0.8s; }
+    .card:nth-child(10) { animation-delay: 0.9s; }
+    .card:nth-child(11) { animation-delay: 1.0s; }
+    .card:nth-child(12) { animation-delay: 1.1s; }
+    .card:nth-child(13) { animation-delay: 1.2s; }
 
-    .card {
-      animation: fadeInUp 0.6s ease forwards;
-      opacity: 0;
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero { padding: 40px 16px 30px; }
+      .hero-stats { gap: 24px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .card-body { padding: 20px; }
     }
-
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-    .card:nth-child(3) { animation-delay: 0.3s; }
-    .card:nth-child(4) { animation-delay: 0.4s; }
-    .card:nth-child(5) { animation-delay: 0.5s; }
-    .card:nth-child(6) { animation-delay: 0.6s; }
-    .card:nth-child(7) { animation-delay: 0.7s; }
   </style>
 </head>
 <body>
 
-<!-- Header -->
-<div class="header">
-  <div class="header-badge">Viral Pro — Mentoria</div>
-  <h1>Planos de Ação</h1>
-  <p>Cada aluno recebe um plano de ação personalizado com 14 seções estratégicas para crescer no Instagram. Análise completa de perfil, roteiros-modelo, ganchos testados e cronograma de execução.</p>
-
-  <div class="header-stats">
-    <div class="stat">
-      <div class="stat-number">7</div>
-      <div class="stat-label">Planos Criados</div>
+  <section class="hero">
+    <div class="hero-badge">Viral Pro</div>
+    <h1>Planos de <span>Ação</span></h1>
+    <p>Dashboards personalizados com estratégias práticas de crescimento no Instagram para cada aluno da mentoria Viral Pro.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">13</div>
+        <div class="stat-label">Planos Criados</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">14</div>
+        <div class="stat-label">Seções por Plano</div>
+      </div>
     </div>
-    <div class="stat">
-      <div class="stat-number">14</div>
-      <div class="stat-label">Seções por Plano</div>
+  </section>
+
+  <section class="section-cards">
+    <div class="cards-grid">
+
+      <!-- Ana Julia -->
+      <a class="card" href="ana-julia/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-educacao">Educação</span>
+          <div class="card-name">Ana Julia</div>
+          <div class="card-brand">Conteúdo Educacional</div>
+          <div class="card-desc">Estratégias para crescer no nicho de educação com conteúdo de valor e engajamento orgânico.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Bruna Limpeza -->
+      <a class="card" href="bruna-limpeza/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-limpeza">Limpeza</span>
+          <div class="card-name">Bruna</div>
+          <div class="card-brand">Dicas de Limpeza</div>
+          <div class="card-desc">Plano para viralizar no nicho de limpeza doméstica com dicas práticas e hacks do dia a dia.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Bruno Ecco -->
+      <a class="card" href="bruno-ecco/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-saude">Odontologia</span>
+          <div class="card-name">Bruno Ecco</div>
+          <div class="card-brand">Dentista</div>
+          <div class="card-desc">Estratégias para dentistas dominarem o Instagram com conteúdo educativo e acessível ao público geral.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Carolina Porto dos Gatos -->
+      <a class="card" href="carolina-porto-dos-gatos/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-pets">Pets</span>
+          <div class="card-name">Carolina</div>
+          <div class="card-brand">Porto dos Gatos</div>
+          <div class="card-desc">Plano de crescimento para o nicho pet com foco em gatos e conteúdo apaixonante.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Eizzi Melgarejo -->
+      <a class="card" href="eizzi-melgarejo/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-dev-pessoal">Desenvolvimento Pessoal</span>
+          <div class="card-name">Eizzi Melgarejo</div>
+          <div class="card-brand">Desenvolvimento Pessoal</div>
+          <div class="card-desc">Estratégias para crescer no nicho de desenvolvimento pessoal com autenticidade e conexão.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Luciana Consultoria Financeira -->
+      <a class="card" href="luciana-consultoria-financeira/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-financas">Finanças</span>
+          <div class="card-name">Luciana</div>
+          <div class="card-brand">Consultoria Financeira</div>
+          <div class="card-desc">Plano para consultora financeira crescer com conteúdo educativo sobre finanças pessoais e investimentos.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Marilia Psi -->
+      <a class="card" href="marilia-psi/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-psicologia">Psicologia</span>
+          <div class="card-name">Marilia</div>
+          <div class="card-brand">Psicóloga</div>
+          <div class="card-desc">Estratégias de crescimento para psicóloga com conteúdo sobre saúde mental e bem-estar emocional.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Mateus Junger -->
+      <a class="card" href="mateus-junger/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-educacao">Educação</span>
+          <div class="card-name">Mateus Junger</div>
+          <div class="card-brand">Conteúdo Educacional</div>
+          <div class="card-desc">Plano de ação para crescer com conteúdo educativo e alcançar novos públicos no Instagram.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Rafael -->
+      <a class="card" href="rafael/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-cripto">Cripto</span>
+          <div class="card-name">Rafael</div>
+          <div class="card-brand">Cripto e Bitcoin</div>
+          <div class="card-desc">Estratégias para comunicar sobre criptomoedas e Bitcoin de forma acessível ao público geral e viralizar.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ 100K seguidores</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Renato -->
+      <a class="card" href="renato/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-supermercados">Supermercados</span>
+          <div class="card-name">Renato</div>
+          <div class="card-brand">Tecnologia para Supermercados</div>
+          <div class="card-desc">Plano para alcançar 100K+ falando de tecnologia para supermercados com linguagem voltada ao público geral.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ 100K seguidores</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ricardo Junior -->
+      <a class="card" href="ricardo-junior/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-tech">Tecnologia / IA</span>
+          <div class="card-name">Ricardo Junior</div>
+          <div class="card-brand">Tecnologia e IA</div>
+          <div class="card-desc">Estratégias para viralizar no nicho de tecnologia e inteligência artificial com linguagem acessível.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Rosangela -->
+      <a class="card" href="rosangela/" target="_blank">
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <span class="card-nicho nicho-dev-pessoal">Desenvolvimento Pessoal</span>
+          <div class="card-name">Rosangela</div>
+          <div class="card-brand">Desenvolvimento Pessoal</div>
+          <div class="card-desc">Plano de crescimento com foco em conteúdo inspiracional e desenvolvimento pessoal no Instagram.</div>
+          <div class="card-meta">
+            <div class="card-growth">↑ Crescimento</div>
+            <div class="card-cta">Ver plano</div>
+          </div>
+        </div>
+      </a>
+
     </div>
-    <div class="stat">
-      <div class="stat-number">7</div>
-      <div class="stat-label">Nichos Diferentes</div>
-    </div>
-  </div>
-</div>
+  </section>
 
-<div class="divider"></div>
-
-<!-- Cards -->
-<div class="cards-section">
-  <div class="cards-grid">
-
-    <!-- Ana Júlia -->
-    <a class="card" href="ana-julia/" target="_blank">
-      <div class="card-gradient"></div>
-      <div class="card-body">
-        <span class="card-nicho nicho-educacao">Educação</span>
-        <div class="card-name">Ana Júlia</div>
-        <div class="card-brand">Educação & Storytelling</div>
-        <div class="card-desc">Criadora de conteúdo sobre educação e histórias reais de superação. Plano completo para escalar com storytelling que conecta.</div>
-        <div class="card-meta">
-          <div class="card-growth">↑ 25K → 100K+</div>
-          <div class="card-cta">Ver plano</div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Eizzi Melgarejo -->
-    <a class="card" href="eizzi-melgarejo/" target="_blank">
-      <div class="card-gradient"></div>
-      <div class="card-body">
-        <span class="card-nicho nicho-direito">Direito Médico</span>
-        <div class="card-name">Eizzi Melgarejo</div>
-        <div class="card-brand">UJAMB Advogados — Direito Médico & LGPD</div>
-        <div class="card-desc">Advogada especializada em proteção jurídica para médicos e clínicas. Plano focado em conteúdo confrontacional educativo.</div>
-        <div class="card-meta">
-          <div class="card-growth">↑ 8K → 50K+</div>
-          <div class="card-cta">Ver plano</div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Mateus Junger -->
-    <a class="card" href="mateus-junger/" target="_blank">
-      <div class="card-gradient"></div>
-      <div class="card-body">
-        <span class="card-nicho nicho-advocacia">Advocacia</span>
-        <div class="card-name">Mateus Junger</div>
-        <div class="card-brand">Advoguei — Aposentadoria & INSS</div>
-        <div class="card-desc">Especialista em aposentadoria e benefícios do INSS. Plano estratégico para crescer com conteúdo jurídico acessível.</div>
-        <div class="card-meta">
-          <div class="card-growth">↑ Meta definida</div>
-          <div class="card-cta">Ver plano</div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Carolina -->
-    <a class="card" href="carolina-porto-dos-gatos/plano-acao-carolina.html" target="_blank">
-      <div class="card-gradient"></div>
-      <div class="card-body">
-        <span class="card-nicho nicho-pets">Pets</span>
-        <div class="card-name">Carolina</div>
-        <div class="card-brand">Porto dos Gatos — Veterinária Felina</div>
-        <div class="card-desc">Veterinária especializada em felinos com clínica exclusiva para gatos desde 2019. Plano para dominar o nicho pet no Instagram.</div>
-        <div class="card-meta">
-          <div class="card-growth">↑ 10K → 100K+</div>
-          <div class="card-cta">Ver plano</div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Marília PSI -->
-    <a class="card" href="marilia-psi/" target="_blank">
-      <div class="card-gradient"></div>
-      <div class="card-body">
-        <span class="card-nicho nicho-psicologia">Psicologia</span>
-        <div class="card-name">Marília PSI</div>
-        <div class="card-brand">Psicóloga & Emagrecimento</div>
-        <div class="card-desc">Psicóloga com foco em emagrecimento e relação saudável com a comida. Conteúdo sobre saúde mental e autoconhecimento.</div>
-        <div class="card-meta">
-          <div class="card-growth">↑ Meta: 10K</div>
-          <div class="card-cta">Ver plano</div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Rosângela -->
-    <a class="card" href="rosangela/" target="_blank">
-      <div class="card-gradient"></div>
-      <div class="card-body">
-        <span class="card-nicho nicho-dev-pessoal">Dev. Pessoal</span>
-        <div class="card-name">Rosângela</div>
-        <div class="card-brand">Desenvolvimento Pessoal & Empoderamento</div>
-        <div class="card-desc">Desenvolvimento pessoal e empoderamento feminino. Plano completo com diagnóstico de conta e estratégia de crescimento.</div>
-        <div class="card-meta">
-          <div class="card-growth">↑ Meta: 100K</div>
-          <div class="card-cta">Ver plano</div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Luciana -->
-    <a class="card" href="luciana-consultoria-financeira/plano-acao-luciana.html" target="_blank">
-      <div class="card-gradient"></div>
-      <div class="card-body">
-        <span class="card-nicho nicho-financas">Finanças</span>
-        <div class="card-name">Luciana</div>
-        <div class="card-brand">Consultoria Financeira</div>
-        <div class="card-desc">Assessora de investimentos e consultora financeira. Plano para crescer ensinando pessoas a construir patrimônio.</div>
-        <div class="card-meta">
-          <div class="card-growth">↑ 1K → 10K+</div>
-          <div class="card-cta">Ver plano</div>
-        </div>
-      </div>
-    </a>
-
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta-section">
-  <div class="cta-box">
-    <h2>Quer seu Plano de Ação?</h2>
-    <p>Cada plano é feito sob medida para o seu perfil, nicho e momento. Análise completa + estratégia de crescimento personalizada.</p>
-    <a class="cta-btn" href="https://www.instagram.com/oneyaraujo/" target="_blank">Falar com Oney no Instagram</a>
-  </div>
-</div>
-
-<!-- Footer -->
-<div class="footer">
-  Planos de ação gerados a partir de análises de perfil — <strong>Viral Pro</strong> com <a href="https://www.instagram.com/oneyaraujo/" target="_blank">Oney Araújo</a> — 2026
-</div>
+  <footer class="footer">
+    <p>Viral Pro — Mentoria de Crescimento no Instagram com <a href="https://instagram.com/oneyaraujo" target="_blank">@oneyaraujo</a></p>
+  </footer>
 
 </body>
 </html>
