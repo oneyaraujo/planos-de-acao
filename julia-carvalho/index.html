@@ -111,6 +111,22 @@
     line-height: 1.65;
   }
 
+  .hero-video {
+    max-width: 640px;
+    margin: 0 auto 28px;
+    border-radius: 16px;
+    padding: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 14px;
+    display: block;
+  }
+
   .hero-meta {
     display: flex;
     justify-content: center;
@@ -262,14 +278,14 @@
   .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 
   .idea-card {
-    background: var(-card); border: 1px solid var(--card-border);
+    background: var(--card); border: 1px solid var(--card-border);
     border-radius: 14px; padding: 22px;
     box-shadow: var(--card-shadow); transition: all 0.2s ease;
   }
 
   .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
 
-  -idea-type {
+  .idea-type {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 10px; font-weight: 800; text-transform: uppercase;
     letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
@@ -279,84 +295,696 @@
   .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
   .type-reels { background: var(--pink-soft); color: var(--pink); }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Júlia Carvalho — Churrasco & Receitas</h1>
+  <p class="hero-sub">Especialista em churrasco e receitas na brasa. Domina qualidade visual, ângulo e luz. Cresceu 700-861 seguidores/dia recentemente. Tudo o que precisa fazer para escalar de 500K a 1M+ seguidores.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/rIZ7sXEsQwo" title="Análise de Perfil — Júlia Carvalho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>26 de Março, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Churrasco & Gastronomia</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">1/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">40s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">1M+</div><div class="stat-label">Meta de Seguidores</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de qualquer outra coisa</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Reescrever a primeira linha da bio</h3><p>A frase "Conecta pessoas através do fogo e da comida de verdade" é abstrata demais. Trocar por algo direto como "Receitas simples de churrasco para fazer com a sua família". Isso comunica EXATAMENTE o que você faz em 1 frase.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Reorganizar a bio — "Fale comigo" vem primeiro</h3><p>Coloque "Fale comigo" (link WhatsApp) ANTES de "Projetos, cursos, experiências". A pessoa lê de cima para baixo. Se quer conversão, WhatsApp tem que estar entre as 3 primeiras linhas.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Mapear 20 temas virais do nicho</h3><p>Pesquise quais receitas e assuntos viralizam no segmento de churrasco. Assista a aula "Criatividade Sintética" no Código Viral. Liste: polêmicas sobre técnica, receitas inusitadas, trending topics (Copa, Neymar, eventos).</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Criar grupo de referências no WhatsApp</h3><p>Grupo com você mesma para salvar todos os vídeos virais que encontra. Crie a rotina: de manhã, 10 minutos no feed → salva 5 vídeos virais de churrasco → coloca no grupo. Isso resolve "falta de ideias".</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Criar perfil fake de pesquisa</h3><p>Instagram secundário: siga só perfis de churrasco/gastronomia. Treine o algoritmo para receber referências do nicho todos os dias. Abra todos os dias, passa 5 minutos vendo o que está em alta.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Usar comentários dos seguidores como ideias</h3><p>Leia comentários. Frase boa ("Eu terceirizo a parte vegana pro boi") vira título de vídeo. Ex: você grava uma receita com essa punchline. Seguidores entregam conteúdo pronto.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-soon"><div class="action-number">7</div><div class="action-content"><h3>Reduzir duração dos vídeos para 40 segundos</h3><p>Vídeos mais curtos parecem mais fáceis de reproduzir. Isso gera mais salvamentos e compartilhamentos. A receita do coração crocante que fez em 7 segundos foi genial — mantenha esse ritmo.</p></div><div class="action-tag">Em breve</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS — VÍDEOS ANALISADOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que estava errado e como ficaria o roteiro corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>Se colocar molho em carne boa é um crime</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Narração redundante: você descreve exatamente o que já está na tela. Duas informações iguais sendo comunicadas ao mesmo tempo. A imagem mostra, a voz também mostra — sobra nada para o espectador pensar.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Separe fala de imagem. Enquanto a carne aparece, FALE algo diferente: "No churrasco de ontem, alguém chegou com um molho industrial. Claro que ninguém deixou colocar na carne boa. Vou te mostrar por que molho caseiro faz toda a diferença". O vídeo complementa a fala, não traduz.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>Ainda bem que não sou vegana (7 segundos)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que poderia melhorar</div>
+          <p>Nada de grave — este vídeo é BOM e provavelmente gerou muitos comentários. Conteúdo contraintuitivo/polêmico funciona. Mas é genérico: "Eu terceirizo a parte vegana pro boi". Poderia ser mais específico.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Versão melhorada</div>
+          <p>Use EXATAMENTE essa frase, mas dentro de uma receita. Enquanto mostra o espetinho de coração crocante: "A parte vegana eu deixo com o boi mesmo. Agora churrasco de verdade é isso daqui: coração crocante, suculento, derretendo na boca". Receita + polêmica = viral.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>Bora preparar o queridinho do churrasco</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Gancho muito fraco: "Bora preparar..." é genérico e não cria desejo. Não entra em nenhuma conversa em alta (Copa, jogo do Brasil). Vídeo longo demais para uma receita.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Gancho melhorado</div>
+          <p>"Salva esse espetinho para o dia do jogo do Brasil" ou "Esse é o espetinho que a gente come SEMPRE que o Brasil joga". Conecta a receita com trending topics. Manter em 40 segundos. Terminar com "Marca alguém que precisa provar isso no próximo jogo".</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Eu só queria saber por que ninguém tá falando</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Demora muito para chegar ao ponto. Introdução longa antes do conteúdo principal. Quando vê a faca, já perdeu muita gente que não aguenta a "enrolação".</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Versão corrigida</div>
+          <p>Ir direto: "5 coisas que todo churrasqueiro que se preza PRECISA ter" (mostra a primeira faca). Depois: "A segundo é..." Usar antecipação: "E a melhor eu deixo pro final". Ritmo rápido, 3 segundos por item. Faca = primeiro frame, não último.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que manter e do que mudar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Narrar exatamente o que está na imagem</div>
+      <div class="compare-item"><span>✕</span> Ganchos fracos: "Bora preparar..."</div>
+      <div class="compare-item"><span>✕</span> Vídeos acima de 1 minuto para receitas</div>
+      <div class="compare-item"><span>✕</span> Ficar apenas em receitas — ignorar trending topics</div>
+      <div class="compare-item"><span>✕</span> Ignorar comentários bons dos seguidores</div>
+      <div class="compare-item"><span>✕</span> Postar sem gancho forte nos 3 primeiros segundos</div>
+      <div class="compare-item"><span>✕</span> Introduções longas antes de chegar ao ponto</div>
+      <div class="compare-item"><span>✕</span> Fazer conteúdo genérico sem conexão com momento</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Separar fala e imagem — falar algo diferente</div>
+      <div class="compare-item"><span>✓</span> Ganchos polêmicos, curiosos ou contraintuitivos</div>
+      <div class="compare-item"><span>✓</span> Vídeos de até 40 segundos — ritmo rápido</div>
+      <div class="compare-item"><span>✓</span> Conectar receitas com assuntos em alta</div>
+      <div class="compare-item"><span>✓</span> Usar frases dos comentários como títulos de vídeos</div>
+      <div class="compare-item"><span>✓</span> Instigar debate logo nos primeiros segundos</div>
+      <div class="compare-item"><span>✓</span> Usar antecipação: "O segredo eu deixo pro final"</div>
+      <div class="compare-item"><span>✓</span> Criar banco de referências com perfil fake</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>6 regras de ouro para cada vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Entrar nas Conversas</h3><p>Conecte suas receitas com o que está em alta: Copa do Mundo, Neymar, eventos. Não fique de fora das conversas do momento.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🚝</span><h3>Gancho é Tudo</h3><p>Os 3 primeiros segundos decidem. Use polêmica, curiosidade ou contraintuição. "Bora preparar..." não funciona mais.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⏱️</span><h3>40 Segundos é o Ideal</h3><p>Receita curta parece fácil de fazer. Isso gera mais salvamentos e compartilhamentos — pessoas pensam "vou fazer isso agora".</p></div>
+    <div class="rule-card"><span class="rule-emoji">🕣️</span><h3>Fale ≠ Mostre</h3><p>Não narre o que está na tela. Conte uma história diferente enquanto a receita aparece. O vídeo complementa, não traduz.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📹</span><h3>Banco de Referências</h3><p>Crie um perfil fake e um grupo no WhatsApp para colecionar vídeos virais do seu nicho. Isso resolve o problema de "falta de ideias".</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔄</span><h3>Comentários = Conteúdo</h3><p>Seus seguidores te entregam títulos e ganchos nos comentários. Transforme as melhores frases em vídeos novos.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Templates "preencha os espaços" adaptados para BBQ</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Polêmica + Receita</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Se você acha que colocar molho em carne boa é um crime, é porque você nunca provou isso aqui"<br><em>Apareça com a carne na mão, com paixão na voz</em></div></div>
+    <div class="script-step"><div class="script-step-label">Contexto</div><div class="script-step-text">"Brigaram comigo no churrasco de ontem por causa dessa receita. Mas quando viram o resultado, todo mundo queria a minha receita de molho"<br><em>Narre a história enquanto prepara os ingredientes</em></div></div>
+    <div class="script-step"><div class="script-step-label">Receita</div><div class="script-step-text">Passo a passo rápido (15s) — misturar, temperar, pronto. Ritmo: 3-4 segundos por etapa</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Marca alguém que ama churrasco e precisa provar isso"</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Trending + Receita</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Salva esse espetinho para o dia do jogo do Brasil"<br><em>Comece mostrando o espetinho pronto e crocante</em></div></div>
+    <div class="script-step"><div class="script-step-label">Contexto</div><div class="script-step-text">"Gosto de churrasco quando o Brasil joga porque, não importa se perde... pelo menos a comida é uma vitória garantida"<br><em>Mostre o coração crocante de perto</em></div></div>
+    <div class="script-step"><div class="script-step-label">Receita</div><div class="script-step-text">Passo a passo do espetinho (20s). Não precisa detalhar muito — mostra do jeito que você já faz</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Quantos corações você precisa para assistir um jogo onde o Brasil perde?"</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Lista + Antecipação</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"5 coisas que todo churrasqueiro que se preza precisa ter"<br><em>Mostre a primeira coisa AQUI no gancho — não suspense longo</em></div></div>
+    <div class="script-step"><div class="script-step-label">Antecipação</div><div class="script-step-text">"E a melhor eu vou deixar pro final"<br><em>Crie curiosidade, mas siga rápido</em></div></div>
+    <div class="script-step"><div class="script-step-label">Conteúdo</div><div class="script-step-text">Mostra os 5 itens com cortes rápidos. 3-4 segundos por item. Falas curtas: "Esse aqui é essencial", "Todo churrasqueiro bom usa"</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Qual é a sua faca preferida? Comenta aqui"</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW DE PRODUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Do brainstorm ao post publicado — passo a passo</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Pesquisar</h4><p>Abra o perfil fake e o grupo do WhatsApp. Veja o que está viralizando no nicho e nos trending topics do dia</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Roteirizar</h4><p>Escolha 1 tema viral + 1 gancho forte. Escreva em 3 linhas: gancho, meio, CTA</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Gravar</h4><p>Filme a receita em takes curtos. Pense: "O que eu vou falar de diferente do que a câmera mostra?"</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Editar</h4><p>Corte para 40 segundos. Adicione legenda na tela e narração. Confirme que gancho está nos 3 primeiros segundos</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Publicar</h4><p>Poste e monitore os comentários. Anote frases boas dos seguidores para os próximos vídeos</p></div>
+  </div>
+
+  <!-- 7. FÓRMULAS DE GANCHO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie e adapte — projetados para prender nos primeiros 3 segundos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Polêmica:</em> "Se você acha que colocar molho em carne boa é um crime, é porque você nunca provou isso"</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Curiosidade:</em> "Eu só queria saber por que ninguém tá falando sobre isso no churrasco"</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Contraintuição:</em> "Ainda bem que não sou vegana — eu terceirizo a parte vegana pro boi"</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Desafio:</em> "Duvido que um vegano assista esse vídeo e não sinta vontade"</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Trending:</em> "Salva essa receita pro dia do jogo do Brasil"</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Bastidor + Confissão:</em> "Brigaram comigo no churrasco de ontem por causa dessa receita"</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Antecipação:</em> "5 itens que todo churrasqueiro precisa ter — e o melhor eu deixo pro final"</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>12 formatos e temas prontos para gravar já na próxima semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Manteiga Caseira para Churrasco</h3><p>Variações: para pão de queijo, para fritar carne, com tempero especial. Pessoas vão salvar "pra fazer em casa".</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Churrasco de Cogumelo na Brasa</h3><p>Tema inusitado que gera curiosidade e debate. "Veganos vão amar (e você também vai)".</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Espetinho de Coração Crocante</h3><p>Versão curta (40s) conectada ao jogo do Brasil. "Salva pro próximo jogo".</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Kit do Churrasqueiro: 5 Facas</h3><p>Lista visual com fotos das facas. Pessoas arrastam e salvam. Formato thread que funciona bem.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Brigaram Comigo por Essa Receita</h3><p>Storytelling com receita polêmica de molho. "No churrasco todo mundo questiona, mas depois..." Altamente engajado.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Receitas da Copa — Uma por Dia</h3><p>Uma receita por dia do jogo, sempre com camisa do Brasil. Trending + educação = viral garantido.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Resposta a Comentário Polémico</h3><p>Usar frase de seguidor como gancho do vídeo. Já viralizou comentário, agora vira vídeo.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Tour pela Churrasqueira</h3><p>Mostrar setup com dicas de cada ferramenta. "Essas 3 coisas fizeram toda a diferença".</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Se Seu Coração Não Aguenta...</h3><p>Gancho criativo com espetinho de coração. "Se seu coração não aguenta fortes emoções (e sabores), não assista".</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Antes vs Depois: Carne com e sem Molho</h3><p>Comparativo visual que gera debate. Pessoas arrastam só pra discutir qual estava melhor.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Manteiga Week — 7 Receitas</h3><p>Uma receita diferente de manteiga por dia. Cria ritmo, pessoas esperam o próximo dia.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>O Que a Gente Faz com Quem Bota Molho?</h3><p>Brincadeira polêmica + receita de molho. "A resposta está dentro desse vídeo".</p></div>
+  </div>
+
+  <!-- 9. PERFIS DE REFERÊNCIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Criadores que usam a mesma estratégia de conteúdo</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🥩</div>
+      <div>
+        <h3>Criadores BBQ Internacionais</h3>
+        <div class="ref-niche">Churrasco / Gastronomia</div>
+        <p>Use o perfil fake para descobrir creators de BBQ de outros países. Adapte receitas americanas/argentinas com um toque brasileiro. Estudar como narram diferente do que mostram.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🎬</div>
+      <div>
+        <h3>Influenciadores de Viagem</h3>
+        <div class="ref-niche">Gastronomia / Lifestyle</div>
+        <p>Observar como narram uma coisa e mostram outra. "Estou em um mercado local, vou escolher ingredientes frescos" (enquanto a câmera passeia). Aplicar essa técnica nos vídeos de receita.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">💬</div>
+      <div>
+        <h3>Criadores de Frases Contraintuitivas</h3>
+        <div class="ref-niche">Humor / Educação</div>
+        <p>Estudar vídeos de 7 segundos com frases polêmicas que geram muitos comentários. Adaptar para o universo do churrasco. Ex: "Eu terceirizo a parte vegana pro boi".</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🍴</div>
+      <div>
+        <h3>Creators que Usam Trending Topics</h3>
+        <div class="ref-niche">Receitas / Eventos</div>
+        <p>Acompanhar como conectam receitas com Copa, Neymar, eventos do momento. Fazer o mesmo: toda receita tem um gancho atualizado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs — O Que Funciona</h2><p>Chamadas à ação testadas e aprovadas</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Para Comentários</div>
+      <blockquote>"Gente, o que a gente faz com quem bota molho em carne boa?"</blockquote>
+      <div class="cta-note">Cria polêmica, debate, comentários calorosos</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Para Compartilhamentos</div>
+      <blockquote>"Marca alguém que ama churrasco e precisa ver isso"</blockquote>
+      <div class="cta-note">Força o usuário a tagear, espalha o vídeo</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Para Salvamentos</div>
+      <blockquote>"Salva essa receita pro próximo churrasco da família"</blockquote>
+      <div class="cta-note">Utilidade = salvamento = algoritmo leva mais</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+    <div><h2>Técnica de Venda (Link na Bio)</h2><p>Como vender através do conteúdo, não contra ele</p></div>
+  </div>
+
+  <div class="filming-checklist" style="padding: 24px; text-align: left; line-height: 1.8;">
+    <p><strong>Regra de Ouro:</strong> Você já vende — através do conteúdo útil. Receitas que ajudam as pessoas geram salvamentos e seguidores. Para vender seus cursos, projetos e experiências gastronômicas, conecte naturalmente ao conteúdo.</p>
+    <p style="margin-top: 16px;"><strong>Exemplo 1:</strong> "Essa receita é do módulo X do meu curso de churrasco pro zero. Aí dentro, a gente prepara 15 receitas diferentes e você aprende a técnica de cada uma."</p>
+    <p style="margin-top: 12px;"><strong>Exemplo 2:</strong> "No meu workshop a gente faz isso ao vivo, com uma churrasqueira profissional. Você sai daqui sabendo fazer as 5 receitas mais virais."</p>
+    <p style="margin-top: 12px;"><strong>Nunca fazer:</strong> Um vídeo inteiro de venda. Insira a oferta dentro de um conteúdo que tem valor. Proporção: 90% conteúdo, 10% venda.</p>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M3.09 9a9 9 0 0 1 5.64-3.61"/><path d="M21 12a9 9 0 0 0-8.31-8.9"/><circle cx="11" cy="12" r="9"/></svg></div>
+    <div><h2>Checklist de Gravação</h2><p>Antes de publicar, sempre verificar esses 7 pontos</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Antes de Publicar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho é forte? (3 primeiros segundos)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Estou falando algo diferente da imagem?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem legenda na tela? (clara, fácil ler)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Duração está abaixo de 40 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Mostrei o prato/receita de perto? (last frame)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Pessoa leiga consegue reproduzir?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA no final? (pergunta, marca ou salva)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>NÃO tem logo/@ desnecessário na tela?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS RECOMENDADAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M12 2v20m10-10H2"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>Software e serviços essenciais para começar</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Stack de Produção</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div><strong>Social Blade</strong> — Monitorar crescimento diário</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div><strong>Perfil Fake</strong> — Banco de referências virais</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div><strong>Grupo WhatsApp</strong> — Salvar vídeos virais</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div><strong>Código Viral</strong> — Aula de Criatividade Sintética</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div><strong>Microfone Lapela</strong> — Narração clara</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div><strong>CapCut/InShot</strong> — Edição com legendas automáticas</div>
+    </div>
+  </div>
+
+  <!-- 14. CRONOGRAMA DE EXECUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Próximas 4 semanas — o que fazer em cada etapa</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Hoje</div>
+      <div class="timeline-title">Ações Imediatas (2-3 horas)</div>
+      <div class="timeline-desc">Reescrever bio, criar grupo WhatsApp, criar perfil fake, mapear 20 temas virais de churrasco, assistir aula de Criatividade Sintética.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 1</div>
+      <div class="timeline-title">Produção em Massa</div>
+      <div class="timeline-desc">Gravar 7 vídeos com ganchos fortes (um por dia). Escolher 3 para publicar imediatamente. Testar formato de 40 segundos. Monitorar quais ganchos funcionam melhor.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 2-3</div>
+      <div class="timeline-title">Entrar em Conversas + Diário</div>
+      <div class="timeline-desc">Postar diariamente com fórmulas de gancho. Conectar receitas com eventos em alta (Copa, Neymar, trending topics). Monitorar comentários. Anote frases boas dos seguidores para os próximos vídeos.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Mês 1+</div>
+      <div class="timeline-title">Escala e Otimização</div>
+      <div class="timeline-desc">Ajustar estratégia baseado nos dados. Meta: 500-1000 seguidores/dia. Entrar em todas as conversas trending. Começar a vender cursos/experiências através do conteúdo (10% do tempo).</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Março 2026
+</div>
+
+<script>
+  // Checklist interativo
+  document.querySelectorAll('.check-item, .filming-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      if (e.target.closest('.check-box') || e.target.closest('.filming-check') || !e.target.closest('a')) {
+        this.classList.toggle('done');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
