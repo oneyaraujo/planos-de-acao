@@ -1,35 +1,1428 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plano de Ação — Bruna | Limpeza Profissional</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plano de Ação — Bruna | Limpeza Profissional</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-  --bg: #ffffff;
-  --bg-soft: #fafafa;
-  --card: #ffffff;
-  --card-border: #e8e8ed;
-  --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
-  --ig-purple: #833AB4;
-  --ig-pink: #E1306C;
-  --ig-orange: #F77737;
-  --ig-yellow: #FCAF45;
-  --ig-blue: #405DE6;
-  --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
-  --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
-}
-body { font-family: 'Inter', sans-serif; background: var(--bg-soft); color: var(--text); }
-</style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #fafafa;
+      --card: #ffffff;
+      --card-border: #e8e8ed;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+      --ig-purple: #833AB4;
+      --ig-pink: #E1306C;
+      --ig-orange: #F77737;
+      --ig-yellow: #FCAF45;
+      --ig-blue: #405DE6;
+      --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+      --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+      --green: #00C853;
+      --green-soft: rgba(0, 200, 83, 0.08);
+      --red: #E1306C;
+      --red-soft: rgba(225, 48, 108, 0.07);
+      --yellow: #F77737;
+      --yellow-soft: rgba(247, 119, 55, 0.07);
+      --blue: #405DE6;
+      --blue-soft: rgba(64, 93, 230, 0.07);
+      --purple: #833AB4;
+      --purple-soft: rgba(131, 58, 180, 0.07);
+      --pink: #E1306C;
+      --pink-soft: rgba(225, 48, 108, 0.07);
+      --cyan: #00B4D8;
+      --cyan-soft: rgba(0, 180, 216, 0.07);
+      --orange: #F77737;
+      --orange-soft: rgba(247, 119, 55, 0.07);
+      --text: #1a1a2e;
+      --text-secondary: #4a4a5a;
+      --text-muted: #8e8e9a;
+      --text-dim: #b0b0b8;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-soft);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 56px 40px 40px;
+      text-align: center;
+      background: var(--bg);
+      border-bottom: 1px solid var(--card-border);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--ig-gradient);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ig-gradient);
+      border-radius: 100px;
+      padding: 8px 22px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      background: var(--ig-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      max-width: 620px;
+      margin: 0 auto 20px;
+      line-height: 1.65;
+    }
+
+    .hero-video {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      border: 3px solid transparent;
+      background-image: linear-gradient(#fff, #fff), var(--ig-gradient);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    }
+
+    .hero-video iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: block;
+      border: none;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+    /* Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: -28px auto 0;
+      padding: 0 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--ig-gradient);
+    }
+
+    .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+    .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+    .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+    .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+    .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+    .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Main */
+    .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+    /* Section Headers */
+    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+    .section-header:first-child { margin-top: 0; }
+
+    .section-icon {
+      width: 46px; height: 46px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+    .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Action Cards */
+    .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+    .action-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: start;
+      gap: 18px;
+      box-shadow: var(--card-shadow);
+      transition: all 0.2s ease;
+    }
+
+    .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+    .action-number {
+      width: 34px; height: 34px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+    }
+
+    .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+    .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+    .action-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px; border-radius: 100px;
+      font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+      text-transform: uppercase; letter-spacing: 0.3px;
+    }
+
+    .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+    .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+    .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+    .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+    .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+    .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+    /* Compare Grid */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .compare-col {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    }
+
+    .compare-col h3 {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 15px; font-weight: 700; margin-bottom: 14px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+    }
+
+    .compare-col.bad h3 { color: var(--red); }
+    .compare-col.good h3 { color: var(--green); }
+
+    .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+    .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+    /* Rules Grid */
+    .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+    .rule-card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 22px; text-align: center;
+      box-shadow: var(--card-shadow); transition: all 0.2s ease;
+    }
+
+    .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+    .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+    .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+    /* Ideas Grid */
+    .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+    .idea-card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 22px;
+      box-shadow: var(--card-shadow); transition: all 0.2s ease;
+    }
+
+    .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+    .idea-type {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+    }
+
+    .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+    .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    .type-reels { background: var(--pink-soft); color: var(--pink); }
+    .type-carousel { background: var(--purple-soft); color: var(--purple); }
+    .type-series { background: var(--cyan-soft); color: var(--cyan); }
+    .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+
+    /* Hooks */
+    .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+    .hook-item {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 18px 22px;
+      display: flex; align-items: start; gap: 14px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .hook-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--ig-gradient); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 14px; font-weight: 800;
+    }
+
+    .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+    .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+    /* Before/After */
+    .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+    .ba-card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+    }
+
+    .ba-header {
+      padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+      border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+    }
+
+    .ba-header .ba-video-tag {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+      background: var(--purple-soft); color: var(--purple);
+    }
+
+    .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+    .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+    .ba-col { padding: 18px 22px; }
+    .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+    .ba-col-label {
+      font-size: 11px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+      align-items: center; gap: 6px;
+    }
+
+    .ba-col:first-child .ba-col-label { color: var(--red); }
+    .ba-col:last-child .ba-col-label { color: var(--green); }
+
+    .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+    .ba-col p strong { color: var(--text); font-weight: 600; }
+
+    /* Script Templates */
+    .script-card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+      margin-bottom: 14px;
+    }
+
+    .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+    .script-step {
+      display: flex; gap: 14px; padding: 10px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .script-step:last-child { border-bottom: none; }
+
+    .script-step-label {
+      flex-shrink: 0; width: 90px;
+      font-size: 11px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.5px; padding-top: 2px;
+    }
+
+    .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+    .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+    .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+    .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+    .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+    .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+    /* Workflow */
+    .workflow {
+      display: flex; gap: 0; align-items: stretch;
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+    }
+
+    .workflow-step {
+      flex: 1; padding: 20px 16px; text-align: center;
+      position: relative; border-right: 1px solid var(--card-border);
+    }
+
+    .workflow-step:last-child { border-right: none; }
+
+    .workflow-step::after {
+      content: '→'; position: absolute; right: -8px; top: 50%;
+      transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+      z-index: 1; background: var(--card); padding: 2px;
+    }
+
+    .workflow-step:last-child::after { display: none; }
+
+    .workflow-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+      background: var(--ig-gradient);
+    }
+
+    .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+    /* Reference Profiles */
+    .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+    .ref-card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 22px;
+      box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+    }
+
+    .ref-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--ig-gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+
+    .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+    .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+    .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+    /* CTA Guide */
+    .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+    .cta-card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 20px;
+      box-shadow: var(--card-shadow); text-align: center;
+    }
+
+    .cta-when {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+      border-radius: 6px; display: inline-block;
+    }
+
+    .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+    .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+    .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+    .cta-card blockquote {
+      font-size: 14px; font-weight: 600; color: var(--text);
+      line-height: 1.5; font-style: italic; margin-bottom: 8px;
+    }
+
+    .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+    /* Checklist */
+    .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+    .check-item {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 14px 18px;
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+      box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .check-item:hover { border-color: var(--ig-purple); }
+
+    .check-box {
+      width: 22px; height: 22px; border-radius: 6px;
+      border: 2px solid var(--text-dim); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .check-item.done { background: var(--green-soft); border-color: var(--green); }
+    .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+    .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+    /* Filming Checklist */
+    .filming-checklist {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    }
+
+    .filming-checklist h3 {
+      font-size: 15px; font-weight: 700; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px; color: var(--text);
+    }
+
+    .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+    .filming-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; border-radius: 10px;
+      font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+      cursor: pointer; user-select: none; transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .filming-item:hover { background: var(--bg-soft); }
+
+    .filming-check {
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 2px solid var(--text-dim); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+    .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+    .filming-item.done { color: var(--text-muted); }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 32px; }
+
+    .timeline::before {
+      content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+      width: 2px; background: var(--ig-gradient); border-radius: 2px;
+    }
+
+    .timeline-item { position: relative; padding: 0 0 28px 24px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute; left: -23px; top: 4px;
+      width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+    }
+
+    .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+    .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+    .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+    .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+    .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+    .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+    .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+    .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+    .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+    .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* Footer */
+    .footer {
+      text-align: center; padding: 36px 40px; font-size: 13px;
+      color: var(--text-muted); border-top: 1px solid var(--card-border);
+      max-width: 1200px; margin: 0 auto; background: var(--bg);
+    }
+
+    .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero { padding: 40px 20px 24px; }
+      .hero h1 { font-size: 28px; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+      .main { padding: 24px 20px 60px; }
+      .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+      .ba-body { grid-template-columns: 1fr; }
+      .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+      .workflow { flex-direction: column; }
+      .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+      .workflow-step::after { display: none; }
+      .action-card { grid-template-columns: auto 1fr; }
+      .action-tag { grid-column: 2; }
+    }
+  </style>
 </head>
 <body>
-<div class="hero">
-  <h1>Bruna — Limpeza Profissional</h1>
-</div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">✨ Viral Pro — Análise de Perfil</div>
+    <h1>Plano de Ação<br>Bruna — Limpeza Profissional</h1>
+    <p class="hero-sub">Estratégia completa para crescimento de audiência, vendas de produto digital e profissionalização como diarista. Baseado em análise profunda do seu perfil, nicho e potencial de mercado.</p>
+
+    <div class="hero-video">
+      <iframe src="https://www.youtube.com/embed/Aylh-btnUaw" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        Março 2026
+      </div>
+      <div class="hero-meta-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        1-on-1 com Oney
+      </div>
+      <div class="hero-meta-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Análise + Estratégia
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Ações Urgentes</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">1/dia</div>
+      <div class="stat-label">Meta de Posts</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">1 min</div>
+      <div class="stat-label">Duração Ideal</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Foco Conteúdo Real</div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- 1. Correções Imediatas -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--red-soft); color: var(--red);">🚨</div>
+        <div>
+          <h2>Correções Imediatas</h2>
+          <p>6 ajustes que você deve fazer HOJE para melhorar seu perfil</p>
+        </div>
+      </div>
+
+      <div class="priority-grid">
+        <div class="action-card urgency-now">
+          <div class="action-number">1</div>
+          <div class="action-content">
+            <h3>Remover elemento visual sobre o rosto</h3>
+            <p>Aquele ícone/badge que aparece sobre seu rosto nos vídeos. Posicione qualquer elemento visual mais embaixo, longe da face. Sua expressão é a melhor ferramenta de conexão.</p>
+            <div class="action-tag">⏰ Hoje</div>
+          </div>
+        </div>
+
+        <div class="action-card urgency-now">
+          <div class="action-number">2</div>
+          <div class="action-content">
+            <h3>Adicionar legendas em TODOS os vídeos</h3>
+            <p>Use CapCut ou a legenda automática do Instagram. 30% do seu público assiste sem áudio. Legendas = 40% mais view time. Crítico para crescimento.</p>
+            <div class="action-tag">⏰ Hoje</div>
+          </div>
+        </div>
+
+        <div class="action-card urgency-now">
+          <div class="action-number">3</div>
+          <div class="action-content">
+            <h3>Remover widget feio do perfil</h3>
+            <p>Aquele "app de criador" que aparece no seu perfil está matando a profissionalidade. Remova do seu perfil nas configurações. Simples mas impactante.</p>
+            <div class="action-tag">⏰ Hoje</div>
+          </div>
+        </div>
+
+        <div class="action-card urgency-week">
+          <div class="action-number">4</div>
+          <div class="action-content">
+            <h3>Reorganizar destaques e adicionar link WhatsApp</h3>
+            <p>Mantenha apenas 3 destaques. Um deles DEVE ser vendas (link WhatsApp direto). Estrutura: Serviços → Dicas → Vendas. Isso é funil de conversão.</p>
+            <div class="action-tag">📅 Esta semana</div>
+          </div>
+        </div>
+
+        <div class="action-card urgency-week">
+          <div class="action-number">5</div>
+          <div class="action-content">
+            <h3>Melhorar a bio do perfil</h3>
+            <p>Bio atual é vaga. Teste: "Diarista profissional. Te ensino a limpar como profissional. Manual completo no link." Direto, claro, com menção ao produto.</p>
+            <div class="action-tag">📅 Esta semana</div>
+          </div>
+        </div>
+
+        <div class="action-card urgency-week">
+          <div class="action-number">6</div>
+          <div class="action-content">
+            <h3>Thumbnails com cores fortes</h3>
+            <p>Seu melhor vídeo (faxina pesada) tem thumbnail com cor forte. Replique esse padrão em TODOS os novos vídeos. Teste amarelo, vermelho e azul saturado.</p>
+            <div class="action-tag">📅 Esta semana</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Certo vs Errado (Before/After) -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--purple-soft); color: var(--purple);">⚖️</div>
+        <div>
+          <h2>Certo vs Errado</h2>
+          <p>O que você deve fazer e o que evitar para crescer</p>
+        </div>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-col bad">
+          <h3>❌ Errado (Matando seu crescimento)</h3>
+          <div class="compare-item"><span>❌</span>Sem legenda nos vídeos</div>
+          <div class="compare-item"><span>❌</span>Elemento visual sobre o rosto</div>
+          <div class="compare-item"><span>❌</span>Widget feio no perfil</div>
+          <div class="compare-item"><span>❌</span>Thumbnails sem cor forte</div>
+          <div class="compare-item"><span>❌</span>Vídeos muito curtos (menos de 30s)</div>
+          <div class="compare-item"><span>❌</span>Sem CTA no final dos vídeos</div>
+          <div class="compare-item"><span>❌</span>Hashtags genéricas (#viral, #foryou)</span></div>
+          <div class="compare-item"><span>❌</span>Sem menção ao produto digital</div>
+          <div class="compare-item"><span>❌</span>Postar 2-3x por semana (irregular)</span></div>
+        </div>
+
+        <div class="compare-col good">
+          <h3>✅ Certo (Crescimento garantido)</h3>
+          <div class="compare-item"><span>✅</span>Legenda em 100% dos vídeos</div>
+          <div class="compare-item"><span>✅</span>Rosto e expressão bem posicionados</div>
+          <div class="compare-item"><span>✅</span>Perfil limpo e profissional</div>
+          <div class="compare-item"><span>✅</span>Thumbnail com cor saturada (amarelo, vermelho)</div>
+          <div class="compare-item"><span>✅</span>Vídeos de 1-2 minutos (antes/durante/depois)</span></div>
+          <div class="compare-item"><span>✅</span>CTA sempre: "comenta", "segue", "link na bio"</div>
+          <div class="compare-item"><span>✅</span>Hashtags de nicho (#limpezaprofissional #diarista)</div>
+          <div class="compare-item"><span>✅</span>Menção sutil ao manual em todo vídeo</div>
+          <div class="compare-item"><span>✅</span>1 post por dia (consistência é tudo)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Regras de Ouro para Conteúdo -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--yellow-soft); color: var(--yellow);">👑</div>
+        <div>
+          <h2>Regras de Ouro</h2>
+          <p>3 princípios que toda criadora de conteúdo de limpeza deve seguir</p>
+        </div>
+      </div>
+
+      <div class="rules-grid">
+        <div class="rule-card">
+          <span class="rule-emoji">💪</span>
+          <h3>Conteúdo Real</h3>
+          <p>Mostre a faxina de verdade. Mão na massa, suando, trabalhando. Seu público quer ver o processo completo, não só o resultado final.</p>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-emoji">🎬</span>
+          <h3>Gancho Narrativo</h3>
+          <p>Use DMs reais, imprima conversas de clientes pedindo ajuda. Comece mostrando o pedido e complete com a solução visual. Prova social vende.</p>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-emoji">💰</span>
+          <h3>Vender Sem Vender</h3>
+          <p>Toda faxina que você posta é uma chance de mencionar o manual: "Isso aqui está no meu manual, link na bio." Natural, não propaganda.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Banco de Ideias de Conteúdo -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--pink-soft); color: var(--pink);">💡</div>
+        <div>
+          <h2>Banco de Ideias</h2>
+          <p>12 tipos de conteúdo prontos para você gravar este mês</p>
+        </div>
+      </div>
+
+      <div class="ideas-grid">
+        <div class="idea-card">
+          <div class="idea-type type-reels">Reels</div>
+          <h3>Respondo DM ao vivo com faxina</h3>
+          <p>Print da DM → "olha o que me mandaram" → faxina completa → resultado. Formato vencedor que gera engajamento.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-reels">Reels</div>
+          <h3>Antes e depois de limpeza pesada</h3>
+          <p>Ambiente muito sujo impactante → processo → revelação do resultado. Quanto mais dramático o antes, melhor.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-carousel">Carrossel</div>
+          <h3>"Indico ou Não Indico" produtos</h3>
+          <p>Pegue 5 produtos de limpeza populares. Mostre qual funciona e qual é hype. Posição de expert = confiança = venda.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-reels">Reels</div>
+          <h3>Mitos da limpeza desmentidos</h3>
+          <p>"Vinagre limpa tudo?" Não. Teste na câmera. "Água quente mata bactéria?" Depende. Educa + gera curiosidade.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-series">Série</div>
+          <h3>Erros comuns na hora de limpar</h3>
+          <p>Erro 1: Usar água demais. Erro 2: Produtos misturados. Série de 5 posts = 5 dias de conteúdo garantido.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-reels">Reels</div>
+          <h3>Rotina de limpeza semanal</h3>
+          <p>Segunda: cozinha. Terça: banheiro. Mostra como organizar a semana. Seu cliente aprende enquanto você vende o serviço.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-carousel">Carrossel</div>
+          <h3>Kit essencial de produtos</h3>
+          <p>Quais 7 produtos você NUNCA deixa de ter? Simples, prático, posiciona você como expert.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-bastidor">Bastidor</div>
+          <h3>Dia de faxina pesada (suando, real)</h3>
+          <p>Tire selfie durante o trabalho, suada, focada. Humaniza e cria identificação. O público adora ver os bastidores.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-reels">Reels</div>
+          <h3>Dica rápida de produto que você usa</h3>
+          <p>30 segundos: pegue um produto, mostre como usar, resultado imediato. Rápido, visual, vira trend.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-series">Série</div>
+          <h3>"Me pediram pra limpar isso" (desafios)</h3>
+          <p>Vídeos onde você limpa coisas difíceis: carpete, sofá, tapete. Cada um é um desafio diferente = série de 10+ posts.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-reels">Reels</div>
+          <h3>Como se profissionalizar como diarista</h3>
+          <p>Fale sobre preços, contratos, organização. Seu público é diarista também. Assim você vende o manual.</p>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-type type-carousel">Carrossel</div>
+          <h3>Como organizar produtos de limpeza</h3>
+          <p>Carrinho de limpeza, caixa, prateleira. Dicas práticas que seu público ADORA copiar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Ganchos Vencedores -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--blue-soft); color: var(--blue);">🎣</div>
+        <div>
+          <h2>Ganchos Vencedores</h2>
+          <p>7 maneiras de começar seus vídeos para parar a pessoas na timeline</p>
+        </div>
+      </div>
+
+      <div class="hooks-list">
+        <div class="hook-item">
+          <div class="hook-icon">1</div>
+          <div class="hook-text"><em>"Olha o que me mandaram"</em> — Mostre uma DM real pedindo ajuda. Prova social imediata.</div>
+        </div>
+
+        <div class="hook-item">
+          <div class="hook-icon">2</div>
+          <div class="hook-text"><em>"Essa casa não era limpa há X meses"</em> — Quanto maior o tempo, mais impactante o antes/depois.</div>
+        </div>
+
+        <div class="hook-item">
+          <div class="hook-icon">3</div>
+          <div class="hook-text"><em>"Todo mundo acha que [produto] limpa tudo, mas..."</em> — Desminta mitos. Educação + curiosidade.</div>
+        </div>
+
+        <div class="hook-item">
+          <div class="hook-icon">4</div>
+          <div class="hook-text"><em>"Erros que você comete na hora de limpar"</em> — Culpa. As pessoas querem saber se estão erradas.</div>
+        </div>
+
+        <div class="hook-item">
+          <div class="hook-icon">5</div>
+          <div class="hook-text"><em>"Vou te mostrar como profissional limpa isso"</em> — Posicionamento de expert. Você sabe, eles não.</div>
+        </div>
+
+        <div class="hook-item">
+          <div class="hook-icon">6</div>
+          <div class="hook-text"><em>"Me pediram pra limpar isso e olha no que deu"</em> — Desafio. Cria narrativa de "vou ver o resultado".</div>
+        </div>
+
+        <div class="hook-item">
+          <div class="hook-icon">7</div>
+          <div class="hook-text"><em>"Você tá usando [produto] errado"</em> — Proprietary insight. Você descobre, seu público aprende.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Modelos de Script -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--orange-soft); color: var(--orange);">📝</div>
+        <div>
+          <h2>Modelos de Script</h2>
+          <p>3 roteiros prontos que você pode gravar hoje</p>
+        </div>
+      </div>
+
+      <div class="script-card">
+        <h3>📱 Modelo "Respondo DM ao vivo"</h3>
+        <div class="script-step">
+          <div class="script-step-label">Gancho (0-5s)</div>
+          <div class="script-step-text">Print da DM na tela: "Olha o que me mandaram de vocês..." Mostre o pedido exato.</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Promessa (5-10s)</div>
+          <div class="script-step-text">Fale para a câmera: "Pois é, vou responder ao vivo aqui mesmo. Senta aí que vai dar show." <em>Tom casual, confiante</em></div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Processo (10-40s)</div>
+          <div class="script-step-text">Mostre a faxina completa. Câmera rápida, mostra o passo a passo, seu rosto de vez em quando. Som atrativo (música, som da limpeza).</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Revelação (40-50s)</div>
+          <div class="script-step-text">Revele o resultado final. "Pronto! Ficou assim..." Reação genuína de satisfação. Aqui é onde as pessoas mais assistem.</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">CTA (50-60s)</div>
+          <div class="script-step-text">Direto para câmera: "Comenta aqui embaixo o que você quer que eu limpe na próxima. Manda o seu desafio!" <em>Ou: "Link na bio para o manual completo de técnicas."</em></div>
+        </div>
+      </div>
+
+      <div class="script-card">
+        <h3>🔧 Modelo "Antes e Depois Pesado"</h3>
+        <div class="script-step">
+          <div class="script-step-label">Gancho (0-5s)</div>
+          <div class="script-step-text">Câmera do ambiente MUITO sujo. Você olha para câmera com expressão: "Vocês acreditam que vou limpar isso?" Dramatize.</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Promessa (5-15s)</div>
+          <div class="script-step-text">Apresente o produto/técnica: "Usando [técnica profissional], vou transformar isso tudo." Segurança de que vai funcionar.</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Processo (15-45s)</div>
+          <div class="script-step-text">Time-lapse ou edição rápida. Mostre o trabalho acontecendo. Seu rosto (esforço, suor) + resultado parcial.</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Revelação (45-55s)</div>
+          <div class="script-step-text">Câmera volta para o ambiente transformado. Você olha para câmera em choque/satisfação. "Ficou assim...". Suspense paga.</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">CTA (55-60s)</div>
+          <div class="script-step-text">"Isso tá no meu manual. Aprende as técnicas profissionais que realmente funcionam. Link na bio." <em>Ou: "Segue que post assim todo dia!"</em></div>
+        </div>
+      </div>
+
+      <div class="script-card">
+        <h3>🧪 Modelo "Dica de Produto"</h3>
+        <div class="script-step">
+          <div class="script-step-label">Gancho (0-5s)</div>
+          <div class="script-step-text">Pegue o produto na câmera. "Todo mundo usa X achando que funciona, mas..." Crie curiosidade de que vai revelar algo.</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Insight (5-20s)</div>
+          <div class="script-step-text">Posicione seu conhecimento: "Deixa eu te contar a verdade que ninguém fala..." Demonstre na prática (lado a lado com outro produto ou superfície).</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Processo (20-40s)</div>
+          <div class="script-step-text">Use o produto CERTO. Mostre o resultado diferença. "Viu a diferença? Porque a maioria usa errado."</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">Resultado (40-50s)</div>
+          <div class="script-step-text">Revele o antes/depois lateral. "Com o método certo, fica assim." Reação de satisfação genuína.</div>
+        </div>
+        <div class="script-step">
+          <div class="script-step-label">CTA (50-60s)</div>
+          <div class="script-step-text">"Essas técnicas de limpeza profissional tá tudo no meu manual. Deixa um comentário se você quer aprender mais!"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Workflow de Produção -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--cyan-soft); color: var(--cyan);">⚙️</div>
+        <div>
+          <h2>Workflow de Produção</h2>
+          <p>Processo diário para gravar, editar e postar seus vídeos</p>
+        </div>
+      </div>
+
+      <div class="workflow">
+        <div class="workflow-step">
+          <div class="workflow-num">1</div>
+          <h4>Selecionar</h4>
+          <p>Escolha a DM ou pedido do dia para o gancho</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">2</div>
+          <h4>Printar</h4>
+          <p>Captura de tela da DM para usar no vídeo</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">3</div>
+          <h4>Gravar</h4>
+          <p>Faxina completa (antes/durante/depois). 5-10 min de gravação</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">4</div>
+          <h4>Editar</h4>
+          <p>CapCut: cortar, legenda, efeitos, thumbnail (no próprio app)</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">5</div>
+          <h4>Postar</h4>
+          <p>Instagram Reels + CTA + hashtags de nicho + link na bio</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Antes e Depois — Exemplos Reais -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--green-soft); color: var(--green);">✅</div>
+        <div>
+          <h2>Antes e Depois</h2>
+          <p>Tipo de conteúdo que FUNCIONA vs tipo que você postava antes</p>
+        </div>
+      </div>
+
+      <div class="before-after-grid">
+        <div class="ba-card">
+          <div class="ba-header">
+            <div class="ba-video-tag">Último vídeo seu</div>
+            <h3>Exemplo 1: Sem contexto</h3>
+          </div>
+          <div class="ba-body">
+            <div class="ba-col">
+              <div class="ba-col-label">❌ Problema</div>
+              <p>Você gravando uma faxina de forma neutra. Sem DM, sem contexto, sem CTA. Parece mais um vídeo de "como faço meu trabalho" do que um conteúdo para o público.</p>
+            </div>
+            <div class="ba-col">
+              <div class="ba-col-label">✅ Solução</div>
+              <p><strong>Contexto → Ação → Resultado.</strong> Comece mostrando uma DM real: "Me pediram para limpar a cozinha dessa casa que não era limpa há 3 meses". Depois a faxina. Depois o resultado. Pronto, tem narrativa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-card">
+          <div class="ba-header">
+            <div class="ba-video-tag">Problema comum</div>
+            <h3>Exemplo 2: Sem legenda</h3>
+          </div>
+          <div class="ba-body">
+            <div class="ba-col">
+              <div class="ba-col-label">❌ Problema</div>
+              <p>Vídeo sem legenda. 30% do público assiste sem áudio. Perde a narrativa, perde o engajamento. Reels sem legenda = morte lenta de alcance.</p>
+            </div>
+            <div class="ba-col">
+              <div class="ba-col-label">✅ Solução</div>
+              <p><strong>100% de legenda sempre.</strong> Use CapCut (automática + manual) ou legenda automática do Instagram. A legenda é TÃO importante quanto a imagem. Sem ela, seu alcance cai 40%.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-card">
+          <div class="ba-header">
+            <div class="ba-video-tag">Oportunidade de crescimento</div>
+            <h3>Exemplo 3: Sem CTA claro</h3>
+          </div>
+          <div class="ba-body">
+            <div class="ba-col">
+              <div class="ba-col-label">❌ Problema</div>
+              <p>Você termina o vídeo com resultado final. Nada a mais. Seu público assiste, gosta, mas não sabe o que fazer depois. Sem CTA = sem ação.</p>
+            </div>
+            <div class="ba-col">
+              <div class="ba-col-label">✅ Solução</div>
+              <p><strong>CTA sempre, sempre, SEMPRE.</strong> "Comenta qual ambiente você quer que eu limpe". "Segue que post disso todo dia". "Link na bio pro manual completo." CTAs aumentam engajamento em 3x.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Estratégia de Venda (Humanizada) -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--pink-soft); color: var(--pink);">💼</div>
+        <div>
+          <h2>Estratégia de Venda</h2>
+          <p>Como vender seu manual sem parecer vendedora (vender sem vender)</p>
+        </div>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-col">
+          <h3>❌ Vender Agressivamente</h3>
+          <div class="compare-item"><span>❌</span>Gravar vídeo de promocional do manual</div>
+          <div class="compare-item"><span>❌</span>Colocar banner no vídeo "CLIQUE AQUI"</div>
+          <div class="compare-item"><span>❌</span>Toda legenda falando do manual</div>
+          <div class="compare-item"><span>❌</span>Parecer desesperada em vender</div>
+          <div class="compare-item"><span>❌</span>Ignorar conteúdo, focar só em venda</div>
+        </div>
+
+        <div class="compare-col">
+          <h3>✅ Vender Humanizado</h3>
+          <div class="compare-item"><span>✅</span>Todo vídeo menciona sutil: "Isso está no meu manual"</div>
+          <div class="compare-item"><span>✅</span>Link na bio sempre (simples, não agressivo)</div>
+          <div class="compare-item"><span>✅</span>90% conteúdo, 10% menção ao produto</div>
+          <div class="compare-item"><span>✅</span>Parecer segura que funciona (sem pedir)</div>
+          <div class="compare-item"><span>✅</span>Pessoas interessadas em você → clicam no link</div>
+        </div>
+      </div>
+
+      <div class="action-card urgency-week" style="margin-top: 20px;">
+        <div class="action-number">$</div>
+        <div class="action-content">
+          <h3>Cronograma de Ofertas Especiais</h3>
+          <p><strong>Não venda todo dia.</strong> Estratégia de datas especiais: Black Friday (novembro), Natal (dezembro), Ano Novo (janeiro). Nesses períodos, intensifique as menções e lance promoções. Aquecedor 2 semanas antes com conteúdo de valor extra.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Referências e Benchmarks -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--purple-soft); color: var(--purple);">👁️</div>
+        <div>
+          <h2>Referências</h2>
+          <p>Tipos de perfis que você deveria estudar (sem copiar, mas aprender)</p>
+        </div>
+      </div>
+
+      <div class="ref-grid">
+        <div class="ref-card">
+          <div class="ref-avatar">🧹</div>
+          <div>
+            <h3>Diarista com processo real</h3>
+            <div class="ref-niche">Limpeza — Nicho semelhante</div>
+            <p>Estuda como fazem antes/durante/depois. Como gravam a faxina. Como editam. Como posicionam expertise.</p>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-avatar">💬</div>
+          <div>
+            <h3>Perfil que usa narrativa DM</h3>
+            <div class="ref-niche">Qualquer nicho — Técnica aplicável</div>
+            <p>Observe como usam DMs reais para criar contexto. Prova social. Como incorporam de forma natural.</p>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-avatar">📊</div>
+          <div>
+            <h3>Criador que vende produto digital</h3>
+            <div class="ref-niche">Educação/Cursos — Modelo de vendas</div>
+            <p>Como mencionam seu produto. Frequência. CTAs. Estratégia de oferta. Timing certo de vender.</p>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-avatar">🎬</div>
+          <div>
+            <h3>Produtor de conteúdo consistente</h3>
+            <div class="ref-niche">Qualquer nicho — Ritmo de produção</div>
+            <p>Estuda como gerenciam a produção. 1 vídeo/dia. Qualidade consistente. Editing estilo. Thumbnails.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. CTA Guide (Quando e Como) -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--orange-soft); color: var(--orange);">📣</div>
+        <div>
+          <h2>CTA Guide</h2>
+          <p>Exatamente o que falar para cada tipo de vídeo (natural e sem parecer desespero)</p>
+        </div>
+      </div>
+
+      <div class="cta-grid">
+        <div class="cta-card">
+          <div class="cta-when">Para Engajamento</div>
+          <blockquote>"Comenta aqui embaixo o que você quer que eu limpe na próxima"</blockquote>
+          <div class="cta-note">Usa quando quer comments (leia: engajamento para algoritmo)</div>
+        </div>
+
+        <div class="cta-card">
+          <div class="cta-when">Para Seguidores</div>
+          <blockquote>"Segue aqui porque eu posto isso todo dia"</blockquote>
+          <div class="cta-note">Natural, sem parecer súplica. Relembra que vale acompanhar</div>
+        </div>
+
+        <div class="cta-card">
+          <div class="cta-when">Para Venda</div>
+          <blockquote>"Isso está tudo no meu manual, link na bio"</blockquote>
+          <div class="cta-note">Sutil, mas claro. Quem quer clica. Quem não quer ignora.</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 16px; font-size: 13px; color: var(--text-secondary); text-align: center;">
+        <strong>Dica:</strong> Alterne CTAs. 3 engajamento, 1 venda. Dessa forma você não fica repetitivo e a audiência aceita melhor.
+      </p>
+    </section>
+
+    <!-- 12. Checklist de Produção e Postagem -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--green-soft); color: var(--green);">📋</div>
+        <div>
+          <h2>Checklist</h2>
+          <p>Antes de postar qualquer vídeo, verifique esses 20 itens</p>
+        </div>
+      </div>
+
+      <div class="filming-checklist">
+        <h3>🎬 Antes de Gravar</h3>
+        <div class="filming-grid">
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Ambiente limpo e bem iluminado</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Câmera (celular) carregada 100%</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Áudio testado (cápsula ou mic lapela)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Gancho preparado (DM printada)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Roupas apropriadas (limpas, acessíveis)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>CTA definido mentalmente</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filming-checklist" style="margin-top: 14px;">
+        <h3>✂️ Depois de Gravar (Edição)</h3>
+        <div class="filming-grid">
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Cortadas cenas longas (máx 60s)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Legenda em 100% do vídeo</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Thumbnail com cor forte</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Música de fundo (sem copyright)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Efeitos visuais coerentes</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Aspectratio correto (9:16 para Reels)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filming-checklist" style="margin-top: 14px;">
+        <h3>📱 Antes de Postar</h3>
+        <div class="filming-grid">
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Bio verificada (link WhatsApp/manual)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Descrição com CTA claro</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>3-5 hashtags de nicho (#limpeza #diarista)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Hora de postagem otimizada (19-20h)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Vídeo salvo localmente (backup)</span>
+          </div>
+          <div class="filming-item">
+            <div class="filming-check"></div>
+            <span>Revisar uma última vez tudo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Cronograma de 30 Dias -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--blue-soft); color: var(--blue);">📅</div>
+        <div>
+          <h2>Cronograma — Próximos 30 Dias</h2>
+          <p>Plano semana a semana para implementação completa</p>
+        </div>
+      </div>
+
+      <div style="background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-label">Semana 1</div>
+            <div class="timeline-title">Correções + Setup</div>
+            <div class="timeline-desc">Implemente as 6 correções imediatas (remover elemento, legendas, widget, destaques, bio). Prepare 2 vídeos usando os modelos de script. Objetivo: deixar perfil pronto.</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-label">Semana 2</div>
+            <div class="timeline-title">Gravação Intensiva</div>
+            <div class="timeline-desc">Grave 7 vídeos (1 por dia). Foco em formato "DM ao vivo" e "Antes e depois". Todos com legendas, CTA e mencão ao manual. Comece a postar 1/dia.</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-label">Semana 3</div>
+            <div class="timeline-title">Diversificação</div>
+            <div class="timeline-desc">Mude os tipos: carrossel "indico ou não indico", série de mitos, dica de produto. Mantém 1/dia. Acompanhe analítica: qual tipo tem mais engajamento?</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-label">Semana 4</div>
+            <div class="timeline-title">Escala + Preparação</div>
+            <div class="timeline-desc">Continua 1/dia com tipos que funcionaram. Prepare oferta especial (Black Friday, promoção de lançamento). Aqueça audiência com conteúdo de valor.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-card urgency-week" style="margin-top: 20px;">
+        <div class="action-number">🎯</div>
+        <div class="action-content">
+          <h3>Meta clara para 30 dias</h3>
+          <p>Sair de ~80K para mínimo 100K seguidores. Método: 1 vídeo/dia de qualidade, com legenda, com narrativa, com CTA. Em 30 dias você terá 30 vídeos para trabalhar por você 24/7.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Ferramentas Recomendadas -->
+    <section>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--cyan-soft); color: var(--cyan);">🛠️</div>
+        <div>
+          <h2>Ferramentas Recomendadas</h2>
+          <p>Stack de produção para Bruna (limpeza profissional no TikTok/Reels)</p>
+        </div>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-col">
+          <h3>📹 Gravação</h3>
+          <div class="compare-item"><span>✓</span><strong>Celular nativo</strong> — Câmera já está ótima</div>
+          <div class="compare-item"><span>✓</span><strong>CapCut</strong> — Edição + legendas (gratuito)</div>
+          <div class="compare-item"><span>✓</span><strong>Mic lapela (~R$40)</strong> — Som profissional</div>
+          <div class="compare-item"><span>✓</span><strong>Tripé/Gimbal</strong> — Estabiliza a câmera</div>
+          <div class="compare-item"><span>✓</span><strong>Iluminação simples</strong> — Ring light ou janela</div>
+        </div>
+
+        <div class="compare-col">
+          <h3>🎨 Design + Thumbnails</h3>
+          <div class="compare-item"><span>✓</span><strong>Canva</strong> — Thumbnails prontas (R$14/mês)</div>
+          <div class="compare-item"><span>✓</span><strong>Photopea</strong> — Photoshop online grátis</div>
+          <div class="compare-item"><span>✓</span><strong>Remove.bg</strong> — Remover fundo (grátis)</div>
+          <div class="compare-item"><span>✓</span><strong>Adobe Express</strong> — Templates simples</div>
+          <div class="compare-item"><span>✓</span><strong>Pexels/Unsplash</strong> — Imagens stock grátis</div>
+        </div>
+
+        <div class="compare-col">
+          <h3>🔊 Áudio + Música</h3>
+          <div class="compare-item"><span>✓</span><strong>Epidemic Sound</strong> — Música sem copyright</div>
+          <div class="compare-item"><span>✓</span><strong>Artlist</strong> — Alternativa similar</div>
+          <div class="compare-item"><span>✓</span><strong>YouTube Audio Library</strong> — Grátis (oficial)</div>
+          <div class="compare-item"><span>✓</span><strong>ElevenLabs</strong> — Narração com IA (se precisar)</div>
+          <div class="compare-item"><span>✓</span><strong>Descript</strong> — Edição por legenda</div>
+        </div>
+
+        <div class="compare-col">
+          <h3>🔗 Link + Gerenciamento</h3>
+          <div class="compare-item"><span>✓</span><strong>Linktree</strong> — Link único (grátis)</div>
+          <div class="compare-item"><span>✓</span><strong>Later/Buffer</strong> — Agendar posts</div>
+          <div class="compare-item"><span>✓</span><strong>Google Analytics</strong> — Rastrear cliques (grátis)</div>
+          <div class="compare-item"><span>✓</span><strong>WhatsApp Business</strong> — Link direto (grátis)</div>
+          <div class="compare-item"><span>✓</span><strong>Gumroad/Hotmart</strong> — Vender produto digital</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px; padding: 16px; background: var(--blue-soft); border-radius: 12px; font-size: 13.5px; color: var(--blue); line-height: 1.6;">
+        <strong>Investimento mínimo para começar:</strong> R$0 (CapCut é grátis, Canva é grátis, YouTube Audio Library é grátis). Investimento recomendado: ~R$60-100/mês (Mic lapela + Canva Pro + Música). Retorno esperado: Manual a R$97 × 50 vendas/mês = R$4.850/mês em 60 dias.
+      </p>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Março 2026
+  </div>
+
+  <script>
+    // Interatividade dos checkboxes
+    document.querySelectorAll('.check-item, .filming-item').forEach(el => {
+      el.addEventListener('click', function() {
+        this.classList.toggle('done');
+      });
+    });
+  </script>
 </body>
 </html>
