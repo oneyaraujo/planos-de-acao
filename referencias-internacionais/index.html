@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referências Internacionais — Instagram & Content Creation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a2e; line-height: 1.6; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    padding: 60px 24px 50px;
+    text-align: center;
+    color: white;
+  }
+  .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
+  .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+  .hero-stats {
+    display: flex; gap: 32px; justify-content: center; margin-top: 28px; flex-wrap: wrap;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num { font-size: 2rem; font-weight: 800; }
+  .hero-stat .label { font-size: 0.85rem; opacity: 0.8; }
+
+  /* NAV FILTROS */
+  .nav-filters {
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    padding: 20px 24px; background: white; border-bottom: 1px solid #e5e7eb;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-btn {
+    padding: 8px 18px; border-radius: 50px; border: 1.5px solid #e5e7eb;
+    background: white; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; color: #555;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white; border-color: transparent;
+  }
+
+  /* CONTAINER */
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+  /* SEÇÃO */
+  .section { margin-bottom: 48px; }
+  .section-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  }
+  .section-icon {
+    width: 44px; height: 44px; border-radius: 12px; display: flex;
+    align-items: center; justify-content: center; font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .section-title { font-size: 1.3rem; font-weight: 700; }
+  .section-count {
+    background: #f0f0f0; padding: 2px 10px; border-radius: 50px;
+    font-size: 0.75rem; font-weight: 600; color: #888;
+  }
+
+  /* GRID DE CARDS */
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+
+  /* CARD */
+  .card {
+    background: white; border-radius: 16px; padding: 24px;
+    border: 1px solid #e5e7eb; transition: all 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    border-color: #d0d0d0;
+  }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+  .card-name { font-size: 1.1rem; font-weight: 700; color: #1a1a2e; }
+  .card-handle { font-size: 0.85rem; color: #667eea; font-weight: 500; margin-top: 2px; }
+  .card-flag {
+    font-size: 1.6rem; flex-shrink: 0;
+  }
+  .card-product {
+    background: #f7f7ff; border-radius: 10px; padding: 10px 14px;
+    margin-bottom: 12px; font-size: 0.88rem; color: #444;
+  }
+  .card-product strong { color: #764ba2; }
+  .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tag {
+    padding: 3px 10px; border-radius: 50px; font-size: 0.75rem;
+    font-weight: 600; background: #f0f0f0; color: #666;
+  }
+  .tag.ig { background: #fef3f2; color: #e0457b; }
+  .tag.reels { background: #fff4e5; color: #e67e22; }
+  .tag.copy { background: #eef9ff; color: #2980b9; }
+  .tag.curso { background: #f0fdf4; color: #27ae60; }
+  .tag.agency { background: #fdf0ff; color: #8e44ad; }
+  .tag.yt { background: #fff0f0; color: #c0392b; }
+
+  .card-desc {
+    font-size: 0.85rem; color: #777; line-height: 1.5;
+  }
+  .card-metric {
+    margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;
+    font-size: 0.8rem; color: #999; display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  .card-metric span { display: flex; align-items: center; gap: 4px; }
+  .card-metric .dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  /* CORES SEÇÕES */
+  .bg-purple { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+  .bg-orange { background: linear-gradient(135deg, #f093fb, #f5576c); color: white; }
+  .bg-blue { background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; }
+  .bg-green { background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; }
+  .bg-pink { background: linear-gradient(135deg, #fa709a, #fee140); color: white; }
+  .bg-teal { background: linear-gradient(135deg, #30cfd0, #330867); color: white; }
+  .bg-red { background: linear-gradient(135deg, #ff758c, #ff7eb3); color: white; }
+
+  /* TABELA COMPARATIVA */
+  .comparison-table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    border-radius: 12px; overflow: hidden; background: white;
+    border: 1px solid #e5e7eb;
+  }
+  .comparison-table th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white; padding: 14px 16px; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;
+    text-align: left;
+  }
+  .comparison-table td {
+    padding: 12px 16px; font-size: 0.85rem; border-bottom: 1px solid #f0f0f0;
+    color: #555;
+  }
+  .comparison-table tr:hover td { background: #fafafe; }
+  .comparison-table td:first-child { font-weight: 600; color: #1a1a2e; }
+
+  /* INSIGHTS BOX */
+  .insights-box {
+    background: linear-gradient(135deg, #667eea08, #764ba210);
+    border: 1.5px solid #667eea30; border-radius: 16px;
+    padding: 28px; margin-top: 40px;
+  }
+  .insights-box h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; color: #764ba2; }
+  .insight-item {
+    display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;
+  }
+  .insight-bullet {
+    width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700; color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+  .insight-text { font-size: 0.9rem; color: #555; padding-top: 3px; }
+  .insight-text strong { color: #1a1a2e; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 1.6rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .nav-filters { gap: 6px; }
+    .nav-btn { font-size: 0.78rem; padding: 6px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Referências Internacionais</h1>
+  <p>Instagram Growth, Content Creation & Social Media Marketing — os maiores nomes fora do Brasil</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">30+</div><div class="label">Referências</div></div>
+    <div class="hero-stat"><div class="num">7</div><div class="label">Categorias</div></div>
+    <div class="hero-stat"><div class="num">8</div><div class="label">Países</div></div>
+  </div>
+</div>
+
+<div class="nav-filters">
+  <button class="nav-btn active" onclick="filterCards('all')">Todos</button>
+  <button class="nav-btn" onclick="filterCards('ig-growth')">IG Growth</button>
+  <button class="nav-btn" onclick="filterCards('reels')">Reels & Short-form</button>
+  <button class="nav-btn" onclick="filterCards('copy')">Copywriting</button>
+  <button class="nav-btn" onclick="filterCards('cursos')">Course Creation</button>
+  <button class="nav-btn" onclick="filterCards('strategy')">Estratégia Digital</button>
+  <button class="nav-btn" onclick="filterCards('agency')">Agências</button>
+  <button class="nav-btn" onclick="filterCards('coaches')">Coaches & Social</button>
+</div>
+
+<div class="container">
+
+  <!-- SEÇÃO 1: IG GROWTH -->
+  <div class="section" data-category="ig-growth">
+    <div class="section-header">
+      <div class="section-icon bg-purple">📈</div>
+      <div class="section-title">Instagram Growth Educators</div>
+      <span class="section-count">6 referências</span>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card" data-cat="ig-growth">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Vanessa Lau</div>
+            <div class="card-handle">@vanessalau.co</div>
+          </div>
+          <div class="card-flag">🇨🇦</div>
+        </div>
+        <div class="card-product"><strong>BOSSGRAM Academy 3.0</strong> — sistema "Followers to Clients" pra coaches e empreendedores</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Referência em converter seguidores em clientes. Ensina estratégia de conteúdo, engajamento e funil de vendas pelo Instagram.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e0457b"></div> 600K+ no IG</span>
+          <span><div class="dot" style="background:#c0392b"></div> 500K+ no YouTube</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="ig-growth">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Jasmine Star</div>
+            <div class="card-handle">@jasminestar</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Social Media Bootcamp</strong> — estratégia de visual branding e comunidades engajadas</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Fotógrafa que virou referência em branding visual no Instagram. Foco em algoritmo, engajamento e conversão de seguidores.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e0457b"></div> ~300K no IG</span>
+          <span><div class="dot" style="background:#27ae60"></div> CreativeLive Partner</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="ig-growth">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Jenna Kutcher</div>
+            <div class="card-handle">@jennakutcher</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>The Instagram Lab</strong> — sistema de 4 etapas + templates prontos</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Foco em visual branding e planejamento de conteúdo. Tem o podcast "Goal Digger" e mais de 10.000 alunos nos cursos.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e0457b"></div> 10K+ alunos</span>
+          <span><div class="dot" style="background:#2980b9"></div> Podcast Goal Digger</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="ig-growth">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Sue B. Zimmerman</div>
+            <div class="card-handle">@theinstagramexpert</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Ready Set Gram</strong> + <strong>Grow with Reels</strong> — Instagram pra donos de negócio</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+          <span class="tag reels">Reels</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Pioneira no ensino de Instagram. Se posiciona como "The Instagram Expert" e foca em autoridade, Reels e geração de leads.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e67e22"></div> Pioneira no nicho</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="ig-growth">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Nathan Chan</div>
+            <div class="card-handle">@foundr</div>
+          </div>
+          <div class="card-flag">🇦🇺</div>
+        </div>
+        <div class="card-product"><strong>Instagram Domination</strong> — curso pela Foundr, de 0 a 1M+ seguidores</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">CEO da Foundr. Cresceu o perfil de 0 a 3M+ seguidores. O curso ensina o sistema comprovado de escala rápida.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e0457b"></div> 3M+ no IG (Foundr)</span>
+          <span><div class="dot" style="background:#27ae60"></div> 0→1M em 1 ano</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="ig-growth">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Sorav Jain</div>
+            <div class="card-handle">@soravjain</div>
+          </div>
+          <div class="card-flag">🇮🇳</div>
+        </div>
+        <div class="card-product"><strong>Instagram Reels Mastery</strong> — framework R.A.C.E.U.P + agência echoVME</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+          <span class="tag reels">Reels</span>
+          <span class="tag agency">Agência</span>
+        </div>
+        <div class="card-desc">Maior referência da Índia em marketing digital. Treinou 300K+ alunos globalmente. Tem agência + instituto de treinamento.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e0457b"></div> 235K+ no IG</span>
+          <span><div class="dot" style="background:#c0392b"></div> 110K+ no YouTube</span>
+          <span><div class="dot" style="background:#27ae60"></div> 300K+ alunos</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEÇÃO 2: REELS & SHORT-FORM -->
+  <div class="section" data-category="reels">
+    <div class="section-header">
+      <div class="section-icon bg-orange">🎬</div>
+      <div class="section-title">Reels & Short-Form Video</div>
+      <span class="section-count">3 referências</span>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card" data-cat="reels">
+        <div class="card-top">
+          <div>
+            <div class="card-name">One Peak Creative</div>
+            <div class="card-handle">@onepeakcreative</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>TikTok & Reels Creator Course</strong> — foco em viralização e monetização</div>
+        <div class="card-tags">
+          <span class="tag reels">Reels</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Caso de estudo: aluno atingiu 100K seguidores com 16M views em um mês. Foco em formatos virais e domínio de algoritmo.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e67e22"></div> 16M views (case)</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="reels">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Taylor Loren</div>
+            <div class="card-handle">@taylorloren</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Instagram Reels Course</strong> — content buckets, trending audio, analytics</div>
+        <div class="card-tags">
+          <span class="tag reels">Reels</span>
+          <span class="tag ig">Instagram</span>
+        </div>
+        <div class="card-desc">Especialista em estratégia de Reels. Ensina o processo completo: ideação, execução com áudios em alta e análise de métricas.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e67e22"></div> Referência em Reels</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="reels">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Stephanie Kase</div>
+            <div class="card-handle">@stephaniekase</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Reels Mini Course</strong> — processo completo de Reels do zero</div>
+        <div class="card-tags">
+          <span class="tag reels">Reels</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Foco no processo ponta a ponta: da ideação até a análise pós-publicação. Formato mini curso, direto ao ponto.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e67e22"></div> Educadora de conteúdo</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEÇÃO 3: COPYWRITING -->
+  <div class="section" data-category="copy">
+    <div class="section-header">
+      <div class="section-icon bg-blue">✍️</div>
+      <div class="section-title">Copywriting & Content Marketing</div>
+      <span class="section-count">2 referências</span>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card" data-cat="copy">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Alex Cattoni</div>
+            <div class="card-handle">@alexcattoni</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Copy Posse / SPARK</strong> — membership de copy, sales pages, emails</div>
+        <div class="card-tags">
+          <span class="tag copy">Copywriting</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Eleita "Marketer of the Year 2022" pelo DigitalMarketer. Comunidade Copy Posse com 100K+ membros. Foco em copy que vende.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#c0392b"></div> 400K+ no YouTube</span>
+          <span><div class="dot" style="background:#27ae60"></div> 100K+ comunidade</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="copy">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Ramit Sethi</div>
+            <div class="card-handle">@ramit</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Endless Audience</strong> + <strong>Zero to Launch</strong> — email marketing, audiência, cursos</div>
+        <div class="card-tags">
+          <span class="tag copy">Copywriting</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Plataforma "I Will Teach You to Be Rich". 1M+ leitores mensais. Referência em email marketing e automação de audiência.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#2980b9"></div> 1M+ leitores/mês</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEÇÃO 4: COURSE CREATION -->
+  <div class="section" data-category="cursos">
+    <div class="section-header">
+      <div class="section-icon bg-green">🎓</div>
+      <div class="section-title">Digital Course Creation</div>
+      <span class="section-count">3 referências</span>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card" data-cat="cursos">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Amy Porterfield</div>
+            <div class="card-handle">@amyporterfield</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Digital Course Academy</strong> — 7 módulos, do zero ao lançamento</div>
+        <div class="card-tags">
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">16+ anos de experiência. Cursos geraram $120M+ em receita. Podcast "The Amy Porterfield Show" é referência no nicho.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#27ae60"></div> $120M+ em receita</span>
+          <span><div class="dot" style="background:#2980b9"></div> 16+ anos</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="cursos">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Melyssa Griffin</div>
+            <div class="card-handle">@melyssa_griffin</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>The Profitable Creator</strong> + <strong>The Confident Creator</strong></div>
+        <div class="card-tags">
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Foco em mindset + sistema de monetização pra criadores. 40K+ alunos nos cursos online. Ensina a ser criador lucrativo.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e0457b"></div> 60K no IG</span>
+          <span><div class="dot" style="background:#27ae60"></div> 40K+ alunos</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="cursos">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Pat Flynn</div>
+            <div class="card-handle">@patflynn</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Heroic Online Courses</strong> + <strong>Short-Form Video Course</strong> + podcasting</div>
+        <div class="card-tags">
+          <span class="tag curso">Curso</span>
+          <span class="tag reels">Short-form</span>
+          <span class="tag yt">YouTube</span>
+        </div>
+        <div class="card-desc">Smart Passive Income. 10M+ views diários em short-form. Referência em renda passiva, criação de cursos e podcasting.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e67e22"></div> 10M+ views/dia (shorts)</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEÇÃO 5: ESTRATÉGIA DIGITAL -->
+  <div class="section" data-category="strategy">
+    <div class="section-header">
+      <div class="section-icon bg-teal">🧠</div>
+      <div class="section-title">Estratégia Digital & Marketing</div>
+      <span class="section-count">5 referências</span>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card" data-cat="strategy">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Marie Forleo</div>
+            <div class="card-handle">@marieforleo</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>B-School</strong> — programa completo de negócio online</div>
+        <div class="card-tags">
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">943K no Instagram. 80K+ alunos em 650+ nichos. B-School é um dos programas online mais conhecidos do mundo.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e0457b"></div> 943K no IG</span>
+          <span><div class="dot" style="background:#27ae60"></div> 80K+ alunos</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="strategy">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Gary Vaynerchuk</div>
+            <div class="card-handle">@garyvee</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>GaryVee Content Model</strong> — pilar content → micro-content, "Jab Jab Jab Right Hook"</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+          <span class="tag reels">Short-form</span>
+          <span class="tag yt">YouTube</span>
+        </div>
+        <div class="card-desc">Não vende curso, mas o framework de conteúdo dele é estudado por todo mundo. Modelo de repurposing é referência global.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#e0457b"></div> Milhões em todas as plataformas</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="strategy">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Lewis Howes</div>
+            <div class="card-handle">@lewishowes</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Legacy Course</strong> + <strong>7 Figure Webinars</strong> — marca pessoal + conteúdo</div>
+        <div class="card-tags">
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Foco em marca pessoal, storytelling e estratégia de conteúdo multiplataforma. Podcast "School of Greatness".</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#2980b9"></div> Podcast top-ranked</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="strategy">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Tim Ferriss</div>
+            <div class="card-handle">@timferriss</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>The Tim Ferriss Show</strong> — podcasting, repurposing, distribuição multi-plataforma</div>
+        <div class="card-tags">
+          <span class="tag yt">YouTube</span>
+          <span class="tag curso">Conteúdo</span>
+        </div>
+        <div class="card-desc">1B+ downloads do podcast. 3-4M leitores mensais no blog. Modelo de conteúdo long-form → distribuição é referência.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#c0392b"></div> 1B+ downloads</span>
+          <span><div class="dot" style="background:#2980b9"></div> 3-4M leitores/mês</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="strategy">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Evan Carmichael</div>
+            <div class="card-handle">@evancarmichael</div>
+          </div>
+          <div class="card-flag">🇨🇦</div>
+        </div>
+        <div class="card-product"><strong>YouTube Growth Bootcamp</strong> — framework de thought leader video</div>
+        <div class="card-tags">
+          <span class="tag yt">YouTube</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Foco em crescimento de canal, posicionamento como autoridade e construção de equipe de conteúdo.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#c0392b"></div> Educador de YouTube</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEÇÃO 6: AGÊNCIAS -->
+  <div class="section" data-category="agency">
+    <div class="section-header">
+      <div class="section-icon bg-pink">🏢</div>
+      <div class="section-title">Agências que Também Ensinam</div>
+      <span class="section-count">4 referências</span>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card" data-cat="agency">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Dreampro (Ariel Schiffer)</div>
+            <div class="card-handle">@dreamprocourses</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Done-for-you + Cursos</strong> — transforma expertise em programas lucrativos</div>
+        <div class="card-tags">
+          <span class="tag agency">Agência</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Agência de criação de cursos que também ensina o processo. Modelo híbrido: serviço + educação.</div>
+      </div>
+
+      <div class="card" data-cat="agency">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Sarah Cordiner (TekMatix)</div>
+            <div class="card-handle">@sarahcordiner</div>
+          </div>
+          <div class="card-flag">🇦🇺</div>
+        </div>
+        <div class="card-product"><strong>Course creation services + training</strong> — design de cursos engajantes</div>
+        <div class="card-tags">
+          <span class="tag agency">Agência</span>
+          <span class="tag curso">Curso</span>
+        </div>
+        <div class="card-desc">Foco em criar cursos online engajantes e lucrativos. Serviço completo de produção + treinamento pra fazer sozinho.</div>
+      </div>
+
+      <div class="card" data-cat="agency">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Course Co.</div>
+            <div class="card-handle">@courseco</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Done-for-you Course Agency</strong> — planejamento, criação e lançamento</div>
+        <div class="card-tags">
+          <span class="tag agency">Agência</span>
+        </div>
+        <div class="card-desc">Agência especializada em criar cursos digitais do zero. Da estratégia ao lançamento.</div>
+      </div>
+
+      <div class="card" data-cat="agency">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Nozak Consulting</div>
+            <div class="card-handle">@nozakconsulting</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Course Creation Consulting</strong> — de expert a curso escalável</div>
+        <div class="card-tags">
+          <span class="tag agency">Agência</span>
+        </div>
+        <div class="card-desc">Consultoria que ajuda profissionais a transformar conhecimento em cursos online escaláveis.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEÇÃO 7: COACHES -->
+  <div class="section" data-category="coaches">
+    <div class="section-header">
+      <div class="section-icon bg-red">🎯</div>
+      <div class="section-title">Social Media Coaches</div>
+      <span class="section-count">2 referências</span>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card" data-cat="coaches">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Stacy Tuschl</div>
+            <div class="card-handle">@stacytuschl</div>
+          </div>
+          <div class="card-flag">🇺🇸</div>
+        </div>
+        <div class="card-product"><strong>Content Machine</strong> + <strong>Her Marketing Lab</strong> ($497/mês) — conteúdo pra negócios locais</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+          <span class="tag curso">Membership</span>
+        </div>
+        <div class="card-desc">14+ anos de experiência. Transforma 1 conteúdo semanal em micro-conteúdos diários. Foco em negócios locais.</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#27ae60"></div> 14+ anos no mercado</span>
+        </div>
+      </div>
+
+      <div class="card" data-cat="coaches">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Stacey Mattinson</div>
+            <div class="card-handle">@thesocialcoach</div>
+          </div>
+          <div class="card-flag">🇬🇧</div>
+        </div>
+        <div class="card-product"><strong>Social Media Coaching</strong> — crescimento sustentável e autêntico</div>
+        <div class="card-tags">
+          <span class="tag ig">Instagram</span>
+        </div>
+        <div class="card-desc">Referência no Reino Unido. Foco em estratégias reais, conexão autêntica e crescimento sustentável (não hacks vazios).</div>
+        <div class="card-metric">
+          <span><div class="dot" style="background:#2980b9"></div> UK-based</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TABELA COMPARATIVA RÁPIDA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon bg-purple">📊</div>
+      <div class="section-title">Comparativo Rápido — Top 10</div>
+    </div>
+    <div style="overflow-x:auto;">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>País</th>
+          <th>Produto Principal</th>
+          <th>Especialidade</th>
+          <th>Audiência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Vanessa Lau</td><td>🇨🇦 Canadá</td><td>BOSSGRAM Academy</td><td>IG → Clientes</td><td>600K+ IG</td></tr>
+        <tr><td>Amy Porterfield</td><td>🇺🇸 EUA</td><td>Digital Course Academy</td><td>Criar cursos online</td><td>$120M+ receita</td></tr>
+        <tr><td>Nathan Chan</td><td>🇦🇺 Austrália</td><td>Instagram Domination</td><td>Escalar seguidores</td><td>3M+ (Foundr)</td></tr>
+        <tr><td>Alex Cattoni</td><td>🇺🇸 EUA</td><td>Copy Posse / SPARK</td><td>Copywriting</td><td>400K+ YT</td></tr>
+        <tr><td>Marie Forleo</td><td>🇺🇸 EUA</td><td>B-School</td><td>Negócio online</td><td>943K IG</td></tr>
+        <tr><td>Gary Vaynerchuk</td><td>🇺🇸 EUA</td><td>Content Model</td><td>Estratégia de conteúdo</td><td>Milhões</td></tr>
+        <tr><td>Jasmine Star</td><td>🇺🇸 EUA</td><td>Social Media Bootcamp</td><td>Visual branding IG</td><td>300K IG</td></tr>
+        <tr><td>Pat Flynn</td><td>🇺🇸 EUA</td><td>Heroic Online Courses</td><td>Renda passiva + cursos</td><td>10M views/dia</td></tr>
+        <tr><td>Sorav Jain</td><td>🇮🇳 Índia</td><td>Reels Mastery</td><td>IG Reels + agência</td><td>300K+ alunos</td></tr>
+        <tr><td>Jenna Kutcher</td><td>🇺🇸 EUA</td><td>The Instagram Lab</td><td>Visual branding</td><td>10K+ alunos</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- INSIGHTS -->
+  <div class="insights-box">
+    <h3>Insights da Pesquisa</h3>
+    <div class="insight-item">
+      <div class="insight-bullet">1</div>
+      <div class="insight-text"><strong>EUA domina o mercado</strong> — mais de 70% das referências são americanas. Canadá, Austrália, Índia e UK completam o mapa.</div>
+    </div>
+    <div class="insight-item">
+      <div class="insight-bullet">2</div>
+      <div class="insight-text"><strong>Modelo híbrido é tendência</strong> — donos de agência que também vendem curso (Sorav Jain, Dreampro, Course Co.) estão crescendo.</div>
+    </div>
+    <div class="insight-item">
+      <div class="insight-bullet">3</div>
+      <div class="insight-text"><strong>Reels e short-form são o nicho quente</strong> — cursos focados em vídeo curto são os que mais crescem em demanda.</div>
+    </div>
+    <div class="insight-item">
+      <div class="insight-bullet">4</div>
+      <div class="insight-text"><strong>Faixa de preço</strong> — cursos variam de $199 a $2.000+; memberships de $49 a $497/mês.</div>
+    </div>
+    <div class="insight-item">
+      <div class="insight-bullet">5</div>
+      <div class="insight-text"><strong>Posicionamento importa mais que audiência</strong> — Sue B. Zimmerman tem menos seguidores que muitos, mas se posiciona como "The Instagram Expert" e cobra premium.</div>
+    </div>
+    <div class="insight-item">
+      <div class="insight-bullet">6</div>
+      <div class="insight-text"><strong>Podcast + Curso é o combo dominante</strong> — Amy Porterfield, Pat Flynn, Jenna Kutcher, Lewis Howes — todos usam podcast como topo de funil.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function filterCards(cat) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  document.querySelectorAll('.section').forEach(s => {
+    if (cat === 'all') {
+      s.style.display = '';
+    } else {
+      const sectionCat = s.getAttribute('data-category');
+      s.style.display = sectionCat === cat ? '' : 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
