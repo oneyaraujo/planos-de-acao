@@ -651,7 +651,240 @@
             .comparison-grid {
                 grid-template-columns: 1fr;
             }
+            .comparator-result { flex-direction: column; }
+            .comparator-side { min-width: unset; }
         }
+
+        /* === COMPARADOR INTERATIVO === */
+        .comparator-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .comparator-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,30,99,0.06) 0%, transparent 50%);
+            animation: pulse-bg 8s ease-in-out infinite;
+        }
+        @keyframes pulse-bg { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        .comparator-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .comparator-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.3rem;
+        }
+        .comparator-subtitle {
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+        .comparator-search-wrap {
+            position: relative;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .comparator-search {
+            width: 100%;
+            padding: 0.9rem 1.2rem 0.9rem 2.8rem;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .comparator-search::placeholder { color: rgba(255,255,255,0.4); }
+        .comparator-search:focus {
+            outline: none;
+            border-color: #e91e63;
+            background: rgba(255,255,255,0.12);
+            box-shadow: 0 0 20px rgba(233,30,99,0.15);
+        }
+        .comparator-search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255,255,255,0.4);
+            font-size: 1.1rem;
+        }
+        .comparator-dropdown {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            background: #1e293b;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            max-height: 280px;
+            overflow-y: auto;
+            display: none;
+            z-index: 200;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+        .comparator-dropdown.open { display: block; }
+        .comparator-item {
+            padding: 0.7rem 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.15s;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .comparator-item:hover { background: rgba(233,30,99,0.15); }
+        .comparator-item-name {
+            color: white;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .comparator-item-creator {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.78rem;
+        }
+        .comparator-item-badge {
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .badge-br { background: rgba(0,200,83,0.15); color: #00c853; }
+        .badge-intl { background: rgba(33,150,243,0.15); color: #2196f3; }
+
+        /* Resultado da comparação */
+        .comparator-result-wrap {
+            display: none;
+            margin-top: 1.5rem;
+        }
+        .comparator-result-wrap.visible { display: block; }
+        .comparator-result {
+            display: flex;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+        .comparator-side {
+            flex: 1;
+            background: rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            min-width: 0;
+        }
+        .comparator-side.cv-side {
+            border-color: rgba(233,30,99,0.3);
+            background: rgba(233,30,99,0.06);
+        }
+        .comparator-side-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 0.4rem;
+        }
+        .comparator-side-name {
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.15rem;
+        }
+        .comparator-side-creator {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.82rem;
+            margin-bottom: 1rem;
+        }
+        .comparator-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .comparator-detail-label {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.82rem;
+        }
+        .comparator-detail-value {
+            color: white;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-align: right;
+        }
+        .comparator-vs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .comparator-vs span {
+            background: linear-gradient(135deg, #e91e63, #ff5722);
+            color: white;
+            font-weight: 800;
+            font-size: 0.85rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Vantagens e Desvantagens */
+        .comparator-verdicts {
+            margin-top: 1.2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .verdict-col {
+            background: rgba(255,255,255,0.04);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .verdict-col h4 {
+            font-size: 0.85rem;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .verdict-col h4.vantagens { color: #00c853; }
+        .verdict-col h4.desvantagens { color: #ff5252; }
+        .verdict-item {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.75);
+            padding: 0.35rem 0;
+            line-height: 1.4;
+            display: flex;
+            gap: 0.4rem;
+        }
+        .verdict-icon { flex-shrink: 0; }
+        .comparator-close {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .comparator-close:hover { color: white; }
     </style>
 </head>
 <body>
@@ -665,6 +898,24 @@
             </ul>
         </div>
     </nav>
+
+    <!-- COMPARADOR INTERATIVO -->
+    <section class="comparator-section" id="comparatorSection">
+        <div class="comparator-inner">
+            <div class="comparator-title">Compare o Código Viral</div>
+            <div class="comparator-subtitle">Pesquise qualquer concorrente para ver vantagens e desvantagens ponto a ponto</div>
+            <div class="comparator-search-wrap">
+                <span class="comparator-search-icon">🔍</span>
+                <input type="text" class="comparator-search" id="comparatorSearch" placeholder="Digite o nome do curso ou criador..." autocomplete="off">
+                <div class="comparator-dropdown" id="comparatorDropdown"></div>
+            </div>
+            <div class="comparator-result-wrap" id="comparatorResultWrap">
+                <div class="comparator-result" id="comparatorResult"></div>
+                <div class="comparator-verdicts" id="comparatorVerdicts"></div>
+                <div class="comparator-close" id="comparatorClose">✕ Fechar comparação</div>
+            </div>
+        </div>
+    </section>
 
     <!-- TAB 1: INTERNACIONAL -->
     <div id="internacional" class="tab-content active">
@@ -2020,6 +2271,251 @@
         // Initialize
         populateIntlTable();
         populateBRTable();
+
+        // === COMPARADOR INTERATIVO ===
+        (function() {
+            const cvData = brCourses.find(c => c.name === 'Código Viral');
+            const cvExtras = {
+                garantia: 'Sim (1M views ou dinheiro de volta)',
+                ia: 'Não (oportunidade)',
+                comunidade: 'Não (oportunidade)',
+                velocidade: '10 dias',
+                alunos: '60.000+',
+                seguidores: '4.5M+',
+                formato: 'Aulas gravadas',
+                foco: 'Reels / Viralização'
+            };
+
+            // Merge all competitors (excl Código Viral)
+            const allCompetitors = [
+                ...brCourses.filter(c => c.name !== 'Código Viral').map(c => ({...c, market: 'BR'})),
+                ...intlCourses.map(c => ({...c, market: 'INTL', platform: c.country || 'N/A'}))
+            ];
+
+            const searchInput = document.getElementById('comparatorSearch');
+            const dropdown = document.getElementById('comparatorDropdown');
+            const resultWrap = document.getElementById('comparatorResultWrap');
+            const resultDiv = document.getElementById('comparatorResult');
+            const verdictsDiv = document.getElementById('comparatorVerdicts');
+            const closeBtn = document.getElementById('comparatorClose');
+
+            function renderDropdown(filter) {
+                const term = filter.toLowerCase();
+                const matches = allCompetitors.filter(c =>
+                    c.name.toLowerCase().includes(term) ||
+                    c.creator.toLowerCase().includes(term)
+                ).slice(0, 12);
+
+                if (!matches.length || !term) {
+                    dropdown.classList.remove('open');
+                    return;
+                }
+
+                dropdown.innerHTML = matches.map((c, i) => `
+                    <div class="comparator-item" data-idx="${allCompetitors.indexOf(c)}">
+                        <div>
+                            <div class="comparator-item-name">${c.name}</div>
+                            <div class="comparator-item-creator">${c.creator}</div>
+                        </div>
+                        <span class="comparator-item-badge ${c.market === 'BR' ? 'badge-br' : 'badge-intl'}">${c.market === 'BR' ? 'BR' : c.country || 'INTL'}</span>
+                    </div>
+                `).join('');
+                dropdown.classList.add('open');
+            }
+
+            searchInput.addEventListener('input', () => renderDropdown(searchInput.value));
+            searchInput.addEventListener('focus', () => { if (searchInput.value) renderDropdown(searchInput.value); });
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.comparator-search-wrap')) dropdown.classList.remove('open');
+            });
+
+            dropdown.addEventListener('click', (e) => {
+                const item = e.target.closest('.comparator-item');
+                if (!item) return;
+                const idx = parseInt(item.dataset.idx);
+                const competitor = allCompetitors[idx];
+                searchInput.value = competitor.name;
+                dropdown.classList.remove('open');
+                showComparison(competitor);
+            });
+
+            closeBtn.addEventListener('click', () => {
+                resultWrap.classList.remove('visible');
+                searchInput.value = '';
+            });
+
+            function parsePrice(priceStr) {
+                if (!priceStr) return null;
+                const str = String(priceStr);
+                if (str.toLowerCase().includes('gratu')) return 0;
+                if (str.includes('N/D')) return null;
+                const nums = str.match(/[\d.,]+/g);
+                if (!nums) return null;
+                return parseFloat(nums[0].replace('.', '').replace(',', '.'));
+            }
+
+            function showComparison(comp) {
+                const isBR = comp.market === 'BR';
+                const cvPrice = parsePrice(cvData.price);
+                const compPrice = isBR ? parsePrice(comp.price) : comp.price;
+                const compPriceStr = isBR ? comp.price : ('$' + comp.price);
+
+                // Build side-by-side cards
+                const fields = isBR ? [
+                    { label: 'Preço', cv: cvData.price, comp: comp.price },
+                    { label: 'Módulos', cv: cvData.modules, comp: comp.modules },
+                    { label: 'Promessa', cv: cvData.promise, comp: comp.promise },
+                    { label: 'Plataforma', cv: cvData.platform, comp: comp.platform },
+                    { label: 'Garantia', cv: cvExtras.garantia, comp: inferGuarantee(comp) },
+                    { label: 'Comunidade', cv: cvExtras.comunidade, comp: inferCommunity(comp) },
+                    { label: 'Velocidade', cv: cvExtras.velocidade, comp: inferSpeed(comp) },
+                ] : [
+                    { label: 'Preço', cv: 'R$197 (~$40)', comp: '$' + comp.price },
+                    { label: 'Módulos', cv: cvData.modules, comp: comp.modules },
+                    { label: 'Promessa', cv: cvData.promise, comp: comp.promise },
+                    { label: 'Diferencial', cv: '1M views garantido', comp: comp.differentiator || 'N/A' },
+                    { label: 'Garantia', cv: cvExtras.garantia, comp: 'Não informado' },
+                    { label: 'País', cv: 'Brasil', comp: comp.country },
+                ];
+
+                resultDiv.innerHTML = `
+                    <div class="comparator-side cv-side">
+                        <div class="comparator-side-label">Seu produto</div>
+                        <div class="comparator-side-name">Código Viral</div>
+                        <div class="comparator-side-creator">Oney Araújo</div>
+                        ${fields.map(f => `
+                            <div class="comparator-detail">
+                                <span class="comparator-detail-label">${f.label}</span>
+                                <span class="comparator-detail-value">${f.cv}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="comparator-vs"><span>VS</span></div>
+                    <div class="comparator-side">
+                        <div class="comparator-side-label">${isBR ? 'Concorrente BR' : 'Concorrente Internacional'}</div>
+                        <div class="comparator-side-name">${comp.name}</div>
+                        <div class="comparator-side-creator">${comp.creator}</div>
+                        ${fields.map(f => `
+                            <div class="comparator-detail">
+                                <span class="comparator-detail-label">${f.label}</span>
+                                <span class="comparator-detail-value">${f.comp}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+
+                // Generate verdicts
+                const vantagens = [];
+                const desvantagens = [];
+
+                // Price comparison
+                const compPriceNum = isBR ? parsePrice(comp.price) : comp.price;
+                if (compPriceNum !== null && cvPrice !== null) {
+                    const compPriceReal = isBR ? compPriceNum : compPriceNum * 5;
+                    if (cvPrice < compPriceReal) {
+                        const pct = Math.round(((compPriceReal - cvPrice) / compPriceReal) * 100);
+                        vantagens.push(`Preço ${pct}% mais barato que ${comp.name}`);
+                    } else if (cvPrice > compPriceReal) {
+                        const pct = Math.round(((cvPrice - compPriceReal) / cvPrice) * 100);
+                        desvantagens.push(`Preço ${pct}% mais caro que ${comp.name}`);
+                    }
+                }
+
+                // Guarantee
+                const compHasGuarantee = inferGuarantee(comp);
+                if (!compHasGuarantee.includes('Sim')) {
+                    vantagens.push('Garantia exclusiva: "1M views ou dinheiro de volta"');
+                } else {
+                    desvantagens.push('Concorrente também oferece garantia');
+                }
+
+                // Speed
+                vantagens.push('Resultado prometido em 10 dias (mais rápido que o mercado)');
+
+                // Social proof
+                vantagens.push('60.000+ alunos e 4.5M+ seguidores como prova social');
+
+                // Community
+                const compComm = inferCommunity(comp);
+                if (compComm.includes('Sim') || compComm.includes('Comunidade') || compComm.includes('mentoria')) {
+                    desvantagens.push('Concorrente tem comunidade/mentoria ativa');
+                } else {
+                    vantagens.push('Ambos sem comunidade forte (campo aberto)');
+                }
+
+                // Modules depth
+                const compModStr = String(comp.modules || '').toLowerCase();
+                if (compModStr.includes('50+') || compModStr.includes('completo') || compModStr.includes('65+') || compModStr.includes('48+')) {
+                    desvantagens.push('Concorrente oferece mais conteúdo/módulos');
+                } else {
+                    vantagens.push('Código Viral é enxuto e direto ao ponto (3 módulos)');
+                }
+
+                // Platform (BR only)
+                if (isBR && comp.platform === 'Hotmart') {
+                    vantagens.push('Mesma plataforma (Hotmart) — familiar para o aluno');
+                }
+
+                // AI
+                if (compModStr.includes('ia') || compModStr.includes('ai')) {
+                    desvantagens.push('Concorrente já integra IA no conteúdo');
+                } else {
+                    vantagens.push('Oportunidade: nenhum dos dois usa IA (quem sair primeiro, ganha)');
+                }
+
+                // International specific
+                if (!isBR) {
+                    vantagens.push('Conteúdo 100% em português (vantagem para mercado BR)');
+                    if (comp.price > 200) {
+                        vantagens.push('Posição de preço imbatível no cenário global');
+                    }
+                }
+
+                verdictsDiv.innerHTML = `
+                    <div class="verdict-col">
+                        <h4 class="vantagens">✅ Vantagens do Código Viral</h4>
+                        ${vantagens.map(v => `
+                            <div class="verdict-item">
+                                <span class="verdict-icon">✅</span>
+                                <span>${v}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="verdict-col">
+                        <h4 class="desvantagens">❌ Pontos de Atenção</h4>
+                        ${desvantagens.length ? desvantagens.map(d => `
+                            <div class="verdict-item">
+                                <span class="verdict-icon">❌</span>
+                                <span>${d}</span>
+                            </div>
+                        `).join('') : '<div class="verdict-item"><span class="verdict-icon">🎯</span><span>Nenhuma desvantagem significativa identificada</span></div>'}
+                    </div>
+                `;
+
+                resultWrap.classList.add('visible');
+            }
+
+            function inferGuarantee(comp) {
+                const name = (comp.name + ' ' + comp.promise + ' ' + (comp.modules || '')).toLowerCase();
+                if (name.includes('garantia') || name.includes('dinheiro de volta')) return 'Sim';
+                return 'Não informado';
+            }
+
+            function inferCommunity(comp) {
+                const txt = (comp.modules + ' ' + comp.promise + ' ' + (comp.platform || '')).toLowerCase();
+                if (txt.includes('comunidade') || txt.includes('mentoria') || txt.includes('mentorias') || txt.includes('mensal') || txt.includes('/mês') || txt.includes('vip') || txt.includes('grupo')) return 'Sim (mencionado)';
+                return 'Não informado';
+            }
+
+            function inferSpeed(comp) {
+                const txt = (comp.promise + ' ' + comp.name).toLowerCase();
+                if (txt.includes('7 dias')) return '7 dias';
+                if (txt.includes('60 dias')) return '60 dias';
+                if (txt.includes('146 dias')) return '146 dias';
+                if (txt.includes('rápido') || txt.includes('acelerado')) return 'Acelerado (sem prazo)';
+                return 'Não especificado';
+            }
+        })();
     </script>
 </body>
 </html>
