@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Ricardo Ortis | Direito Imobiliário</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-consultoria { background: var(--blue-soft); color: var(--blue); }
+
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Ricardo Ortis — Direito Imobiliário</h1>
+  <p class="hero-sub">Advogado especializado em direito imobiliário e contratos. Atendimento online e presencial em Taubaté/SP. Tudo o que precisa fazer para sair de 347 seguidores e alcançar 1K e depois 10K.</p>
+
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/FrMUxbrPkZM" title="Análise Viral Pro — Ricardo Ortis" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Abril de 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Direito Imobiliário e Contratos</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">2/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">40s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Foco no Nicho</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de qualquer outra coisa</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Aproximar o rosto na foto de perfil</h3><p>A foto atual está muito distante. No celular, seu rosto fica pequeno demais para identificar. Recorte da gravata para cima — o rosto precisa ocupar 70%+ da bolinha. Lembre: as pessoas te veem num celular pequeno, e se não reconhecem seu rosto, passam direto.</p></div><div class="action-tag">Fazer agora</div></div>
+
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Reescrever a bio: primeira frase é sobre o público, não sobre você</h3><p>Sua bio hoje parece fachada de escritório. A primeira frase precisa dizer <strong>para quem</strong> o perfil serve. Exemplo: "📁 Te orientando sobre contratos imobiliários sob a perspectiva do direito". Na segunda linha coloque "Advogado — Direito Imobiliário e Contratos". Tire títulos e siglas que o público não entende (master, etc.).</p></div><div class="action-tag">Fazer agora</div></div>
+
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Adicionar emoji de dedinho (👇) antes do link</h3><p>No lugar de "Taubaté, São Paulo, atendimento online e presencial" solto, coloque um emoji de dedinho apontando para baixo antes da última linha. Isso direciona visualmente a pessoa para clicar no link de contato. Mantenha "Taubaté/SP — Online e presencial" de forma limpa.</p></div><div class="action-tag">Fazer agora</div></div>
+
+    <div class="action-card urgency-now"><div class="action-number">4</div><div class="action-content"><h3>Parar imediatamente de postar conteúdo fora do nicho</h3><p>Seus últimos vídeos são sobre educação de filhos, paternidade e abuso sexual. Se seu perfil é de <strong>direito imobiliário e contratos</strong>, esses temas confundem o público. Mães vão te seguir e você não tem serviço para oferecer a elas. Suspenda esses temas e foque 100% no seu segmento.</p></div><div class="action-tag">Fazer agora</div></div>
+
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Posicionar legendas abaixo do queixo nos vídeos</h3><p>A legenda está cobrindo seu rosto nos vídeos. Posicione sempre abaixo do queixo para que o espectador veja seu rosto e leia o texto ao mesmo tempo. Se a legenda compete com o rosto, a retenção cai.</p></div><div class="action-tag">Esta semana</div></div>
+
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Remover objetos sobre a cabeça no enquadramento</h3><p>Nos vídeos, tem elementos visuais passando por cima da sua cabeça — isso incomoda. Grave com distância suficiente e num fundo limpo. Prefira gravar no escritório, na mesa de reunião ou em casa. Ambientes reais passam mais credibilidade do que fundos preparados.</p></div><div class="action-tag">Esta semana</div></div>
+
+    <div class="action-card urgency-soon"><div class="action-number">7</div><div class="action-content"><h3>Cuidado com palavras sensíveis nos posts</h3><p>Termos como "abuso sexual" podem gerar restrição do Instagram. Se precisar abordar temas sensíveis, use substituições: troque letras por números (4bus0, s3xu4l) ou use asteriscos. Mas o ideal é focar no nicho imobiliário e evitar esses temas.</p></div><div class="action-tag">Em breve</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS — VÍDEOS ANALISADOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que estava errado e como ficaria o roteiro corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>"Se você tem um filho adolescente, ensine isso"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Tema completamente fora do nicho (educação emocional de filhos). Perfil é de direito imobiliário, mas o vídeo fala de sentimentos, raiva e ciúme. Energia séria e pesada — não transmite entusiasmo. Expressão facial sem sorriso, voz monótona. Legenda cobrindo o rosto.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Se for usar o tema de "filhos", <strong>conecte ao nicho</strong>: "Se seu filho vai comprar o primeiro imóvel, ensine isso antes." Grave com mais energia — <strong>sorriso ao ligar a câmera</strong>, voz com firmeza. Posicione a legenda abaixo do queixo. Se não consegue conectar ao nicho, não poste.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>"Tem pai que protege mais o celular do que o próprio filho"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Gancho bom ("é duro de ouvir, mas tem pai que..."), mas o conteúdo desvia totalmente do nicho. Fala sobre educação sexual, proteção digital de crianças. Usa termos sensíveis que podem gerar restrição do Instagram. Está promovendo outro perfil fechado — se quer crescer, tem que estar aberto.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Aproveite a <strong>estrutura do gancho</strong> (que é boa) e aplique no nicho: <strong>"É duro de ouvir, mas tem gente que protege mais a senha do Wi-Fi do que o contrato de compra do imóvel."</strong> Duração de 40s está perfeita. Mantenha o formato, mude o tema para direito imobiliário.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>Vídeo sobre paternidade e proteção</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Mais um vídeo consecutivo fora do nicho. Já é o terceiro sobre filhos/paternidade. O perfil está comunicando uma coisa (advocacia) e entregando outra (educação parental). Isso confunde o algoritmo e o público. Ninguém sabe se o perfil é de advogado ou de educador.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p><strong>Defina o nicho e não saia dele.</strong> Se é direito imobiliário, fale sobre: cláusulas perigosas, erros em contratos, golpes imobiliários, dicas para quem vai comprar/alugar. Se quiser falar de paternidade, crie um perfil separado. Um perfil = um nicho = uma audiência.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que manter e do que mudar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Postar vídeos sobre filhos/paternidade no perfil de advocacia</div>
+      <div class="compare-item"><span>✕</span> Gravar com expressão séria e energia baixa</div>
+      <div class="compare-item"><span>✕</span> Ler roteiro e esquecer da atuação (gestual, sorriso, firmeza)</div>
+      <div class="compare-item"><span>✕</span> Colocar legenda por cima do rosto</div>
+      <div class="compare-item"><span>✕</span> Usar fundo branco genérico ou objetos sobre a cabeça</div>
+      <div class="compare-item"><span>✕</span> Dar conselho genérico e motivacional</div>
+      <div class="compare-item"><span>✕</span> Bio que parece fachada de escritório (títulos e siglas)</div>
+      <div class="compare-item"><span>✕</span> Manter perfil de conteúdo fechado</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> 100% dos vídeos sobre direito imobiliário e contratos</div>
+      <div class="compare-item"><span>✓</span> Sorrir ao ligar a câmera — energia acima do espectador</div>
+      <div class="compare-item"><span>✓</span> Decorar o texto para liberar o corpo e a emoção</div>
+      <div class="compare-item"><span>✓</span> Legenda sempre abaixo do queixo</div>
+      <div class="compare-item"><span>✓</span> Gravar no escritório, mesa de reunião ou ambiente real</div>
+      <div class="compare-item"><span>✓</span> Dar dica prática, macete, passo a passo útil</div>
+      <div class="compare-item"><span>✓</span> Bio que diz para quem o perfil serve</div>
+      <div class="compare-item"><span>✓</span> Postar 2x por dia (vídeos + carrosséis)</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>Regras de ouro para cada vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Conteúdo Útil</h3><p>Todo vídeo precisa entregar algo prático. Macete, dica, passo a passo. A pessoa tem que pensar "preciso salvar isso". Nada de conselho ou motivacional.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>Gancho Forte</h3><p>Os 3 primeiros segundos decidem tudo. Use curiosidade, urgência ou polêmica do nicho. Se errar o gancho, perdeu o vídeo inteiro.</p></div>
+    <div class="rule-card"><span class="rule-emoji">😄</span><h3>Energia Alta</h3><p>Sua energia tem que estar acima de quem assiste. Sorriso ao ligar a câmera, voz com firmeza. Se a pessoa sentir que você está pesado, ela pula.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🗣️</span><h3>Falar com Firmeza</h3><p>Decore o roteiro para liberar o corpo e a expressão. Primeiro o texto na cabeça, depois o gestual e o emocional. É treino — ninguém nasce pronto.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📹</span><h3>Ambiente Natural</h3><p>Grave no escritório, na mesa de reunião, em casa. Pareça que parou o dia para compartilhar algo. Nada de cenário montado demais.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔄</span><h3>Nicho = Foco</h3><p>Um perfil, um nicho, uma audiência. Não misture direito imobiliário com paternidade. Se quiser outro tema, crie outro perfil.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>3 templates de script adaptados para direito imobiliário</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Alerta de Cláusula Perigosa</h3>
+    <div class="script-step">
+      <div class="script-step-label">Gancho</div>
+      <div class="script-step-text">"Esse contrato de aluguel tem uma cláusula que pode te fazer perder dinheiro."<br><em>Olhar direto na câmera, expressão de urgência, sorriso leve</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Contexto</div>
+      <div class="script-step-text">"A maioria das pessoas assina contrato sem ler. E tem uma cláusula que quase ninguém percebe..."<br><em>Mostrar um contrato na mão ou na tela</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Dica</div>
+      <div class="script-step-text">"A cláusula X diz que [explicação simples]. Na protica, isso significa que você pode ter", que pagar [consequência]."<br><em>Usar linguagem simples, sem juridiquês</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">CTA</div>
+      <div class="script-step-text">"Salva esse vídeo e manda pra alguém que tá pra assinar um contrato de aluguel. Segue o perfil pra mais dicas assim."<br><em>40 segundos total</em></div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <h3>📊 īodelo 2 ⇍ Erro Comum do Comprado</h3>
+    <div class="script-step">
+      <div class="script-step-label">Gancho</div>
+      <div class="script-step-text">"Você tá comprando um imóvel? Não assine nada antes de ver isso."<-br><em>Tom firme, olhar direto, sorriso confiante</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Problema</div>
+      <div class="script-step-text">"O erro mais comum é confiar só no corretor e não verificar a matrícula do imóvel. Já vi gente perder R$ 200 mil por causa disso."<br><em>Expressão séria aqui, mas sem ser pesado</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Solução</div>
+      <div class="script-step-text">"Antes de assinar, vá ao cartório e peé a certidão de matrícula atualizada. Verifique se tem penhora, hipoteca ou qualquer restrição."<br><em>Passo a passo claro</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">CTA</div>
+      <div class="script-step-text">"Se ficou alguma dúvida, me chama no direct. E segue esse perfil pra não cair em armadilha imobiliária."<br><em>Sorriso, encerrar com energia</em></div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <h3>📊 īodelo 3 ⇍ Comparação Pr�tica</h3>
+    <div class="script-step">
+      <div class="script-step-label">Gancho",/div>
+      <div class="script-step-text">"Alugar ou financiar? Vou te mostrar qual faz mais sentido em 2026."<br><em>Energia alta, como se fosse contar um segredo</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Lado A</div>
+      <div class="script-step-text">"Se você aluga, paga X por mês, em 10 anos gastou Y e não tem nada no seu nome."<br><em>Números reais da região de Taubaté</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Lado B</div>
+      <div class="script-step-text">"Se você financia, paga Z por mês, em 10 anos já pagou metade e tem o imóvel."<br><em>Comparação visual se possível</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">Revelação</div>
+      <div class="script-step-text">"Mas tem um detalhe que muda tudo: as taxas de juros. E é aqui que a maioria erra."<br><em>Gerar curiosidade para próximo vídeo</em></div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">CTA</div>
+      <div class="script-step-text">"Quer saber qual a melhor opção pro seu caso? Me manda um direct. E salva esse vídeo."><br><em>Encerrar sorrindo</em></div>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ath d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>12 ideias prontas para você gravar esta semana</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ca prática, alerta, passo a passo), as pessoas confiam em você. E quando precisam de um advogado para revisar contrato ou resolver problema imobiliário, adivinha quem vem na cabeça? Vocë. O CTA “me chama no direct” no final dos vídeos já é suficiente. Não faça vídeo-propaganda. Seja útil, responda comentários, responda directs com atenção. O atendimento online e presencial que você oferece vira consequência natural do conteúdo. A venda acontece when (pessoa jp�H�ۙ�XH8�$�H�ۙ�X[���H�H�ۜ���H��H][YYK������H[����]����]����KKHL���P��T�HԐU�p�����KO��]��\��H��X�[ۋZXY\����]��\��H��X�[ۋZX�ۈ��[OH��X��ܛ�[���\�KYܙY[�\�ٝ
+Nȏ�ݙ��YH����ZY�H�����Y]Л�H�����[H��ۙH�����OH��\�KYܙY[�H�����K]�YH�����[[�H�[��H�HLHL�M��
+�Ϗ]H�L�HL���L��KL��
+XL��KL�L��XL��H�L�LH�Ϗ�ݙϏ�]���]�����X��\�Hܘ]�p����ȏ����\��H܈���YH][H[�\�HX�X�\����]�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� @oneyaraujo</h3>
+        <div class="ref-niche">Marketing Digital / Conteúdo</div>
+        <p>Referência de bio bem estruturada (primeira frase é sobre o público, não sobre si), energia alta nos vídeos e conteúdo 100% útil. Observe o formato e adapte ao seu nicho.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs</h2><p>3 chamadas para ação que funcionam para advocacia</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo Educativo</div>
+      <blockquote>"Salva esse vídeo e manda pra alguém que tá pra assinar um contrato."</blockquote>
+      <div class="cta-note">Use em vídeos de dica prática. O "manda pra alguém" gera compartilhamento orgânico.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo de Alerta</div>
+      <blockquote>"Se ficou com dúvida sobre o seu contrato, me chama no direct."</blockquote>
+      <div class="cta-note">Converte visualização em consulta. Use em vídeos que falam de riscos e problemas.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Final de Carrossel</div>
+      <blockquote>"Segue esse perfil pra não cair em armadilha imobiliária."</blockquote>
+      <div class="cta-note">CTA de seguimento. Funciona bem no último slide do carrossel ou no final de séries.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Técnica de Venda</h2><p>Como converter seguidores em clientes sem parecer anúncio</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Conteúdo útil vende sozinho — você não precisa empurrar</h3>
+      <p>Quando você entrega valor real (dica prática, alerta, passo a passo), as pessoas confiam em você. E quando precisam de um advogado para revisar contrato ou resolver problema imobiliário, adivinha quem vem na cabeça? Você. O CTA "me chama no direct" no final dos vídeos já é suficiente. Não faça vídeo-propaganda. Seja útil, responda comentários, responda directs com atenção. O atendimento online e presencial que você oferece vira consequência natural do conteúdo. A venda acontece quando a pessoa já confia — e confiança se constrói com utilidade, não com anúncio.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist de Gravação</h2><p>Passe por cada item antes de publicar</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira antes de postar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho é forte? (3 primeiros segundos)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Estou sorrindo e com energia alta?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Legenda abaixo do queixo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Vídeo entre 30-40 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O tema é 100% do meu nicho?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Pessoa leiga entende? (sem juridiquês)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA no final?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Nada sobre a cabeça / fundo limpo?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS RECOMENDADAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>Tudo que você precisa para produzir conteúdo</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Desafio 27 dias falando com a câmera — na plataforma Viral Pro</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Código Viral (curso de 3h) — assistir do início ao fim</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo no WhatsApp consigo mesmo — banco de ideias diário</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Perfil fake no Instagram — só seguir perfis do nicho</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Aula de Criatividade Sintética — Módulo 1 do Código Viral</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Tripé + microfone de lapela — para qualidade mínima de gravação</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA DE EXECUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Seu roadmap dos próximos 30 dias</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Hoje</div>
+      <div class="timeline-title">Arrumar o perfil + iniciar treinamento</div>
+      <div class="timeline-desc">Corrigir foto de perfil (aproximar rosto), reescrever bio, adicionar emoji de dedinho. Começar o desafio de 27 dias falando com a câmera. Se não fez o Código Viral, assistir hoje.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 1</div>
+      <div class="timeline-title">Criar arsenal de ideias + primeiros vídeos no nicho</div>
+      <div class="timeline-desc">Criar grupo no WhatsApp, criar perfil fake, fazer lista de 30 temas virais do nicho. Assistir aula de Criatividade Sintética. Começar a postar 2x por dia focado 100% em direito imobiliário.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 2-3</div>
+      <div class="timeline-title">Treinar energia + variar formatos</div>
+      <div class="timeline-desc">Gravar com sorriso e firmeza na voz. Testar carrosséis (usar IA). Variar entre Reels, carrosséis e bastidores. Continuar desafio de 27 dias. Começar a responder directs com atenção.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Mês 1+</div>
+      <div class="timeline-title">Meta 1K + consolidar rotina</div>
+      <div class="timeline-desc">Comparar o Ricardo do dia 1 com o do dia 30 — a diferença vai ser enorme. Manter 2 posts/dia, energia alta, nicho 100% alinhado. Primeiro milestone: 1.000 seguidores. Depois: 10.000.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Abril 2026
+</div>
+
+</body>
+</html>
