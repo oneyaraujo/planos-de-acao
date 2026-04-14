@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Ricardo Ortis | Direito Imobiliário</title>
+<style>
+  :root {
+    --text: #0a0a0a;
+    --text-secondary: #666;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+    --accent: #3b82f6;
+    --accent-light: #eff6ff;
+    --accent-soft: #f0f9ff;
+    --ig-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    --green: #10b981;
+    --green-soft: #d1fae5;
+    --orange: #f59e0b;
+    --orange-soft: #fef3c7;
+    --pink: #ec4899;
+    --pink-soft: #fce7f3;
+    --purple: #8b5cf6;
+    --purple-soft: #ede9fe;
+    --blue: #3b82f6;
+    --blue-soft: #dbeafe;
+    --cyan: #06b6d4;
+    --cyan-soft: #cffafe;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--accent-soft);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+
+  .hero-title strong {
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 24px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+  }
+
+  .hero-video {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    border: 3px solid;
+    border-image: var(--ig-gradient) 1;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+  }
+
+  .hero-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .meta-item {
+    padding: 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .meta-item strong {
+    display: block;
+    color: var(--accent);
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .meta-item span {
+    display: block;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0 20px;
+    border-bottom: 2px solid var(--border);
+    margin: 60px 0 40px;
+  }
+
+  .section-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+
+  .section-header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+  }
+
+  /* SCRIPT STEPS */
+  .scripts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .script-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+  }
+
+  .script-card.highlight {
+    border-color: var(--accent);
+    border-width: 2px;
+    background: var(--accent-soft);
+  }
+
+  .script-step-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .script-step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .script-card h3 {
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .script-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .script-step-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  .context-card {
+    background: var(--cyan-soft);
+    border-left: 4px solid var(--cyan);
+    padding: 16px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+
+  .context-card strong {
+    display: block;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .context-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* HOOKS SECTION */
+  .hooks-list {
+    display: grid;
+    gap: 16px;
+    margin: 40px 0;
+  }
+
+  .hook-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .hook-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+
+  .hook-text {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .hook-text em {
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  /* IDEAS GRID */
+  .ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .idea-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+
+  .idea-card:hover {
+    border-color: var(--accent);
+  }
+
+  .idea-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .type-reels {
+    background: var(--pink-soft);
+    color: var(--pink);
+  }
+
+  .type-carousel {
+    background: var(--blue-soft);
+    color: var(--blue);
+  }
+
+  .type-series {
+    background: var(--orange-soft);
+    color: var(--orange);
+  }
+
+  .type-bastidor {
+    background: var(--purple-soft);
+    color: var(--purple);
+  }
+
+  .type-consultoria {
+    background: var(--green-soft);
+    color: var(--green);
+  }
+
+  .idea-card h3 {
+    font-size: 18px;
+    margin: 12px 0;
+    color: var(--text);
+  }
+
+  .idea-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* CHECKLIST */
+  .filming-checklist {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 40px 0;
+  }
+
+  .filming-checklist h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .filming-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .filming-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+  }
+
+  .filming-item:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+
+  .filming-item.done {
+    background: var(--green-soft);
+    border-color: var(--green);
+    opacity: 0.7;
+  }
+
+  .filming-item.done .filming-check::after {
+    content: '✓';
+    color: var(--green);
+    font-weight: bold;
+  }
+
+  .filming-check {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .filming-item:hover .filming-check {
+    border-color: var(--accent);
+  }
+
+  .filming-item.done .filming-check {
+    border-color: var(--green);
+    background: var(--green);
+  }
+
+  /* TOOLS */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .check-item:hover {
+    background: var(--accent-soft);
+  }
+
+  .check-item.done {
+    background: var(--green-soft);
+    border-color: var(--green);
+  }
+
+  .check-item.done .check-box::after {
+    content: '✓';
+    color: var(--green);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .check-box {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .check-item.done .check-box {
+    background: var(--green);
+    border-color: var(--green);
+  }
+
+  /* CTA GRID */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .cta-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .cta-when {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--accent);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .cta-card blockquote {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text);
+    margin: 12px 0;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .cta-note {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--accent-soft);
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+  }
+
+  /* ACTION CARD */
+  .action-card {
+    margin: 40px 0;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .action-number {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+  }
+
+  .action-content {
+    flex: 1;
+  }
+
+  .action-content h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .action-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* REF CARDS */
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .ref-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .ref-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  .ref-card h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .ref-niche {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .ref-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* WORKFLOW */
+  .workflow {
+    display: grid;
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .workflow-step {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .workflow-num {
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .workflow-step h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .workflow-step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: grid;
+    gap: 32px;
+    margin: 40px 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    margin-left: 80px;
+    position: relative;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -62px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline-label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 80px;
+  }
+
+  .footer strong {
+    color: var(--text);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 32px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .ideas-grid,
+    .cta-grid,
+    .ref-grid,
+    .scripts,
+    .checklist-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h1 class="hero-title">Plano de Ação <strong>Viral Pro</strong></h1>
+      <p class="hero-sub">Para Ricardo Ortis — Direito Imobiliário</p>
+      <div class="hero-video">
+        <iframe src="https://www.youtube.com/embed/A-lAyJ5lV6M" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item"><strong>30</strong> <span>dias de ação</span></div>
+        <div class="meta-item"><strong>60</strong> <span>posts criados</span></div>
+        <div class="meta-item"><strong>2</strong> <span>por dia</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. SCRIPT STEPS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--accent-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+    <div><h2>Scripts para Esta Semana</h2><p>4 roteiros prontos para gravar — retire aqui, adapte e execute</p></div>
+  </div>
+
+  <div class="scripts">
+    <div class="script-card">
+      <div class="script-step-title">
+        <div class="script-step-num">1</div>
+        <h3>Alerta</h3>
+      </div>
+      <p>"Esse contrato de aluguel tem uma cláusula que pode te fazer perder dinheiro. Assista até o final."</p>
+      <div class="context-card">
+        <strong>Contexto</strong>
+        <p>"A maioria das pessoas não lê. Quando leem, descobrem coisas que ninguém havia comentado. O impacto disso é enorme. Crie urgência sem parecer clickbait."</p>
+      </div>
+    </div>
+    <div class="script-card">
+      <div class="script-step-title">
+        <div class="script-step-num">2</div>
+        <h3>Curiosidade</h3>
+      </div>
+      <p>"90% das pessoas assinam contrato sem perceber esse detalhe. Vou te mostrar como se proteger."</p>
+      <div class="context-card">
+        <strong>Contexto</strong>
+        <p>"Curiosidade vira compartilhamento. Quando a pessoa sente que "descobriu algo que não sabia", ela quer contar pra alguém. Trabalhe isso."</p>
+      </div>
+    </div>
+    <div class="script-card">
+      <div class="script-step-title">
+        <div class="script-step-num">3</div>
+        <h3>Dor + Solução</h3>
+      </div>
+      <p>"Comprou um imóvel e descobriu que tinha dívida? Isso aqui te protege. Assista e tire seu email anotado."</p>
+      <div class="context-card">
+        <strong>Contexto</strong>
+        <p>"Combine problema que a pessoa está vivendo agora + solução rápida + CTA claro. Não deixe a pessoa saindo da rede sem saber o que fazer."</p>
+      </div>
+    </div>
+    <div class="script-card">
+      <div class="script-step-title">
+        <div class="script-step-num">4</div>
+        <h3>Polêmica</h3>
+      </div>
+      <p>"Corretor nunca vai te falar isso sobre o contrato."</p>
+      <div class="context-card">
+        <strong>Contexto</strong>
+        <p>"Confronto funciona quando você está certo. Mostre o outro lado de forma inteligente, sem ser agressivo ou atacar pessoalmente."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. LIÇÕES DO PERFIL (RICARDO) -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg></div>
+    <div><h2>Lições do Perfil</h2><p>O que funciona de verdade no seu nicho — extraído da análise</p></div>
+  </div>
+
+  <div class="scripts">
+    <div class="script-card">
+      <h3>Educação sem perguntar quem é</h3>
+      <p>Quando você entrega um pedaço de valor sobre algo técnico (cláusula abusiva, risco, proteção), as pessoas não perguntam quem você é no início. Ensinam, depois perguntam. Use isso a seu favor.</p>
+    </div>
+    <div class="script-card">
+      <h3>Humor humaniza</h3>
+      <p>Um texto engraçado sobre contrato, imóvel ou burocracia quebra a frieza que as pessoas esperam de um advogado. Faça brincadeiras inteligentes, não forçadas.</p>
+    </div>
+    <div class="script-card">
+      <h3>Stories que educam viralizam mais que dicas rápidas</h3>
+      <p>"Meu cliente comprou imóvel e perdeu R$ 50 mil por não ler uma cláusula" gera muito mais compartilhamento do que "leia sempre o contrato". Conte histórias reais.</p>
+    </div>
+    <div class="script-card">
+      <h3>Ligar conteúdo a dor do momento</h3>
+      <p>Quando você fala sobre atrasado de aluguel em janeiro (período de cobranças), sobre reforma em fevereiro (pós-verão) ou sobre aluguel abusivo em períodos de inflação, o conteúdo dispara. Estude o calendário.</p>
+    </div>
+  </div>
+
+  <!-- 3. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Técnica de Venda</h2><p>Como converter seguidores em clientes sem parecer anúncio</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink); background: #fce7f3;">
+    <div class="action-number" style="background: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Conteúdo útil vende sozinho — você não precisa empurrar</h3>
+      <p>Quando você entrega valor real (dica prática, alerta, passo a passo), as pessoas confiam em você. E quando precisam de um advogado para revisar contrato ou resolver problema imobiliário, adivinham quem vem na cabeça? Você. O CTA "me chama no direto" no final dos vídeos já é suficiente. Não faça vídeo-propaganda. Seja útil, responda comentários, responda directs com atenção. O atendimento online e presencial que você oferece vira consequência natural do conteúdo. A venda acontece quando a pessoa já confia — e confiança se constrói com consistência.</p>
+    </div>
+  </div>
+
+  <!-- 4. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs</h2><p>3 chamadas para ação que funcionam para advocacia</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo Educativo</div>
+      <blockquote>"Salva esse vídeo e manda pra alguém que tá prá assinar um contrato."</blockquote>
+      <div class="cta-note">Use em vídeos de dica prática. O "manda pra alguém" gera compartilhamento orgânico.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo de Alerta</div>
+      <blockquote>"Se ficou com dúvida sobre o seu contrato, me chama no direct."</blockquote>
+      <div class="cta-note">Converte visualização em consulta. Use em vídeos que falam de riscos e problemas.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Final de Carrossel</div>
+      <blockquote>"Segue esse perfil pra não cair em armadilha imobiliária."</blockquote>
+      <div class="cta-note">CTA de seguimento. Funciona bem no último slide do carrossel ou no final de séries.</div>
+    </div>
+  </div>
+
+  <!-- 5. TÉCNICA DIDÁTICA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Técnica Didática</h2><p>Como explicar conceito jurídico que ninguém entende de forma que TODOS entendam</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);
+ background: var(--pink-soft);">
+    <div class="action-number" style="background: var(--pink);">A</div>
+    <div class="action-content">
+      <h3>Fale com linguagem simples</h3>
+      <p>Não use termos como "cláusula abusiva", use "detalhe que pode prejudicar você". Não diga "verificação do cartório", diga "confirmar se a pessoa é dona mesmo". Juiz é estudado para lidar com termos técnicos. Seu seguidor não. Troque pelos em linguagem simples. Diga o que cada uma significa na prática e como se proteger.</p>
+    </div>
+  </div>
+
+  <!-- 6. REFERENCES -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Inspire-se nesses perfis para entender o que funciona</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">⚖️</div>
+      <div>
+        <h3>Advogados de direito imobiliário no Instagram</h3>
+        <div class="ref-niche">Direito Imobiliário</div>
+        <p>Busque perfis do nicho no perfil fake e siga os que têm mais engagement. Observe com o que ganham ganchos, que temas repetem e como usam linguagem simples.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🚀</div>
+      <div>
+        <h3>Oney Araújo — @oneyaraujo</h3>
+        <div class="ref-niche">Marketing Digital / Conteúdo</div>
+        <p>Referência de bio bem estruturada (primeira frase é sobre o público, não sobre si), energia alta nos vídeos e conteúdo 100% útil. Observe o formato e adapte ao seu nicho.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. HOOKS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+    <div><h2>Fórmulas de Gancho</h2><p>Ganchos prontos adaptados para direito imobiliário</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item">
+      <div class="hook-icon">1</div>
+      <div class="hook-text"><em>Alerta:</em> "Esse contrato de aluguel tem uma cláusula que pode te fazer perder dinheiro."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">2</div>
+      <div class="hook-text"><em>Curiosidade:</em> "90% das pessoas assinam contrato sem perceber esse detalhe."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">3</div>
+      <div class="hook-text"><em>Dor + Solução:</em> "Comprou um imóvel e descobriu que tinha dívida? Isso aqui te protege."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">4</div>
+      <div class="hook-text"><em>Polêmica:</em> "Corretor nunca vai te falar isso sobre o contrato."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">5</div>
+      <div class="hook-text"><em>Se + Então:</em> "Se você vai alugar um imóvel, assista esse vídeo antes de assinar qualquer coisa."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">6</div>
+      <div class="hook-text"><em>Desafio:</em> "Me falou: você leu TODO o contrato antes de assinar? Aposto que não."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">7</div>
+      <div class="hook-text"><em>Bastidor:</em> "Hoje recebi um cliente que quase perdeu R$ 150 mil. Vou te contar o que aconteceu."</div>
+    </div>
+  </div>
+
+  <!-- 8. BANCO DE IDEAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></div>
+    <div><h2>Banco de Ideas de Conteúdo</h2><p>12 ideias pronto para você gravar esta semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>5 cláusulas perigosas em contrato de aluguel</h3><p>Mostre cada cláusula com linguagem simples. Diga o que cada uma significa na prática e como se proteger.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Checklist: documentos para comprar um imóvel</h3><p>Lista visual com cada documento necessário. Formato de check — salva e compartilha muito.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>O que acontece se você não registrar o imóvel no cartório</h3><p>Explique que "quem não registra, não é dono". Use caso real (sem nomes) para ilustrar.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Contrato da Semana" — análise de cláusula real</h3><p>Toda semana, pegue uma cláusula de contrato real e explique se é justa ou abusiva.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Alugar vs Financiar: comparação visual</h3><p>Cada slide com um critério: custo mensal, patrimônio, flexibilidade. Formato "lado a lado".</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Golpe do falso proprietário: como se proteger</h3><p>Explique como funciona o golpe, mostre como verificar no cartório e o que fazer se cair.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Seu vizinho pode construir um muro no limite do terreno?</h3><p>Tema polêmico entre vizinhos. Explique o que diz a lei e como resolver sem briga.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Direitos do inquilino que o proprietário não quer que você saiba</h3><p>5-7 direitos pouco conhecidos. Formato provocativo que gera compartilhamento.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Posso ser despejado se atrasar 1 mês de aluguel?</h3><p>Responda a dúvida mais comum. Explique prazos, notificação e processo legal.</p></div>
+    <div class="idea-card"><div class="idea-type type-consultoria">Consultoria</div><h3>Instagram para Adolescentes: como ativar no celular do seu filho</h3><p>Passo a passo do recurso do Instagram. Conecta ao tema "proteção" sem sair do digital. Use como timing post.</p></div>
+  </div>
+
+  <!-- 9. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist de Gravação</h2><p>Passe por cada item antes de publicar</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✓ Confira antes de postar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho é forte? (3 primeiros segundos)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Estou sorrindo e com energia alta?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Legenda abaixo do queeixo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Vídeo entre 30-40 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O tema é 100% do meu nicho?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Pessoa leiga entende? (sem jargão)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA no final?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Nada sobre a cabeça / fundo limpo?</div>
+    </div>
+  </div>
+
+  <!-- 10. FERRAMENTAS RECOMENDADAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>Tudo que você precisa para produzir conteúdo</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Desafio 27 dias falando com a câmera — na plataforma Viral Pro</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Código Viral (curso de 3h) — assistir do início ao fim</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo no WhatsApp consigo mesmo — banco de ideias diário</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Perfil fake no Instagram — só seguir perfis do nicho</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Aula de Criatividade Sintética — Módulo 1 do Código Viral</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Tripé + microfone de lapela — para qualidade mínima de gravação</div>
+  </div>
+
+  <!-- 11. CRONOGRAMA DE EXECUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Seu roadmap dos próximos 30 dias</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Hoje</div>
+      <div class="timeline-title">Arrumar o perfil + iniciar treinamento</div>
+      <div class="timeline-desc">Corrigir foto de perfil (aproximar rosto), reescrever bio, adicionar emoji de dedinho. Começar o desafio de 27 dias falando com a câmera. Se não fez o Código Viral, assistir hoje.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 1</div>
+      <div class="timeline-title">Criar arsenal de ideias + primeiros vídeos no nicho</div>
+      <div class="timeline-desc">Criar grupo no WhatsApp, criar perfil fake, fazer lista de 30 temas virais do nicho. Assistir aula de Criatividade Sintética. Começar a postar 2x por dia focado 100% em direito imobiliário.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 2-3</div>
+      <div class="timeline-title">Treinar energia + variar formatos</div>
+      <div class="timeline-desc">Gravar com sorriso e firmeza na voz. Testar carrosséis (usar IA). Variar entre Reels, carrosséis e bastidores. Continuar desafio de 27 dias. Começar a responder directs com atenção.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Mês 1+</div>
+      <div class="timeline-title">Meta 1K + consolidar rotina</div>
+      <div class="timeline-desc">Comparar o Ricardo do dia 1 com o do dia 30 — a diferença vai ser enorme. Manter 2 posts/dia, energia alta, nicho 100% alinhado. Primeiro milestone: 1.000 seguidores. Depois: 10.000.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Abril 2026
+</div>
+
+</body>
+</html>
+ .script-card.highlight {
+    border-color: var(--accent);
+    border-width: 2px;
+    background: var(--accent-soft);
+  }
+
+  .script-step-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .script-step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .script-card h3 {
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .script-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .script-step-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  .context-card {
+    background: var(--cyan-soft);
+    border-left: 4px solid var(--cyan);
+    padding: 16px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+
+  .context-card strong {
+    display: block;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .context-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* HOOKS SECTION */
+  .hooks-list {
+    display: grid;
+    gap: 16px;
+    margin: 40px 0;
+  }
+
+  .hook-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .hook-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+
+  .hook-text {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .hook-text em {
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  /* IDEAS GRID */
+  .ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .idea-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+
+  .idea-card:hover {
+    border-color: var(--accent);
+  }
+
+  .idea-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .type-reels {
+    background: var(--pink-soft);
+    color: var(--pink);
+  }
+
+  .type-carousel {
+    background: var(--blue-soft);
+    color: var(--blue);
+  }
+
+  .type-series {
+    background: var(--orange-soft);
+    color: var(--orange);
+  }
+
+  .type-bastidor {
+    background: var(--purple-soft);
+    color: var(--purple);
+  }
+
+  .type-consultoria {
+    background: var(--green-soft);
+    color: var(--green);
+  }
+
+  .idea-card h3 {
+    font-size: 18px;
+    margin: 12px 0;
+    color: var(--text);
+  }
+
+  .idea-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* CHECKLIST */
+  .filming-checklist {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 40px 0;
+  }
+
+  .filming-checklist h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .filming-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .filming-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+  }
+
+  .filming-item:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+
+  .filming-item.done {
+    background: var(--green-soft);
+    border-color: var(--green);
+    opacity: 0.7;
+  }
+
+  .filming-item.done .filming-check::after {
+    content: '✓';
+    color: var(--green);
+    font-weight: bold;
+  }
+
+  .filming-check {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .filming-item:hover .filming-check {
+    border-color: var(--accent);
+  }
+
+  .filming-item.done .filming-check {
+    border-color: var(--green);
+    background: var(--green);
+  }
+
+  /* TOOLS */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .check-item:hover {
+    background: var(--accent-soft);
+  }
+
+  .check-item.done {
+    background: var(--green-soft);
+    border-color: var(--green);
+  }
+
+  .check-item.done .check-box::after {
+    content: '✓';
+    color: var(--green);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .check-box {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .check-item.done .check-box {
+    background: var(--green);
+    border-color: var(--green);
+  }
+
+  /* CTA GRID */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .cta-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .cta-when {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--accent);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .cta-card blockquote {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text);
+    margin: 12px 0;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .cta-note {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--accent-soft);
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+  }
+
+  /* ACTION CARD */
+  .action-card {
+    margin: 40px 0;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .action-number {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+  }
+
+  .action-content {
+    flex: 1;
+  }
+
+  .action-content h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .action-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* REF CARDS */
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .ref-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .ref-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  .ref-card h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .ref-niche {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .ref-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* WORKFLOW */
+  .workflow {
+    display: grid;
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .workflow-step {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .workflow-num {
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .workflow-step h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .workflow-step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: grid;
+    gap: 32px;
+    margin: 40px 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    margin-left: 80px;
+    position: relative;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -62px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline-label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 80px;
+  }
+
+  .footer strong {
+    color: var(--text);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 32px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .ideas-grid,
+    .cta-grid,
+    .ref-grid,
+    .scripts,
+    .checklist-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h1 class="hero-title">Plano de Ação <strong>Viral Pro</strong></h1>
+      <p class="hero-sub">Para Ricardo Ortis — Direito Imobiliário</p>
+      <div class="hero-video">
+        <iframe src="https://www.youtube.com/embed/A-lAyJ5lV6M" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item"><strong>30</strong> <span>dias de ação</span></div>
+        <div class="meta-item"><strong>60</strong> <span>posts criados</span></div>
+        <div class="meta-item"><strong>2</strong> <span>por dia</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. SCRIPT STEPS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--accent-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+    <div><h2>Scripts para Esta Semana</h2><p>4 roteiros prontos para gravar — retire aqui, adapte e execute</p></div>
+  </div>
+
+  <div class="scripts">
+    <div class="script-card">
+      <div class="script-step-title">
+        <div class="script-step-num">1</div>
+        <h3>Alerta</h3>
+      </div>
+      <p>"Esse contrato de aluguel tem uma cláusula que pode te fazer perder dinheiro. Assista até o final."</p>
+      <div class="context-card">
+        <strong>Contexto</strong>
+        <p>"A maioria das pessoas não lê. Quando leem, descobrem coisas que ninguém havia comentado. O impacto disso é enorme. Crie urgência sem parecer clickbait."</p>
+      </div>
+    </div>
+    <div class="script-card">
+      <div class="script-step-title">
+        <div class="script-step-num">2</div>
+        <h3>Curiosidade</h3>
+      </div>
+      <p>"90% das pessoas assinam contrato sem perceber esse detalhe. Vou te mostrar como se proteger."</p>
+      <div class="context-card">
+        <strong>Contexto</strong>
+        <p>"Curiosidade vira compartilhamento. Quando a pessoa sente que "descobriu algo que não sabia", ela quer contar pra alguém. Trabalhe isso."</p>
+      </div>
+    </div>
+    <div class="script-card">
+      <div class="script-step-title">
+        <div class="script-step-num">3</div>
+        <h3>Dor + Solução</h3>
+      </div>
+      <p>"Comprou um imóvel e descobriu que tinha dívida? Isso aqui te protege. Assista e tire seu email anotado."</p>
+      <div class="context-card">
+        <strong>Contexto</strong>
+        <p>"Combine problema que a pessoa está vivendo agora + solução rápida + CTA claro. Não deixe a pessoa saindo da rede sem saber o que fazer."</p>
+      </div>
+    </div>
+    <div class="script-card">
+      <div class="script-step-title">
+        <div class="script-step-num">4</div>
+        <h3>Polêmica</h3>
+      </div>
+      <p>"Corretor nunca vai te falar isso sobre o contrato."</p>
+      <div class="context-card">
+        <strong>Contexto</strong>
+        <p>"Confronto funciona quando você está certo. Mostre o outro lado de forma inteligente, sem ser agressivo ou atacar pessoalmente."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. LIÇÕES DO PERFIL (RICARDO) -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg></div>
+    <div><h2>Lições do Perfil</h2><p>O que funciona de verdade no seu nicho — extraído da análise</p></div>
+  </div>
+
+  <div class="scripts">
+    <div class="script-card">
+      <h3>Educação sem perguntar quem é</h3>
+      <p>Quando você entrega um pedaço de valor sobre algo técnico (cláusula abusiva, risco, proteção), as pessoas não perguntam quem você é no início. Ensinam, depois perguntam. Use isso a seu favor.</p>
+    </div>
+    <div class="script-card">
+      <h3>Humor humaniza</h3>
+      <p>Um texto engraçado sobre contrato, imóvel ou burocracia quebra a frieza que as pessoas esperam de um advogado. Faça brincadeiras inteligentes, não forçadas.</p>
+    </div>
+    <div class="script-card">
+      <h3>Stories que educam viralizam mais que dicas rápidas</h3>
+      <p>"Meu cliente comprou imóvel e perdeu R$ 50 mil por não ler uma cláusula" gera muito mais compartilhamento do que "leia sempre o contrato". Conte histórias reais.</p>
+    </div>
+    <div class="script-card">
+      <h3>Ligar conteúdo a dor do momento</h3>
+      <p>Quando você fala sobre atrasado de aluguel em janeiro (período de cobranças), sobre reforma em fevereiro (pós-verão) ou sobre aluguel abusivo em períodos de inflação, o conteúdo dispara. Estude o calendário.</p>
+    </div>
+  </div>
+
+  <!-- 3. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Técnica de Venda</h2><p>Como converter seguidores em clientes sem parecer anúncio</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink); background: #fce7f3;">
+    <div class="action-number" style="background: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Conteúdo útil vende sozinho — você não precisa empurrar</h3>
+      <p>Quando você entrega valor real (dica prática, alerta, passo a passo), as pessoas confiam em você. E quando precisam de um advogado para revisar contrato ou resolver problema imobiliário, adivinham quem vem na cabeça? Você. O CTA "me chama no direto" no final dos vídeos já é suficiente. Não faça vídeo-propaganda. Seja útil, responda comentários, responda directs com atenção. O atendimento online e presencial que você oferece vira consequência natural do conteúdo. A venda acontece quando a pessoa já confia — e confiança se constrói com consistência.</p>
+    </div>
+  </div>
+
+  <!-- 4. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs</h2><p>3 chamadas para ação que funcionam para advocacia</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo Educativo</div>
+      <blockquote>"Salva esse vídeo e manda pra alguém que tá prá assinar um contrato."</blockquote>
+      <div class="cta-note">Use em vídeos de dica prática. O "manda pra alguém" gera compartilhamento orgânico.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo de Alerta</div>
+      <blockquote>"Se ficou com dúvida sobre o seu contrato, me chama no direct."</blockquote>
+      <div class="cta-note">Converte visualização em consulta. Use em vídeos que falam de riscos e problemas.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Final de Carrossel</div>
+      <blockquote>"Segue esse perfil pra não cair em armadilha imobiliária."</blockquote>
+      <div class="cta-note">CTA de seguimento. Funciona bem no último slide do carrossel ou no final de séries.</div>
+    </div>
+  </div>
+
+  <!-- 5. TÉCNICA DIDÁTICA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Técnica Didática</h2><p>Como explicar conceito jurídico que ninguém entende de forma que TODOS entendam</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);
+ background: var(--pink-soft);">
+    <div class="action-number" style="background: var(--pink);">A</div>
+    <div class="action-content">
+      <h3>Fale com linguagem simples</h3>
+      <p>Não use termos como "cláusula abusiva", use "detalhe que pode prejudicar você". Não diga "verificação do cartório", diga "confirmar se a pessoa é dona mesmo". Juiz é estudado para lidar com termos técnicos. Seu seguidor não. Troque pelos em linguagem simples. Diga o que cada uma significa na prática e como se proteger.</p>
+    </div>
+  </div>
+
+  <!-- 6. REFERENCES -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Inspire-se nesses perfis para entender o que funciona</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">⚖️</div>
+      <div>
+        <h3>Advogados de direito imobiliário no Instagram</h3>
+        <div class="ref-niche">Direito Imobiliário</div>
+        <p>Busque perfis do nicho no perfil fake e siga os que têm mais engagement. Observe com o que ganham ganchos, que temas repetem e como usam linguagem simples.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🚀</div>
+      <div>
+        <h3>Oney Araújo — @oneyaraujo</h3>
+        <div class="ref-niche">Marketing Digital / Conteúdo</div>
+        <p>Referência de bio bem estruturada (primeira frase é sobre o público, não sobre si), energia alta nos vídeos e conteúdo 100% útil. Observe o formato e adapte ao seu nicho.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. HOOKS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+    <div><h2>Fórmulas de Gancho</h2><p>Ganchos prontos adaptados para direito imobiliário</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item">
+      <div class="hook-icon">1</div>
+      <div class="hook-text"><em>Alerta:</em> "Esse contrato de aluguel tem uma cláusula que pode te fazer perder dinheiro."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">2</div>
+      <div class="hook-text"><em>Curiosidade:</em> "90% das pessoas assinam contrato sem perceber esse detalhe."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">3</div>
+      <div class="hook-text"><em>Dor + Solução:</em> "Comprou um imóvel e descobriu que tinha dívida? Isso aqui te protege."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">4</div>
+      <div class="hook-text"><em>Polêmica:</em> "Corretor nunca vai te falar isso sobre o contrato."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">5</div>
+      <div class="hook-text"><em>Se + Então:</em> "Se você vai alugar um imóvel, assista esse vídeo antes de assinar qualquer coisa."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">6</div>
+      <div class="hook-text"><em>Desafio:</em> "Me falou: você leu TODO o contrato antes de assinar? Aposto que não."</div>
+    </div>
+    <div class="hook-item">
+      <div class="hook-icon">7</div>
+      <div class="hook-text"><em>Bastidor:</em> "Hoje recebi um cliente que quase perdeu R$ 150 mil. Vou te contar o que aconteceu."</div>
+    </div>
+  </div>
+
+  <!-- 8. BANCO DE IDEAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></div>
+    <div><h2>Banco de Ideas de Conteúdo</h2><p>12 ideias pronto para você gravar esta semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>5 cláusulas perigosas em contrato de aluguel</h3><p>Mostre cada cláusula com linguagem simples. Diga o que cada uma significa na prática e como se proteger.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Checklist: documentos para comprar um imóvel</h3><p>Lista visual com cada documento necessário. Formato de check — salva e compartilha muito.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>O que acontece se você não registrar o imóvel no cartório</h3><p>Explique que "quem não registra, não é dono". Use caso real (sem nomes) para ilustrar.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Contrato da Semana" — análise de cláusula real</h3><p>Toda semana, pegue uma cláusula de contrato real e explique se é justa ou abusiva.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Alugar vs Financiar: comparação visual</h3><p>Cada slide com um critério: custo mensal, patrimônio, flexibilidade. Formato "lado a lado".</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Golpe do falso proprietário: como se proteger</h3><p>Explique como funciona o golpe, mostre como verificar no cartório e o que fazer se cair.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Seu vizinho pode construir um muro no limite do terreno?</h3><p>Tema polêmico entre vizinhos. Explique o que diz a lei e como resolver sem briga.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Direitos do inquilino que o proprietário não quer que você saiba</h3><p>5-7 direitos pouco conhecidos. Formato provocativo que gera compartilhamento.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Posso ser despejado se atrasar 1 mês de aluguel?</h3><p>Responda a dúvida mais comum. Explique prazos, notificação e processo legal.</p></div>
+    <div class="idea-card"><div class="idea-type type-consultoria">Consultoria</div><h3>Instagram para Adolescentes: como ativar no celular do seu filho</h3><p>Passo a passo do recurso do Instagram. Conecta ao tema "proteção" sem sair do digital. Use como timing post.</p></div>
+  </div>
+
+  <!-- 9. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist de Gravação</h2><p>Passe por cada item antes de publicar</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✓ Confira antes de postar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho é forte? (3 primeiros segundos)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Estou sorrindo e com energia alta?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Legenda abaixo do queeixo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Vídeo entre 30-40 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O tema é 100% do meu nicho?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Pessoa leiga entende? (sem jargão)</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA no final?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Nada sobre a cabeça / fundo limpo?</div>
+    </div>
+  </div>
+
+  <!-- 10. FERRAMENTAS RECOMENDADAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>Tudo que você precisa para produzir conteúdo</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Desafio 27 dias falando com a câmera — na plataforma Viral Pro</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Código Viral (curso de 3h) — assistir do início ao fim</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo no WhatsApp consigo mesmo — banco de ideias diário</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Perfil fake no Instagram — só seguir perfis do nicho</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Aula de Criatividade Sintética — Módulo 1 do Código Viral</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Tripé + microfone de lapela — para qualidade mínima de gravação</div>
+  </div>
+
+  <!-- 11. CRONOGRAMA DE EXECUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Seu roadmap dos próximos 30 dias</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Hoje</div>
+      <div class="timeline-title">Arrumar o perfil + iniciar treinamento</div>
+      <div class="timeline-desc">Corrigir foto de perfil (aproximar rosto), reescrever bio, adicionar emoji de dedinho. Começar o desafio de 27 dias falando com a câmera. Se não fez o Código Viral, assistir hoje.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 1</div>
+      <div class="timeline-title">Criar arsenal de ideias + primeiros vídeos no nicho</div>
+      <div class="timeline-desc">Criar grupo no WhatsApp, criar perfil fake, fazer lista de 30 temas virais do nicho. Assistir aula de Criatividade Sintética. Começar a postar 2x por dia focado 100% em direito imobiliário.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 2-3</div>
+      <div class="timeline-title">Treinar energia + variar formatos</div>
+      <div class="timeline-desc">Gravar com sorriso e firmeza na voz. Testar carrosséis (usar IA). Variar entre Reels, carrosséis e bastidores. Continuar desafio de 27 dias. Começar a responder directs com atenção.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Mês 1+</div>
+      <div class="timeline-title">Meta 1K + consolidar rotina</div>
+      <div class="timeline-desc">Comparar o Ricardo do dia 1 com o do dia 30 — a diferença vai ser enorme. Manter 2 posts/dia, energia alta, nicho 100% alinhado. Primeiro milestone: 1.000 seguidores. Depois: 10.000.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Abril 2026
+</div>
+
+</body>
+</html>
