@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Catiane | Advogada Criminalista</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 28px;
+    line-height: 1.65;
+  }
+
+  .hero-video {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    border: 3px solid transparent;
+    background-image: linear-gradient(#fff, #fff), var(--ig-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .hero-video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    border: none;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-item input[type="checkbox"] {
+    width: 18px; height: 18px; cursor: pointer; accent-color: var(--ig-purple);
+  }
+
+  .filming-item.done { background: var(--green-soft); color: var(--green); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Selling Technique */
+  .technique-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .technique-intro { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px; }
+
+  .technique-rules { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .technique-rule {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: start; gap: 12px;
+    font-size: 13.5px; color: var(--text-secondary); line-height: 1.6;
+  }
+
+  .technique-rule strong { color: var(--text); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--card-border);
+    background: var(--bg);
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .ideas-grid { grid-template-columns: 1fr; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .ref-grid { grid-template-columns: 1fr; }
+    .cta-grid { grid-template-columns: 1fr; }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .main { padding: 20px 20px 60px; }
+    .hero { padding: 40px 20px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<div class="hero">
+  <div class="hero-badge">Viral Pro — Análise de Perfil</div>
+  <h1>Catiane</h1>
+  <p class="hero-sub">Advogada Criminalista — Transformar opinião em autoridade, contextualizar melhor os vídeos e trazer utilidade prática sob a ótica do direito criminal.</p>
+
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/Gmc5vKgMKa0" title="Análise Viral Pro — Catiane" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      37K seguidores
+    </div>
+    <div class="hero-meta-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      Nicho: Direito Criminal
+    </div>
+    <div class="hero-meta-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      14 de Abril, 2026
+    </div>
+  </div>
+</div>
+
+<!-- STATS ROW -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">5</div>
+    <div class="stat-label">Ações Urgentes</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">2/dia</div>
+    <div class="stat-label">Meta de Posts</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">40s</div>
+    <div class="stat-label">Duração Ideal</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Foco em Autoridade</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- SEÇÃO 1: CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft); color: var(--red);">🚨</div>
+    <div>
+      <h2>Correções Imediatas do Perfil</h2>
+      <p>5 ações urgentes para otimizar seu perfil agora</p>
+    </div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now">
+      <div class="action-number">1</div>
+      <div class="action-content">
+        <h3>Aproximar o rosto na foto de perfil</h3>
+        <p>Seu rosto ocupa ~30% da foto. O ideal é 60%+. No celular, a foto de perfil é minúscula — se seu rosto não domina, ninguém te reconhece. Tire uma foto mais próxima, com o rosto ocupando a maior parte da bolinha.</p>
+        <div class="action-tag">Fazer agora</div>
+      </div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">2</div>
+      <div class="action-content">
+        <h3>Remover o rótulo "criador de conteúdo digital"</h3>
+        <p>Esse rótulo não agrega nada e ocupa espaço. Você é advogada criminalista — deixe isso claro no perfil sem rótulos genéricos.</p>
+        <div class="action-tag">Fazer agora</div>
+      </div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">3</div>
+      <div class="action-content">
+        <h3>Inverter a ordem das frases na bio</h3>
+        <p>"Aprenda como progredir de regime e sair da cadeia mais cedo" precisa ser a PRIMEIRA frase. É provocativa e prende atenção. A segunda frase (Juridiqueis) fica embaixo.</p>
+        <div class="action-tag">Fazer agora</div>
+      </div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">4</div>
+      <div class="action-content">
+        <h3>Trocar o link do TikTok por WhatsApp</h3>
+        <p>O link do TikTok não ajuda em nada. Coloque um link profissional: catianemacosk.com.br/whatsapp. A pessoa clica e já cai direto no seu WhatsApp. Profissionaliza e converte.</p>
+        <div class="action-tag">Fazer agora</div>
+      </div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">5</div>
+      <div class="action-content">
+        <h3>Assistir aula "Criatividade Sintética" do Código Viral</h3>
+        <p>Essa aula vai te ajudar a localizar os principais temas e vídeos virais do seu nicho. Depois, liste 30 temas que mais se repetem no direito criminal para ter sempre na ponta da língua.</p>
+        <div class="action-tag">Esta semana</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO 2: ANTES VS DEPOIS - VÍDEOS ANALISADOS -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="section-icon" style="background: var(--purple-soft); color: var(--purple);">📹</div>
+    <div>
+      <h2>Antes vs Depois — Vídeos Analisados</h2>
+      <p>Como transformar cada vídeo de bom para excelente</p>
+    </div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header">
+        <div class="ba-video-tag">Vídeo 1</div>
+        <h3>"Você estuda 5 anos, o cliente aprende na cela em 6 meses" (26K views)</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ Errado</div>
+          <p>Vídeo repostado do TikTok sem áudio seu. Só o áudio do cliente falando, sem contexto nem explicação. Não gera autoridade — qualquer blogueiro poderia ter postado isso.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ Correto</div>
+          <p>Primeiro bloco = áudio do cliente (15s). Segundo bloco = VOCÊ aparece explicando (30s): <strong>"A autoridade, gente, sou advogada e o que ele falou tá certo. Primeira pena é isso, segunda pena parará..."</strong> + CTA: <strong>"Se precisar de uma advogada, link na bio."</strong> Adicionar legenda do que o cliente fala. Gancho alternativo: <strong>"Quando o cliente ensina a advogada a trabalhar".</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header">
+        <div class="ba-video-tag">Vídeo 2</div>
+        <h3>"Não precisa encostar na mulher para ser violência doméstica"</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ Errado</div>
+          <p>Poluição visual absurda — legenda + texto por cima + foto atrás com outro texto. Três camadas de informação competindo. Ângulo ruim (sem espaço acima da cabeça para o texto overlay). Opinião sem embasamento jurídico no final.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ Correto</div>
+          <p>Escolher NO MÁXIMO 2 elementos visuais: imagem/headline + legenda embaixo. OU você + legenda. Nunca 3 camadas. Recuar na câmera para dar espaço ao texto. Quando emitir opinião, SEMPRE trazer caso concreto + visão jurídica: <strong>"Esse caso aqui, a mulher jogou água fervendo no homem, não aconteceu nada. A Lei Maria da Penha na prática só beneficia a mulher. Esse é um furo da lei. Como resolver isso, doutora?"</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header">
+        <div class="ba-video-tag">Vídeo 3</div>
+        <h3>"Posso ficar em silêncio sem piorar minha situação?"</h3>
+      </div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">❌ Errado</div>
+          <p>Falta contextualização total. A pessoa no feed não entende que se trata de alguém que cometeu um crime. O brasão da advogada está escrito de trás para frente. Quem nunca te viu pode pular o vídeo. Visualizações puladas matam o alcance.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✅ Correto</div>
+          <p>Contextualizar nos primeiros 3 segundos com um exemplo: <strong>"O cara matou o outro numa briga de bar. Tá diante do juiz. É melhor falar ou ficar calado?"</strong> Aí sim responde: <strong>"Melhor ficar calado, porque dependendo do que falar, pode agravar. 'Eu matei a pessoa' é uma coisa. 'A pessoa me atacou e um tiro disparou da minha arma' é outra história."</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO 3: CERTO VS ERRADO -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="section-icon" style="background: var(--pink-soft); color: var(--pink);">⚡</div>
+    <div>
+      <h2>Certo vs Errado</h2>
+      <p>Mudanças de hábito que vão transformar seu crescimento</p>
+    </div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3>🚫 Pare de fazer</h3>
+      <div class="compare-item"><span>❌</span> Repostar áudio do TikTok sem aparecer no vídeo</div>
+      <div class="compare-item"><span>❌</span> Emitir opinião sem embasamento jurídico</div>
+      <div class="compare-item"><span>❌</span> Acumular 3+ camadas visuais (texto + foto + legenda)</div>
+      <div class="compare-item"><span>❌</span> Usar rótulo "criador de conteúdo digital"</div>
+      <div class="compare-item"><span>❌</span> Deixar link do TikTok na bio</div>
+      <div class="compare-item"><span>❌</span> Postar sem contextualizar nos primeiros segundos</div>
+      <div class="compare-item"><span>❌</span> Ficar 5+ dias sem postar</div>
+      <div class="compare-item"><span>❌</span> Fazer carrosseis com texto muito técnico</div>
+    </div>
+
+    <div class="compare-col good">
+      <h3>✅ Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Aparecer em TODOS os vídeos com sua autoridade de advogada</div>
+      <div class="compare-item"><span>✓</span> Trazer exemplos concretos + visão jurídica em todo conteúdo</div>
+      <div class="compare-item"><span>✓</span> Contextualizar cenário nos 3 primeiros segundos</div>
+      <div class="compare-item"><span>✓</span> Usar no máximo 2 elementos visuais por frame</div>
+      <div class="compare-item"><span>✓</span> Postar 2x por dia (meta)</div>
+      <div class="compare-item"><span>✓</span> Criar grupo de WhatsApp consigo mesma para salvar ideias</div>
+      <div class="compare-item"><span>✓</span> Criar @fake para consumir conteúdo do nicho</div>
+      <div class="compare-item"><span>✓</span> Reescrever textos dos carrosseis com linguagem acessível</div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO 4: ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="section-icon" style="background: var(--blue-soft); color: var(--blue);">🎯</div>
+    <div>
+      <h2>Estratégia de Conteúdo</h2>
+      <p>6 pilares que vão sustentar todo seu crescimento</p>
+    </div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <span class="rule-emoji">⚖️</span>
+      <h3>Autoridade Jurídica</h3>
+      <p>Todo vídeo precisa da SUA visão como advogada. Não basta opinar — traga a ótica do direito. Isso é o que separa você de qualquer blogueiro.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">🪝</span>
+      <h3>Contexto nos 3 Primeiros Segundos</h3>
+      <p>A pessoa decide se assiste ou pula nos primeiros segundos. Descreva a situação antes de dar a resposta. Sem contexto = vídeo pulado.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">⏱️</span>
+      <h3>3 Formatos que Resolvem</h3>
+      <p>Sequência (react + explicação), Caixinha de Pergunta, e Carrossel de Casos. Domine esses três e não precisa de mais nada.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">🕣️</span>
+      <h3>Sempre Apareça Explicando</h3>
+      <p>Vídeo sem você não gera autoridade. Primeiro bloco pode ser áudio/meme. Segundo bloco tem que ser VOCÊ explicando, complementando, posicionando.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">📹</span>
+      <h3>Conteúdo Útil e Prático</h3>
+      <p>Pessoas querem saber: como funciona, o que fazer, qual o risco. Traga soluções. "Se isso acontecer com você, faça X." É isso que gera seguidor.</p>
+    </div>
+
+    <div class="rule-card">
+      <span class="rule-emoji">🔄</span>
+      <h3>30 Temas na Ponta da Língua</h3>
+      <p>Liste os 30 temas mais virais do direito criminal. Quando aparecer um timing post, você já sabe qual tema associar. Nunca mais falta ideia.</p>
+    </div>
+  </div>
+
+  <!-- SEÇÃO 5: ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="section-icon" style="background: var(--yellow-soft); color: var(--yellow);">📝</div>
+    <div>
+      <h2>Roteiros-Modelo Prontos</h2>
+      <p>3 estruturas testadas que funcionam</p>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <h3>🎬 Modelo 1 — Sequência: React + Explicação</h3>
+    <div class="script-step">
+      <div class="script-step-label">GANCHO</div>
+      <div class="script-step-text">[Áudio viral ou meme sobre situação criminal] — 15 segundos</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">TRANSIÇÃO</div>
+      <div class="script-step-text">"A autoridade aqui, gente. Sou advogada criminalista e o que ele falou tá certo/errado."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">EXPLICAÇÃO</div>
+      <div class="script-step-text">"Primeira coisa: [ponto jurídico 1]. Segunda: [ponto jurídico 2]. E tem mais..."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">POSICIONAMENTO</div>
+      <div class="script-step-text">"Isso acontece porque [visão jurídica]. Se você estiver nessa situação, [solução prática]."</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">CTA</div>
+      <div class="script-step-text">"Se precisar de uma advogada criminalista pra te defender, link tá na bio."</div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <h3>💬 Modelo 2 — Caixinha de Pergunta com Contexto</h3>
+    <div class="script-step">
+      <div class="script-step-label">GANCHO</div>
+      <div class="script-step-text">"Tava na briga de bar, matei uma pessoa, mas eu estava com a razão. É melhor eu falar ou ficar calado?"</div>
+    </div>
+    <div class="script-step">
+      <div class="script-step-label">RESPOSTA</div>
+      <div class="script-step-text">"Melhor você ficar calado. Porque dependendo do que falar, pode agravar sua situação."</div>
+    </div>
+    <div class='67&�B�7FW��&V�#�U�T�����F�c��F�b6�73�'67&�B�7FW�FW�B#�"tWR�FV�W76�r:�V�6��6�tW76��RF6�RRV�F�&�F�7&�RF֖�&�r:��WG&��7L;7&��#��F�c���F�c��F�b6�73�'67&�B�7FW#��F�b6�73�'67&�B�7FW��&V�#�UD�ĔDDS��F�c��F�b6�73�'67&�B�7FW�FW�B#�%6V�FV�:|:6�FRV�Gf�vF��f�<:��FRf�"6��62VRl:6�FR6��&��WFW"�#��F�c���F�c��F�b6�73�'67&�B�7FW#��F�b6�73�'67&�B�7FW��&V�#�5D��F�c��F�b6�73�'67&�B�7FW�FW�B#�$�R6VwVR&6&W"6WW2F�&V�F�2�FW2FR&V6�6"FV�W2�#��F�c���F�c���F�cࠢ�F�b6�73�'67&�B�6&B#�ƃ3�	����FV��2(	B6'&�76V�FR66�7&�֖�����3��F�b6�73�'67&�B�7FW#��F�b6�73�'67&�B�7FW��&V�#�t�4����F�c��F�b6�73�'67&�B�7FW�FW�B#�L:�GV��&�f�6F�f�6��Ɩ�wVvV�6W7<:�fV���84�L:�6�6�$W��7FRV�F�FFR6W'F&W6�FR�6���#��F�c���F�c��F�b6�73�'67&�B�7FW#��F�b6�73�'67&�B�7FW��&V�#�4��DU�D���F�c��F�b6�73�'67&�B�7FW�FW�B#�W�ƗVR�66��R�V�V�Ɩ�wVvV�6���W2�W6R��vV�2&V�2V�F��7<:�fV����F�c���F�c��F�b6�73�'67&�B�7FW#��F�b6�73�'67&�B�7FW��&V�#�4ĔDU3��F�c��F�b6�73�'67&�B�7FW�FW�B#�6F6ƖFR���F��FW�F�7W'F��F�&WF��6V��W&�F�\:�2���F�c���F�c��F�b6�73�'67&�B�7FW#��F�b6�73�'67&�B�7FW��&V�#�D�4��F�c��F�b6�73�'67&�B�7FW�FW�B#�7V'7F�GV�g&26V�<:�fV�2�"6&7FW&W2�ҧF�R�G"�f�6�&Wf�F"&��VV��F���7Fw&����F�c���F�c��F�b6�73�'67&�B�7FW#��F�b6�73�'67&�B�7FW��&V�#�5D��F�c��F�b6�73�'67&�B�7FW�FW�B#�%6�fW76R6'&�76V�&V�F�&V6�6"�#��F�c���F�c���F�cࠢ���4\8|84�c�t�$�d��rDR$�E\8|84�D�8$������F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"����&�vR�6�gB��6���#�f"����&�vR��#�)�������F�c��F�c�ƃ#�v�&�f��rFR&�G\:|:6�F�:&�����#���R76�26���W2&&�GW��""l:�FV�2�F������F�c���F�cࠢ�F�b6�73�'v�&�f��r#��F�b6�73�'v�&�f��r�7FW#��F�b6�73�'v�&�f��r��V�#���F�c�ƃC����F�&"G&V�F��s���C���'&�W���&RR6WRf�R�fV��VRL:f�&Ɨ��F���F�&V�F�7&�֖��������F�c��F�b6�73�'v�&�f��r�7FW#��F�b6�73�'v�&�f��r��V�#�#��F�c�ƃC�W66�ƆW"f�&�F����C���6W\:��6��6�����R6'&�76V��FV6�F&6VF���FV�������F�c��F�b6�73�'v�&�f��r�7FW#��F�b6�73�'v�&�f��r��V�#�3��F�c�ƃC�w&f"�l:�FV����C���&��6��6��FW�F��W2��&��6�#�d�<8�W�Ɩ6�F��32�������F�c��F�b6�73�'v�&�f��r�7FW#��F�b6�73�'v�&�f��r��V�#�C��F�c�ƃC�VF�F"R�VvV�F#���C����:����"V�V�V�F�2f�7V�2�FW�F�6W7<:�fV�������F�c��F�b6�73�'v�&�f��r�7FW#��F�b6�73�'v�&�f��r��V�#�S��F�c�ƃC�V&Ɩ6"R&WWF�#���C����WF�"�"F��l:�FV�2f�&�2(i"f�&�6'&�76V�������F�c���F�cࠢ���4\8|84�s�l95$�T�2DRt�4������F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"���7���6�gB��6���#�f"���7�⓲#�	��3��F�c��F�c�ƃ#�l;7&�V�2FRv�6�����#���r����2&��F�2&W6"��2,;7����2l:�FV�3�����F�c���F�cࠢ�F�b6�73�&����2�Ɨ7B#��F�b6�73�&����֗FV�#��F�b6�73�&����֖6��#���F�c��F�b6�73�&�����FW�B#��V��6��FW�F�G&�:F�6���V��%Ff�'&�vFR&"��FV�V�W76���2WRFf6��&�:6��8��VƆ�"WRf�"�Rf�6"6�F�RW7W&"�WRGf�vF��#��F�c���F�c��F�b6�73�&����֗FV�#��F�b6�73�&����֖6��#�#��F�c��F�b6�73�&�����FW�B#��V����:�֖6�W,:�F�6���V��%7W��Rf��&�6�F��fV�f�&V6V&W""BS֖�F�WFfƗ���F�R�2�2R��Ff��V7&"�7&��R6��V�6�#��F�c���F�c��F�b6�73�&����֗FV�#��F�b6�73�&����֖6��#�3��F�c��F�b6�73�&�����FW�B#��V��&�f�6:|:6���V��%f�<:�W7GVFR��2FRf7V�FFR��6ƖV�FR&V�FR�6V�V�b�W6W2�VV�6&R��3�#��F�c���F�c��F�b6�73�&����֗FV�#��F�b6�73�&����֖6��#�C��F�c��F�b6�73�&�����FW�B#��V���V���f���V��$�V��&�FV��VF�R�v�&�84�&V6�6V�6�7F"��VƆW"&6W"f���:��6�F��:�7F�6�#��F�c���F�c��F�b6�73�&����֗FV�#��F�b6�73�&����֖6��#�S��F�c��F�b6�73�&�����FW�B#��V��6�GV:|:6�&Vã��V��$V�G&�RV��G,:6��7V66�f�<:��F�RV�R6��V�&�VRW&&�V&F�Rv�&�#��F�c���F�c��F�b6�73�&����֗FV�#��F�b6�73�&����֖6��#�c��F�c��F�b6�73�&�����FW�B#��V��WF�ƖFFRF�&WF���V��%6R��:�6�FR&"�f�<:�FV��F�&V�F�FRf�6"6�F���25T�DD�6���VRf�<:�f��FW2�#��F�c���F�c��F�b6�73�&����֗FV�#��F�b6�73�&����֖6��#�s��F�c��F�b6�73�&�����FW�B#��V��6����&�f�6F�f���V��$֖�6FV�f��F�&F��2�V�V�f��F�&F��2��VRWRf:v��#��F�c���F�c���F�cࠢ���4\8|84���$�4�DR�DT�2DR4��D\9�D�����F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"���W'�R�6�gB��6���#�f"���W'�R��#�	�*��F�c��F�c�ƃ#�&�6�FR�FV�2FR6��F\;�F����#���"l:�FV�2&��F�2&6��\:v"w&f#�����F�c���F�cࠢ�F�b6�73�&�FV2�w&�B#��F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�&VV�2#�&VV�3��7��ƃ3�7&��R6��V�6����3���66�2��FR7&�֖��6�2�V7&&���:Ɨ6R�W,:�F�6����:6��W�V���7W��Rf��&�6�F��fV�������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�&VV�2#�&VV�3��7��ƃ3��VR6��FV6R6RWR&Vv�"V�76�F�����3���6V�:&��,:F�6��f�<:6�F�F�&V�F���V|:�F��FVfW6g2W�6W76�������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�6&�W6V�#�6'&�76V���7��ƃ3�RF�&V�F�2VRf�<:�FV�R�:6�6&S���3���6F6ƖFR�F�&V�F�6��W�V����f�&�F�VGV6F�f�������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�&VV�2#�&VV�3��7��ƃ3�&�w&VF�"FR&Vv��S�6���gV�6������3���W�Ɩ6"FRf�&�6W7<:�fV���VR��f�VV�6�&�w&W7<:6�������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�6W&�W2#�<:�&�S��7��ƃ3�&V7B66�2&V�3���3���8VF��FR6ƖV�FR���L:�6��7VW�Ɩ6:|:6��W,:�F�6������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�&7F�F�"#�&7F�F�#��7��ƃ3�F�FRVF�:��6����3�����7G&R&W&:|:6��6V�&WfV�"FWFƆW26�v���6�2������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�&VV�2#�&VV�3��7��ƃ3��V|:�F��FVfW6�V�F�f�S���3���W�V���26��7&WF�2�V�F�f�RRV�F��84�f�R������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�6&�W6V�#�6'&�76V���7��ƃ3��VR�T�4f�"&��:�6����3���g&6W2VR6��&��WFV�g2g&6W26VwW&2�,:F�6�RF�&WF�������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�&VV�2#�&VV�3��7��ƃ3��V��&�FV�&�FVvR���V�3����3�����:�֖6�f�<:6��W,:�F�6��:Ɨ6R6���WF������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�6W&�W2#�<:�&�S��7��ƃ3�6����7&�֖�����3���W&wV�F2FR6VwV�F�&W2�&W7�7F26��6��FW�F��W,:�F�6�������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�&VV�2#�&VV�3��7��ƃ3�&W6��FRf�F#�G&&Ɔ#����3���7W&��6�FFW2;�FV�2RF�&WF2�F�&V�F�2F�&W6�F�:&��������F�cࠢ�F�b6�73�&�FV�6&B#��7�6�73�&�FV�G�RG�R�&7F�F�"#�&7F�F�#��7��ƃ3�6���gV�6���V�f�6�F�6FV����3���FW6֗7F�f�6"�&�6W76��&W7��FL;�f�F26��V�2������F�c���F�cࠢ���4\8|84���U$d�2DR$TdU,8��4�����F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"������6�gB��6���#�f"����沓�#�*���F�c��F�c�ƃ#�W&f�2FR&VfW,:��6����#����7�&R�6R�W7FW27&VF�'2VRF�֖����6�������F�c���F�cࠢ�F�b6�73�'&Vb�w&�B#��F�b6�73�'&Vb�6&B#��F�b6�73�'&Vb�fF"#�)�n�����F�c��F�c�ƃ3�Gf�vF�f��6����3��F�b6�73�'&Vb��6�R#�F�&V�F�7&�֖���&W7�7F2,:F�63��F�c���f�6�Rf��<:�76�����'&6��&W7��FV�F�6�GV:|;VW27&�֖��2FRf�&�,:F�6R;�F���f�&�F�6V�:&���&W7�7F�W,:�F�6�&�WF�f�%G&�VV�F�&�6����:�6��Rv�&�"(	BW6RW7FR6�����7�&:|:6�&W7G'WGW&"6WW2l:�FV�2������F�c���F�cࠢ�F�b6�73�'&Vb�6&B#��F�b6�73�'&Vb�fF"#�	����F�c��F�c�ƃ3���W�&;������3��F�b6�73�'&Vb��6�R#��&�WF��rF�v�F��7&W66��V�F���7Fw&���F�c����V�F�"F�f�&�&��f�&�F�FR&VfW,:��6�&����2RW7G'WGW&�W6�VFƖ�W2FR��L:�6�6���L:�GV��f�7V��6��FW�GVƗ���2&��V�&�226VwV�F�2�2F��2FRv�6��fW&&��FW�F�Rf�7V�������F�c���F�c���F�cࠢ���4\8|84��uT�DR5D2����F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"����&�vR�6�gB��6���#�f"����&�vR��#�	�����F�c��F�c�ƃ#�wV�FR5D3���#���W66�Ɔ�5D6W'F�&6FF��FRl:�FV������F�c���F�cࠢ�F�b6�73�&7F�w&�B#��F�b6�73�&7F�6&B#��F�b6�73�&7F�v�V�#�l:�FV�FRWF�&�FFS��F�c��&��6�V�FS�%6R&V6�6"FRV�Gf�vF7&�֖�Ɨ7F&FRFVfV�FW"�Ɩ�L:�&���#��&��6�V�FS��F�b6�73�&7F���FR#�W6R;72l:�FV�2��FRf�<:�W�Ɩ6R6R�6�6����6��fW'FRF�&WF�V�6ƖV�FR���F�c���F�cࠢ�F�b6�73�&7F�6&B#��F�b6�73�&7F�v�V�#�l:�FV�VGV6F�f���F�c��&��6�V�FS�$�R6VwVR&6&W"6WW2F�&V�F�2�FW2FR&V6�6"FV�W2�#��&��6�V�FS��F�b6�73�&7F���FR#�W6RV�6��F\;�F�2;�FV�26�'&R�V�2�F�&V�F�2R&�6W76�2�vW&6VwV�F�"���F�c���F�cࠢ�F�b6�73�&7F�6&B#��F�b6�73�&7F�v�V�#�l:�FV���:�֖6���F�c��&��6�V�FS�$6��6�&F�6��V�F:����F&�w\:��VR&V6�6�#��&��6�V�FS��F�b6�73�&7F���FR#�W6RV�l:�FV�2FR���:6��vW&6��'F�Ɔ�V�F�RV�v��V�F����F�c���F�c���F�cࠢ���4\8|84��L8�4�4DRdT�D����F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"���w&VV��6�gB��6���#�f"���w&VV⓲#�	�+��F�c��F�c�ƃ#�6���6��fW'FW"6VwV�F�"V�6ƖV�FR6V�&V6W"�;��6�����#���fV�F6��FV6RV�F��:6��f��:v�WF�&�FFS�����F�c���F�cࠢ�F�b6�73�'FV6��VR�6&B#��F�b6�73�'FV6��VR֖�G&�#�fV�F6��FV6RV�F�W76�6��f��7VWF�&�FFR�F�F�l:�FV�VR��7G&7Vf�<:6��W,:�F�6�VRG&�6��\:|:6�,:F�6�VR6��FW�GVƗ�6V�:&��2(	BW7L:fV�FV�F�f�<:�6���Gf�vF�W76�V�6�%6RWR&V6�6"�:�6��W76V�VRWRf�Rf�"�#��F�cࠢ�F�b6�73�'FV6��VR�'V�W2#��F�b6�73�'FV6��VR�'V�R#��7G&��s���V�6f:vl:�FV�<;2&fV�FW"���7G&��s��6��F\;�F�fV�FR6������WF�&�FFRvW&6��f��:v���F�c��F�b6�73�'FV6��VR�'V�R#��7G&��s�"�5DFRfV�FV����:����"g&6W3���7G&��s�%6R&V6�6"�Ɩ��&���"&��F���:6���6�7F���F�c��F�b6�73�'FV6��VR�'V�R#��7G&��s�2��v�G4�&��:�6WRgV�����7G&��s�VV�6Ɩ6�:W7L:V6R&��F�&6��G&F"���F�c��F�b6�73�'FV6��VR�'V�R#��7G&��s�B����"fV�F:�WF�&�FFS���7G&��s�W�ƗVR��6�6���R�6R�G&v66�2��76�6��fW'FR��2VRV�VW"&���:|:6����F�c���F�c���F�cࠢ���4\8|84�#�4�T4�ĕ5BDRu$d8|84�����F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"���&�VR�6�gB��6���#�f"���&�VR��#�)�S��F�c��F�c�ƃ#�6�V6�Ɨ7BFRw&f:|:6����#���fW&�f�VRW7FW2��FV�2�FW2FRV&Ɩ6#�����F�c���F�cࠢ�F�b6�73�&f��֖�r�6�V6�Ɨ7B#�ƃ3�	�8��FW2FRV&Ɩ6"�fW&�f�VS����3��F�b6�73�&f��֖�r�w&�B#���&V�6�73�&f��֖�r֗FV�#�Ɩ�WBG�S�&6�V6�&��"��6��vS�'F��2�&V�DV�V�V�B�6�74Ɨ7B�F�vv�R�vF��Rr�#�6��FW�F�6�&���22&��V�&�26VwV�F�3����&V����&V�6�73�&f��֖�r֗FV�#�Ɩ�WBG�S�&6�V6�&��"��6��vS�'F��2�&V�DV�V�V�B�6�74Ɨ7B�F�vv�R�vF��Rr�#�f�<:�&V6R��l:�FV�W�Ɩ6�F�����&V����&V�6�73�&f��֖�r֗FV�#�Ɩ�WBG�S�&6�V6�&��"��6��vS�'F��2�&V�DV�V�V�B�6�74Ɨ7B�F�vv�R�vF��Rr�#����:����"V�V�V�F�2f�7V�2�"g&�S����&V����&V�6�73�&f��֖�r֗FV�#�Ɩ�WBG�S�&6�V6�&��"��6��vS�'F��2�&V�DV�V�V�B�6�74Ɨ7B�F�vv�R�vF��Rr�#��VvV�F��VRW7L:6V�F�f�F�����&V����&V�6�73�&f��֖�r֗FV�#�Ɩ�WBG�S�&6�V6�&��"��6��vS�'F��2�&V�DV�V�V�B�6�74Ɨ7B�F�vv�R�vF��Rr�#�f�<:6��W,:�F�6��:6�<;2���:6�����&V����&V�6�73�&f��֖�r֗FV�#�Ɩ�WBG�S�&6�V6�&��"��6��vS�'F��2�&V�DV�V�V�B�6�74Ɨ7B�F�vv�R�vF��Rr�#�W�V���6��7&WF��R66�&V�����&V����&V�6�73�&f��֖�r֗FV�#�Ɩ�WBG�S�&6�V6�&��"��6��vS�'F��2�&V�DV�V�V�B�6�74Ɨ7B�F�vv�R�vF��Rr�#�5D��f����6VwV�"�RƖ��&������&V����&V�6�73�&f��֖�r֗FV�#�Ɩ�WBG�S�&6�V6�&��"��6��vS�'F��2�&V�DV�V�V�B�6�74Ɨ7B�F�vv�R�vF��Rr�#�FW�F�F�6'&�76V�W7L:6W7<:�fV��6V��W&�F�\:�2�����&V����F�c���F�cࠢ���4\8|84�3�dU%$�T�D2$T4��T�DD2����F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"��זV���r�6�gB��6���#�f"��זV���r��#�	�������F�c��F�c�ƃ#�fW'&�V�F2&V6��V�FF3���#���b&V7W'6�2VRl:6�6V�W&"7V&�G\:|:6������F�c���F�cࠢ�F�b6�73�''V�W2�w&�B#��F�b6�73�''V�R�6&B#��7�6�73�''V�R�V����#�	�9���7��ƃ3�7&�F�f�FFR6��L:�F�6���3���V�F�<;6F�v�f�&�&�V"FV�2f�&�2F�6WR�6���76�7F&��V�&��FW��2Ɨ7FR6WW23FV�2������F�cࠢ�F�b6�73�''V�R�6&B#��7�6�73�''V�R�V����#�	�;��7��ƃ3�w'W�v�G46������3���7&�RV�w'W�6��f�<:��W6��6�fRƖ�2�:VF��2R�FV�2FR6��F\;�F�ƒ�6WR&�6�FRFF�2W76��������F�cࠢ�F�b6�73�''V�R�6&B#��7�6�73�''V�R�V����#�	�C��7��ƃ3�f�RF��6�����3���W&f��6V7V�L:&��VR<;26VwVR6��F\;�F��W,:�F�6��G&V����v�&�F��&V�f�"l:�FV�2f�&�2F��6��������F�cࠢ�F�b6�73�''V�R�6&B#��7�6�73�''V�R�V����#�)�.�����7��ƃ3�67WC���3���VF�F�"&F�6���"�VvV�F2R6�'F"l:�FV�2�W6R&��FW"���:����"V�V�V�F�2f�7V�2������F�cࠢ�F�b6�73�''V�R�6&B#��7�6�73�''V�R�V����#�)������7��ƃ3�6&7FW&W2W7V6��3���3���7V'7F�GV�g&26V�<:�fV�3�ҧF�R�G"�f�6��2�FV��Wf�F&��VV��F���7Fw&�������F�cࠢ�F�b6�73�''V�R�6&B#��7�6�73�''V�R�V����#�	�ȳ��7��ƃ3�Ɨ7FFR3FV�3���3���F�7V�V�F�6��6WW23FV�2��2f�&�2�6��7V�FR�FW2FRw&f"��V�6��2f�F�FV�������F�c���F�cࠢ���4\8|84�C�5$���u$�DRU�T5\8|84�����F�b6�73�'6V7F���ֆVFW""7G��S�&�&v���F��C���#��F�b6�73�'6V7F���֖6��"7G��S�&&6�w&�V�C�f"���W'�R�6�gB��6���#�f"���W'�R��#�	�8S��F�c��F�c�ƃ#�7&���w&�FRW�V7\:|:6����#���&�F��:�2�:�2&6�Vv"������F�c���F�cࠢ�F�b6�73�'F��VƖ�R#��F�b6�73�'F��VƖ�R֗FV�#��F�b6�73�'F��VƖ�R�F�B#���F�c��F�b6�73�'F��VƖ�R��&V�#���S��F�c��F�b6�73�'F��VƖ�R�F�F�R#�''V�"�W&f����F�c��F�b6�73�'F��VƖ�R�FW62#�&����"f�F��&V��fW",;7GV�����fW'FW"&���G&�6"Ɩ�&v�G4�76�7F�"$7&�F�f�FFR6��L:�F�6"���F�c���F�c��F�b6�73�'F��VƖ�R֗FV�#��F�b6�73�'F��VƖ�R�F�B#���F�c��F�b6�73�'F��VƖ�R��&V�#�6V����F�c��F�b6�73�'F��VƖ�R�F�F�R#����F"�'6V����F�c��F�b6�73�'F��VƖ�R�FW62#�Ɨ7F"3FV�2�7&�"w'W�v�G46����7&�"f�R�w&f""l:�FV�2�F���22f�&�F�2�6W\:��6��6�����6'&�76V���F�c���F�c��F�b6�73�'F��VƖ�R֗FV�#��F�b6�73�'F��VƖ�R�F�B#���F�c��F�b6�73�'F��VƖ�R��&V�#�6V��2"�3��F�c��F�b6�73�'F��VƖ�R�F�F�R#�WF�&�FFR�6��6�7L:��6���F�c��F�b6�73�'F��VƖ�R�FW62#���FW""�7G2�F��6��FW�GVƗ�"4T�$R�&V6W"V�F�F�l:�FV��G&�6f�&�"l:�FV�2f�&�2V�6'&�76V��&VW67&WfW"FW�F�2F�26'&�76V�2W��7FV�FW2���F�c���F�c��F�b6�73�'F��VƖ�R֗FV�#��F�b6�73�'F��VƖ�R�F�B#���F�c��F�b6�73�'F��VƖ�R��&V�#��:�2���F�c��F�b6�73�'F��VƖ�R�F�F�R#�W66�"&���F�c��F�b6�73�'F��VƖ�R�FW62#��Ɨ6"�:�G&�63�V�2f�&�F�2W&f�&���VƆ�#�F�'&"��2VRgV�6�����7&�"<:�&�Rf���$6����7&�֖��"��6��\:v"&W7��FW"6VwV�F�&W2V�l:�FV���WF��6VwV�F�&W2���F�c���F�c���F�cࠣ��F�cࠣ���d��DU"����F�b6�73�&f��FW"#����FR:|:6�vW&F�'F�"F�:Ɨ6RFRW&f��(	B�7G&��s�f�&�&���7G&��s�6����W�&;���(	B'&��##`���F�cࠣ�67&�C���f��֖�r6�V6�Ɨ7B��FW&7F�f�G��F�7V�V�B�VW'�6V�V7F�$�r�f��֖�r֗FV�r��f�$V6���FV������FV��FDWfV�DƗ7FV�W"�v6Ɩ6�r�gV�7F��ₒ��F��2�6�74Ɨ7B�F�vv�R�vF��Rr���ғ��ғ�����6�V6��FV�2��FW&7F�f�G��F�7V�V�B�VW'�6V�V7F�$�r�6�V6�֗FV�r��f�$V6���FV������FV��FDWfV�DƗ7FV�W"�v6Ɩ6�r�gV�7F��ₒ��F��2�6�74Ɨ7B�F�vv�R�vF��Rr���ғ��ғ����67&�Cࠣ��&�G�����F���
