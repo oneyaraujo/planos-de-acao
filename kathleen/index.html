@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Kathleen | Cest la Vie La Francesa</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    border: 3px solid transparent;
+    background-image: linear-gradient(#fff, #fff), var(--ig-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-viagem { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Kathleen — Cest la Vie La Francesa</h1>
+  <p class="hero-sub">Assessoria de viagens e vistos para a França. Como sair de 1.071 seguidores e atingir 10K nos próximos três meses, transformando o perfil em uma "amostra grátis" que vende sozinha.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/H5msdRhWfh4" title="Análise Viral Pro — Kathleen" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>27 de Abril, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Assessoria França / Vistos</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">1/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">30-40s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">10K</div><div class="stat-label">Meta em 3 Meses</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de qualquer outra coisa</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Trocar a foto de perfil pelo seu rosto</h3><p>A logo atual é pequena demais e ninguém consegue ler. Use uma foto sua vestida "à la francesa", com o passaporte/visto na mão e a Torre Eiffel ou arquitetura francesa ao fundo. O rosto humano tem dez vezes mais força do que uma logo. As pessoas confiam em quem elas reconhecem. Você não é uma agência sem cara — é a Kathleen que vive em Paris.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Aparecer com o rosto nos conteúdos</h3><p>Hoje seu perfil parece feito por uma agência. A pessoa olha e não sente conexão com ninguém. Comece a aparecer narrando, dando dicas, mostrando os bastidores das suas assessorias. O rosto é o que cria familiaridade — toda vez que aparecer, a pessoa pensa "ah, é a Kathleen, a que fala de França".</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Repostar o vídeo do PVT cortando o começo fraco</h3><p>O vídeo do visto férias-trabalho começa com "Muita gente acha que precisa ser rico, ter cidadania europeia..." — isso é fraco e as pessoas pulam. Comece direto pelo ponto forte: <strong>"Existe um visto chamado férias-trabalho que permite morar na França por até um ano."</strong> O resto do vídeo já está bom — só falta um começo que prenda nos primeiros 3 segundos.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Criar um perfil secundário só para pesquisa</h3><p>Abra um arroba tipo @kathleenviagens, @ckaqueteclap ou qualquer nome. Nesse perfil, siga SOMENTE perfis de viagem, vistos, intercâmbio. Curta vídeos virais de viagem, assista até o final. O Instagram vai te entregar o melhor dessas categorias de bandeja, e você nunca mais fica sem ideia de conteúdo.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Montar uma linha editorial dupla</h3><p>Hoje você só fala de visto e burocracia. Adiciona uma linha de <strong>entretenimento</strong>: "5 lugares em Paris para visitar com 0€", "lugares secretos para pedir em casamento que não sejam a Torre Eiffel", "quanto custou minha viagem para a França". Esse tipo de conteúdo viraliza, é salvo e atrai gente que ainda não pensou em comprar — mas vai comprar quando pensar.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS — VÍDEOS ANALISADOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que estava errado e como fica o roteiro corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>Visto férias-trabalho (PVT)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Começo fraco e desinteressante: <em>"Muita gente acha que precisa ser rico, ter cidadania europeia, mas não existe um visto chamado férias-trabalho..."</em>. A pessoa pula nos primeiros segundos porque o gancho não pega. O conteúdo do vídeo é ótimo — só está enterrado no meio.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Cortar o começo. Começar direto: <strong>"Existe um visto chamado férias-trabalho que permite você morar na França por até um ano."</strong> O resto do vídeo segue igual — trabalhar legal, viajar pela Europa, brasileiros entre 18 e 30 podem aplicar. Termine com: <strong>"Comenta PVT que eu te explico como funciona."</strong> Reposta esse vídeo amanhã com o corte certo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>Carrossel "Existe vida fora de Paris"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Título genérico ninguém lê. <em>"Existe vida fora de Paris e sai do Nordeste"</em> é abstrato, não promete utilidade direta. Resultado: 77 likes, alcance baixo. O carrossel tem história boa, mas o gancho não comunica valor prático.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Transformar o carrossel em <strong>"livro" útil</strong>. Pegue o ponto mais forte da história e transforme em utilidade: <strong>"5 cidades além de Paris para morar na França sem gastar uma fortuna"</strong> ou <strong>"10 lugares para conhecer em Paris pagando 0€"</strong>. Cada slide um lugar, com foto + custo + tempo. Conteúdo útil = salva, compartilha, vira seguidor.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>"Vale a pena morar ilegal na França"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>A ideia viraliza, mas joga contra você. Quem assiste pode acabar desistindo de viajar para a França e pensar "vou para Itália, vou para os EUA". Você está educando o público a NÃO precisar do seu serviço. Polêmica que custa cliente.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Inverter o gancho: <strong>"O que acontece com quem mora ilegal na França?"</strong> — abre curiosidade, mostra os riscos reais (multa, deportação, banimento da Europa) e termina com: <strong>"Por isso o visto é a saída mais inteligente. Se quiser ajuda, link na bio."</strong> Mantém o gancho viralizável e ainda vende o serviço. Tom de conversa, nunca de aula.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Vídeo com a influencer "Foi americano, virou francesa"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>A ideia de usar influencer é boa, mas você está apostando em uma só. E a influencer não fala de você no meio do vídeo — ninguém entende que VOCÊ é a assessoria por trás. O vídeo perde força para conversão.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Ter pelo menos <strong>15 influencers</strong> que vão para a França no portfólio. Em algum momento de cada vídeo, ela diz: <strong>"Quem desenhou tudo pra mim foi a Kathleen, da Cest la Vie La Francesa. Ela me acompanhou no WhatsApp do começo ao fim, foi sensacional."</strong> Aí sim vira prova social. Um vídeo só não move a agulha — uma série de depoimentos move.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que manter e do que mudar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Logo da empresa como foto de perfil</div>
+      <div class="compare-item"><span>✕</span> Conteúdo só de visto e burocracia</div>
+      <div class="compare-item"><span>✕</span> Gancho fraco e abstrato ("muita gente acha...")</div>
+      <div class="compare-item"><span>✕</span> Vídeos sem o seu rosto</div>
+      <div class="compare-item"><span>✕</span> Conteúdo polêmico que afasta o público-alvo</div>
+      <div class="compare-item"><span>✕</span> Apostar tudo em uma única influencer</div>
+      <div class="compare-item"><span>✕</span> Postar 1 vídeo por semana ou menos</div>
+      <div class="compare-item"><span>✕</span> Conteúdo só para quem já vai comprar de você</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Foto sua à la francesa, com Torre Eiffel ao fundo</div>
+      <div class="compare-item"><span>✓</span> Dupla linha: visto + entretenimento útil (lugares, dicas)</div>
+      <div class="compare-item"><span>✓</span> Gancho direto: "Existe um visto que..."</div>
+      <div class="compare-item"><span>✓</span> Aparecer narrando e mostrando o dia a dia</div>
+      <div class="compare-item"><span>✓</span> Conteúdo que abre curiosidade e leva pra solução</div>
+      <div class="compare-item"><span>✓</span> Portfólio de 15+ influencers mencionando você</div>
+      <div class="compare-item"><span>✓</span> Mínimo 1 post por dia, sem exceção</div>
+      <div class="compare-item"><span>✓</span> Conteúdo para o público que sonha com a França</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>Regras de ouro para cada vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🎁</span><h3>Perfil = Amostra Grátis</h3><p>Seu Instagram não é vitrine de venda — é como aquela mocinha do supermercado oferecendo provinha. Entrega valor de graça. A venda vem como consequência, não como objetivo declarado.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>Gancho nos 3 Primeiros Segundos</h3><p>Comece pelo ponto mais forte. Sem rodeio. "Existe um visto..." é gancho. "Muita gente acha..." é onde a pessoa pula.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🌍</span><h3>Conteúdo Para os 9 Quadrados</h3><p>Não fale só com quem vai comprar. O algoritmo entrega para muita gente — se o vídeo só serve a 10% deles, ele morre. Faça conteúdo que serve para o sonhador, não só para o cliente.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📹</span><h3>Tom de Conversa</h3><p>Esquece roteiro engessado. Fala como você falaria com uma cliente no WhatsApp. Naturalidade vende mais que produção.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔄</span><h3>Replicar o Que Já Funcionou</h3><p>Não invente roda. Pega vídeo viral de viagem (Gramado, Itália, etc.) e adapta para França. Mesmo formato, conteúdo seu. Atalho legítimo.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📅</span><h3>Mínimo 1 Vídeo Por Dia</h3><p>As pessoas veem 500 a 1000 vídeos por dia. Se você posta 1 por semana, é como se não existisse. Consistência ganha de produção bonita.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Templates "preencha os espaços" baseados nos exemplos da mentoria</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Lugares Gratuitos / Utilidade Pura</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Se você tem 10 mil reais para viajar para a França, guarda esse dinheiro no bolso. Eu vou te mostrar 5 lugares incríveis em Paris que você visita gastando ZERO."<br><em>Apareça você falando no início, depois vão entrando as fotos dos lugares por cima.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Conteúdo</div><div class="script-step-text">Lugar 1: foto + nome + por que vale a pena (1 frase). Lugar 2, 3, 4, 5. Ritmo rápido, 5–8 segundos por lugar. Música suave de fundo.<br><em>O texto fica em cima da foto. Você narrando.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Ponte</div><div class="script-step-text">"Lista completa salva nos comentários, mas se você quer transformar isso em uma viagem inteligente, o investimento que você ia gastar em qualquer canto pode render a melhor viagem da sua vida."</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Manda direct ou clica no link da bio que eu desenho um roteiro com você."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — "Existe um Visto..." (Educação que Viraliza)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Existe um visto chamado [nome do visto] que permite você morar na França por até um ano."<br><em>Comece direto. Sem "muita gente acha". Já entrega o gancho forte.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Benefício</div><div class="script-step-text">"Com ele você pode trabalhar legalmente, viajar pela Europa e ter a experiência de morar fora — é um dos caminhos mais acessíveis para brasileiros."</div></div>
+    <div class="script-step"><div class="script-step-label">Filtro</div><div class="script-step-text">"Pouca gente sabe que brasileiros entre 18 e 30 anos podem solicitar esse visto."<br><em>Aqui você qualifica o público sem ser cansativo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se quiser entender como funciona e como aplicar, comenta PVT que eu te explico nos comentários."<br><em>Comentário gera engajamento, engajamento gera alcance.</em></div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Bastidor de Assessoria (Filmando Você Trabalhando)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Tô aqui na cafeteria correndo, mas precisa ver isso que eu acabei de fazer pra um cliente."<br><em>Mostra naturalidade. Conteúdo "real" performa mais que conteúdo perfeito.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Mostrar</div><div class="script-step-text">"Olha, montei pra ele 8 lugares pra passear, um plano pra tirar o visto de estudante, descobrimos quanto ele precisa comprovar..."<br><em>Mostra a tela ou os papéis enquanto fala.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Dica útil</div><div class="script-step-text">"E uma coisa que você precisa prestar atenção quando for tirar visto é [dica concreta]. Eu vejo muita gente errar nisso."<br><em>Aqui está o valor — a dica que serve para qualquer pessoa.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Salva esse vídeo, vai te ajudar lá na frente. E se quiser que eu monte o seu, link da bio."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW DE PRODUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da pesquisa ao post — passo a passo prático</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Perfil secundário</h4><p>Abre o arroba de pesquisa. Encontra um vídeo viral de viagem</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Salva no WhatsApp</h4><p>Copia link e salva no grupo "só você". Banco de ideias rolando</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Adapta para França</h4><p>Pega o formato do viral e troca o destino para França/Paris</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Grava 30-40s</h4><p>Celular no apoio. Você narrando ou voiceover. Legenda na tela</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Publica e repete</h4><p>Posta no Reels. Amanhã faz outro do banco. Mínimo 1/dia</p></div>
+  </div>
+
+  <!-- 7. FÓRMULAS DE GANCHO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie e adapte — projetadas para prender nos primeiros 3 segundos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Existe X que pouca gente sabe:</em> "Existe um visto chamado férias-trabalho que permite morar na França por até um ano."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Guarda o dinheiro:</em> "Se você tem 10 mil reais para viajar pra Paris, guarda esse dinheiro. Vou te mostrar 5 lugares incríveis pagando 0€."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Todo mundo quer X, mas Y:</em> "Todo mundo só quer pedir em casamento na Torre Eiffel. Mas tem 5 lugares mais lindos que ela — e quase ninguém conhece."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>O que acontece se:</em> "O que acontece com quem mora ilegal na França? Spoiler: ninguém te conta isso."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Se eu tivesse X anos:</em> "Se eu tivesse entre 18 e 30 anos e quisesse morar na Europa por um ano só com passaporte brasileiro, eu faria isso."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Lista numerada útil:</em> "5 cidades além de Paris para morar na França sem gastar uma fortuna." (Carrossel ou Reels com fotos)</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Bastidor cru:</em> "Tô aqui correndo na cafeteria, mas precisa ver o que acabei de montar pra uma cliente que vai pra França." (filmando os papéis ou a tela)</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Formatos prontos para gravar já na próxima semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"5 lugares em Paris que você visita pagando 0€"</h3><p>Foto + nome + 1 frase de cada lugar. Ritmo rápido, música suave. Tipo de conteúdo que vira referência e ganha salvamento em massa.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Lugares secretos em Paris para pedir em casamento"</h3><p>Sai do óbvio (Torre Eiffel) e mostra 4–5 alternativas românticas. Casa público de viagem com público de relacionamento. Salvamento garantido.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Existe um visto que..." — 1 visto por vídeo</h3><p>PVT, estudante, trabalho, longa duração. Cada vídeo um visto. Sequência de 4–5 conteúdos que educa o público.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Filmar uma sessão estratégica</h3><p>Pede pra cliente assinar autorização. Filma o WhatsApp/call sem mostrar dados. Corta o trecho mais útil e posta com narração explicando a dica.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>"5 cidades além de Paris para morar na França"</h3><p>Slide 1: gancho. Slide 2–6: cidade + custo de vida + por que vale. Slide 7: CTA. Conteúdo que viraliza e fica salvo no perfil.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"O que acontece com quem mora ilegal"</h3><p>Curiosidade + risco real (multa, banimento Schengen, deportação). Termina com: "Por isso o visto é a saída inteligente."</p></div>
+    <div class="idea-card"><div class="idea-type type-viagem">Viagem</div><h3>"Quanto custou minha viagem pra França"</h3><p>Mostra os números reais: passagem, hospedagem, comida, passeios. Total no fim. Conteúdo que abre conversa sobre orçamento.</p></div>
+    <div class="idea-card"><div class="idea-type type-viagem">Viagem</div><h3>"Trabalhos sazonais na França"</h3><p>Como guardar dinheiro durante o PVT. Onde trabalhar, quanto se ganha, o que esperar. Conteúdo prático e altamente útil.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"História de quem foi" (com permissão)</h3><p>Recria a jornada de clientes reais. "A maria queria mudar para Paris e fez assim." Storytelling com final emocional + CTA discreto.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Roteiro de 7 dias em Paris pagando pouco"</h3><p>Cada dia um lugar/atividade barata. Termina convidando para a assessoria personalizada de quem quer ir além do roteiro genérico.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"3 erros de quem viaja pra França pela primeira vez"</h3><p>Erro 1: comprar passagem em alta temporada. Erro 2: não pesquisar transporte. Erro 3: não levar adaptador. Útil + viralizável.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>"Um dia da minha vida em Paris"</h3><p>Café, padaria, atendimento de cliente, passeio rápido. Mostra que você vive lá de verdade — autoridade construída por imagem.</p></div>
+  </div>
+
+  <!-- 9. PERFIS DE REFERÊNCIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Inspire-se nesses formatos que já viralizam no nicho de viagem</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🏔️</div>
+      <div>
+        <h3>Páginas de Gramado</h3>
+        <div class="ref-niche">Viagem regional / Lugares baratos</div>
+        <p>Formato: foto do lugar + texto em cima ("lugares com 0 reais para visitar em Gramado"). Você pode pegar o mesmo formato — às vezes nem precisa aparecer — e adaptar para França. Texto curto, foto bonita, lista numerada.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">✈️</div>
+      <div>
+        <h3>Perfis de viagem internacional</h3>
+        <div class="ref-niche">Itália, Portugal, Espanha</div>
+        <p>Use o perfil secundário pra seguir esses canais. Salva os ganchos e formatos que viralizaram lá fora. O Instagram já validou esses vídeos com milhões de pessoas — você só precisa traduzir para o seu nicho de França.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Conteúdo educativo</div>
+      <blockquote>"Comenta PVT que eu te explico como funciona."</blockquote>
+      <div class="cta-note">Comentário simples gera engajamento e o algoritmo entrega para mais gente. Use em vídeos de visto e burocracia.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Lista útil / Lugares</div>
+      <blockquote>"Salva esse vídeo, lista completa nos comentários."</blockquote>
+      <div class="cta-note">Salvar é o sinal mais forte para o Instagram entender que o conteúdo é útil. Lista nos comentários gera retorno.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Bastidor / Storytelling</div>
+      <blockquote>"Se quiser que eu desenhe o seu, link da bio."</blockquote>
+      <div class="cta-note">Desapegado, rápido, sem soar venda. A pessoa entendeu que tem assessoria — agora a curiosidade vai levá-la pro link.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Vender a Assessoria sem Parecer Anúncio</h2><p>A técnica da "Sessão Estratégica"</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Não diga "consultoria gratuita". Diga "sessão estratégica".</h3>
+      <p>Consultoria gratuita não existe no marketing digital — desvaloriza. <strong>Sessão estratégica</strong> é uma chamada onde a pessoa vem conhecer a sua mentoria/assessoria. Você analisa o caso dela ao vivo, mostra o que precisa ser feito, e no final apresenta a proposta personalizada.</p>
+      <p style="margin-top: 10px;">Roteiro mental: <em>"Olha, no seu caso a gente precisa fazer X, Y, Z. Eu consigo te recomendar lugares gratuitos secretos. Eu desenhei aqui uma proposta especial pra você, é assim, assim e assim."</em> A pessoa já sente que é personalizado, e mesmo que não feche, ela não vai querer fazer por conta própria — fica sempre aquela sensação de que podia estar aproveitando mais.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Olhe isso ANTES de apertar "compartilhar" em cada vídeo</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Passe por cada item antes de publicar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho prende nos 3 primeiros segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem narração com tom de conversa (não de aula)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A legenda está aparecendo na tela?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Ficou entre 30 e 60 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Serve também para quem ainda NÃO vai comprar?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA claro no final (comenta, salva, link bio)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Eu apareço pelo menos uma vez no vídeo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>NÃO está afastando o público que sonha com a França?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas e Recursos</h2><p>O kit mínimo pra rodar a estratégia</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Código Viral — assistir a aula "Criatividade Sintética" (Módulo 1)</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Perfil secundário no Instagram só pra alimentar o algoritmo</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo no WhatsApp consigo mesma — banco de referências</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Lista organizada de padrões virais por nicho (planilha simples)</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Sessão de fotos — você à la francesa, com Torre Eiffel ao fundo</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Tripé de celular + microfone de lapela para gravações na rua</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Passo a passo para implementar tudo sem se perder</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Limpar o perfil e abrir as engrenagens</div><div class="timeline-desc">Trocar foto de perfil pela sua (mesmo que provisória). Abrir o perfil secundário e seguir 30 perfis de viagem. Criar o grupo no WhatsApp consigo mesma. Cortar e repostar o vídeo do PVT começando pelo gancho certo. Listar 10 vídeos virais de viagem que você já consegue adaptar.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Estabelecer o ritmo de 1 vídeo/dia</div><div class="timeline-desc">Postar 7 vídeos seguidos. Mistura: 3 de utilidade ("5 lugares com 0€"), 2 educativos ("existe um visto que..."), 1 bastidor de assessoria, 1 storytelling. Começar a aparecer com seu rosto em todos os vídeos. Agendar a sessão de fotos profissional.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Diversificar formatos e mapear o que funciona</div><div class="timeline-desc">Testar carrosséis, Reels e Stories. Olhar quais formatos têm mais salvamento e compartilhamento. Iniciar contato com 5 a 10 influencers que vão para a França. Começar a documentar sessões estratégicas (com permissão). Refinar a página de captura.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Escalar e converter</div><div class="timeline-desc">Subir para 2 posts/dia (1 Reels + 1 Stories útil). Fechar com pelo menos 3 influencers no portfólio mencionando você. Converter os primeiros leads em sessões estratégicas. Acompanhar evolução: meta de 10K seguidores até o terceiro mês. Mandar vídeos no grupo do Viral Pro pra Oney avaliar.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Abril 2026</div>
+
+</body>
+                                                                                                                                                                        </html>
