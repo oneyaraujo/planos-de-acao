@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Dr. Joney | Reprodução Assistida</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Dr. Joney — Reprodução Assistida</h1>
+  <p class="hero-sub">Médico com 100K seguidores, 8.500 partos e clínica Instituto Avance. Crescimento estagnado em 200/dia. O caminho pra sair de 100K e bater 500K com conteúdo de baixo esforço e tom de videochamada.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/r8uQC34Lilw" title="Análise Viral Pro — Dr. Joney" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>14 de Maio, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Reprodução Assistida</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">2-3/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">30-40s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">500K</div><div class="stat-label">Meta de Seguidores</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça isso hoje, antes de gravar qualquer vídeo novo</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Encurtar a bio — primeira linha em UMA linha só</h3><p>Hoje sua bio "Ajuda mulheres a encontrarem caminhos para transformar o sonho de ser mãe em realidade" ocupa duas linhas. Troca por <strong>"Ajudo mulheres a transformarem o sonho de ser mãe em realidade"</strong>. Simples, direto, eficaz. Segunda linha: "Reprodução assistida". Terceira: "+8.500 partos" (sua autoridade). Quarta: @instituto-avance (sem precisar de link, o Instagram já transforma em clicável).</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Trocar o bit.ly da bio pelo link direto do WhatsApp</h3><p>O bit.ly é desnecessário e gera fricção. Coloca o link direto do WhatsApp da clínica. Antes do link, adiciona um texto curto tipo <strong>"Fale comigo, me manda uma mensagem"</strong>. Quanto menos cliques entre a pessoa e o atendimento, maior a conversão.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Mudar a chave: vídeo é VIDEOCHAMADA, não palestra</h3><p>O Dr. Joney que atende no consultório (que conversa, escuta, é gente boa) NÃO aparece nos vídeos. Aparece um Dr. Joney "script-ado", lendo texto. <strong>Pare imediatamente</strong>. Daqui pra frente, finge que tá numa videochamada com UMA pessoa. Olha na câmera, conversa. Esquece roteiro. O conteúdo que viraliza é o que parece conversa, não palestra.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Assistir a aula de Gancho e Retenção do Código Viral</h3><p>Você não estava na aula de ontem. Separa um momento, assiste do começo ao fim. Sem dominar a parte do gancho, os outros conteúdos perdem força. <strong>Gancho de identificação</strong> é o que vai te tirar do platô — "sua esposa", "seu marido", "seu filho", "sua bebê". A pessoa entende em 1 segundo que é pra ela.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Estudar o perfil da Ivana (referência de maternidade)</h3><p>Ela abre os vídeos desenhando um cenário comum ("eu lembro de uma mãe que entrou na clínica e o filho começou a gritar..."). Imediatamente a pessoa pensa "isso já aconteceu comigo". Estuda 10 vídeos dela. Não copia conteúdo. Copia a estrutura do gancho.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Vídeos Analisados</h2><p>O que travou cada vídeo e como o roteiro deveria ser</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>"Espermograma — exame que nunca foi feito"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Tom totalmente <strong>scriptado</strong>: "Não é normal perder meses ou anos tentando engravidar por causa de um exame que nunca foi feito. Salve esse vídeo e já me segue, porque..." Som de leitura, não de conversa. Gancho longo demais. CTA no meio do gancho mata a retenção. A pessoa pula em 4 segundos.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Olhando na câmera, tom de conversa: <strong>"Se sua esposa não tá engravidando, provavelmente o problema não é ela — é você."</strong> Pausa. "Eu posso presumir que ela já fez uma série de exames, tá tudo OK, e vocês ainda não conseguem engravidar. Você também precisa fazer exames. Manda esse vídeo pro teu marido." Fim. 30 segundos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>Carrossel "7 frases que o marido precisa falar no puerpério"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Parede de texto em cada slide. As pessoas <strong>desistem de ler</strong>. Sem respiros, sem quebra de linha. Visual denso afasta o leitor. Resultado: salvamentos abaixo do potencial.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>1 frase principal por slide, no máximo 3-4 linhas curtas. <strong>Quebra de linha entre cada ideia</strong> (respiros). Pode usar setinhas, marcadores, esquemas. Pessoa lê em 3 segundos e arrasta. Visual leve = mais conclusões = mais alcance.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>Formato "Proibições para uma jornada leve até o positivo"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que poderia melhorar</div>
+          <p>Fórmula "5 coisas para X" / "7 proibições para Y" tá batida e <strong>não entra em conversa</strong>. Soa como aula. A pessoa que quer informação rápida procura blog, não Instagram.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Mantém esse formato como base, mas diminui o volume. <strong>Aumenta o formato de conversa direta</strong>. Em vez de "5 coisas pra evitar na gestação", grava: "Se você tá tentando engravidar e tá fazendo isso aqui, para AGORA. Eu vou te explicar por quê..." Mesma informação, embalagem completamente diferente.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Vídeos de testemunho (pais, bebês, partos)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✓ O que tá funcionando</div>
+          <p>Esses vídeos são ótimos. Mostram o resultado real do seu trabalho. <strong>Funcionam como prova social</strong>. Mantém esse formato.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como evoluir</div>
+          <p>Continua produzindo, mas <strong>aumenta a frequência</strong> dos vídeos de baixo esforço (conversa direta). O testemunho convence quem já tá interessado; o low effort traz seguidor novo. Os dois juntos = crescimento exponencial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que cortar e do que adotar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Vídeos com tom scriptado, lendo texto</div>
+      <div class="compare-item"><span>✕</span> Gancho longo com CTA no meio ("salve esse vídeo e já me segue, porque...")</div>
+      <div class="compare-item"><span>✕</span> Bio com 2 linhas na primeira frase</div>
+      <div class="compare-item"><span>✕</span> Link bit.ly redirecionando para WhatsApp</div>
+      <div class="compare-item"><span>✕</span> Carrossel com parede de texto</div>
+      <div class="compare-item"><span>✕</span> Muito formato "X coisas para Y" / "7 proibições"</div>
+      <div class="compare-item"><span>✕</span> Vídeos longos (mais de 50s)</div>
+      <div class="compare-item"><span>✕</span> Esperar inspiração ou cenário pra gravar</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Tom de videochamada com UMA pessoa</div>
+      <div class="compare-item"><span>✓</span> Gancho de identificação curto (3 segundos)</div>
+      <div class="compare-item"><span>✓</span> Bio limpa, 1 linha por ideia, autoridade na 3ª linha</div>
+      <div class="compare-item"><span>✓</span> Link direto do WhatsApp + "fale comigo"</div>
+      <div class="compare-item"><span>✓</span> Carrossel com respiros, esquemas, frases curtas</div>
+      <div class="compare-item"><span>✓</span> Conversa direta: "se sua esposa tá tentando engravidar..."</div>
+      <div class="compare-item"><span>✓</span> Vídeos entre 30 e 40 segundos</div>
+      <div class="compare-item"><span>✓</span> Gravar no carro, na clínica, em qualquer lugar (low effort)</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As regras de ouro pra cada vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">📞</span><h3>Tom de Videochamada</h3><p>Imagina UMA pessoa do outro lado. Não tá falando pra plateia. Você tá no consultório, conversando. Esse é o tom.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Gancho de Identificação</h3><p>Em 3 segundos, a pessoa precisa pensar "isso é pra mim". Use marido, esposa, filho, bebê, gestação, grávida. Funciona como ímã.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⚡</span><h3>Low Effort, Alta Frequência</h3><p>Pare de planejar produção. Grava no carro, na clínica, na sala. 2-3 vídeos por dia. Volume + simplicidade vence elaboração.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪞</span><h3>Cenário Comum Universal</h3><p>"Lembro de uma mãe que chegou na clínica..." A pessoa pensa "já aconteceu comigo". Desenhe a cena, depois entregue a solução.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🩺</span><h3>Útil, Replicável, Simples</h3><p>Só o conteúdo útil traz seguidor. Meme tem views, react tem views, mas só útil cresce. Cada vídeo: uma dica aplicável.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⏱️</span><h3>30 a 40 Segundos</h3><p>Menos que 30s não dá tempo. Mais que 40s a pessoa pula. 1 ideia, 1 gancho, 1 dica, 1 fechamento. Simples.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Templates "preencha os espaços" no tom de videochamada que o Oney indicou</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Cenário Comum + Dica Útil</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Se sua esposa tá tentando engravidar há mais de 1 ano e nada acontece, presta atenção." <em>Olhando direto na câmera, tom calmo, conversando.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Cenário</div><div class="script-step-text">"Tem casal que chega no meu consultório depois de 3 anos. Ela já fez todos os exames possíveis. E quando eu pergunto sobre o espermograma do marido, a resposta é sempre a mesma: ele não quis fazer."</div></div>
+    <div class="script-step"><div class="script-step-label">Autoridade</div><div class="script-step-text">"Eu sou médico há mais de 15 anos, já fiz 8.500 partos, e olha o que eu vejo: 40% dos casos de infertilidade vêm do homem. Marido, é por aqui que começa."</div></div>
+    <div class="script-step"><div class="script-step-label">Fechamento</div><div class="script-step-text">"Manda esse vídeo pro teu marido. Salva pra lembrar." <em>Sem CTA de venda. Sem "me segue". Apenas direcionamento.</em></div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Pergunta Direta (Marido / Esposa)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Marido, qual é o momento ideal pra você levar tua esposa pro hospital?" <em>Câmera fixa, jaleco ou camisa, olhar firme.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Validação</div><div class="script-step-text">"Eu sou médico, já fiz mais de 8.500 partos, e SEMPRE me deparo com isso: marido desesperado, mulher quase parindo no carro, ninguém sabe quando ir."</div></div>
+    <div class="script-step"><div class="script-step-label">Dica</div><div class="script-step-text">"Anota aqui: contração de 5 em 5 minutos, durando 1 minuto, por 1 hora. Esse é o momento. Não antes, não depois."</div></div>
+    <div class="script-step"><div class="script-step-label">Fechamento</div><div class="script-step-text">"Manda esse vídeo pra alguma grávida que você conhece. Pode salvar a noite dela."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Mito da Maternidade (Identificação Imediata)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Tua avó te disse pra você não tomar café na gestação. Tua mãe também. E olha o que a ciência fala..." <em>Câmera direta, expressão de "vou te contar uma fofoca".</em></div></div>
+    <div class="script-step"><div class="script-step-label">Quebra</div><div class="script-step-text">"Você pode SIM tomar café. Até 2 xícaras por dia. O que faz mal é exagerar. E olha que tem grávida que evita pão, fruta, peixe sem necessidade."</div></div>
+    <div class="script-step"><div class="script-step-label">Autoridade</div><div class="script-step-text">"Como obstetra, olha o que eu mais vejo: mulher tensa, comendo pouco, com medo de tudo. Relaxa. A maioria das proibições é mito."</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Compartilha com uma grávida que você conhece."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Do paciente que sai do consultório ao vídeo no ar — sem produção</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Observa o consultório</h4><p>Paciente sai, você pensa "dá vídeo sobre isso?". Anota no celular.</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Grava no carro</h4><p>Indo ou voltando da clínica. Câmera frontal, sem microfone, sem cenário. Conversa direta.</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Edita simples</h4><p>Legenda automática no Instagram. Sem corte, sem trilha sonora. Pode ser InShot ou nativo.</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Publica imediato</h4><p>Não junta vídeo. Publica 2-3 por dia em horários diferentes (manhã, almoço, noite).</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Mede e repete</h4><p>Mapeia o que gerou MAIS SEGUIDOR (não só views). Dobra no formato vencedor.</p></div>
+  </div>
+
+  <!-- 7. GANCHOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Identificação imediata + tom de conversa — projetadas pra prender em 3 segundos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Marido (gera compartilhamento da esposa):</em> "Marido, se sua esposa começar a tomar ácido fólico, anota isso aqui pra não passar vergonha."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Esposa (manda pro marido):</em> "Se você e seu marido tão tentando engravidar há mais de 1 ano, o problema provavelmente não é seu — manda esse vídeo pra ele."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Grávida:</em> "Se você tá grávida e tem mais de 35 anos, presta atenção nesses 3 sinais." (faixa etária + identificação direta)</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Cenário comum:</em> "Lembro de uma paciente minha que chegou desesperada, disse que tinha feito todos os exames..." (já desenha a cena que viraliza)</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Mito vs verdade:</em> "Tua avó te disse pra não tomar café na gestação. Vou te explicar por que ela tá errada."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Urgência:</em> "Se você tem mais de 38 anos e tá pensando em engravidar, isso aqui muda tudo." (urgência sem desespero)</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Pergunta provocação:</em> "Por que tua mãe sofreu pra engravidar e você tá sofrendo igual? Eu vou te contar."</div></div>
+  </div>
+
+  <!-- 8. IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Formatos e temas prontos pra gravar nessa semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Marido, faz o espermograma antes de gastar com FIV"</h3><p>Conversa direta com o marido. Esposas compartilham em peso. Gancho de identificação + dica útil + autoridade médica.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Qual o momento certo de ir pro hospital?"</h3><p>Pergunta pro marido. Dica prática: 5x5x1. Salvamento garantido. Manda pra qualquer grávida.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Mitos da Maternidade" — uma por semana</h3><p>Tua avó vs ciência. Café, peixe, pão, dormir de barriga pra cima. Cada mito = um vídeo. Quebra de crença viraliza.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Esposa tá com 38 e quer engravidar — anota AGORA"</h3><p>Urgência sem desespero. Relógio biológico explicado em 30s. Compartilhamento entre amigas é alto.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Cenários do Consultório" — Storytelling</h3><p>"Lembro de uma paciente que..." → desenha a cena → entrega a lição. Formato Ivana. Conexão emocional alta.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>"3 exames que TODO marido precisa fazer"</h3><p>1 ideia por slide. Respiros. Esquema visual. Sem parede de texto. Estilo Oney com Conselho de Nutrição.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Sinais de que você ovulou (mesmo sem teste)"</h3><p>Informação útil pra quem tá tentando engravidar. Salvamento massivo. Acelera o seguidor qualificado.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Vídeos de testemunho (mantém o que funciona)</h3><p>Bebês, mães chorando de alegria, partos. Você já faz, continua. Funciona como prova social.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Mães de gêmeos: o que ninguém te conta"</h3><p>Seu próprio caso (você tem gêmeas). Vulnerabilidade + autoridade. Conta a história da bolsa rota da sua filha.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Quanto tempo esperar pra fazer FIV?"</h3><p>Dúvida real de casal. Você responde como médico, conversando. Atrai cliente qualificado pra clínica.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>"Frases que TODO marido precisa falar no puerpério"</h3><p>Refazer o seu carrossel atual com respiros, frases curtas, esquemas visuais. Mesmo tema, embalagem nova.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>"Um dia no consultório" — formato story</h3><p>Stories ao longo do dia. Você indo pra clínica, atendendo (sem mostrar paciente), saindo. Gera intimidade.</p></div>
+  </div>
+
+  <!-- 9. REFERÊNCIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Quem dominou esse formato — estuda esses</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">👶</div>
+      <div>
+        <h3>Ivana</h3>
+        <div class="ref-niche">Maternidade / Cenários comuns</div>
+        <p>O Oney indicou diretamente. Ela abre os vídeos desenhando um cenário comum ("eu lembro de uma mãe que entrou e o filho começou a gritar..."). Identificação imediata. Estuda 10 vídeos dela. Não copia conteúdo — copia a estrutura do gancho.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🩺</div>
+      <div>
+        <h3>Médicos americanos de fertilidade</h3>
+        <div class="ref-niche">EM physicians, OB-GYNs, REI specialists</div>
+        <p>Estuda médicos da gringa que fazem reprodução assistida. Eles dominam o "low effort content" e o tom de videochamada. Adapta o formato pra língua e cultura brasileira. 1-2 anos à frente em formato.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo Pro Marido</div>
+      <blockquote>"Manda esse vídeo pro teu marido."</blockquote>
+      <div class="cta-note">Esposa compartilha em peso. Funciona como ímã viral. Sem pedir seguir — só direcionamento.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Dica de Saúde / Útil</div>
+      <blockquote>"Salva esse vídeo pra lembrar — pode ser que você precise depois."</blockquote>
+      <div class="cta-note">Salvamento = sinal forte pro algoritmo. O Instagram empurra mais.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Cenário Comum / História</div>
+      <blockquote>"Compartilha com alguma grávida que você conhece."</blockquote>
+      <div class="cta-note">Todo mundo conhece pelo menos uma grávida. Marcação = alcance multiplicado.</div>
+    </div>
+  </div>
+
+  <!-- 11. VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Direcionar pra Clínica sem Virar Anúncio</h2><p>O conteúdo cresce o perfil. A clínica vende sozinha.</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: não vende a clínica no vídeo, vende a autoridade</h3>
+      <p>Quando você faz conteúdo útil, replicável e em tom de conversa, a pessoa começa a confiar. Quando ela tem um problema real (não engravida, tá com 38, marido não fez exame), ela <strong>já te conhece</strong> e abre o WhatsApp da bio. A venda já foi feita no vídeo — sem você pedir. Daqui pra frente, mencione a clínica em 1 frase: <strong>"Aqui no Instituto Avance a gente vive isso todo dia"</strong>. Volta pro conteúdo imediatamente. Nada de pitch, nada de oferta. A bio faz o trabalho de venda. <strong>Quanto mais seguidor, mais pacientes — sem precisar pedir.</strong></p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Confere cada item antes de apertar "compartilhar"</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Passa por cada item antes de publicar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho dos 3 primeiros segundos gera identificação imediata?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tom é de videochamada (conversa) e NÃO de leitura?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Mencionei "marido", "esposa", "filho", "bebê", "grávida" no gancho?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O vídeo tem entre 30 e 40 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>É um conteúdo ÚTIL, replicável e simples?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>NÃO tem CTA no meio do gancho?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Fechamento pede compartilhamento ou salvamento (não seguir)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Já tenho o segundo (ou terceiro) vídeo do dia gravado?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O kit mínimo pra produzir 2-3 vídeos por dia sem fricção</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Câmera do celular — suficiente, sem precisar de microfone externo</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Suporte de celular pro painel do carro — gravar no trânsito</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>InShot ou edição nativa do Instagram — legenda automática</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Notas no celular — banco de ideias do consultório</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Link direto do WhatsApp da clínica (sem encurtador)</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Código Viral — aula de Gancho e Retenção (assista AGORA)</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>De 100K hoje até 500K em 6 meses</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Limpar as bases</div><div class="timeline-desc">Reescrever bio (1 linha por ideia). Trocar bit.ly pelo link direto do WhatsApp. Assistir a aula de Gancho e Retenção. Gravar o primeiro vídeo no estilo videochamada (no carro indo pra clínica).</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1-2</div><div class="timeline-title">Implementar o tom de conversa</div><div class="timeline-desc">2-3 vídeos por dia em tom de videochamada. Banco de ideias do consultório. Estudar 10 vídeos da Ivana. Refazer 1 carrossel antigo com respiros. Manter vídeos de testemunho. Medir: quais formatos trouxeram mais SEGUIDOR (não só views).</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1-2</div><div class="timeline-title">Dobrar nos formatos vencedores</div><div class="timeline-desc">Identifica os 2-3 formatos que mais converteram em seguidor. Triplica neles. Lança a série "Mitos da Maternidade" e "Cenários do Consultório". Começa a misturar referências da gringa. Meta: 200K seguidores até fim do mês 2.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 3-6</div><div class="timeline-title">Escalar e monetizar a autoridade</div><div class="timeline-desc">3-4 vídeos por dia. Conversa com Cabral (sócio do Oney) pra tráfego pago turbinar os vídeos vencedores. Convites pra palestras, parcerias, mídia. Clínica Instituto Avance cheia de paciente vindo do Instagram. Meta: 500K seguidores e 50% mais consultas/mês.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Maio 2026</div>
+
+</body>
+</html>
