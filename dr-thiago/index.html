@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Dr. Thiago | Plantão & Residência</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Dr. Thiago — Plantão & Residência</h1>
+  <p class="hero-sub">Médico plantonista que ensina outros médicos a dominarem o plantão e passarem na residência. Estagnado em poucos seguidores desde 2021. O caminho pra sair de 2K e chegar em 50K+ está aqui dentro.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/ZJmpl6gzFys" title="Análise Viral Pro — Dr. Thiago" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>14 de Maio, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Medicina / Plantão</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">2/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">40s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">50/50</div><div class="stat-label">Povão / Residentes</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Resolve isso antes de gravar qualquer vídeo novo</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Reescrever a bio com benefício abrangente</h3><p>Hoje a bio "te ajuda a dar plantão e a passar na residência" só fala com médico. Coloca uma frase ANTES dessa que comunique algo útil pra qualquer pessoa, tipo dicas práticas de saúde do dia a dia. A bio precisa fazer sentido pro povão que vai cair no teu perfil pelo conteúdo abrangente.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Arrumar a página do ebook (Guia de Sobrevivência no Internato)</h3><p>A página tá quebrada — não carrega direito, foto enorme sem necessidade, e não tem botão na primeira dobra. Resolve isso hoje: foto menor (do lado do texto, não dominando a tela), botão de CTA visível antes do scroll, texto curto explicando o que é o ebook.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Trocar a mentalidade: servir a comunidade, não só residentes</h3><p>Tua mente tem que virar a chave. Você é médico, sua missão no Instagram é servir a comunidade inteira. Aceita que 90% dos seguidores nunca vão comprar de você — eles existem pra fazer teu perfil crescer e dar autoridade. Quanto mais seguidor, mais residente entra no perfil e te vê como referência. Sem essa virada mental, nada do resto funciona.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Revisitar a aula de Criatividade Sintética no Código Viral</h3><p>Módulo 1, aula 4 (mais ou menos). Revisita pra listar todos os temas mais virais do nicho médico — tanto residência quanto saúde geral. Isso vira tua base de munição pra parar de travar na hora de gravar.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Criar um grupo no WhatsApp consigo mesmo</h3><p>Esse grupo vira teu banco de munição: vídeos virais que você gostaria de replicar, formatos de outros nichos que dá pra adaptar pra medicina, ideias do dia a dia. Toda vez que aparecer algo bom, joga lá. No dia que precisar gravar, você tem 30 ideias prontas. Sem isso, você trava.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Criar uma @fake só pra consumir conteúdo médico</h3><p>Conta nova no Instagram. Segue só médicos que produzem conteúdo (Brasil e gringa). Curte, salva e assiste só esses vídeos. Em 1 semana o algoritmo entende que essa conta só quer conteúdo médico — e passa a te entregar virais do nicho que você nunca viu na vida. Vira tua máquina de referências sem esforço.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Vídeos Analisados</h2><p>O que travou cada vídeo e como o roteiro deveria ser</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>Prescrição pra salvar no plantão (ultranichado)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Conteúdo tecnicíssimo, falando só pra residente que já tá no plantão. Linguagem fechada. Quem não é médico pula em 1 segundo. Resultado: <strong>poucas views</strong>, porque o público nichado dentro do Instagram é minúsculo.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Mesma autoridade, mas com gancho abrangente. Exemplo: <strong>"3 coisas pra checar antes de levar seu filho pro plantão"</strong>. Lá dentro você fala "eu sou plantonista, ensino outros plantonistas". Você ganha viralização e ainda planta a autoridade pro residente comprar o ebook.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>Caixinha de perguntas — "O que faria diferente no internato?"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Pergunta morna, resposta morna ("não faria nada de diferente"). Zero curiosidade. Mesmo o residente ideal pula esse vídeo. <strong>Zero engajamento</strong> previsível — o público não tem motivo nenhum pra ficar.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Troca a pergunta por uma com gancho de fofoca: <strong>"Qual a história mais absurda que já aconteceu com você no plantão?"</strong>. Aí você conta um caso real de 10 anos atrás, com tensão e desfecho. Dentro da história, ensina a conduta correta. Curiosidade + ensino = vídeo segura todo mundo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>Reacts (Baby Shark, reanimação cardio)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que poderia melhorar</div>
+          <p>Funciona bem (140k views já provou). Mas é um formato isolado — não tem um padrão visual ou linha editorial que conecte os reacts entre si. Falta consistência pra virar série de verdade.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p><strong>Manter os reacts e transformar em série fixa</strong>. Padrão visual igual em todos (mesmo enquadramento, mesma vinheta de abertura). Toda semana um react. Eles puxam viralização orgânica e dão ritmo. Mantém o que tá funcionando — só profissionaliza.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Frequência de postagem — 2 por semana</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>2 conteúdos por semana é praticamente nada. Por isso o perfil tá estagnado há anos. <strong>Sem volume, sem crescimento</strong>. O algoritmo precisa de matéria-prima pra te empurrar — e você não tá entregando.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p><strong>Mínimo 2 vídeos por dia</strong>. Pelo menos um deles bem rasinho: você no carro indo pro hospital, jaleco no banco, uma dica de 30 a 40 segundos. Cara de story. No trânsito sobra tempo pra gravar 5 desses por dia. Não tem como travar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que cortar e do que adotar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Conteúdo só pra residente (público minúsculo)</div>
+      <div class="compare-item"><span>✕</span> Postar 2 vezes por semana</div>
+      <div class="compare-item"><span>✕</span> Linguagem técnica fechada (diluição de medicamento etc.)</div>
+      <div class="compare-item"><span>✕</span> Caixinha com perguntas mornas</div>
+      <div class="compare-item"><span>✕</span> Bio com benefício só pra médico</div>
+      <div class="compare-item"><span>✕</span> Página do ebook quebrada e sem CTA visível</div>
+      <div class="compare-item"><span>✕</span> Esperar inspiração pra gravar</div>
+      <div class="compare-item"><span>✕</span> Gancho fraco nos 3 primeiros segundos</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> 50% conteúdo povão + 50% residente</div>
+      <div class="compare-item"><span>✓</span> 2 vídeos por dia, mínimo absoluto</div>
+      <div class="compare-item"><span>✓</span> Pegar o complexo e entregar simples</div>
+      <div class="compare-item"><span>✓</span> Caixinhas com gancho de curiosidade ("história absurda")</div>
+      <div class="compare-item"><span>✓</span> Bio mostra benefício pra qualquer um primeiro</div>
+      <div class="compare-item"><span>✓</span> Página do ebook limpa, CTA na primeira dobra</div>
+      <div class="compare-item"><span>✓</span> Grupo no WhatsApp como banco de munição</div>
+      <div class="compare-item"><span>✓</span> Gancho forte + texto na tela que também é gancho</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As regras de ouro pra cada vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">⚖️</span><h3>Mesclagem 50/50</h3><p>Metade pro povão (qualquer mãe, marido, esposa, vô), metade pro residente. O povão te faz crescer; o residente te faz vender.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>Gancho Forte ou Morre</h3><p>Os 3 primeiros segundos decidem tudo. Curiosidade, fofoca, urgência. Sem gancho, o vídeo morre — independente do conteúdo.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Complexo Vira Simples</h3><p>Seu maior desafio é traduzir medicina pra linguagem de feira. Quem faz isso melhor, vende mais. Raso não é ruim — é simples.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📲</span><h3>Cara de Story</h3><p>No carro, jaleco, sem produção. Vídeo de 30-40s que pareça stories. As pessoas confiam mais nesse formato do que em produção elaborada.</p></div>
+    <div class="rule-card"><span class="rule-emoji">👨‍⚕️</span><h3>Sempre Mencionar Quem Você É</h3><p>"Eu sou plantonista, ensino outros plantonistas." Dentro do conteúdo abrangente, planta a autoridade de forma desapegada.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔁</span><h3>Volume Acima de Tudo</h3><p>2 vídeos por dia é o piso. Quanto mais você posta, mais o algoritmo testa e mais rápido você acerta o formato que viraliza.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Templates "preencha os espaços" no formato que o Oney recomendou</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Dica Abrangente com Autoridade Médica</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"3 coisas pra checar antes de levar seu filho pro plantão." <em>Apareça com jaleco, dentro do carro ou no corredor do hospital.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Autoridade</div><div class="script-step-text">"Eu sou médico plantonista, ensino outros plantonistas, e uma coisa muito comum que a gente vê é a mãe levando o filho no primeiro dia de febre."<br><em>Planta quem você é, sem fazer pitch.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Conteúdo</div><div class="script-step-text">"Antes de ir pro plantão, verifica esse 3 sinais aqui: 1) [sinal], 2) [sinal], 3) [sinal]. Se tiver, é hora de levar. Se não, [orientação simples]."</div></div>
+    <div class="script-step"><div class="script-step-label">Fechamento</div><div class="script-step-text">"Salva esse vídeo pra mostrar pra outra mãe que precisa." <em>Sem CTA de venda. Só pede salvamento.</em></div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Caso Absurdo do Plantão (Storytelling)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"A história mais absurda que aconteceu comigo no plantão." <em>Direto na câmera, jaleco, expressão de "você não vai acreditar".</em></div></div>
+    <div class="script-step"><div class="script-step-label">Setup</div><div class="script-step-text">"Antes de eu virar especialista em ajudar médicos a passar na residência, teve um caso há uns 10 anos, uma pessoa entrou e [contexto]."</div></div>
+    <div class="script-step"><div class="script-step-label">Tensão</div><div class="script-step-text">"Ninguém sabia o que fazer. Aí eu lembrei de [conduta correta] e [desfecho]."<br><em>Conta a história ENSINANDO a conduta sem parecer aula.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Lição</div><div class="script-step-text">"Por isso eu falo pros meus residentes: [lição prática]. É isso que separa quem passa de quem repete a prova."</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Me segue se você é residente ou tá estudando pra residência."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Conteúdo de Story no Carro (volume diário)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Esposa, se seu marido chegar em casa falando que tá com [sintoma], NÃO faça isso." <em>Celular no painel, jaleco, semáforo fechado. Texto na tela: o próprio gancho.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Dica rápida</div><div class="script-step-text">"O que parece [coisa comum] pode ser [coisa séria]. Antes de qualquer chá, faz isso: [orientação prática]."</div></div>
+    <div class="script-step"><div class="script-step-label">Encerramento</div><div class="script-step-text">"Marca aqui um amigo que precisa ver." <em>Vídeo termina em 30s. Sem edição complexa, só legenda.</em></div></div>
+  </div>
+
+  <!-- 6. WORKFLOW -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>De acordar até ter 2 vídeos no ar — sem travar</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Banco de munição</h4><p>Abre o grupo do WhatsApp consigo mesmo e escolhe 2 ideias salvas</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Grava no carro</h4><p>A caminho do hospital, celular no painel, jaleco, 30-40s por vídeo</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Edita simples</h4><p>Só legenda na tela (texto também é gancho). Sem corte, sem trilha</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Publica os dois</h4><p>1 abrangente (povão) + 1 mais nichado (residência). Manhã e fim do dia</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Salva referências</h4><p>Na volta do plantão, joga 3-5 vídeos virais no grupo do WhatsApp pro próximo dia</p></div>
+  </div>
+
+  <!-- 7. GANCHOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copia, adapta e usa — projetados pra segurar nos 3 primeiros segundos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Família:</em> "Esposa, se seu marido chegar em casa falando isso, NÃO ignora." (alta taxa de compartilhamento — mulher manda pro marido)</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Filho:</em> "3 coisas pra checar antes de levar seu filho pro plantão." (gancho de mãe + autoridade médica)</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Idoso:</em> "Se seu pai ou sua mãe tem mais de 60, NUNCA dê esses remédios sem ler isso aqui." (preocupação com idoso = salvamento garantido)</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Curiosidade:</em> "A história mais absurda que já aconteceu comigo no plantão." (gancho de fofoca, segura até quem não é médico)</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Polêmica:</em> "Esse remédio que toda farmácia indica? Tá fazendo mais mal que bem." (controvérsia controlada gera comentário)</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Residência:</em> "O erro mais caro que cometi quando comecei a estudar pra residência." (vulnerabilidade + ensino, conecta com aluno)</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Mito:</em> "Tudo que sua avó te ensinou sobre febre tá errado. Vou te mostrar por quê." (quebra de crença popular = retenção)</div></div>
+  </div>
+
+  <!-- 8. IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Formatos e temas prontos pra gravar nessa semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"3 coisas pra checar antes de levar seu filho pro plantão"</h3><p>Gancho clássico pra mãe. Você de jaleco, lista as 3 coisas, fecha com a sua autoridade ("eu sou plantonista").</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Esposa, se seu marido falar isso, leva ele no médico"</h3><p>Sintomas que homem ignora. Gera compartilhamento em massa de esposa pra marido — você previu que viralizaria.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Histórias de Plantão" — uma por semana</h3><p>Casos absurdos que aconteceram. Storytelling + ensino. Gancho de fofoca segura até quem não é médico.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Reacts contínuos (mantém o que funciona)</h3><p>O react de 140k provou que funciona. Profissionaliza: mesma vinheta, mesmo enquadramento, toda semana.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Mitos da farmácia que matam idoso"</h3><p>Polêmica controlada. Quebra crença popular. Idoso é tema que dá muito compartilhamento e salvamento.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>"5 erros que travam quem estuda pra residência"</h3><p>Gera no Claude/Cloud a partir dos teus áudios. Pega tema que viralizou e transforma em carrossel.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>"Sinais de que seu filho precisa de plantão AGORA"</h3><p>Conteúdo pra mãe + autoridade médica. Salva como vida, compartilha em grupo de família.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>"Um dia no plantão" — formato story</h3><p>Você indo pro hospital, narrando o que tá pensando. Cara de story, gera intimidade e autoridade.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"O erro mais caro que cometi estudando pra residência"</h3><p>Vulnerabilidade + lição prática. Conecta diretamente com seu público nichado (residente).</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Tudo que sua avó te disse sobre febre tá errado"</h3><p>Mito vs verdade. Conteúdo abrangente, alto compartilhamento, autoridade médica embutida.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Print de thread no estilo Twitter</h3><p>Pega temas virais e transforma em carrossel estilo tweet. Formato que para o feed e tem alto salvamento.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>"O que eu como antes de um plantão de 24h"</h3><p>Hábitos pessoais + autoridade ("eu, como plantonista..."). Vira referência prática pra residente e curiosidade pro povão.</p></div>
+  </div>
+
+  <!-- 9. REFERÊNCIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Quem dominou esse formato — estuda esses</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🩺</div>
+      <div>
+        <h3>Médicos brasileiros virais</h3>
+        <div class="ref-niche">Plantonistas, emergencistas, pediatras</div>
+        <p>Cria a @fake e segue só esses perfis. Curtidas, salvamentos e tempo de tela. Em 1 semana o algoritmo te entrega os virais médicos que você nunca viu. Estuda o formato — não copia o conteúdo.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🌎</div>
+      <div>
+        <h3>Médicos da gringa (principalmente)</h3>
+        <div class="ref-niche">EM physicians, ER doctors, residents</div>
+        <p>O Oney enfatizou: estuda mais o que tá vindo da gringa. Eles estão 1-2 anos à frente em formato. Princípio do "complexo vira simples" é dominado por eles. Adapta pra língua e cultura brasileira.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Conteúdo Abrangente</div>
+      <blockquote>"Salva esse vídeo pra mostrar pra alguém que precisa."</blockquote>
+      <div class="cta-note">Sem pedir seguir. Pede salvamento — o algoritmo entende como "conteúdo útil" e empurra mais.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Conteúdo Pra Residente</div>
+      <blockquote>"Me segue se você é residente ou estuda pra residência."</blockquote>
+      <div class="cta-note">Filtra o público certo. Atrai quem é seu cliente em potencial pro ebook.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo Polêmico</div>
+      <blockquote>"Marca aqui um médico ou um amigo que precisa ver isso."</blockquote>
+      <div class="cta-note">Marcação em comentário = comentário forçado = mais alcance. Use em conteúdo de "mito vs verdade".</div>
+    </div>
+  </div>
+
+  <!-- 11. VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Vender o Ebook sem Virar Anúncio</h2><p>A técnica da menção rápida em conteúdo abrangente</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: planta autoridade no meio, vende no link da bio</h3>
+      <p>Dentro de cada conteúdo abrangente, você menciona em 1 frase: <strong>"eu sou plantonista, ensino outros médicos a darem plantão e a passar na residência"</strong>. Volta pro conteúdo imediatamente. Sem pitch, sem oferta. A pessoa que é residente já entende o que você vende. No final, "link na bio pro guia de sobrevivência no internato" — só pra quem se interessou. O perfil cresce com povão, o ebook vende pros residentes que chegaram pelo abrangente. <strong>Quanto mais seguidor, mais autoridade percebida — mais alunos.</strong></p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Confere cada item antes de apertar "compartilhar"</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Passa por cada item antes de publicar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho dos 3 primeiros segundos é forte o suficiente?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O conteúdo é abrangente (povão entende) OU 100% pra residente?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Mencionei em 1 frase quem eu sou (plantonista)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O vídeo tem entre 30 e 40 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Traduzi o complexo em linguagem simples?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem legenda na tela (que também é gancho)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA específico pro tipo do vídeo (salvar / seguir / marcar)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Já tenho o segundo vídeo do dia gravado?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O kit mínimo pra produzir 2 vídeos por dia sem fricção</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Claude (Cloud) — gera carrosséis automáticos a partir dos seus áudios</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>WhatsApp (grupo consigo mesmo) — banco de referências e ideias</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Instagram @fake — só pra consumir conteúdo médico viral</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Suporte de celular pro painel do carro — gravação no trânsito</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Microfone de lapela — áudio limpo mesmo dentro do carro</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Código Viral — aula de Criatividade Sintética (módulo 1, aula 4)</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Do hoje à virada do perfil em 30+ dias</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Resolver as bases</div><div class="timeline-desc">Reescrever bio (benefício abrangente + médico). Arrumar a página do ebook (foto menor, CTA na primeira dobra). Criar grupo no WhatsApp consigo mesmo. Criar a @fake. Gravar o primeiro vídeo no estilo story (no carro indo pro hospital).</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Estabelecer o ritmo de 2 por dia</div><div class="timeline-desc">2 vídeos por dia sem falha: 1 abrangente (família/saúde do dia a dia) + 1 nichado (residência/plantão). Revisita a aula de Criatividade Sintética. Alimenta o grupo do WhatsApp com 5 referências por dia da @fake. Mantém os reacts da série.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Testar formatos e dobrar nos vencedores</div><div class="timeline-desc">Inclui carrosséis (formato thread + pelo Claude). Lança a série "Histórias de Plantão". Mede o que viraliza: formato, gancho, horário. Dobra no que funciona, abandona o que não rende. Começa a aparecer mais o jaleco em ambientes diferentes (carro, hospital, casa).</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Escalar e colher autoridade</div><div class="timeline-desc">Sobe pra 3 vídeos por dia quando o fluxo tiver fluido. Aproveita pico viral pra mencionar o ebook em formatos novos. Meta: sair dos 2K e bater 20K em 60 dias, 50K em 90. A partir daí, oportunidades começam a bater na porta: palestras, parcerias, congressos médicos.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Maio 2026</div>
+
+</body>
+</html>
