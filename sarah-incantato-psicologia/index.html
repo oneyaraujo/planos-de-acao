@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Sarah | Encantato Psicologia</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    border: 3px solid transparent;
+    background-image: linear-gradient(#fff, #fff), var(--ig-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .hero-video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    border: none;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-yap { background: var(--blue-soft); color: var(--blue); }
+
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Sarah — Encantato Psicologia</h1>
+  <p class="hero-sub">Psicóloga e formadora de psicólogos. Cresceu 35.9K mas as vendas ainda não acompanharam. O caminho pra transformar alcance em conversão: rosto humano, conteúdo abrangente e gancho que prende nos 3 primeiros segundos.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/J593enrGykY" title="Análise Viral Pro — Sarah Encantato Psicologia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>19 de Maio, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Psicologia / Neurociência</div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">1-2/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">40s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">50/50</div><div class="stat-label">Abrangente x Específico</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de gravar o próximo vídeo</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Trocar a foto de perfil — a Sarah precisa aparecer</h3><p>O logo da Encantato (foguete) tá afastando seguidores. Pessoas <strong>não seguem instituições, seguem pessoas</strong>. Cresceram 35.9K com a logo — com a foto da Sarah seria 50K+ no mesmo tempo. Magazine Luiza precisou da Lu. Encantato precisa da Sarah. Foto profissional, rosto ocupando 70%+ da imagem.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Reorganizar o nome do perfil</h3><p>Trocar "Encantato Psicologia" como nome principal por <strong>"Sarah"</strong>, e deixar "Encantato Psicologia" como descritivo abaixo (ou no @handle). As pessoas compram a formação POR causa da Sarah, porque é ela quem aparece nos vídeos. O nome do perfil precisa amplificar isso.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Reescrever a bio em funil de abrangência</h3><p>A primeira linha atual ("Te mostro como atualizar sua prática clínica em psicologia e neurociência no mundo atual") é específica demais. Estrutura correta em 3 linhas: <strong>linha 1 ampla</strong> ("Aqui você descobre todo dia sobre psicologia e neurociência"), <strong>linha 2 específica</strong> ("Atualize sua prática clínica com nossa formação"), <strong>linha 3 CTA</strong> com 👇 apontando o link.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Adotar a regra 50/50 (abrangente x específico)</h3><p>Metade do conteúdo precisa conversar com QUALQUER pessoa interessada em psicologia/neurociência — não só com psicólogos. Vocês foram exatas no início e perderam alcance. <strong>Instagram é plataforma de INTERESSE, não de público</strong> — não sabe quem é psicólogo. Vídeo abrangente alcança mais, e dentro da amostragem maior aparece o psicólogo que vira aluno.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Contextualizar memes pra leigo entender</h3><p>O Reels do Neymar sobre "por que o psicólogo não pode mostrar teste na internet" — leigo (Oney) não entendeu. Memes/referências internas da psicologia precisam de UMA frase de contexto antes do gancho: <strong>"O psicólogo não pode mostrar teste online — e isso parece exagero, mas tem uma razão técnica que afeta TODO mundo que vai fazer avaliação"</strong>. Abre o vídeo pra qualquer espectador.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que travou cada vídeo e como ele virava conteúdo viral</p></div>
+  </div>
+
+  <div class="before-after-grid">
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>Meme Neymar — "Por que psicólogo não pode mostrar teste"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Conteúdo super interno ao mundo dos psicólogos. Leigo não entende sem contexto. Galera específica entendeu, mas <strong>perdeu a abrangência</strong>. O Instagram não distribui pra mais gente porque o tema não chama interesse universal.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como reescrever</div>
+          <p>Adicionar contexto NO INÍCIO: <strong>"Você sabia que existe uma regra que proíbe psicólogo de mostrar testes online? E isso afeta DIRETAMENTE qualquer pessoa que vai fazer avaliação. Deixa eu te explicar o porquê — pode ser que você esteja sendo avaliada errado e nem saiba."</strong> Agora todo mundo entra no vídeo, e o psicólogo se identifica do meio em diante.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>Tela dividida — "Você vê essa cena e já pensa em autismo, né?"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Conteúdo EXCELENTE (sinais vs diagnóstico, exploração sensorial), mas o gancho é fraco/suave. Pergunta retórica não engaja. "Você vê essa cena e já pensa em autismo, né?" → fácil de pular. Vídeo bom morre no gancho.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Gancho provocativo</div>
+          <p><strong>"Se o seu filho faz ISSO, ele tem autismo. Isso é o que muita gente vai te dizer na internet. Mas deixa eu te explicar uma coisa antes pra você não surtar."</strong> Depois entra exatamente o que ela falou (sinais vs diagnóstico). O conteúdo é o mesmo — o gancho é que muda a entrega do algoritmo. <strong>80% do sucesso do vídeo é o gancho.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>Jovem autista baleada por sorrir</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Gancho atual ("Sorriso é pra masculinidade de um homem que precisa de uma arma para responder") é frase de palestra — não engaja. O <strong>gancho REAL forte vem DEPOIS</strong>: "Essa jovem autista foi baleada no rosto por um homem descontrolado porque sorriu pra ele". Final do vídeo virou palestra ("É por isso que nós psicólogos precisamos psicoeducar...") em vez de CTA.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Reescrita completa</div>
+          <p>Começar com o <strong>print da manchete real da notícia</strong> (familiaridade visual = engaja) + narração "Essa jovem foi baleada no rosto porque sorriu — e isso revela uma coisa que ninguém quer falar". Mencionar a formação no MEIO ("Inclusive na Encantato a gente fala sobre isso"). Final = CTA: <strong>"Compartilha esse vídeo pra mais gente entender — não deixa essa informação morrer aqui."</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Carrossel — Teste de personalidade (BFP / MMPI)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Texto muito pequeno e blocão em cada slide. Ninguém lê parágrafo grande em carrossel. Conteúdo bom mas diluído. Sem CTA forte no último slide.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como reescrever</div>
+          <p>Refazer no <strong>formato carrossel-X (estilo Twitter)</strong> que o Oney já mandou. Cada slide: <strong>3-4 linhas curtas no máximo</strong>. Foto da Sarah no header de cada card. Último slide: CTA enxuto — "Dá dois toques 👆 salva 🔖 me segue 💬". Fazer também versão Reels do mesmo tema = multiplica o alcance sem refazer o trabalho.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 5</span><h3>Cena Big Bang Theory (Sheldon + avó) — Teoria da Mente</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ Ajuste fino (o vídeo já é excelente)</div>
+          <p>Estrutura PERFEITA: começa abrangente (cena famosa que qualquer um entende) → afunila pro psicólogo. Único ajuste: o final foi 100% pros psicólogos. Equilibrar com a galera leiga.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Gancho ainda mais abrangente</div>
+          <p><strong>"Como você sabe quando alguém tá mentindo pra você? Existe uma habilidade mental que faz a diferença — e quando ela falta, a pessoa cai em tudo."</strong> Entra a cena, análise da teoria da mente, e no final um CTA que serve pros dois públicos: <strong>"Me segue aqui — todo dia eu mostro essas análises unindo neurociência ao cotidiano."</strong> Formato repetível: pegar cena de filme/série → análise psicológica.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>O que parar e o que começar a fazer no perfil</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Logo da Encantato como foto de perfil</div>
+      <div class="compare-item"><span>✕</span> Conteúdo 100% específico pra psicólogos</div>
+      <div class="compare-item"><span>✕</span> Gancho retórico fraco ("já pensa em autismo, né?")</div>
+      <div class="compare-item"><span>✕</span> Meme interno da psicologia sem contexto pro leigo</div>
+      <div class="compare-item"><span>✕</span> Final do vídeo em modo palestra</div>
+      <div class="compare-item"><span>✕</span> Blocão de texto em carrossel</div>
+      <div class="compare-item"><span>✕</span> Bio específica logo na primeira linha</div>
+      <div class="compare-item"><span>✕</span> Pitch de venda longo no final</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Foto profissional da Sarah no perfil</div>
+      <div class="compare-item"><span>✓</span> 50/50 abrangente x específico</div>
+      <div class="compare-item"><span>✓</span> Gancho provocativo ("Se seu filho faz ISSO...")</div>
+      <div class="compare-item"><span>✓</span> 1 frase de contexto antes do meme interno</div>
+      <div class="compare-item"><span>✓</span> CTA no final ("compartilha pra ajudar a espalhar")</div>
+      <div class="compare-item"><span>✓</span> 3-4 linhas por slide no carrossel-X</div>
+      <div class="compare-item"><span>✓</span> Bio em funil: ampla → específica → CTA</div>
+      <div class="compare-item"><span>✓</span> Menção da formação no MEIO em 2 frases</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As regras de ouro que mudam o jogo no perfil de Psicologia</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Interesse, Não Público</h3><p>Instagram entrega por INTERESSE no tema, não pelo perfil profissional. Conteúdo abrangente = alcance maior = psicólogo achado dentro do range. Específico demais = morre.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>Gancho Provocativo</h3><p>80% do sucesso do vídeo é o gancho. Provocativo > suave. "Se seu filho faz ISSO, ele tem autismo" > "Você vê essa cena e já pensa em autismo?".</p></div>
+    <div class="rule-card"><span class="rule-emoji">⏱️</span><h3>40 Segundos no Máximo</h3><p>Reels de psicologia entre 30-60s. 40s é o sweet spot. Cena/manchete → contexto → análise → CTA. Sem tempo pra palestra.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📰</span><h3>Visual de Manchete</h3><p>Print da notícia real como fundo do vídeo gera familiaridade. Olho do espectador já é treinado a ler manchete. Mais forte que texto digitado em cima.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⚖️</span><h3>50/50 Abrangente x Específico</h3><p>Metade pra todo mundo (cenas, notícias, mitos da mente), metade pra psicólogo (técnicas, testes, formação). Mantém alcance E conversão.</p></div>
+    <div class="rule-card"><span class="rule-emoji">👤</span><h3>O Rosto da Sarah Sempre</h3><p>A Sarah é a marca. Foto profissional no perfil, aparecer nos vídeos, narrar com voz própria. Instituição sozinha não cresce — precisa de rosto humano.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>3 templates baseados no que já funcionou + ajustes do Oney</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Tela Dividida com Cena Famosa (replicar o Sheldon)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Como você sabe quando alguém tá mentindo? Existe uma habilidade mental que faz a diferença — e quando ela falta, a pessoa cai em qualquer mentira."<br><em>Sarah aparece de um lado, a cena famosa do outro. Cena rola, ela narra por cima.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Análise leiga</div><div class="script-step-text">"Olha o que aconteceu aqui: a avó tava blefando. O Sheldon levou tudo ao pé da letra. Isso se chama teoria da mente — a capacidade de perceber que o outro pode pensar diferente da realidade."<br><em>A cena continua rodando. Conceito explicado em 1 frase.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Aprofunda</div><div class="script-step-text">"Quem tem dificuldade nessa habilidade não entende ironia, blefe ou sarcasmo. É comum em quadros como autismo e algumas condições do neurodesenvolvimento."<br><em>Agora afunila pro psicólogo, mas ainda usa linguagem acessível.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Pitch curto</div><div class="script-step-text">"Inclusive na formação Encantato a gente trabalha essas análises clínicas — fica de olho aqui que toda semana eu mostro casos novos."<br><em>2 frases. Sem pausa dramática. Volta pro conteúdo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Me segue aqui — todo dia eu mostro essas análises unindo neurociência ao cotidiano."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Manchete Real + Análise Psicológica</h3>
+    <div class="script-step"><div class="script-step-label">Gancho visual</div><div class="script-step-text"><strong>Print da manchete real</strong> na tela (preencher 100% do enquadramento). Sarah narrando com voz indignada:<br>"Essa jovem autista foi baleada no rosto por um homem descontrolado porque sorriu pra ele. E isso revela uma coisa que ninguém quer falar."</div></div>
+    <div class="script-step"><div class="script-step-label">Contexto rápido</div><div class="script-step-text">"O que muita gente não sabe é que autistas sorriem sem intenção social. Pode ser uma lembrança, uma reação sensorial. NÃO é deboche."<br><em>Sai da manchete, Sarah aparece de frente. Tom de explicação direta.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Menção curta</div><div class="script-step-text">"Na minha visão, psicólogos deveriam falar mais sobre isso. Inclusive é o que a gente trabalha na formação Encantato."<br><em>2 frases. Não para o vídeo pra fazer pitch.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA forte</div><div class="script-step-text">"Compartilha esse vídeo pra mais gente saber. Talvez se esse cara tivesse passado por essa informação antes, essa atrocidade não tinha acontecido."<br><em>Transforma a lição em ação. Engaja a audiência pra ser mensageira.</em></div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Mito vs Verdade da Psicologia</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Se o seu filho faz [comportamento específico], ele tem [transtorno]. Isso é o que MUITA gente vai te falar na internet. Mas antes de você surtar, deixa eu te explicar."<br><em>Sarah falando direto pra câmera, celular esticado, estilo story.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Quebra do mito</div><div class="script-step-text">"O comportamento sozinho não diagnostica nada. Pode ser exploração sensorial, empolgação, autorregulação, ou só desenvolvimento normal da criança."<br><em>Pode usar imagens de apoio: bebê brincando, gráfico do desenvolvimento.</em></div></div>
+    <div class="script-step"><div class="script-step-label">O critério real</div><div class="script-step-text">"Diagnóstico se faz olhando o conjunto: comunicação, interação social, brincadeira, linguagem, marcos do desenvolvimento. NÃO se faz por um vídeo no Instagram."<br><em>Sarah pode contar nos dedos. Sequência rápida.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA + venda sutil</div><div class="script-step-text">"Se você é psicólogo e quer aprender a fazer essa avaliação completa, link da formação Encantato tá na bio. Se você é dono(a) de pet humano, me segue pra mais conteúdo desmistificado."<br><em>Dois CTAs em um. Cada audiência tem o seu.</em></div></div>
+  </div>
+
+  <!-- 6. WORKFLOW -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da ideia ao post — usando o banco de referências do @fake</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Banco de ideias</h4><p>Manhã: abre o @fake e o grupo WhatsApp consigo mesma, escolhe 1 cena/manchete</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Define o gancho</h4><p>Pergunta provocativa em 1 frase. Se não passar no "teste de pular", reformula</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Grava em 1 take</h4><p>Celular esticado ou tela dividida. 40s. Narração + legenda</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Posta Reels + carrossel</h4><p>Mesmo tema vira 1 Reels + 1 carrossel-X. Multiplica alcance</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Engaja primeiros 30min</h4><p>Responde TODOS os comentários. Algoritmo prioriza vídeos com resposta rápida</p></div>
+  </div>
+
+  <!-- 7. GANCHOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Adapte pro próximo vídeo — todas funcionam pra psicologia/neurociência</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Provocação parental:</em> "Se o seu filho faz ISSO, ele tem autismo. Isso é o que vão te falar. Mas antes de surtar, deixa eu te explicar."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Manchete real:</em> Print da notícia + "Essa pessoa foi [acontecimento]. E isso revela algo sobre [conceito de psicologia/neurociência]."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Pergunta cotidiana:</em> "Como você sabe quando alguém tá mentindo pra você? Existe uma habilidade mental que faz toda a diferença."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Cena de série analisada:</em> "Você lembra dessa cena? Tem um nome técnico pra isso na psicologia — e quem entende, sai na frente nas relações."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Mito contraintuitivo:</em> "Tudo que dizem sobre [transtorno] na internet tá errado. Vou te mostrar o que A PSICOLOGIA DE VERDADE fala."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Sinais práticos:</em> "3 sinais de [transtorno] que ninguém te ensina a observar. O terceiro é o mais importante."</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Se + Então:</em> "Se você se irrita com [comportamento simples], pode ser que tenha [conceito psicológico]. E não é frescura."</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>12 ideias pra começar a gravar amanhã, adaptadas pro nicho de Psicologia/Neurociência</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Análise da Cena" — toda semana uma cena famosa</h3><p>Sheldon (Big Bang), Friends, The Office, novelas brasileiras. Cada cena = 1 conceito psicológico. Formato repetível e viralizável.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Se seu filho faz ISSO" — série de mitos parentais</h3><p>Birra, sorriso aleatório, repetir palavras, evitar abraço. Cada um vira 1 vídeo desmistificando. Audiência de pais (massiva no Instagram).</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Como saber se alguém tá mentindo"</h3><p>Tema clássico que sempre engaja. Sinais do cérebro mentindo, microexpressões, teoria da mente. Termina com call pra formação.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Manchete real + análise psicológica</h3><p>Print de notícia → "Isso aconteceu porque [conceito da neurociência]". Funciona pra crimes, comportamentos virais, tragédias.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel-X</div><h3>"O que ninguém te conta sobre [transtorno]"</h3><p>3-4 linhas por slide. Mitos + verdades. Carrossel-X estilo Twitter. Salva muito. Versão Reels do mesmo tema = dobra o alcance.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"3 sinais de [transtorno]" — contagem regressiva</h3><p>Autismo, TDAH, ansiedade, depressão. Contagem 3-2-1, o último sempre o mais impactante. Retenção alta.</p></div>
+    <div class="idea-card"><div class="idea-type type-yap">Yap Content</div><h3>Sarah dentro do carro — papo direto pro povo</h3><p>Estilo story, celular esticado. Falar sobre saúde mental no cotidiano, leigo entende tudo. Testar 1 por semana.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel-X</div><h3>Glossário da neurociência em linguagem normal</h3><p>"O que é amígdala, córtex pré-frontal, dopamina" — cada slide um termo + analogia do dia a dia. Vira referência.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"O psicólogo nunca te conta isso" — bastidor ético</h3><p>O que acontece numa consulta, por que não diagnostica por foto, por que não pode mostrar teste. Cada um vira 1 vídeo.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Reação a vídeo viral com análise psicológica</h3><p>Pega um vídeo viral do momento (briga em supermercado, criança chorando, casal discutindo) e analisa o comportamento. Surfa no trending.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Behind the scenes da Encantato (sem expor aluno)</h3><p>Sarah preparando aula, conversando com Jalis, montando material. Mostra a Encantato como família, não como instituição fria.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Pergunta pro psicólogo" — dúvidas dos seguidores</h3><p>Imprima a pergunta na tela. Responda em 40s. Vira série semanal. Engaja porque a audiência sente que pode mandar a próxima.</p></div>
+  </div>
+
+  <!-- 9. PERFIS DE REFERÊNCIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis e Referências</h2><p>Estude esses modelos pra inspirar o conteúdo da Encantato</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🛒</div>
+      <div>
+        <h3>Magazine Luiza / Lu</h3>
+        <div class="ref-niche">Instituição com rosto humano</div>
+        <p>A Magalu é uma das maiores instituições do Brasil — mas o perfil principal é da Lu. As pessoas se conectam com humano, não com logo. A Encantato precisa da Sarah como "Lu" do nicho psicológico.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🎯</div>
+      <div>
+        <h3>Oney Araújo (@oneyaraujo)</h3>
+        <div class="ref-niche">Funil de abrangência aplicado</div>
+        <p>1,5M seguidores, 60K alunos. Os outros 1,44M "não prestam" pra venda — mas são essenciais pra encontrar os 60K. Conteúdo abrangente expande o range; específico fecha a venda. Replicar a lógica.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo abrangente (psicoeducação)</div>
+      <blockquote>"Compartilha esse vídeo pra mais gente entender — informação salva vidas."</blockquote>
+      <div class="cta-note">Transforma a lição em ação. A audiência vira mensageira. Funciona melhor que "me segue".</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo educativo geral</div>
+      <blockquote>"Me segue aqui — todo dia eu mostro essas análises unindo psicologia e neurociência ao cotidiano."</blockquote>
+      <div class="cta-note">Promete entrega futura. Funciona em todos os vídeos. CTA padrão.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo voltado pra psicólogos</div>
+      <blockquote>"Se você é psicólogo e quer se aprofundar, link da formação Encantato tá na bio."</blockquote>
+      <div class="cta-note">Pitch da formação SÓ quando o conteúdo do vídeo é claramente técnico. Sem forçar.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Vender a Formação Encantato sem Parecer Anúncio</h2><p>A técnica da menção no MEIO do vídeo (não no final)</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: menção de 2 frases NO MEIO do vídeo, e volta pro conteúdo</h3>
+      <p>Esquece o final do vídeo com pitch longo da formação. Em vez disso, quando o assunto do vídeo tocar em algo técnico (avaliação, intervenção, teste, abordagem), <strong>jogue uma frase no meio</strong>: <strong>"Inclusive isso é o que a gente trabalha na formação Encantato — fica de olho aqui, na bio."</strong> 2 frases, sem pausa dramática, volta pro conteúdo. A venda acontece pelo VOLUME de menções rápidas + a percepção de que vocês entendem do assunto, não por um vídeo único de pitch. Vendas crescem quando a Encantato deixa de ser "anúncio" e vira "marca de autoridade".</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Confira cada item antes de apertar o publicar</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira cada item antes de postar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho é provocativo (não retórico)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Leigo entende os 10 primeiros segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Ficou entre 30 e 60 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A legenda tá grande e legível?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Se for cena/manchete: visual ocupa pelo menos 60% da tela?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A menção da formação tá NO MEIO (não no final)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O final é CTA (não palestra)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem versão carrossel-X do mesmo tema?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas e Recursos</h2><p>O kit + o que o Oney mandou montar agora</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>CapCut ou InShot — montagem de tela dividida + legenda</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Skill /carrossel-x — formato thread/Twitter pra carrosséis</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Microfone de lapela sem fio — áudio limpo nas gravações</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Foto profissional da Sarah — fundo neutro, sorriso natural</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo WhatsApp consigo mesma — banco de ideias e referências</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Perfil @sarah-ideias (fake) só seguindo psicologia/neurociência</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Dos ajustes urgentes até bater 100K seguidores</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Hoje</div>
+      <div class="timeline-title">Limpeza do perfil + 1 vídeo no novo formato</div>
+      <div class="timeline-desc">Trocar foto de perfil pela foto da Sarah. Reescrever a bio em funil. Mudar o nome do perfil pra Sarah + Encantato Psicologia. Gravar 1 Reels HOJE no formato provocativo (sugestão: "Se seu filho faz ISSO, ele tem autismo — mas calma antes de surtar").</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 1</div>
+      <div class="timeline-title">Sistema operacional + ritmo de 1/dia</div>
+      <div class="timeline-desc">Criar o @sarah-ideias e seguir 50+ perfis de psicologia/neurociência. Criar grupo WhatsApp consigo mesma. Listar 20 temas virais do nicho. Postar 1 Reels por dia sem falha — começa pelos modelos prontos deste plano. Testar o primeiro Yap Content dentro do carro.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 2-3</div>
+      <div class="timeline-title">Subir pra 2/dia + dupla Reels+Carrossel</div>
+      <div class="timeline-desc">Aumentar pra 2 Reels/dia + 1 carrossel-X paralelo do mesmo tema. Testar 3 ganchos diferentes na semana e mapear qual prende mais. Começar a série "Análise da Cena". Responder DMs com agilidade — primeiro contato vira lead em 3-5 mensagens.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Mês 1-2</div>
+      <div class="timeline-title">50K → 100K seguidores + vendas alavancando</div>
+      <div class="timeline-desc">Com foto da Sarah no perfil + conteúdo abrangente, a curva de seguidores acelera. Meta de bater 50K em 30 dias, 100K em 60 dias. Identificar os 5 vídeos que mais cresceram e replicar formato. Vendas da formação Encantato devem subir naturalmente conforme a percepção de autoridade aumenta.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Maio 2026</div>
+
+</body>
+</html>
