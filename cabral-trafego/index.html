@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análise Nível 1 — Matheus Cabral | @cabraltrafego</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --card: #ffffff;
+  --card-border: #e8e8ed;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+  --ig-purple: #833AB4;
+  --ig-pink: #E1306C;
+  --ig-orange: #F77737;
+  --ig-yellow: #FCAF45;
+  --ig-blue: #405DE6;
+  --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+  --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+  --green: #00C853;
+  --green-soft: rgba(0, 200, 83, 0.08);
+  --red: #E1306C;
+  --red-soft: rgba(225, 48, 108, 0.07);
+  --yellow: #F77737;
+  --yellow-soft: rgba(247, 119, 55, 0.07);
+  --blue: #405DE6;
+  --blue-soft: rgba(64, 93, 230, 0.07);
+  --purple: #833AB4;
+  --purple-soft: rgba(131, 58, 180, 0.07);
+  --pink: #E1306C;
+  --pink-soft: rgba(225, 48, 108, 0.07);
+  --cyan: #00B4D8;
+  --cyan-soft: rgba(0, 180, 216, 0.07);
+
+  --text: #1a1a2e;
+  --text-secondary: #4a4a5a;
+  --text-muted: #8e8e9a;
+  --text-dim: #b0b0b8;
+}
+
+body { font-family: 'Inter', sans-serif; background: var(--bg-soft); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+.hero { position: relative; padding: 56px 40px 40px; text-align: center; background: var(--bg); border-bottom: 1px solid var(--card-border); overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--ig-gradient); }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--ig-gradient); border-radius: 100px; padding: 8px 22px; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 24px; }
+.hero h1 { font-size: 44px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-sub { font-size: 17px; color: var(--text-secondary); font-weight: 400; max-width: 720px; margin: 0 auto 20px; line-height: 1.65; }
+.hero-meta { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 8px; }
+.hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+.hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+.level-banner { max-width: 1200px; margin: -20px auto 0; padding: 0 40px; position: relative; z-index: 2; }
+.level-banner-inner { background: linear-gradient(135deg, rgba(247,119,55,0.1), rgba(225,48,108,0.1)); border: 1px solid rgba(247,119,55,0.3); border-radius: 14px; padding: 18px 24px; display: flex; align-items: center; gap: 16px; }
+.level-banner-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--yellow-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.level-banner-text { flex: 1; }
+.level-banner-text h3 { font-size: 14px; font-weight: 800; color: var(--yellow); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.level-banner-text p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1200px; margin: 24px auto 0; padding: 0 40px; position: relative; z-index: 2; }
+.stat-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px; text-align: center; box-shadow: var(--card-shadow); position: relative; overflow: hidden; }
+.stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--ig-gradient); }
+.stat-number { font-size: 30px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+.stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+.stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+.stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+.stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+.stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+.section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+.section-header:first-child { margin-top: 0; }
+.section-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+.section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+.diagnose-box { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 28px 32px; box-shadow: var(--card-shadow); position: relative; }
+.diagnose-box::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--red); border-radius: 14px 0 0 14px; }
+.diagnose-box h3 { font-size: 17px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+.diagnose-box p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.7; }
+.diagnose-box p + p { margin-top: 12px; }
+.diagnose-box strong { color: var(--text); font-weight: 700; }
+.diagnose-box .highlight { background: rgba(225,48,108,0.08); padding: 2px 6px; border-radius: 4px; color: var(--red); font-weight: 600; }
+
+.priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.action-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px 24px; display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 18px; box-shadow: var(--card-shadow); transition: all 0.2s ease; }
+.action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+.action-number { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+.action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+.action-content p + p { margin-top: 8px; }
+.action-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+.urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+.urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+.urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+.urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+.urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+.urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+.action-content code { font-family: 'SF Mono', Monaco, monospace; background: rgba(131,58,180,0.08); color: var(--ig-purple); padding: 2px 6px; border-radius: 4px; font-size: 12.5px; font-weight: 500; }
+
+.cat-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.cat-block { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; box-shadow: var(--card-shadow); overflow: hidden; }
+.cat-block-header { padding: 18px 24px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--card-border); background: var(--bg-soft); }
+.cat-block-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0; }
+.cat-block-title { flex: 1; }
+.cat-block-title h3 { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+.cat-block-title span { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+.cat-block-body { padding: 22px 24px; }
+.cat-block-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+.cat-block-body p + p { margin-top: 10px; }
+.cat-block-body strong { color: var(--text); font-weight: 700; }
+.cat-block-body em { color: var(--ig-purple); font-style: normal; font-weight: 600; background: rgba(131,58,180,0.07); padding: 1px 6px; border-radius: 4px; }
+
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.compare-col { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow); }
+.compare-col h3 { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
+.compare-col.bad h3 { color: var(--red); }
+.compare-col.good h3 { color: var(--green); }
+.compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+.compare-item span { flex-shrink: 0; font-size: 13px; }
+
+.next-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.next-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px 26px; box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start; }
+.next-num { width: 36px; height: 36px; border-radius: 50%; background: var(--ig-gradient); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; flex-shrink: 0; }
+.next-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: var(--text); }
+.next-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+.next-card p + p { margin-top: 6px; }
+
+.footer { text-align: center; padding: 36px 40px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--card-border); max-width: 1200px; margin: 0 auto; background: var(--bg); }
+.footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+@media (max-width: 768px) {
+  .hero { padding: 40px 20px 24px; }
+  .hero h1 { font-size: 28px; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+  .level-banner { padding: 0 20px; }
+  .main { padding: 24px 20px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .action-card { grid-template-columns: auto 1fr; }
+  .action-tag { grid-column: 2; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Matheus Cabral<br>@cabraltrafego</h1>
+  <p class="hero-sub">Gestor de tráfego pago, sócio do @oneyaraujo. Perfil estagnado em platô há quase 3 anos: cresceu apenas 1.408 seguidores desde agosto/2023. O caminho pra sair do platô e transformar autoridade em conversão.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>19 de Maio, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Análise por Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Tráfego Pago / Marketing</div>
+  </div>
+</div>
+
+<div class="level-banner">
+  <div class="level-banner-inner">
+    <div class="level-banner-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F77737" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </div>
+    <div class="level-banner-text">
+      <h3>📊 Análise Nível 1 — Fachada Pública</h3>
+      <p>Esta análise cobre tudo que pode ser avaliado a partir da landing pública do perfil: bio, foto, link, destaques, capas dos Reels, cadência geral e métricas visíveis. <strong>Categorias 3 (Gancho), 4 (Roteiro), 7 (Conteúdo) e 8 (Venda)</strong> exigem transcrição dos Reels e ficam pendentes pra análise Nível 2/3.</p>
+    </div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">5.408</div><div class="stat-label">Seguidores</div></div>
+  <div class="stat-card"><div class="stat-number">59</div><div class="stat-label">Posts em ~3 anos</div></div>
+  <div class="stat-card"><div class="stat-number">~1,4/dia</div><div class="stat-label">Crescimento Real</div></div>
+  <div class="stat-card"><div class="stat-number">SEM</div><div class="stat-label">Link na Bio</div></div>
+</div>
+
+<div class="main">
+
+  <!-- DIAGNÓSTICO GERAL -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+    <div><h2>Diagnóstico Geral</h2><p>O retrato do platô em 1 parágrafo</p></div>
+  </div>
+
+  <div class="diagnose-box">
+    <h3>O perfil tá travado há quase 3 anos — e a causa raiz é dupla.</h3>
+    <p>O Cabral tem um sinal no próprio feed que explica tudo: um post de <strong>agosto/2023</strong> celebrando "4.000 seguidores hoje, vou fazer o desafio <span class="highlight">#LIKEAMACHINE</span> — 30 dias postando reels turbinados". Estamos em maio/2026. <strong>Ele cresceu 1.408 seguidores em 33 meses</strong> — ou seja, ~42/mês, ~1,4/dia. O desafio dos 30 dias parou. O perfil entrou em hibernação.</p>
+    <p>Mas o problema mais caro não é o platô. É que <strong>o perfil não tem balcão de venda</strong>: zero link na bio, zero CTA visível, zero oferta. Cabral é especialista em <strong>tráfego pago</strong>, ou seja, vive de conversão. <span class="highlight">O perfil dele não tem onde converter.</span> Toda audiência que ele constrói vira poeira porque não tem como capturar lead.</p>
+    <p>Soma disso: bio genérica que vende credencial em vez de transformação, avatar confuso (gestor sênior? sócio do Oney? criador de conteúdo?), só 2 destaques sem funil, mistura de fotos antigas e Reels esparsos no feed. <strong>É um perfil de profissional sênior travado no modelo "currículo do LinkedIn", quando precisa virar "amostra grátis do Cabral".</strong></p>
+  </div>
+
+  <!-- CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+    <div><h2>Top 5 Correções Imediatas</h2><p>Por ordem de impacto no destravamento do perfil</p></div>
+  </div>
+
+  <div class="priority-grid">
+
+    <div class="action-card urgency-now">
+      <div class="action-number">1</div>
+      <div class="action-content">
+        <h3>Colocar link da bio AGORA — antes de qualquer outra coisa</h3>
+        <p>Esse é o erro mais caro do perfil. Cabral é especialista em <strong>tráfego pago</strong> e o perfil dele <em>não tem onde converter</em>. Sem link, sem WhatsApp, sem oferta visível, qualquer crescimento vira poeira.</p>
+        <p><strong>Caminho recomendado:</strong> oferta mais barata com preço visível + CTA antes do link 👇. Exemplos: <code>"Aula gratuita: 5 erros que custaram R$ 100mil em ads 👇"</code> ou <code>"Diagnóstico de campanha por R$ 47 👇"</code>. Link: domínio próprio (<code>cabraltrafego.com.br/whatsapp</code>) ou WhatsApp direto. Quanto menos cliques entre a pessoa e o atendimento, maior a conversão.</p>
+      </div>
+      <div class="action-tag">Fazer agora</div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">2</div>
+      <div class="action-content">
+        <h3>Reescrever a bio em 3 linhas — começando pela transformação</h3>
+        <p>Hoje a bio é "💵 Mais de R$ 60 milhões gerenciados / 🚀 Sócio @oneyaraujo". É <strong>credencial pura</strong> — não diz o que a audiência ganha. Ninguém entrou no perfil pra saber quanto você gerencia; entrou porque viu o vídeo.</p>
+        <p><strong>Estrutura sugerida (3-4 linhas):</strong><br>Linha 1 (benefício concreto): <code>"Te ensino a vender no digital com tráfego pago sem queimar dinheiro"</code><br>Linha 2 (autoridade quantificada): <code>"+R$ 60mi em ads gerenciados · Sócio @oneyaraujo"</code><br>Linha 3 (filtro de audiência): <code>"Pra infoprodutor, dono de e-commerce e agência"</code><br>Linha 4 (CTA): <code>"👇 Aula gratuita: meus 5 erros de R$ 100mil"</code></p>
+      </div>
+      <div class="action-tag">Fazer agora</div>
+    </div>
+
+    <div class="action-card urgency-now">
+      <div class="action-number">3</div>
+      <div class="action-content">
+        <h3>Decidir o avatar único do perfil</h3>
+        <p>Hoje o perfil tem 3 vozes misturadas: <strong>(a)</strong> gestor de tráfego sênior (R$ 60mi gerenciados), <strong>(b)</strong> sócio do Oney que comenta o mercado, <strong>(c)</strong> criador de conteúdo de marketing (#LIKEAMACHINE). São três avatares opostos com necessidades, ganchos e referências diferentes.</p>
+        <p><strong>Um perfil = um nicho.</strong> Precisa escolher: o Cabral vai falar pra dono de e-commerce, infoprodutor ou agência? A escolha define linguagem, ganchos, exemplos e oferta. Sem isso o algoritmo não sabe pra quem entregar e o perfil continua disperso.</p>
+      </div>
+      <div class="action-tag">Fazer agora</div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">4</div>
+      <div class="action-content">
+        <h3>Voltar pro "Like a Machine" — desta vez sem desistir</h3>
+        <p>Em 2023 o Cabral anunciou 30 dias postando reels. O feed mostra que parou. Esse é o anti-padrão do <em>Volume e Desapego</em>: testou, não viu retorno imediato, abandonou.</p>
+        <p><strong>Compromisso de 30 dias:</strong> 2 Reels/dia + 1 Carrossel-X/dia. Sem checar view antes de 7 dias. Sem deletar vídeo que flopou. Sem mudar de tema antes do 30º dia. <em>"É no empilhamento que vem o vídeo que explode."</em> Cabral nunca empilhou — sempre que postou foi sprint curto, parou, voltou meses depois. O algoritmo não aquece assim.</p>
+      </div>
+      <div class="action-tag">Esta semana</div>
+    </div>
+
+    <div class="action-card urgency-week">
+      <div class="action-number">5</div>
+      <div class="action-content">
+        <h3>Montar 5 destaques em formato funil de venda</h3>
+        <p>Hoje só tem 2 destaques (Protocolo CSS, Perguntas). Falta o que faz a audiência fria confiar: <strong>prova social, processo e oferta.</strong></p>
+        <p><strong>Estrutura sugerida:</strong> 1) <code>Quem sou eu</code> (vídeo pessoal de 60s) → 2) <code>Cases</code> (resultados de clientes com prints) → 3) <code>Erros caros</code> (lições do que aprendi gastando) → 4) <code>Bastidor</code> (Cabral fazendo o trabalho) → 5) <code>Quero contratar</code> (link direto pro WhatsApp ou oferta).</p>
+      </div>
+      <div class="action-tag">Esta semana</div>
+    </div>
+
+  </div>
+
+  <!-- ANÁLISE POR CATEGORIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H4.5C3.67 2 3 2.67 3 3.5v17C3 21.33 3.67 22 4.5 22h15c.83 0 1.5-.67 1.5-1.5v-17C21 2.67 20.33 2 19.5 2z"/></svg></div>
+    <div><h2>Análise por Categoria — Metodologia Viral Pro</h2><p>Aplicando os 50 padrões da metodologia v2 ao perfil do Cabral</p></div>
+  </div>
+
+  <div class="cat-grid">
+
+    <div class="cat-block">
+      <div class="cat-block-header">
+        <div class="cat-block-icon" style="background: var(--pink-soft); color: var(--pink);">👤</div>
+        <div class="cat-block-title"><h3>Categoria 1 — Bio e Fachada</h3><span>5 de 5 problemas detectados — cobertura completa Nível 1</span></div>
+      </div>
+      <div class="cat-block-body">
+        <p><strong>1.1 — Primeira linha fala do criador, não do benefício.</strong> A bio começa com "Mais de R$ 60 milhões gerenciados" (credencial) e "Sócio @oneyaraujo" (associação). Zero benefício pra audiência. <em>Quem entra no perfil não tá interessado em quanto Cabral gerencia — tá interessado em o que vai aprender.</em></p>
+        <p><strong>1.2 — Bio "marqueteira light".</strong> "60 milhões gerenciados" é a versão palatável da palavra prostituída — comunica autoridade, não utilidade. "Sócio @oneyaraujo" só funciona pra quem já conhece o Oney. Falta o "onde-apertar" da bio.</p>
+        <p><strong>1.3 — Foto de perfil.</strong> Aparece em tamanho pequeno na landing — precisa verificar no celular se o rosto ocupa 70%+ da imagem. Hipótese pelo crop visível: foto está OK, mas pode ser otimizada (sorriso natural, fundo neutro, sem logo de empresa).</p>
+        <p><strong>1.4 — Sem link da bio.</strong> <em>Erro mais caro do perfil.</em> Especialista em tráfego pago sem link de conversão é incoerência total. Sem oferta visível, sem CTA antes do link, sem WhatsApp.</p>
+        <p><strong>1.5 — Destaques pelados.</strong> Só 2 destaques (Protocolo CSS, Perguntas). Falta funil: Quem sou eu → Cases → Erros → Bastidor → Contratar. Audiência fria não tem como confiar.</p>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-block-header">
+        <div class="cat-block-icon" style="background: var(--purple-soft); color: var(--purple);">🎯</div>
+        <div class="cat-block-title"><h3>Categoria 2 — Posicionamento e Linguagem</h3><span>Inferência via bio + capas + alts de imagens</span></div>
+      </div>
+      <div class="cat-block-body">
+        <p><strong>2.4 — Avatar confuso.</strong> @ "cabraltrafego" diz tráfego pago. Bio diz "R$ 60mi gerenciados" (gestor sênior). Feed misturando #LIKEAMACHINE (criador de conteúdo) e "@oneyaraujo desconstruído" (parceria/personality). <em>São 3 avatares opostos.</em> Um perfil = um nicho.</p>
+        <p><strong>2.1 — Confundir público com interesse.</strong> "60 milhões gerenciados" pra quem? E-commerce? Infoprodutor? Agência? Cada um quer ouvir histórias diferentes. Sem filtro de audiência declarado, o algoritmo não consegue otimizar entrega.</p>
+        <p><strong>2.3 — Linguagem técnica sem tradução.</strong> Hipótese pendente de validação via Reels: gestor de tráfego sênior tem tendência forte a falar "CPA", "ROAS", "CTR", "creative fatigue", "look-alike" sem tradução. Em <em>Linguagem de Sexta Série</em>, ROAS vira "quanto você ganha pra cada real investido", CPA vira "custo de cada cliente que entra".</p>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-block-header">
+        <div class="cat-block-icon" style="background: var(--orange-soft); color: var(--orange);">🎬</div>
+        <div class="cat-block-title"><h3>Categoria 5 — Tom e Produção (visual)</h3><span>Inferência via thumbnails — confirmação exige Reels assistidos</span></div>
+      </div>
+      <div class="cat-block-body">
+        <p><strong>5.5 — Marca d'água / logo no vídeo.</strong> Pelas thumbnails dos Reels, não vi sobreposição de logo. Bom sinal. Pendente confirmar no vídeo.</p>
+        <p><strong>5.2 — Cenário produzido demais.</strong> Pelo alt "@oneyaraujo desconstruído" e capas do feed, parece que Cabral tem identidade visual coerente — boa coisa. <em>Mas alerta:</em> em nicho de tráfego, é fácil cair em "vídeo de palestra com slide" ou "estúdio com fundo de marca". <em>Tem que ser cara de story.</em></p>
+        <p><strong>5.1 — A pessoa aparece nos vídeos.</strong> Pelos thumbnails parece que sim. Confirmar no Nível 2.</p>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-block-header">
+        <div class="cat-block-icon" style="background: var(--blue-soft); color: var(--blue);">⚙️</div>
+        <div class="cat-block-title"><h3>Categoria 9 — Volume e Operação Diária</h3><span>O eixo mais crítico junto da Bio</span></div>
+      </div>
+      <div class="cat-block-body">
+        <p><strong>9.1 — Frequência irregular / abaixo de 1/dia.</strong> 59 posts em ~3 anos = <em>1 post a cada 18 dias</em>. Pra especialista em tráfego (cuja autoridade depende de presença), é morte clínica. Princípio 7 da metodologia: <em>"É no empilhamento que vem o vídeo que explode"</em> — Cabral nunca empilhou.</p>
+        <p><strong>9.4 — Não mapear padrões virais do nicho.</strong> Hipótese: pela cadência irregular, provavelmente também falta sistema de banco de ideias e estudo via perfil @fake do nicho. <em>Sem repertório, criar do zero todo dia é exaustivo.</em></p>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-block-header">
+        <div class="cat-block-icon" style="background: var(--purple-soft); color: var(--purple);">🧠</div>
+        <div class="cat-block-title"><h3>Categoria 10 — Algoritmo e Mentalidade</h3><span>Diagnóstico via trajetória de crescimento</span></div>
+      </div>
+      <div class="cat-block-body">
+        <p><strong>10.2 — Apega no resultado / desistiu cedo.</strong> O #LIKEAMACHINE de 2023 sugere que ele tentou um sprint de 30 dias, não viu retorno imediato e parou. Esse é exatamente o anti-padrão do Oney: testou 30 dias, não viu o vídeo que explode, abandonou. <em>"Volume e desapego andam juntos"</em> — Cabral teve o volume, mas não o desapego.</p>
+        <p><strong>10.3 — Medo de "ser raso".</strong> Hipótese (a confirmar): gestor sênior com R$ 60mi gerenciados tem alta tendência a achar que conteúdo simples vai diminuir sua autoridade. <em>"Termo simples não te diminui, te faz chegar em mais gente."</em></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PARE / COMECE -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Pare vs Comece — Guia Visual</h2><p>Tudo o que tem que mudar resumido em 2 colunas</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Bio sem link de conversão (R$ 0 de captura)</div>
+      <div class="compare-item"><span>✕</span> Bio começando por credencial ("60 milhões gerenciados")</div>
+      <div class="compare-item"><span>✕</span> Misturar gestor sênior / sócio / criador no mesmo perfil</div>
+      <div class="compare-item"><span>✕</span> Postar 1 vez a cada 18 dias</div>
+      <div class="compare-item"><span>✕</span> Anunciar desafio de 30 dias e parar no meio</div>
+      <div class="compare-item"><span>✕</span> Só 2 destaques sem funil de prova/oferta</div>
+      <div class="compare-item"><span>✕</span> Apegar no resultado de cada vídeo</div>
+      <div class="compare-item"><span>✕</span> Usar jargão sem traduzir (ROAS, CPA, CTR)</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Link da bio com oferta de R$ 0 (aula/diagnóstico) ou WhatsApp</div>
+      <div class="compare-item"><span>✓</span> Bio em 3 linhas: benefício → autoridade → CTA com 👇</div>
+      <div class="compare-item"><span>✓</span> Um perfil = um nicho (escolher um avatar)</div>
+      <div class="compare-item"><span>✓</span> 2 Reels/dia + 1 Carrossel-X/dia, sem exceção</div>
+      <div class="compare-item"><span>✓</span> Sustentar 30 dias direto sem checar view antes de 7</div>
+      <div class="compare-item"><span>✓</span> 5 destaques em funil: Eu → Cases → Erros → Bastidor → Contratar</div>
+      <div class="compare-item"><span>✓</span> Posta e solta — volume + desapego</div>
+      <div class="compare-item"><span>✓</span> Traduzir jargão pra linguagem de sexta série</div>
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASSOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></div>
+    <div><h2>Próximos Passos — Fechando a Análise Completa</h2><p>O que precisa pra cobrir as Categorias 3, 4, 7 e 8 (ainda em aberto)</p></div>
+  </div>
+
+  <div class="next-grid">
+    <div class="next-card">
+      <div class="next-num">2</div>
+      <div>
+        <h3>Nível 2 — Análise visual completa</h3>
+        <p>Manda 5-8 prints do perfil pelo celular: bio completa, grade do feed, 4-6 Reels recentes em tela cheia (primeiro frame), 2-3 carrosséis abertos no primeiro slide.</p>
+        <p><strong>O que destrava:</strong> Categoria 5 completa (tom, cenário, postura), Categoria 6 (parede de texto em carrossel) e refino do diagnóstico visual.</p>
+      </div>
+    </div>
+    <div class="next-card">
+      <div class="next-num">3</div>
+      <div>
+        <h3>Nível 3 — Análise integral com Reels transcritos</h3>
+        <p>Manda os links dos 3-5 Reels mais recentes pra eu transcrever via skill <code>/transcribe</code>. Idealmente: 1 Reel que ele acha que deu certo + 1 que ele acha que deu ruim + 1 mais recente.</p>
+        <p><strong>O que destrava:</strong> Categoria 3 (gancho real nos 3 primeiros segundos), Categoria 4 (estrutura do roteiro, autoridade contextualizada, "onde-apertar"), Categoria 7 (utilidade aplicável, "água de salsicha") e Categoria 8 (venda desapegada ou pitch longo).</p>
+      </div>
+    </div>
+    <div class="next-card">
+      <div class="next-num">★</div>
+      <div>
+        <h3>Plano de Ação V2 completo</h3>
+        <p>Com Níveis 2 e 3 fechados, eu rodo o <code>/planodeacao</code> e entrego o dashboard completo (14 seções: correções imediatas, antes vs depois dos vídeos, estratégia, roteiros-modelo, workflow de produção diário, banco de ideias, perfis-referência, CTAs, técnica de venda, checklist, ferramentas, cronograma de 30 dias).</p>
+        <p>Esse plano vai pra <code>cabral-trafego/index.html</code> e fica disponível pro próprio Cabral acompanhar a evolução.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Análise gerada com a metodologia <strong>Viral Pro v2</strong> — 10 princípios, 10 categorias, 50 padrões catalogados.<br>
+  Esta é uma análise <strong>Nível 1</strong> (fachada pública). Para análise completa, fornecer transcrições dos Reels.
+</div>
+
+</body>
+</html>
