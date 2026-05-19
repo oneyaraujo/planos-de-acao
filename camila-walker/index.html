@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Camila Walker | Corretora de Imóveis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    border: 3px solid transparent;
+    background-image: linear-gradient(#fff, #fff), var(--ig-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .hero-video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    border: none;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-tour { background: var(--blue-soft); color: var(--blue); }
+
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Camila Walker — Corretora de Imóveis</h1>
+  <p class="hero-sub">Corretora de imóveis de alto padrão. O caminho completo para sair do número baixo de seguidores e bater 10K em até 2 meses — e daí escalar pros 20K e 100K+.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/cgyJxBF5TCE" title="Análise Viral Pro — Camila Walker" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>19 de Maio, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Corretagem de Imóveis</div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">1-2/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">40s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">10K</div><div class="stat-label">Meta em 2 Meses</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de gravar qualquer outro vídeo</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Reescrever a primeira linha da bio</h3><p>"Descomplico a busca por imóveis de alto padrão" passa cara de aula. A primeira linha precisa entregar BENEFÍCIO e desmistificar uma crença na hora. Exemplo: <strong>"Imóvel de alto padrão sem pagar a mais do que precisa"</strong> ou <strong>"O caminho pro seu primeiro imóvel de alto padrão"</strong>. Quem entra no perfil tem que entender em 1 segundo por que ficar.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Reordenar as 3 linhas da bio</h3><p>Estrutura correta: linha 1 = BENEFÍCIO (o que a pessoa ganha), linha 2 = QUEM VOCÊ É em 1 frase, linha 3 = CTA com emoji 👇 apontando pro link ("Fale comigo se quer morar ou investir 👇"). Trocar "curadoria" por uma palavra que qualquer pessoa entende.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Despinar o tour da casa de R$ 8 milhões</h3><p>Esse vídeo cinematográfico de tour não vende, não engaja e parece IA. Tira do fixado. No lugar, fixe seu vídeo viral (o que bateu quase 1 milhão de views) + 2 vídeos novos no formato útil — ganchos de curiosidade tipo <strong>"3 sinais que sua casa é alto padrão"</strong> ou <strong>"5 perguntas pra fazer antes de comprar uma casa"</strong>.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Parar de gravar em pose scriptada</h3><p>Vídeo sentada de perna cruzada, olhando pra câmera, falando frase decorada — isso comunica "anúncio" em 2026. Adotar o formato story: celular esticado na mão, conversacional, como se estivesse mandando áudio pra uma amiga. Você já fala bem (gostei do vídeo dentro do carro) — confia nesse jeito.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Trocar a linguagem comercial por linguagem de Instagram</h3><p>Frases como "80% dos corretores te fazem perder tempo", "dilema da não exclusividade", "estudando planta e documentação" são linguagem de site/anúncio. Trocar por linguagem que pessoa real fala: <strong>"Se o corretor fizer ISSO ao entrar na casa, já desconfia"</strong>, <strong>"Esse azulejo aqui é melhor que esse — vou te explicar"</strong>. Linguagem é a porta de entrada do alcance.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS — VÍDEOS ANALISADOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que travou cada vídeo e como ele virava conteúdo viral</p></div>
+  </div>
+
+  <div class="before-after-grid">
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo Fixado</span><h3>Tour casa Jardim — R$ 8 milhões</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ Por que não engajou</div>
+          <p>Tour cinematográfico, partes parecendo IA, valor de R$ 8 mi cravado na primeira tela. Esse formato comunica "anúncio imobiliário" — o Instagram não distribui porque <strong>não tem gancho de curiosidade nem utilidade</strong>. E não vende: quem tem R$ 8 milhões não compra casa pelo Instagram.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como viralizar um tour</div>
+          <p>Abre com pergunta: <strong>"Como é o closet de uma casa de R$ 10 milhões?"</strong>. A casa toda vira contexto, mas o gancho é UM cômodo. Você anda mostrando: "Tá vendo esse mármore? Isso aqui é o que diferencia alto padrão de popular". Termina mostrando o closet só nos últimos 10 segundos. Viraliza mesmo entre quem não compra, e o cliente alto padrão aparece dentro do alcance.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>"80% dos corretores te fazem perder tempo"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Texto muito comercial: "estudando planta e documentação", "comparando preço de mercado", "prevendo objeções". Para quem NÃO está comprando casa agora (que é a maioria do Instagram), esse vídeo não diz nada. <strong>É anúncio de serviço, não conteúdo de Instagram.</strong></p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como reescrever</div>
+          <p>Gancho útil pra qualquer um: <strong>"5 perguntas que você OBRIGATORIAMENTE precisa fazer antes de comprar uma casa. A primeira é a mais importante."</strong> Aí vai 5, 4, 3, 2, 1 — segurando retenção até o final. Mesmo conteúdo (você sabe o que perguntar), mas vira utilidade pra qualquer espectador, não pitch de venda.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>"O dilema da não exclusividade"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Conteúdo SUPER nichado — só conversa com quem está, AGORA, sendo atendido por vários corretores. Isso é uma fatia minúscula do Instagram. O algoritmo não tem com quem distribuir. Quanto mais específico o tema, <strong>menor o alcance</strong>.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como ampliar o tema</div>
+          <p>Mesmo assunto, gancho universal: <strong>"Esse é o erro mais comum de quem está comprando o primeiro imóvel."</strong> Aí entra no dilema das múltiplas opções, mas embalado como conselho pra quem ainda nem começou a comprar. Aumenta o range. Mais gente para → mais gente assiste → o cliente certo aparece organicamente.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Depoimento WhatsApp do cliente</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Mostra o áudio do cliente elogiando o "tour virtual", mas <strong>não mostra O QUE é o tour virtual</strong>. Quem assiste fica sem saber o que ele tá elogiando. Depoimento sem prova visual é depoimento que não converte — e fica com cara de anúncio.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como reformatar</div>
+          <p>Mantém o áudio do cliente como narração, mas <strong>mostra o tour virtual rodando na tela enquanto ele fala</strong>. "Olha o que ele tá comentando, ó." A pessoa entende imediatamente. Termina explicando como funciona pra quem quiser usar: "É assim que eu mando pros meus clientes."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 5</span><h3>"Se você apresenta imóvel assim, tá perdendo cliente"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Ideia contraintuitiva (vídeo cinematográfico = ruim) <strong>mal defendida</strong>. A parte do óculos VR não convence (nem todo mundo tem). Qualidade da imagem do contra-exemplo é PIOR que a do exemplo que ela critica — o espectador fica achando que ela tá errada. Ideia mal defendida joga contra quem fala.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como defender bem</div>
+          <p>Inverter: <strong>"Existe esse formato bonito de mostrar casa, mas deixa eu te mostrar o que tá fazendo as pessoas COMPRAREM de verdade."</strong> Aí mostra o tour virtual em qualidade boa, com cliente reagindo. Sem atacar o outro formato — só prova que o seu funciona. Defesa = prova visual, não argumento.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>O que parar e o que começar a fazer no perfil</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Conteúdo focado SÓ em cliente de alto padrão</div>
+      <div class="compare-item"><span>✕</span> Vídeo sentada, perna cruzada, frase decorada</div>
+      <div class="compare-item"><span>✕</span> Tour cinematográfico sem gancho ou utilidade</div>
+      <div class="compare-item"><span>✕</span> Linguagem de site: "objeções", "documentação", "exclusividade"</div>
+      <div class="compare-item"><span>✕</span> Pedir "me segue" no começo, antes de entregar valor</div>
+      <div class="compare-item"><span>✕</span> Defender ideia contraintuitiva sem prova visual</div>
+      <div class="compare-item"><span>✕</span> Postar e sumir 3 dias</div>
+      <div class="compare-item"><span>✕</span> Bio com "descomplico", "curadoria" — palavras complicadas</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Conteúdo amplo (interesse de qualquer um por casa)</div>
+      <div class="compare-item"><span>✓</span> Celular esticado, conversacional, estilo story</div>
+      <div class="compare-item"><span>✓</span> Tour com gancho ("Como é o closet de R$ 10 mi?")</div>
+      <div class="compare-item"><span>✓</span> Linguagem de gente: "tá vendo esse azulejo?"</div>
+      <div class="compare-item"><span>✓</span> "Me segue" no FINAL, depois de entregar valor</div>
+      <div class="compare-item"><span>✓</span> Provar com imagem, não com argumento</div>
+      <div class="compare-item"><span>✓</span> 1-2 posts por dia, sem exceção</div>
+      <div class="compare-item"><span>✓</span> Bio simples: benefício + quem é + CTA com 👇</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As regras de ouro que mudam o jogo no Instagram de corretor</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Interesse, Não Público</h3><p>Instagram entrega por INTERESSE no conteúdo, não pelo perfil financeiro de quem assiste. Conteúdo amplo = alcance maior = cliente alto padrão dentro do range.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>Curiosidade Primeiro</h3><p>Os 3 primeiros segundos decidem tudo. Use pergunta, contagem, ou comparação. Se o gancho for "anúncio", o vídeo morre antes de começar.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⏱️</span><h3>40 Segundos no Máximo</h3><p>Vídeo de corretor pode ir até 60s, mas 40s é o sweet spot. Entrega o valor, mostra a casa, pede pra seguir. Curto e direto vence.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📱</span><h3>Linguagem de Story</h3><p>Celular esticado, voz natural, sem pose. Como se mandasse áudio pra alguém. Em 2026, vídeo scriptado parece anúncio — gente foge.</p></div>
+    <div class="rule-card"><span class="rule-emoji">💎</span><h3>Útil > Bonito</h3><p>Vídeo cinematográfico não vende. O que traz seguidor é UTILIDADE: ensinar a ver uma casa, identificar alto padrão, evitar erro. Útil viraliza.</p></div>
+    <div class="rule-card"><span class="rule-emoji">😂</span><h3>1 Meme a Cada 10 Úteis</h3><p>Seu vídeo viral (~1M views) prova que dá. Use meme/engraçado pra puxar gente pro perfil. Quando entra, vê os úteis e segue.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>3 templates "preencha os espaços" baseados no nicho de corretora</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Contagem Regressiva de Utilidade</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"5 perguntas que você OBRIGATORIAMENTE precisa fazer antes de comprar uma casa. A primeira é a mais importante — vai até o final que eu te conto."<br><em>Celular esticado, andando dentro de uma casa que está mostrando.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Pergunta 5</div><div class="script-step-text">"A quinta: quanto custa o condomínio E o IPTU. Muita gente esquece e descobre depois que não cabe no bolso."<br><em>Mostra a placa do condomínio ou um cômodo neutro.</em></div></div>
+    <div class="script-step"><div class="script-step-label">3 e 4</div><div class="script-step-text">"A quarta: idade do imóvel e quando foi a última reforma. A terceira: como é a vizinhança às 11 da noite — sempre passe à noite antes de fechar."<br><em>Cortes rápidos andando por cômodos diferentes.</em></div></div>
+    <div class="script-step"><div class="script-step-label">2 e 1</div><div class="script-step-text">"A segunda: pode quebrar essa parede? Tem parede estrutural? E a PRIMEIRA, a mais importante: pergunte por que o dono está vendendo. A resposta entrega 80% da negociação."<br><em>Fechar tela mostrando a casa ou bate na parede pra ilustrar.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Salva esse vídeo pra não esquecer e me segue aqui — todo dia eu te ensino o que o corretor não conta."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Curiosidade + Tour ("Como é por dentro de...")</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Como é o closet de uma casa de R$ 10 milhões? Vou te mostrar e no final você vai entender o que diferencia alto padrão de popular."<br><em>Câmera apontada pra porta fechada do closet. Não revela ainda.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Contexto</div><div class="script-step-text">"Mas antes, olha essa sala. Esse mármore aqui, sentiu o frio? Isso aqui é mármore italiano, e quando você toca e ele é gelado mesmo no calor, é sinal de qualidade."<br><em>Toca o mármore, mostra de perto.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Mais 1 ponto</div><div class="script-step-text">"E tá vendo esse teto? Pé direito de 3 metros e meio. Casa popular tem 2,70. Cada 30 cm a mais dobra a sensação de espaço."<br><em>Aponta pra cima. Andando rápido pro próximo cômodo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Revelação</div><div class="script-step-text">"Agora sim, o closet. Olha o tamanho — é maior que muito quarto. E o detalhe que ninguém repara: iluminação dentro de cada gaveta. ISSO é alto padrão."<br><em>Abre o closet, mostra de dentro pra fora.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Me segue aqui pra ver mais casas que normalmente você só vê na novela."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Sinais / Identificação</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"3 sinais de que a casa que VOCÊ mora hoje é alto padrão. Quantos a sua tem?"<br><em>Celular na mão, em pé dentro de uma casa que está mostrando.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Sinal 1</div><div class="script-step-text">"O primeiro: pé direito acima de 3 metros. Se o teto da sua sala parece alto e cabe um lustre grande, ponto pra você."<br><em>Aponta pra cima, mostra o pé direito.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Sinal 2</div><div class="script-step-text">"O segundo: mármore ou granito natural na bancada da cozinha. Não é porcelanato imitando — é o material de verdade. Passa o dedo, sente o frio."<br><em>Toca a bancada, mostra de perto.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Sinal 3</div><div class="script-step-text">"E o terceiro, o mais difícil de achar: cozinha separada da área social. Em casa de alto padrão a cozinha tem porta — a vida útil fica escondida."<br><em>Mostra a porta fechando a cozinha.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Quantos a sua casa tem? Conta nos comentários e me segue aqui — toda semana eu te ensino a ler uma casa por dentro."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da ideia ao post — sem travar, sem ficar sem conteúdo</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Banco de ideias</h4><p>Manhã: abre o grupo WhatsApp consigo mesma, escolhe 1 ideia das salvas</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Grava 1 take</h4><p>Celular esticado, 40s, sem decoreba. Tem visita marcada? Grava lá mesmo</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>CapCut + legenda</h4><p>Corta o início, ajusta o gancho, coloca legenda grande no centro</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Posta + CTA</h4><p>Reels com legenda curta (1-2 frases) e a chamada "Me segue"</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Responde rápido</h4><p>Primeiros 30min: responde TODOS os comentários — algoritmo prioriza</p></div>
+  </div>
+
+  <!-- 7. GANCHOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Adapte pro seu próximo vídeo — todas testadas no nicho de imóveis</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Curiosidade visual:</em> "Como é o closet de uma casa de R$ 10 milhões?" — segura na tela cômodo fechado, abre só no final.</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Contagem regressiva:</em> "5 perguntas que você OBRIGATORIAMENTE precisa fazer antes de comprar uma casa. A primeira é a mais importante."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Identificação:</em> "3 sinais de que a casa que VOCÊ mora hoje é alto padrão. Quantos a sua tem?" — conecta com a maioria, mesmo quem não compra.</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Bait criativo (Israel/mecânico):</em> "Tô consertando essa furadeira aqui — ah, brincadeira, eu não sou marceneira. Sou corretora de imóveis. E essa casa atrás de mim custa…"</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Comparação útil:</em> "Comprar casa pronta ou pra reformar — qual é mais barato? Vou fazer a conta na tua frente."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Aviso:</em> "Se o corretor fizer ISSO ao você entrar na casa, já sabe que tem algo estranho. Olha o que pra observar."</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Polêmica leve:</em> "Casa de alto padrão NÃO é só casa cara. Vou te provar com 3 exemplos abaixo de R$ 800 mil."</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>12 ideias prontas pra começar a gravar amanhã</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>5 perguntas pra fazer antes de comprar uma casa</h3><p>Contagem regressiva 5→1, com a 1 sendo o ouro: "pergunte por que o dono tá vendendo".</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>3 sinais de que sua casa é alto padrão</h3><p>Pé direito alto, mármore natural, cozinha com porta. Funciona pra qualquer espectador se identificar.</p></div>
+    <div class="idea-card"><div class="idea-type type-tour">Tour com gancho</div><h3>Como é o closet de uma casa de R$ 10 milhões?</h3><p>Tour da casa toda, mas o gancho promete UM cômodo no final. Curiosidade prende até o fim.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Comprar casa reformada ou pra reformar?</h3><p>Faz a conta na tela: casa por R$ X, gastou R$ Y reformando, vende por R$ Z. Mostra qual vale mais.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Esse azulejo é bom, esse não é</h3><p>Dois azulejos lado a lado. Quebra o ruim com a mão (ou unha). Mostra qual aguenta. Útil pra reforma.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Furo na parede revela qualidade do reboco</h3><p>Fura uma parede (ou simula). Se esfarela muito = reboco ruim. Conteúdo prático que ninguém ensina.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels (gancho viral)</div><h3>"Tô consertando essa furadeira" — mecânico/marceneira</h3><p>Inspirado no corretor do meme. Aparece fazendo algo aleatório, corrige: "Sou corretora de imóveis. Olha essa casa…"</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Visita de hoje" — bastidor diário</h3><p>Você indo pra visita, mostra o trajeto, o que reparou ao entrar. Documenta o trabalho. Confiança via consistência.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel X</div><h3>10 termos do mercado imobiliário em linguagem normal</h3><p>"IPTU, ITBI, RGI, AVCB — o que é cada um?" Carrossel estilo thread. Salva muito.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Quanto custa MORAR numa casa de R$ 2 milhões?</h3><p>Condomínio + IPTU + manutenção + seguro. Faz a conta. Mostra que casa cara é um STILE de vida, não só o preço.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Negociando preço de uma casa AO VIVO</h3><p>Com permissão do cliente, mostra a negociação real (sem mostrar valores sensíveis). Ensina como você abaixa preço.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Pegadinha de visita: o que o vendedor esconde</h3><p>3 coisas que os vendedores escondem em fotos: cantos com mofo, andar do prédio, posição do sol. Faz a pessoa sentir que precisa de você.</p></div>
+  </div>
+
+  <!-- 9. PERFIS DE REFERÊNCIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Estude esses corretores que aplicam exatamente essa estratégia</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🏠</div>
+      <div>
+        <h3>Israel (corretor de tours)</h3>
+        <div class="ref-niche">Tour de casas de alto padrão</div>
+        <p>Faz tours de casas de R$ 10 mi+, mas SEMPRE abre com curiosidade. "Como é o closet desta casa de tantos milhões?" — fala 99,99% nunca vai comprar, ainda assim viraliza, porque o gancho promete UM detalhe específico. Replique o formato.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🔧</div>
+      <div>
+        <h3>Corretor "do mecânico" (gancho viral)</h3>
+        <div class="ref-niche">Gancho criativo de bait</div>
+        <p>Aparece como se estivesse consertando um carro, troca de assunto: "Na verdade, eu não sou mecânico, sou corretor. Olha essa casa…". Quebra padrão do feed e prende a atenção. Você pode adaptar: "Tô furando a parede pra mostrar uma coisa…"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo útil (regra geral)</div>
+      <blockquote>"Salva esse vídeo pra não esquecer e me segue aqui — todo dia eu te ensino o que o corretor não conta."</blockquote>
+      <div class="cta-note">Use no final de TODOS os vídeos educativos. Dois CTAs em um: salvar (engaja) + seguir (cresce).</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Tour de imóvel</div>
+      <blockquote>"Quer ver mais casas assim? Me segue aqui — toda semana eu mostro um imóvel diferente."</blockquote>
+      <div class="cta-note">Promete entrega futura. A pessoa segue porque quer ver mais tours, não pra comprar.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo de identificação</div>
+      <blockquote>"Quantos a sua casa tem? Conta nos comentários e me segue."</blockquote>
+      <div class="cta-note">Pergunta no comentário gera engajamento. Algoritmo entrega mais. Resposta dela leva à DM.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Vender a Consultoria sem Parecer Anúncio</h2><p>A regra que separa corretora de seguidores de corretora que vende</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: vender é mostrar trabalho real, não fazer pitch</h3>
+      <p>Esquece "agende sua consultoria" no final do vídeo. Quem precisa de você te procura na DM depois de ver 3-4 conteúdos teus mostrando que você ENTENDE de casa. <strong>O conteúdo útil é o anúncio.</strong> Quando o assunto for específico (vendendo um imóvel, fechou um negócio), aproveite com 2 frases: <strong>"Inclusive, esse foi um dos meus clientes — se quiser que eu te ajude a encontrar o seu, link na bio"</strong>. Volta pro vídeo. Sem pitch longo. A venda acontece pelo volume de menções curtas + a percepção de que você sabe o que faz, não por um vídeo só de venda.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Passe por cada item antes de apertar o publicar</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira cada item antes de postar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho prende nos 3 primeiros segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tô falando como pessoa de verdade (não scriptada)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A legenda está grande e legível?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Ficou entre 30 e 60 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O conteúdo é útil pra alguém que NÃO vai comprar agora?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Estou usando linguagem de Instagram (não de site)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA no FINAL ("Me segue")?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A qualidade do vídeo está nítida?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas e Recursos</h2><p>O kit mínimo + o que o Oney mandou montar agora</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>CapCut ou InShot — corte + legenda automática</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Microfone de lapela sem fio — áudio limpo nas visitas</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo de WhatsApp consigo mesma — banco de ideias e referências</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Perfil @fake só seguindo corretores — treinar o algoritmo</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Aula "Criatividade Sintética" — Código Viral (ver/revisar)</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Lista de 20 temas virais do nicho — feita após a aula</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Da bio nova até bater 10K em 2 meses</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Hoje</div>
+      <div class="timeline-title">Limpeza do perfil + 1 vídeo útil</div>
+      <div class="timeline-desc">Reescrever a bio nas 3 linhas novas. Despinar o tour da casa de R$ 8 mi e fixar o vídeo viral + 2 vídeos novos. Gravar 1 Reels já hoje no formato útil (sugestão: "3 sinais que sua casa é alto padrão").</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 1</div>
+      <div class="timeline-title">Montagem do sistema + ritmo de 1/dia</div>
+      <div class="timeline-desc">Criar o grupo de WhatsApp consigo mesma. Criar o perfil @fake e começar a seguir 50+ corretores. Assistir/revisar a aula de Criatividade Sintética no Código Viral. Listar 20 temas virais do nicho. Postar 1 Reels por dia sem falha — começa pelos modelos prontos deste plano.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Semana 2-3</div>
+      <div class="timeline-title">Subir pra 2/dia + testar ganchos</div>
+      <div class="timeline-desc">Aumentar pra 2 Reels/dia. A cada 10 vídeos úteis, gravar 1 meme/engraçado (tipo o seu viral de quase 1M). Testar 3 ganchos diferentes na semana e ver qual prende mais. Começar a responder DMs com agilidade — primeiro contato vira lead em 3-5 mensagens.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Mês 1-2</div>
+      <div class="timeline-title">10K seguidores + leads quentes na DM</div>
+      <div class="timeline-desc">Bater 10K em até 60 dias. Identificar os 5 vídeos que mais cresceram e replicar o formato. Começar a fechar consultoria pelo Instagram (1ª venda chega entre os 5K e os 10K). De 10K em diante, plano novo: escala pros 20K, 50K, 100K. Aí o Instagram vira a fonte principal de cliente.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Maio 2026</div>
+
+</body>
+</html>
