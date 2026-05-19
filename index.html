@@ -77,6 +77,67 @@
   .footer strong { background: var(--gradient-ig); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700; }
   @media (max-width: 900px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .hero { padding: 40px 16px 32px; } .hero-stats { gap: 28px; } .cards-grid { grid-template-columns: 1fr; gap: 14px; padding: 0 16px 32px; } .card-body { padding: 18px; } .section-label { padding: 0 16px; } }
+
+  /* Tabs Navigation */
+  .nav-tabs { max-width: 1200px; margin: 0 auto 24px; padding: 0 24px; display: flex; gap: 8px; justify-content: center; border-bottom: 1px solid #e5e7eb; }
+  .nav-tab { background: transparent; border: none; padding: 14px 24px; font-size: 14px; font-weight: 700; color: var(--text-muted); cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s ease; font-family: inherit; display: flex; align-items: center; gap: 8px; }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active { color: var(--purple); border-bottom-color: var(--purple); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Metodologia */
+  .methodology { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
+  .meth-intro { background: var(--gradient-subtle); border: 1px solid rgba(131,58,180,0.12); border-radius: 16px; padding: 28px; margin-bottom: 36px; }
+  .meth-intro h2 { font-size: 22px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; }
+  .meth-intro p { font-size: 14.5px; color: var(--text-muted); line-height: 1.65; }
+  .meth-intro p + p { margin-top: 10px; }
+
+  .meth-principles { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; margin-bottom: 36px; box-shadow: var(--shadow-sm); }
+  .meth-principles h2 { font-size: 19px; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+  .principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .principle { display: flex; gap: 12px; padding: 14px; border-radius: 10px; background: #fafafa; }
+  .principle-num { width: 28px; height: 28px; flex-shrink: 0; background: var(--gradient-ig); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; }
+  .principle-text { font-size: 13.5px; line-height: 1.5; color: #374151; }
+  .principle-text strong { color: var(--text); }
+
+  .meth-category { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; margin-bottom: 16px; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .meth-cat-header { padding: 20px 24px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid #f3f4f6; }
+  .meth-cat-icon { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .meth-cat-icon.cat-perfil { background: rgba(225,48,108,0.1); color: #E1306C; }
+  .meth-cat-icon.cat-estrategia { background: rgba(131,58,180,0.1); color: #833AB4; }
+  .meth-cat-icon.cat-video { background: rgba(247,119,55,0.1); color: #F77737; }
+  .meth-cat-icon.cat-gancho { background: rgba(252,175,69,0.15); color: #b8770a; }
+  .meth-cat-icon.cat-carrossel { background: rgba(64,93,230,0.1); color: #405DE6; }
+  .meth-cat-icon.cat-conteudo { background: rgba(16,185,129,0.1); color: #059669; }
+  .meth-cat-icon.cat-cta { background: rgba(225,48,108,0.1); color: #E1306C; }
+  .meth-cat-icon.cat-operacao { background: rgba(131,58,180,0.1); color: #833AB4; }
+  .meth-cat-title { flex: 1; }
+  .meth-cat-title h3 { font-size: 16px; font-weight: 800; margin-bottom: 2px; letter-spacing: -0.3px; }
+  .meth-cat-title p { font-size: 13px; color: var(--text-muted); margin: 0; }
+  .meth-cat-count { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 12px; background: #f3f4f6; color: var(--text-muted); }
+
+  .meth-problems { padding: 8px 0; }
+  .meth-problem { padding: 18px 24px; border-bottom: 1px solid #f3f4f6; }
+  .meth-problem:last-child { border-bottom: none; }
+  .meth-problem-title { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .meth-problem-num { font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 6px; background: rgba(225,48,108,0.1); color: #E1306C; flex-shrink: 0; letter-spacing: 0.3px; }
+  .meth-problem-title h4 { font-size: 15px; font-weight: 700; line-height: 1.3; color: var(--text); }
+  .meth-rows { display: grid; grid-template-columns: 110px 1fr; gap: 10px 16px; font-size: 13.5px; line-height: 1.55; }
+  .meth-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; padding-top: 2px; }
+  .meth-label.erro { color: #E1306C; }
+  .meth-label.diag { color: var(--text-muted); }
+  .meth-label.sol { color: #059669; }
+  .meth-row-text { color: #374151; }
+  .meth-row-text strong { color: var(--text); font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .principles-grid { grid-template-columns: 1fr; }
+    .meth-rows { grid-template-columns: 1fr; gap: 4px; }
+    .meth-label { margin-top: 8px; }
+    .nav-tab { padding: 12px 16px; font-size: 13px; }
+  }
+
 </style>
 </head>
 <body>
@@ -86,18 +147,58 @@
   <h1>Planos de <span>Ação</span></h1>
   <p>Dashboards personalizados com estratégias práticas de crescimento no Instagram para cada aluno da mentoria Viral Pro com Oney Araújo.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-num">31</div><div class="hero-stat-label">Planos Criados</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">34</div><div class="hero-stat-label">Planos Criados</div></div>
     <div class="hero-stat"><div class="hero-stat-num">14</div><div class="hero-stat-label">Seções por Plano</div></div>
     <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Possibilidades</div></div>
   </div>
 </section>
 
+
+<div class="nav-tabs">
+  <button class="nav-tab active" data-tab="planos" onclick="showTab('planos')">📋 Planos de Ação</button>
+  <button class="nav-tab" data-tab="metodologia" onclick="showTab('metodologia')">📘 Metodologia</button>
+</div>
+
+<div id="tab-planos" class="tab-content active">
 <div class="section-label">Mais Recentes</div>
 
 <div class="cards-grid">
 
-  <a class="card" href="dr-joney/" target="_blank">
+  <a class="card" href="camila-ribeiro/" target="_blank">
     <span class="card-new">Novo</span>
+    <div class="card-gradient"></div>
+    <div class="card-body">
+      <span class="card-nicho nicho-psicologia">Mentoria Sistêmica</span>
+      <div class="card-name">Camila Ribeiro</div>
+      <div class="card-brand">Método A Travessia</div>
+      <div class="card-desc">Mentora sistêmica para mulheres que conseguem tudo mas não consegue segurar nada. Estratégia pra sair de 14K e bater 50K-100K com Reels FaceTime e bio concreta.</div>
+      <div class="card-meta"><div class="card-growth">↑ 50K seguidores</div><div class="card-cta">Ver plano</div></div>
+    </div>
+  </a>
+
+  <a class="card" href="sarah-incantato-psicologia/" target="_blank">
+    <div class="card-gradient"></div>
+    <div class="card-body">
+      <span class="card-nicho nicho-psicologia">Psicologia / Neurociência</span>
+      <div class="card-name">Sarah Incantato</div>
+      <div class="card-brand">Encantato Psicologia</div>
+      <div class="card-desc">Psicóloga e formadora de psicólogos. Cresceu 35.9K mas as vendas não acompanharam. Plano pra trazer a Sarah pro rosto da marca e equilibrar conteúdo abrangente x específico.</div>
+      <div class="card-meta"><div class="card-growth">↑ 100K seguidores</div><div class="card-cta">Ver plano</div></div>
+    </div>
+  </a>
+
+  <a class="card" href="camila-walker/" target="_blank">
+    <div class="card-gradient"></div>
+    <div class="card-body">
+      <span class="card-nicho nicho-imovel">Imóveis de Alto Padrão</span>
+      <div class="card-name">Camila Walker</div>
+      <div class="card-brand">Corretora de Imóveis</div>
+      <div class="card-desc">Corretora especializada em alto padrão. Estratégia pra sair do número baixo e bater 10K em 2 meses com conteúdo útil e linguagem de Instagram, não de site.</div>
+      <div class="card-meta"><div class="card-growth">↑ 10K seguidores</div><div class="card-cta">Ver plano</div></div>
+    </div>
+  </a>
+
+  <a class="card" href="dr-joney/" target="_blank">
     <div class="card-gradient"></div>
     <div class="card-body">
       <span class="card-nicho nicho-saude">Reprodução Assistida</span>
@@ -467,6 +568,442 @@
   </a>
 
 </div>
+
+</div>
+
+<div id="tab-metodologia" class="tab-content">
+  <div class="methodology">
+
+    <div class="meth-intro">
+      <h2>📘 Metodologia das Análises de Perfil — Viral Pro</h2>
+      <p>Esta é a metodologia consolidada das análises feitas pelo Oney até hoje. Use como <strong>checklist obrigatório</strong> quando analisar um novo aluno — cada problema aqui apareceu em pelo menos 3 perfis diferentes e tem solução validada.</p>
+      <p>Está organizada em <strong>8 categorias</strong> que cobrem a jornada completa: do perfil (fachada) até a operação diária. Cada problema tem 3 partes: <strong>Erro</strong> (como aparece no perfil do aluno), <strong>Diagnóstico</strong> (por que isso é problema) e <strong>Solução</strong> (a orientação para passar pro aluno).</p>
+    </div>
+
+    <div class="meth-principles">
+      <h2>🎯 Princípios Fundamentais (que regem TUDO)</h2>
+      <div class="principles-grid">
+        <div class="principle">
+          <div class="principle-num">1</div>
+          <div class="principle-text"><strong>Instagram é plataforma de INTERESSE, não de público.</strong> Não sabe quem é "alto padrão" ou "psicólogo" — entrega pra quem se interessa pelo tema do vídeo.</div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">2</div>
+          <div class="principle-text"><strong>50/50 abrangente x específico.</strong> Metade do conteúdo pra qualquer pessoa do nicho amplo, metade pra cliente direto. Sem isso, alcance morre.</div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">3</div>
+          <div class="principle-text"><strong>Você é o produto.</strong> A pessoa precisa aparecer em 90% dos vídeos. Conteúdo dela falando = amostra grátis da mentoria/serviço.</div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">4</div>
+          <div class="principle-text"><strong>Útil &gt; Bonito.</strong> Vídeo cinematográfico não vende. Conteúdo prático e aplicável é o que gera seguidor, salvamento e venda.</div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">5</div>
+          <div class="principle-text"><strong>Gancho é 80% do sucesso do vídeo.</strong> Errou os 3 primeiros segundos, perdeu o vídeo. Provocativo &gt; suave. Contraintuitivo &gt; óbvio.</div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">6</div>
+          <div class="principle-text"><strong>Microproblemas no Reels, problemas grandes no produto pago.</strong> Instagram é entretenimento — entrega insight rápido. Quem ensina muito grátis não vende.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORIA 1: PERFIL -->
+    <div class="meth-category">
+      <div class="meth-cat-header">
+        <div class="meth-cat-icon cat-perfil">👤</div>
+        <div class="meth-cat-title"><h3>Categoria 1 — Perfil (Fachada)</h3><p>Bio, foto, link, destaques — a porta de entrada que decide se a pessoa vai te seguir</p></div>
+        <div class="meth-cat-count">4 problemas</div>
+      </div>
+      <div class="meth-problems">
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">1.1</span><h4>Foto de perfil que afasta seguidor</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Logo da instituição/empresa (Encantato Psicologia, Magazine X), foto muito distante onde mal dá pra ver o rosto, foto antiga com filtro tipo 2018.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Pessoas <strong>não seguem instituições, seguem rostos humanos</strong>. Magazine Luiza é uma instituição gigante mas precisa da Lu. Quanto mais distante a foto, menos identificação a audiência cria com a pessoa.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Foto profissional onde o <strong>rosto ocupa 70%+</strong> da imagem. Sorriso natural. Fundo neutro. Para perfis institucionais: trocar logo pela pessoa principal do negócio (a "Lu" do nicho).</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">1.2</span><h4>Bio confusa, abstrata ou cheia de jargão</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">"Mentora sistêmica para mulheres que cresceram mas não sustentam prosperidade", "Descomplico a busca por imóveis de alto padrão", "Te mostro como atualizar sua prática clínica em psicologia e neurociência".</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Bio é a FACHADA — se confusa, atrai público errado. Jargão técnico ("sistêmica", "neurociência", "curadoria") ou palavras abstratas ("prosperidade", "leveza") <strong>não podem ser visualizadas</strong>. Logo, não convertem.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Estrutura em 3 linhas: <strong>Linha 1 = benefício concreto</strong> ("Ajudo mulheres a manterem o que conquistaram"); <strong>Linha 2 = especialidade</strong> em 1 frase; <strong>Linha 3 = CTA</strong> com 👇 apontando o link. Trocar abstrato por concreto: "vender, multiplicar dinheiro, dinheiro/paz/relações" &gt; "prosperidade, leveza, abundância".</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">1.3</span><h4>Destaques bagunçados, antigos ou duplicados</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Destaques com filtros/fontes do Instagram de 2018, capas duplicadas ("Israel" duas vezes, "Mulher V12" + "Mulher"), conteúdos de eventos passados.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Destaques datados denunciam que o perfil <strong>não é cuidado</strong>. Capa antiga é igual loja com vitrine desatualizada — comunica abandono ou falta de profissionalismo.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Faxina: deletar destaques antigos (mais de 1 ano), unir duplicados, remontar capas com identidade visual atual. Esconder a etiqueta "Criador de conteúdo" se for o caso (Painel profissional → Configurações → desativar).</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">1.4</span><h4>Link da bio mal posicionado</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Link com encurtador feio (bit.ly/x7y), CTA de venda direta ("Compre meu curso 👇"), link com nome do produto ("Método 10").</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">A bio é a fachada de "tudo de graça". Quando o link já vende, o visitante <strong>percebe que é anúncio</strong> e sai. CTA precisa convidar pra CLICAR, não pra COMPRAR.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Link limpo (domínio próprio: <code>sheilaortiz.com.br/treinamentos</code>). CTA foca no clique: "Fale comigo se quer X 👇" ou "Conheça o Método A Travessia 👇". Antes do link, NUNCA nome do produto — sempre a oferta mais barata com preço claro ("Desafio 21 dias por R$19,90 👇").</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORIA 2: ESTRATÉGIA -->
+    <div class="meth-category">
+      <div class="meth-cat-header">
+        <div class="meth-cat-icon cat-estrategia">🎯</div>
+        <div class="meth-cat-title"><h3>Categoria 2 — Estratégia (Como o algoritmo pensa)</h3><p>Mindset do Instagram: por que conteúdo nichado demais morre e abrangente cresce</p></div>
+        <div class="meth-cat-count">3 problemas</div>
+      </div>
+      <div class="meth-problems">
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">2.1</span><h4>Confundir público com interesse</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Fazer conteúdo só pro avatar ("dilema da não exclusividade pra cliente de imóveis", "técnicas de avaliação psicológica MMPI"). Conteúdo só pra cliente de alto padrão / psicólogo / investidor.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text"><strong>Instagram NÃO sabe</strong> quem é "cliente alto padrão", quem é "psicólogo", quem é "lojista". Ele entrega por INTERESSE no tema do vídeo, não por perfil financeiro/profissional. Conteúdo super nichado = alcance pequeno = algoritmo não distribui.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Aumentar abrangência: linguagem mais simples, ganchos universais. "Como saber se a casa que você mora é alto padrão" &gt; "5 perguntas pra qualificar um lead high ticket". <strong>Quanto maior a amostragem, maior a chance do cliente certo aparecer dentro dela.</strong></div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">2.2</span><h4>Não aplicar a regra 50/50</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Perfil 100% específico (só fala pra cliente direto) OU 100% genérico (só meme/viral). Tudo no mesmo registro.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">100% específico mata alcance; 100% genérico não converte. <strong>Sem mistura, o perfil ou cresce sem vender ou vende um pouco sem crescer.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">50% conteúdo abrangente (mente, cotidiano, história) + 50% específico (técnica, avaliação, produto). A cada 10 vídeos úteis, 1 meme/viral pra puxar audiência nova pro perfil — o vídeo viral leva visitante, os úteis convertem.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">2.3</span><h4>Conteúdo de "anúncio camuflado"</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Tour cinematográfico de imóvel, vídeo gerado por IA com travessões, carrossel "agency-style" que parece feito por designer, depoimento de cliente sem mostrar O QUE ele tá elogiando.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Instagram identifica esse formato e <strong>reduz a entrega</strong>. Audiência percebe que é anúncio e pula. A pessoa tem que sentir que <strong>VOCÊ fez aquilo</strong>, não uma agência.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Formato "feito a mão": celular esticado, carrossel-X (estilo Twitter), narração própria, prints reais. Depoimento: mostre o que o cliente tá elogiando (o serviço rodando na tela enquanto o áudio passa).</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORIA 3: VIDEO -->
+    <div class="meth-category">
+      <div class="meth-cat-header">
+        <div class="meth-cat-icon cat-video">🎬</div>
+        <div class="meth-cat-title"><h3>Categoria 3 — Vídeo (Formato e execução)</h3><p>Como filmar, qual duração, postura, voz, legenda</p></div>
+        <div class="meth-cat-count">6 problemas</div>
+      </div>
+      <div class="meth-problems">
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">3.1</span><h4>Vídeo scriptado / pose forçada</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Pessoa sentada de perna cruzada, olhando pra câmera, falando frase decorada. Sem espontaneidade.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Formato data de 2018. Em 2026 a audiência fareja "anúncio" em segundos. <strong>Pose scriptada destrói a conexão emocional.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Formato FaceTime / story: celular esticado, no carro ou em casa, tom de áudio pra amiga. Sem decoreba. Como se estivesse mandando um áudio pra um conhecido.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">3.2</span><h4>A pessoa não aparece nos vídeos</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Aluno usa vídeo de terceiros sem aparecer junto, faz só carrossel/print sem se mostrar, manda áudio de cliente sem narrar.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Em nicho de mentoria/serviço, <strong>o aluno é o produto</strong>. Quem assiste vídeo dele falando = experimenta a "amostra grátis". Sem essa amostra, não tem desejo de comprar.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Aluno aparece em 90% dos vídeos. Quando usar conteúdo de terceiro: <strong>tela dividida</strong> — terceiro em cima, aluno embaixo narrando. Mantém estética + mantém presença.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">3.3</span><h4>Voz sem energia / pausada</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Aluno fala com voz neutra, lenta, sem variação. Som de "leitor de manual".</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Voz neutra <strong>não transmite</strong> a energia que vende serviço/mentoria. Pessoa triste/neutra não consegue convencer ninguém a contratar.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Voz com energia/alegria — mesmo que sejam só 40s. Aplicar a aula Molho (Código Viral). No edits: velocidade 1.1x ou 1.2x dá ritmo. Para alunos com sotaque carregado, 1.1x é o limite.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">3.4</span><h4>Falta legenda ou texto pequeno demais</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Vídeo sem legenda, ou com legenda pequena no canto, ou só com música sem narração.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text"><strong>70% das pessoas assistem com som desligado.</strong> Sem legenda, o vídeo morre na primeira segunda.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Legenda grande e centralizada. Em palavras-chave: usar texto maior/colorido pra dar ênfase. Posicionar a legenda <strong>NÃO encoberta pela barra de comentários</strong> do Instagram (deixar espaço inferior).</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">3.5</span><h4>Vídeo longo demais ou demora pra entregar</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Vídeo de 2-10 minutos pra ideia que cabe em 40s. Repetir a mesma ideia 4 vezes "pra deixar claro". Enrolar antes de entregar a dica.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Pessoa abandona antes do meio = retenção baixa = algoritmo não entrega mais. <strong>O Instagram não é palestra.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Sweet spot: <strong>40 segundos</strong>. Range aceitável: 30-60s. Vídeo polêmico pode passar disso (gera comentários). Vídeo de dica: nunca mais que 60s. Direto ao ponto: gancho → contexto curto → dica → CTA.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">3.6</span><h4>Logo / marca d'água em cima do vídeo</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Logo do negócio fixo no canto do vídeo. Marca d'água em diagonal. @ do perfil no rodapé.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">O algoritmo identifica como conteúdo "produzido" e <strong>reduz entrega</strong>. Além disso, o @ já aparece no perfil — colocar de novo é desnecessário e parece amador.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Vídeo limpo, sem logo. Só usar @ se os vídeos estão sendo roubados por outras páginas. Marca pode aparecer em 1 frame curto (1-2s) no meio ou final, nunca o vídeo inteiro.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORIA 4: GANCHO -->
+    <div class="meth-category">
+      <div class="meth-cat-header">
+        <div class="meth-cat-icon cat-gancho">🪝</div>
+        <div class="meth-cat-title"><h3>Categoria 4 — Gancho (Primeiros 3 segundos)</h3><p>80% do sucesso do vídeo. Errou aqui, perdeu.</p></div>
+        <div class="meth-cat-count">4 problemas</div>
+      </div>
+      <div class="meth-problems">
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">4.1</span><h4>Gancho fraco / retórico / suave</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">"Você vê essa cena e já pensa em autismo, né?", "Sabe aquela sensação de estar quase lá?", "Hoje vamos falar sobre...".</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Pergunta retórica não engaja. Sem provocação, audiência pula em 1 segundo. <strong>Gancho que pode ser respondido com "não" silencioso já perdeu.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Gancho provocativo, contraintuitivo ou impactante: "Se seu filho faz ISSO, ele tem autismo. Calma antes de surtar"; "Tudo que dizem sobre [tema] está errado. Vou provar"; "3 sinais de [coisa] que você tá ignorando".</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">4.2</span><h4>O gancho real vem DEPOIS do gancho planejado</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Vídeo começa com frase fraca ("Sorriso é pra masculinidade frágil") e no meio aparece a frase IMPACTANTE ("Jovem autista foi baleada por sorrir pra um homem"). O gancho real morreu enquanto o planejado tomava tempo.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Padrão comum: o melhor gancho aparece naturalmente no meio quando o aluno está mais quente. <strong>Mas só os primeiros 3 segundos importam pro algoritmo.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Revisar o vídeo bruto antes de cortar: identificar a frase MAIS impactante e movê-la pra primeira posição. O gancho planejado vira fundo de contexto, não abertura.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">4.3</span><h4>Gancho sem ancoragem visual</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Aluno só falando contra parede branca. Vídeo "talking head" sem nada visual no enquadramento.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Em feed de Reels com 100 vídeos visuais por minuto, talking head puro perde no piscar de olhos. <strong>Gancho precisa ser VISUAL antes de ser verbal.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Adicionar visual forte: print de manchete real, cena de filme/série na tela dividida, comparativo "antes/depois", objeto inusitado na mão, andando enquanto fala. <strong>Manchete real gera familiaridade visual de jornal — mais força que texto digitado.</strong></div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">4.4</span><h4>Pedir like/seguir no gancho (antes do valor)</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">"Me segue antes de eu te contar isso", "Curte aí e segue!" no primeiro segundo.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Sem entregar valor antes, <strong>por que a pessoa seguiria?</strong> CTA antes do conteúdo é interrupção pura — algoritmo lê como "alta taxa de pulo".</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">CTA SEMPRE no FINAL, depois de entregar a dica/insight. Único exceção válido: pedido de like sutil no slide 2 ou 3 de carrossel ("já dá dois toques que ainda tem mais").</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORIA 5: CARROSSEL -->
+    <div class="meth-category">
+      <div class="meth-cat-header">
+        <div class="meth-cat-icon cat-carrossel">📑</div>
+        <div class="meth-cat-title"><h3>Categoria 5 — Carrossel</h3><p>Quando carrossel converte e quando ele só ocupa o feed</p></div>
+        <div class="meth-cat-count">3 problemas</div>
+      </div>
+      <div class="meth-problems">
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">5.1</span><h4>Texto demais por slide (blocão)</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Cada slide com parágrafo de 6-10 linhas. Texto pequeno. Cabeçalho longo + corpo + assinatura.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Olho bate, vê parede de texto e desiste. <strong>Ninguém lê parágrafo em Reels.</strong> Performance morre.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">3-4 linhas curtas por slide. 1 ideia por slide. Texto grande. Ousar ser raso (sem ser bobo). Cada slide entrega 1 micropacote.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">5.2</span><h4>Design "de agência" demais</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Carrossel com layout sofisticado, cores corporativas, tipografia profissional, ilustrações vetoriais. Cara de campanha publicitária.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Audiência <strong>não acredita que foi o criador que fez</strong> — parece feito por agência. Quebra a percepção de pessoalidade, principal ativo do criador.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Formato carrossel-X (estilo Twitter/print de tweet). Foto do criador no header. Tipografia simples (SF Pro Display). Parece feito por ele = pessoal = converte.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">5.3</span><h4>Sem CTA forte no último slide</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Carrossel termina com mais texto, ou com link genérico, ou simplesmente acaba.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Audiência chegou no último slide = está engajada. <strong>Não pedir ação aqui é deixar a venda na mesa.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Último slide curto + emoji: "Salva 📌 Compartilha 💌 Me segue 👈". Ou tema-específico: "Conta nos comentários: qual desses você já fez?". CTA visual, não palestrante.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORIA 6: CONTEÚDO -->
+    <div class="meth-category">
+      <div class="meth-cat-header">
+        <div class="meth-cat-icon cat-conteudo">💡</div>
+        <div class="meth-cat-title"><h3>Categoria 6 — Conteúdo (Utilidade)</h3><p>O que dizer e como dizer pra a audiência se identificar</p></div>
+        <div class="meth-cat-count">4 problemas</div>
+      </div>
+      <div class="meth-problems">
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">6.1</span><h4>Linguagem técnica sem tradução</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">"Aplicaria o BFP pra grandes fatores de personalidade e o MMPI pra psicopatologias", "Estudando planta, comparando preço de mercado, prevendo objeções", "Banco Central descartou intervenção imediata".</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Linguagem de site, relatório, jargão profissional <strong>afasta o leigo</strong>. Se só psicólogo/corretor/investidor entende, alcance morre.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Linguagem de 6ª série. Se leigo entende, o profissional também. O contrário não é verdade. Trocar jargão por analogia: "MMPI" → "teste que mede traços de personalidade"; "planta" → "como a casa é por dentro"; "Copom" → "decisão sobre os juros que mexe com sua poupança".</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">6.2</span><h4>Conteúdo sem utilidade aplicável</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Vídeo motivacional só ("você consegue!"), reflexão filosófica sem ação prática, conteúdo "inspiracional" sem dica concreta.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Inspiração não traz seguidor. <strong>O que traz seguidor é UTILIDADE</strong> — algo que a pessoa pode aplicar hoje.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Cada vídeo entrega 1 microdica aplicável. "Faça isso hoje: na próxima vez que entrar dinheiro, antes de gastar sente onde no corpo você sente". Útil = salva, compartilha, segue.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">6.3</span><h4>Final em modo "palestra"</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">"É por isso que nós psicólogos precisamos psicoeducar a sociedade", "É essa a importância de uma boa avaliação imobiliária", "Por isso, fica a reflexão...".</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Vídeo vira aula no final. <strong>Audiência pula assim que sente "lição de moral"</strong>. Conclusão palestrante mata engajamento.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Trocar palestra por CTA acionável: "Compartilha esse vídeo pra mais gente saber"; "Salva pra não esquecer e me segue"; "Conta nos comentários: já aconteceu com você?". Final = ação, não conclusão.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">6.4</span><h4>Sem exemplo concreto / história real</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Conceito explicado de forma abstrata: "auto-sabotagem acontece quando seu corpo associa dinheiro a perigo". Sem ilustração, sem exemplo, sem história.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Audiência precisa SE IDENTIFICAR. Conceito abstrato passa batido. <strong>História real é o que faz a pessoa pensar "isso aconteceu comigo".</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Anexar um exemplo concreto a cada conceito: número real ("perdi R$ 80K em 2 meses"), data ("em maio do ano passado"), situação cotidiana ("você foi no mercado e..."). Confissão pessoal &gt; exemplo genérico.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORIA 7: CTA & VENDA -->
+    <div class="meth-category">
+      <div class="meth-cat-header">
+        <div class="meth-cat-icon cat-cta">💰</div>
+        <div class="meth-cat-title"><h3>Categoria 7 — CTA & Venda</h3><p>Quando mencionar o produto sem virar anúncio</p></div>
+        <div class="meth-cat-count">3 problemas</div>
+      </div>
+      <div class="meth-problems">
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">7.1</span><h4>Pitch longo no final do vídeo</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Vídeo termina com 30 segundos de "no meu curso/mentoria a gente aprofunda isso, são X módulos, link na bio, agende uma sessão...".</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Audiência percebe que virou anúncio e pula. <strong>Pitch longo destrói o engajamento que o conteúdo construiu.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Menção do produto NO MEIO em <strong>2 frases</strong>: "Inclusive isso é o que a gente trabalha no [produto] — fica de olho na bio". Volta pro conteúdo. A venda acontece pelo VOLUME de menções rápidas + autoridade demonstrada, não por pitch único.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">7.2</span><h4>Vender direto na primeira linha da bio</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Bio: "Vendo mentoria de 6 meses pra empresárias", "Aulas de neurociência aplicada por R$2.000", "Especialista em consultoria patrimonial".</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Bio que vende = audiência percebe que é anúncio e sai. <strong>A fachada do perfil tem que ser "tudo de graça".</strong> A venda acontece DEPOIS, no link da bio.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Bio comunica BENEFÍCIO que a pessoa ganha ao seguir ("Dicas diárias para multiplicar seu dinheiro"). Produto/preço fica no link da bio, não na bio em si. Bio = porta; link = balcão de vendas.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">7.3</span><h4>CTA genérico ou inexistente</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Vídeo termina sem CTA, ou com "espero que tenha gostado", ou só "me segue" solto sem contexto.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Sem direção, audiência consome e segue em frente. <strong>O algoritmo prioriza vídeo com ação</strong> (salva, compartilha, comenta).</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">CTA específico por situação: vídeo útil → "Salva pra não esquecer e me segue"; vídeo com história → "Compartilha com [persona] que precisa disso"; vídeo de identificação → "Quantos desses você já fez? Conta nos comentários".</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORIA 8: OPERAÇÃO -->
+    <div class="meth-category">
+      <div class="meth-cat-header">
+        <div class="meth-cat-icon cat-operacao">⚙️</div>
+        <div class="meth-cat-title"><h3>Categoria 8 — Operação (Sistema)</h3><p>Como manter o ritmo, banco de ideias e referências</p></div>
+        <div class="meth-cat-count">4 problemas</div>
+      </div>
+      <div class="meth-problems">
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">8.1</span><h4>Sem sistema de banco de ideias</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Aluno depende da memória. Tem ideia no carro, esquece. Vê vídeo viral, não anota. No dia de gravar, "não sabe sobre o que falar".</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Sem sistema, criador fica refém da inspiração do momento. <strong>O melhor conteúdo sempre é o que veio quando você não tava com câmera.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Grupo de WhatsApp consigo mesmo. Joga ideia em áudio, prints, links de vídeos virais. No dia de gravar, abre o grupo e tem 30+ ideias prontas. <strong>NÃO usar o "Salvar" do Instagram</strong> — é ruim, perde a referência.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">8.2</span><h4>Sem treinamento do algoritmo de referência</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Aluno usa o perfil pessoal pra "ver concorrentes". O Reels do perfil dele tá cheio de meme, política, Copa do Mundo. Não consegue mapear o que viraliza no nicho.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Perfil pessoal já está "contaminado" pelos interesses gerais do aluno. <strong>Algoritmo não consegue separar o que é referência profissional do que é entretenimento.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Criar perfil @fake (@nome-ideias) só pra seguir perfis do nicho. Dar like nos vídeos relevantes, marcar "Não tenho interesse" nos outros. Em poucas semanas vira <strong>máquina de referências virais</strong> exclusivas do segmento.</div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">8.3</span><h4>Não mapear padrões virais do nicho</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Aluno cria conteúdo "do zero", chuta o que pode dar certo, perde tempo testando hipóteses sem base.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">A internet já validou o que funciona em cada nicho. <strong>Criar sem mapear é apostar sem dados.</strong></div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Aplicar a aula <strong>Criatividade Sintética</strong> do Código Viral: listar 20+ temas que se repetem como padrão no nicho. Cada novo conteúdo parte de um padrão validado — só muda o ângulo. <strong>Não é copiar, é adaptar o formato.</strong></div>
+          </div>
+        </div>
+
+        <div class="meth-problem">
+          <div class="meth-problem-title"><span class="meth-problem-num">8.4</span><h4>Frequência irregular ou baixa</h4></div>
+          <div class="meth-rows">
+            <div class="meth-label erro">❌ Erro</div><div class="meth-row-text">Aluno posta 2 vídeos numa semana, some por 3 dias, volta com carrossel, some de novo. Sem consistência.</div>
+            <div class="meth-label diag">Diagnóstico</div><div class="meth-row-text">Algoritmo prioriza consistência. <strong>Postar e sumir reseta o aquecimento do perfil.</strong> 1 semana sem postar = volta pra estaca zero.</div>
+            <div class="meth-label sol">✓ Solução</div><div class="meth-row-text">Mínimo 1 vídeo/dia (regra inegociável). Ideal: 1-2 Reels + 1 carrossel-X por dia. Frequência &gt; perfeição. Aluno que posta diário com 60% de qualidade cresce mais que aluno que posta 1x/semana com 100% de qualidade.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="meth-intro" style="margin-top: 36px; background: linear-gradient(135deg, rgba(225,48,108,0.06), rgba(247,119,55,0.06)); border-color: rgba(225,48,108,0.12);">
+      <h2>🎓 Como usar essa metodologia</h2>
+      <p><strong>Para analista iniciante:</strong> abra esse documento antes de cada análise. Para cada um dos 31 problemas listados, verifique se aparece no perfil do aluno. Marque os que aparecerem e use as soluções como roteiro da análise.</p>
+      <p><strong>Para analista avançado:</strong> os problemas estão em ordem de frequência (Categoria 1 e 2 aparecem em 90% dos perfis; Categorias 5-8 são mais específicas). Priorize sempre Perfil e Estratégia antes de mexer em Vídeo e Gancho.</p>
+      <p><strong>Para o aluno:</strong> a metodologia também serve como autoexame. Antes da próxima sessão de análise, passe pelas 8 categorias e marque o que já corrigiu — economiza tempo no próximo encontro.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('.nav-tab[data-tab="' + name + '"]').classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
 
 <div class="footer">
   Planos personalizados gerados a partir das análises do <strong>Viral Pro</strong> com Oney Araújo.<br>
