@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Camilla Ribeiro | Loja de Sucesso</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    border: 3px solid transparent;
+    background-image: linear-gradient(#fff, #fff), var(--ig-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .hero-video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    border: none;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Camilla Ribeiro — Loja de Sucesso</h1>
+  <p class="hero-sub">Consultora de varejo há 18 anos e criadora do Método LDS. Ajuda lojistas a faturar mais com estrutura, gestão e vendas. Tudo o que precisa ajustar para chegar aos 50 mil seguidores — e depois aos 100K.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/1Ac9stoF5u0" title="Análise Viral Pro — Camilla Ribeiro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>20 de Maio, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Varejo &amp; Gestão de Lojas</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Correções na Bio</div></div>
+  <div class="stat-card"><div class="stat-number">1/dia</div><div class="stat-label">Nova Frequência</div></div>
+  <div class="stat-card"><div class="stat-number">50 mil</div><div class="stat-label">Meta de Seguidores</div></div>
+  <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Foco em Utilidade</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>A bio foi o primeiro e o último ponto da análise — comece por ela</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Tirar o selo de "Empreendedora" do perfil</h3><p>Aquele sticker de categoria embaixo do nome só ocupa espaço. Vá em <strong>Editar perfil → Categoria → desativar "Exibir no perfil"</strong>. Como o Nei falou: "as pessoas já sabem que você é empreendedora só de te ver". Não precisa anunciar isso.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Primeira linha da bio = o benefício, claro e direto</h3><p>A primeira linha tem que responder uma pergunta só: <strong>"o que eu ganho seguindo esse perfil?"</strong>. Em vez de algo vago, comunique o benefício para o lojista. Algo simples como <strong>"Dicas diárias pra você vender mais na sua loja"</strong>. Simples mesmo — sem rebuscar.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Simplificar a linha dos 18 anos</h3><p>"18 anos construindo lojas <strong>fortes</strong>, lucrativas, <strong>desejadas</strong> no varejo" tem palavra abstrata demais. O que é uma "loja forte"? Ninguém sabe. Corte "fortes" e "desejadas" e deixe concreto: <strong>"18 anos construindo lojas lucrativas no varejo."</strong></p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">4</div><div class="action-content"><h3>Trocar "reestruturadas" por um resultado concreto</h3><p>"Mais de 500 lojas <strong>reestruturadas</strong>" não vende — é uma palavra fraca de copy. Troque por um resultado que o lojista deseja: <strong>"Mais de 500 lojas que agora faturam mais"</strong> ou <strong>"Mais de 500 lojas que dobraram o faturamento"</strong>. Resultado concreto sempre puxa mais.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Definir o nome da oferta — sem repetição</h3><p>"Método LDS" aparece duas vezes (no texto e na linha da comunidade). Deixe <strong>uma vez só</strong>, como o nome do botão que leva ao link. E se "Comunidade LDS" é um treinamento, chame de <strong>treinamento</strong> — "comunidade" confunde quem ainda não te conhece e não sabe se é um grupo de WhatsApp ou um curso.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Arrumar o link da bio: botão logo de cara</h3><p>Quando alguém clica no seu link, a <strong>primeira coisa</strong> que precisa aparecer é um botão de ação — a pessoa quer clicar, ver preço, comprar. Hoje aparece a sua foto e apresentação primeiro. Inverta: <strong>botão no topo</strong>, e a parte "sobre você" lá embaixo, como um "algo sobre mim". Peça esse ajuste ao designer.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS — VÍDEOS ANALISADOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que travou cada vídeo e como o roteiro ficaria corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>Tela dividida — "O Brasil parou por causa do Neymar"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O conteúdo <strong>virou um conselho</strong>. "Não é o anúncio que vende, é a espera" é uma frase bonita, mas fica no campo do abstrato. O lojista assiste, concorda e... não sabe o que fazer com aquilo. Nenhum passo prático.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Mantenha o formato (ele é forte), mas <strong>termine entregando algo concreto</strong>. Ex: ofereça um <strong>planner de calendário de lançamento</strong> — "o que postar quando for lançar uma coleção nova". Crie o planner com IA e deixe seu contato dentro dele. Aí o vídeo ganha visualização, salvamento e comentário.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>React — A funcionária "maçã podre" da equipe</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O corte dá visualização (já é validado), mas <strong>o seguidor não vem</strong> — as pessoas ficam pelo corte, não pelo que você falou. "Uma líder que não faz rápido acaba com o time" é mais um conselho. Faltou algo prático seu.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Use o corte, mas <strong>traga autoridade pra você</strong> dentro dele. Entregue algo concreto: <strong>"3 perguntas que você faz pra esse funcionário e descobre na hora se ele quer ficar ou sair"</strong>. Aí o react vira útil — e útil é o que traz seguidor.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>React — "Vender não é ter lábia, é controle emocional"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>De novo virou conselho. "Vender é ter controle emocional", "quem aguenta o processo chega no resultado" — é verdade, mas é abstrato. Como o próprio Nei provocou: <strong>não adianta controle emocional se o vendedor não sabe o que falar.</strong></p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Torne útil e concreto: <strong>"3 formas de abordar o cliente que acabou de entrar na loja — 1, 2 e 3"</strong>. O vendedor pensa "essa mulher traz dica boa pra eu vender mais", salva e segue. E como é 1-2-3, ele assiste até o fim.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>"4 pilares que separam loja amadora de loja de sucesso"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O <strong>título mata o vídeo</strong>. "4 pilares" dá preguiça, parece aula — a pessoa pula. Pior: o cenário (sofá, leve, informal) <strong>briga com o gancho</strong>. O visual diz "conversa leve", o texto diz "aula pesada". Um indo pra cada lado.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Troque "pilares" por <strong>"sinais"</strong>: <strong>"5 sinais que o cliente percebe ao entrar na sua loja — e que fazem ele pedir desconto"</strong>. Use a parte rica do vídeo ("o cliente sente quando a loja trabalha no improviso"). Visual, assunto e gancho comunicando a mesma coisa.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 5</span><h3>"Estratégia para acabar com estoque parado"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>A abertura ficou <strong>dúbia</strong> — o termo "missão da semana" não se explica sozinho, deu pra entender só continuando a assistir. Demorou pra ir ao ponto. E o CTA "aplica na sua loja e vem me encontrar" ficou fraco.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Vá <strong>direto ao ponto</strong> na abertura, com termo claro e sem ambiguidade. E feche com um CTA realista: <strong>"Salva esse vídeo ou manda pro teu sócio pra vocês executarem essa semana — depois me agradece."</strong> Simples, rápido, aplicável.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 6</span><h3>"3 erros que fazem o cliente comprar online"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✓ O que já está bom</div>
+          <p>Vídeo informativo e bem construído. Teve um acerto: o <strong>pedido de like no meio</strong> — "antes de te entregar o ouro do terceiro erro, curte esse vídeo". Isso funciona. Mantenha esse recurso.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ O que melhorar</div>
+          <p>O final não converte — não dá um próximo passo. Feche gerando ação: <strong>"Se você quer resolver esses 3 erros, comenta 'LOJA' que eu te mando o passo a passo"</strong> ou "na legenda eu deixei como resolver cada um". Resolver microproblema aproxima a pessoa de você.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que parar e do que começar a fazer</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Transformar o conteúdo em conselho ("não é o anúncio que vende")</div>
+      <div class="compare-item"><span>✕</span> Ficar no abstrato — frase bonita que não diz o que fazer</div>
+      <div class="compare-item"><span>✕</span> Reagir a cortes sem entregar nada prático</div>
+      <div class="compare-item"><span>✕</span> Títulos que parecem aula ("4 pilares", "os 4 passos de...")</div>
+      <div class="compare-item"><span>✕</span> Gancho que briga com o cenário (visual leve + assunto pesado)</div>
+      <div class="compare-item"><span>✕</span> Termos dúbios na abertura ("missão da semana" sem explicar)</div>
+      <div class="compare-item"><span>✕</span> CTA fraco: "aplica na sua loja e vem me encontrar"</div>
+      <div class="compare-item"><span>✕</span> Postar só 5 vezes por semana</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Entregar o concreto: "3 formas de...", "5 sinais que..."</div>
+      <div class="compare-item"><span>✓</span> Responder: o que falo? o que faço? como chego? o que mudo?</div>
+      <div class="compare-item"><span>✓</span> Usar o clone/tela dividida (seu carro-chefe) + uma sacada útil</div>
+      <div class="compare-item"><span>✓</span> Títulos de "sinais" e "erros", provocativos e interessantes</div>
+      <div class="compare-item"><span>✓</span> Visual, assunto e gancho comunicando a mesma coisa</div>
+      <div class="compare-item"><span>✓</span> Ir direto ao ponto, com termos claros</div>
+      <div class="compare-item"><span>✓</span> CTA realista: "salva", "manda pro sócio", "comenta [palavra]"</div>
+      <div class="compare-item"><span>✓</span> Postar 1 vez por dia, sem falha</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As regras de ouro para cada vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Útil é o que traz seguidor</h3><p>Visualização sozinha não traz seguidor. Seguidor vem quando você entrega algo útil. O segredo é um só: servir.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔧</span><h3>Saia do abstrato</h3><p>Conselho bonito não basta. Diga o que fazer, como fazer e o que mudar. Concreto sempre vence o teórico.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>Gancho interessante</h3><p>O Instagram é uma plataforma de interesse. O título precisa despertar vontade de ver — não só informar o que tem no vídeo.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🎬</span><h3>Tudo comunica a mesma coisa</h3><p>Cenário, assunto e gancho alinhados. Se o visual diz "leve" e o texto diz "aula", você se atrapalha sozinha.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📅</span><h3>1 post por dia</h3><p>Consistência é inegociável. Suba de 5 por semana para 1 por dia. Um sistema de ideias garante o ritmo.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔁</span><h3>Resolva microproblemas</h3><p>Cada vídeo resolve um problema pequeno do lojista. Quanto mais você resolve, mais perto a pessoa chega de comprar.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Templates "preencha os espaços" baseados na sua análise</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — "X sinais que o cliente percebe"</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"5 sinais que o cliente percebe quando entra na sua loja — e que fazem ele pedir desconto."<br><em>Cenário leve (sofá ou carro), tom de conversa. O título promete o número.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Contexto</div><div class="script-step-text">"O cliente sente quando a loja trabalha no improviso. E isso aparece nos detalhes."<br><em>Frase de interesse, nunca de aula.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Sequência</div><div class="script-step-text">"Sinal 1: [demora no atendimento]. Sinal 2: [...]. Sinal 3: [...]."<br><em>Ritmo rápido, um sinal por vez. O último é o mais forte.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Consequência</div><div class="script-step-text">"Loja desorganizada faz o cliente pedir desconto, pagar menos ou ir embora."<br><em>Conecte cada sinal a uma perda de dinheiro real.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se a sua loja tem algum desses sinais, comenta 'LOJA' que eu te mando o que fazer."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — "X formas / X perguntas"</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"3 formas de abordar o cliente que acabou de entrar na sua loja."<br><em>Direto, sem rodeio. Já promete o número logo no início.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Forma 1</div><div class="script-step-text">"A primeira é [...]. Funciona porque [...]."<br><em>Uma frase de explicação, sempre prática.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Formas 2 e 3</div><div class="script-step-text">"A segunda é [...]. E a terceira, que é a melhor: [...]."<br><em>Mesmo ritmo. A 3ª segura a pessoa até o fim.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Aplicação</div><div class="script-step-text">"Testa as três essa semana e vê qual converte mais na sua loja."<br><em>Torne aplicável já hoje.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Salva esse vídeo pra não esquecer e manda pra sua equipe de vendas."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Clone / Tela Dividida com Utilidade (carro-chefe)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Olha o erro que essa loja cometeu — e como isso faz o cliente comprar online."<br><em>Reaja a um corte/cena validada do seu segmento.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Reação</div><div class="script-step-text">"Percebeu o que aconteceu aqui? [comente a cena como especialista]."<br><em>Traga autoridade — você analisando, não só reagindo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Sacada útil</div><div class="script-step-text">"O que você faz no lugar disso é: [dica concreta, passo a passo]."<br><em>Aqui está o ouro — algo que o lojista aplica hoje.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se isso te ajudou, salva e manda pro teu sócio executar essa semana."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW DE PRODUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da ideia ao post publicado — o sistema que garante 1 vídeo por dia</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Banco de inspiração</h4><p>Perfil secundário só de estudo: siga concorrentes e perfis do varejo</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Liste os temas</h4><p>Anote os assuntos que mais viralizam no nicho. Tenha a lista na cabeça</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Capture a ideia</h4><p>Grupo de WhatsApp só seu. Teve uma ideia ou gancho? Manda áudio na hora</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Grave em bloco</h4><p>Sofá ou carro de frente pro sol (luz boa). Intercale clone com dicas rápidas</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Publique 1x/dia</h4><p>Ajuste o título provocativo, publique e mande pro grupo do Viral Pro</p></div>
+  </div>
+
+  <!-- 7. FÓRMULAS DE GANCHO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie e adapte — feitas pra despertar interesse nos primeiros segundos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Sinais:</em> "5 sinais que o cliente percebe quando sua loja está desorganizada — e isso faz ele pedir desconto."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Erros:</em> "3 erros que fazem o cliente sair da sua loja e comprar online sem pensar duas vezes."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Contraste / provocação:</em> "Vendedor ruim x vendedor que vende: a diferença está em uma única coisa."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Dor + número:</em> "A melhor estratégia pra acabar com estoque parado sem dar R$ 1 de desconto."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Pergunta direta:</em> "Cliente entrou na sua loja. Você sabe as 3 formas certas de abordar ele?"</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Verdade incômoda:</em> "A sua coleção nova vende pouco — e o problema não é o preço, é como você lança."</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Curiosidade prática:</em> "Tem uma pergunta que revela na hora se o seu vendedor quer ficar ou sair."</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Formatos e temas prontos para gravar já na próxima semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-hotel">Clone</div><h3>Reaja a um corte de loja famosa</h3><p>Comente o erro como especialista e entregue a solução prática. Esse é o seu carro-chefe — manter sempre.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>5 sinais de loja desorganizada</h3><p>Cada sinal ligado a uma perda de venda. Reformatação direta do vídeo dos "4 pilares".</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>3 formas de abordar o cliente</h3><p>Cliente entrou na loja — 1, 2 e 3. Formato que o vendedor salva e segue na hora.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Vendedor ruim x vendedor que vende"</h3><p>Um episódio por comportamento. Título provocativo, comparação clara e concreta.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>7 perguntas pra entrevistar um vendedor</h3><p>Formato thread, slide por slide. Fácil de salvar e mandar pro sócio.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Acabar com estoque parado sem desconto</h3><p>A estratégia da "missão da semana" — mas explicada direto ao ponto desde o primeiro segundo.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Um dia reestruturando uma loja</h3><p>Mostre o antes e o depois de uma loja real. Autoridade na prática, não no discurso.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>3 erros que mandam o cliente pro online</h3><p>Concorrente nas vitrines digitais, atendimento fraco e estoque parado. Like no meio do vídeo.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Calendário comercial da loja</h3><p>O que planejar mês a mês. Vira o esqueleto do seu planner / material gratuito.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Diário de uma consultora de varejo"</h3><p>Uma dica rápida de celular, todo dia. Simples, leve, constante — alimenta o ritmo.</p></div>
+    <div class="idea-card"><div class="idea-type type-hotel">Clone</div><h3>Como lançar coleção criando desejo</h3><p>O caso Celote/Neymar — mas com passo a passo prático de como construir a espera antes.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Os bastidores de uma mentoria LDS</h3><p>Mostre a transformação de uma aluna. Conteúdo que conecta utilidade com a sua oferta.</p></div>
+  </div>
+
+  <!-- 9. PERFIS DE REFERÊNCIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Quem seguir no seu perfil secundário de estudo</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🛍️</div>
+      <div>
+        <h3>Consultores de varejo e vendas</h3>
+        <div class="ref-niche">Concorrentes diretos do seu nicho</div>
+        <p>Estude os títulos que viralizam e os formatos que repetem. Não copie o conteúdo — copie a estrutura. É a "criatividade sintética": ver o que funciona e adaptar pra sua voz.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🔥</div>
+      <div>
+        <h3>Criadores que dominam o clone</h3>
+        <div class="ref-niche">Mesmo formato, outros nichos</div>
+        <p>Perfis fora do varejo que usam tela dividida muito bem. Observe o ritmo da reação, o timing e onde entra a sacada útil. O formato é seu carro-chefe — vale estudar quem é referência nele.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">📲</div>
+      <div>
+        <h3>Lojistas que mostram o dia a dia</h3>
+        <div class="ref-niche">Bastidor real de loja</div>
+        <p>Quem documenta a rotina (vitrine, equipe, vendas) e transforma isso em autoridade. Inspira o formato "bastidor real" — mostrar fazendo vale mais que falar sobre fazer.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">⭐</div>
+      <div>
+        <h3>Como montar o perfil de estudo</h3>
+        <div class="ref-niche">A ferramenta de inspiração</div>
+        <p>Crie um perfil secundário e siga só gente do seu segmento. Em vídeos que não interessam, toque nos três pontinhos → "Não tenho interesse". Você treina o Instagram a te entregar só viral de varejo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo de dica</div>
+      <blockquote>"Salva esse vídeo e manda pro teu sócio pra vocês executarem essa semana."</blockquote>
+      <div class="cta-note">Realista e prático. Gera salvamento e compartilhamento — bem melhor que "vem me encontrar".</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo que resolve um problema</div>
+      <blockquote>"Comenta 'LOJA' que eu te mando o passo a passo completo."</blockquote>
+      <div class="cta-note">Gera comentário e captura contato. Funciona junto com um material gratuito (o planner).</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Final de conteúdo útil</div>
+      <blockquote>"Se quer ajuda pra resolver isso na sua loja, me chama no link da bio."</blockquote>
+      <div class="cta-note">Direto, sem ser anúncio. Use depois de já ter entregue valor de verdade no vídeo.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Vender a Mentoria sem Parecer Anúncio</h2><p>A técnica do "gostinho" que aproxima o lojista da compra</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: entregue a dica, dê o gostinho, e a venda vem sozinha</h3>
+      <p>Você vende dando uma dica prática que mostra que dá resultado. O lojista testa, sente que conseguiu um pedacinho sozinho — e percebe que precisa do <strong>Método LDS completo</strong> pra ir mais longe. Cada conteúdo útil resolve um microproblema e aproxima a pessoa de você. Para acelerar, crie um <strong>material gratuito</strong> (um planner de calendário de lançamento feito com IA, com seu contato dentro) para capturar quem está mais quente. E faça o "jabá" sutil: no fim de um vídeo útil, uma menção rápida de 1-2 frases pro link da bio — falou e voltou pro conteúdo. A venda vem do volume de gente bem servida, nunca de um pitch longo.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Passe por cada item antes de soltar o vídeo</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira tudo antes de postar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho desperta interesse — não só informa?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O título evita parecer "aula"? (sem "X pilares")</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O cenário combina com o assunto do vídeo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O vídeo entrega algo concreto pra aplicar hoje?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Os termos da abertura são claros, sem ambiguidade?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Fui direto ao ponto, sem rodeio no começo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem um CTA realista no final?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O conteúdo está ligado à proposta do perfil (varejo)?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O kit mínimo para produzir com consistência e qualidade</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>IA (Claude) — criar planners, roteiros e calendários de postagem</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Notion — montar o planner que vira seu material gratuito</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo de WhatsApp consigo mesma — capturar ideias na hora</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Perfil secundário no Instagram — estudar concorrentes</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>CapCut — edição dos vídeos clone / tela dividida</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Luz natural — carro de frente pro sol, estética boa sem gastar</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Passo a passo para implementar tudo sem se perder</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Arrumar a bio inteira</div><div class="timeline-desc">Tirar o selo "Empreendedora", reescrever a primeira linha com o benefício, simplificar a linha dos 18 anos e trocar "reestruturadas" por um resultado concreto. Criar o perfil secundário de estudo e o grupo de ideias no WhatsApp. Gravar 1 vídeo no formato clone.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Estabelecer o ritmo de 1 post por dia</div><div class="timeline-desc">Postar todos os dias, sem falha. Listar os temas que mais viralizam no varejo. Pedir ao designer o ajuste do link da bio (botão logo de cara). Regravar o vídeo dos "4 pilares" como "5 sinais que o cliente percebe".</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Refinar ganchos e tornar tudo concreto</div><div class="timeline-desc">Testar títulos de "sinais" e "erros". Regravar os reacts entregando algo prático (3 formas / 3 perguntas). Criar o planner de calendário de lançamento como material gratuito, com seu contato dentro.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Escalar e medir o que traz seguidor</div><div class="timeline-desc">Manter 1 a 2 posts por dia com consistência. Analisar quais formatos trazem seguidor qualificado — não só visualização — e repetir o que funciona. Meta: 50 mil seguidores e Top 3 do nicho.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Maio 2026</div>
+
+</body>
+</html>
