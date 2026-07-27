@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Letícia Suevo | Estoicismo Feminino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    border: 3px solid transparent;
+    background-image: linear-gradient(#fff, #fff), var(--ig-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-historia { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Letícia Suevo — Estoicismo Feminino</h1>
+  <p class="hero-sub">Estoicismo aplicado à reconstrução de mulheres depois do término e do divórcio. O plano para sair dos 28K e virar a pessoa que é seguida pelo nome — não pelo tema.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/3_01dk0fps8" title="Análise Viral Pro — Letícia Suevo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>27 de Julho, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Estoicismo Feminino</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">1/dia</div><div class="stat-label">Meta de Posts (8h)</div></div>
+  <div class="stat-card"><div class="stat-number">40-50s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Foco em Perspectiva</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de gravar qualquer coisa nova</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Trocar o nome do perfil para "Letícia Suevo"</h3><p>Hoje está "Estoicismo Feminino" no campo do nome. O problema é que as pessoas passam a te conhecer como "a menina do estoicismo" e, quando forem te procurar, não acham. Você quer o contrário: ser a <strong>Letícia Suevo que fala sobre estoicismo</strong>. Seu conteúdo já entrega o tema — o nome não precisa fazer isso. Se quiser um meio-termo, "Letícia Suevo | Estoicismo", mas o ideal é só o nome.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Reescrever a primeira linha da bio</h3><p>"Mentora de mulheres em reconstrução" e "sua reconstrução começa aqui" estão dizendo a mesma coisa — é ambíguo e genérico. A primeira linha responde uma pergunta só: <strong>por que esse Instagram existe?</strong> É a fachada do açougue: mesmo vendo a carne lá dentro, a placa confirma que você não vai perder seu tempo. Algo como <strong>"Conselhos diários para mulheres que estão se reconstruindo"</strong>. Nem precisa da palavra estoicismo ali.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Trocar o CTA do link da bio</h3><p>"Sua reconstrução começa aqui" repete a linha de cima e não convida a nada. Troque por algo que dê à pessoa a sensação de <strong>ter acesso a você</strong>: "Seja acompanhada por mim", "Converse comigo", "Quero te acompanhar de perto". O clique nasce da sensação de proximidade, não da promessa abstrata.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">4</div><div class="action-content"><h3>Capa dos Reels tem que ser um frame do próprio vídeo</h3><p>As capas feitas por designer entregam que o conteúdo passou por uma agência — e no segundo seguinte a pessoa pensa que o roteiro também não é seu. Use a barrinha de seleção de frame do próprio Instagram e escolha um take seu, de preferência já com a cara do assunto. Aquela capa do vídeo do carro vale mil vezes mais que qualquer arte.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Cortar as transições, o fade-to-black e o lettering animado</h3><p>Você grava dentro do carro, na cozinha, em casa — cenários casuais. A edição precisa ter o mesmo tamanho do cenário. Transição no meio do gancho tira a atenção da sua fala, e o fade preto entre blocos dá impressão de capítulo quando você ainda está no mesmo assunto. <strong>Corte seco</strong>. Edição sofisticada só faz sentido em estúdio.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Reduzir os vídeos para 40 a 50 segundos</h3><p>Tem vídeo seu de 1min30 e de 2 minutos. Quanto mais longo o vídeo, mais chance você dá para a pessoa pular — e retenção baixa faz o Instagram entregar para menos gente. Se você controla a duração, você controla o alcance. O conteúdo é excelente; o formato é que está segurando ele.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">7</div><div class="action-content"><h3>Gravar deixando 40% de espaço acima da cabeça</h3><p>Você tem colocado imagem e texto em cima do seu rosto. Reenquadre: seu rosto mais para baixo, <strong>título na faixa livre de cima, legenda embaixo</strong>. Aquele espaço é o lugar de título, print, imagem ou vídeo de apoio — e ele só existe se você gravar pensando nele.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que travou cada vídeo e como o roteiro ficaria corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>"Te explicando em menos de 1 minuto o que é estoicismo sem palavras difíceis"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O gancho só funciona para quem já se importa com a palavra estoicismo. Quem nunca ouviu falar pensa "por que eu tenho que dar bola pra isso?" e pula. E o melhor trecho do vídeo — o mais útil de todos — está enterrado no meio.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Comece direto pela parte forte: <strong>"Eu posso sentir saudade e não mandar mensagem. Eu posso sentir raiva e não falar o que vai me custar caro depois."</strong> Segue no mesmo ritmo, entrega o princípio ("você não escolhe o que sente, escolhe o que faz enquanto sente") e fecha com o plot twist: <strong>"Acabei de te explicar o estoicismo em 30 segundos."</strong> Aí sim o CTA.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>"O que eu faria no seu lugar se, mesmo depois do término, ele continuasse tentando contato"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Está rotulado como conselho — e conselho a pessoa pula, porque todo mundo já esteve na posição de não querer ouvir um. Além disso você se apresenta ("Oi, eu sou a Letícia...") antes de entregar o assunto, e o vídeo ganha cara de aula em um cenário que é íntimo (dentro do carro).</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Empacote como história vivida: <strong>"O que eu fiz quando, mesmo bloqueado de tudo, ele continuava tentando contato comigo."</strong> Ninguém sai de uma história sem saber o final. As credenciais entram no fim: "e o que me ajudou a fazer tudo isso foi a filosofia que eu sigo, o estoicismo".</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>"Você aprendeu a não confiar em ninguém"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Transição logo na abertura e título aparecendo enquanto você fala. Em 4 segundos ninguém consegue ler e ouvir ao mesmo tempo — a pessoa não entende sobre o que é o vídeo e vai embora. O gancho é ótimo; a embalagem matou ele.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Zero transição. <strong>Corte seco na sua fala</strong>, deixando o gancho carregar sozinho os 3 primeiros segundos. Título simples, com a fonte nativa (Edits ou Advercase), no espaço livre acima da sua cabeça — não sobre o rosto e não competindo com a frase falada.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4 — o modelo certo</span><h3>"Estou noiva. Depois do divórcio eu tinha certeza de 5 coisas..."</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ Único ajuste</div>
+          <p>O fade-to-black entre os blocos. Parece que o vídeo está trocando de capítulo, mas você continua no mesmo assunto — só quebra o ritmo sem motivo. Corte seco resolve.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Por que esse funciona</div>
+          <p>É <strong>perspectiva pura</strong>: o que você achava, o que descobriu que era mentira e o que construiu. Não é aula, não é conselho — é a sua leitura sobre o que você viveu. É exatamente esse "toquinho no volante" que todo o resto do seu conteúdo precisa. Use esse vídeo como régua.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 5</span><h3>Vídeo da roda / pneu — "o que acontece quando você tenta recuperar um lugar que perdeu"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>2 minutos de tela e você fora do vídeo depois do "assiste aqui". Todo o watch time fica na mão da imagem, e a analogia (que é ótima) fica sem a sua leitura em cima dela.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Narre por cima da imagem rodando, do jeito que você falaria com uma amiga: <strong>"Amiga, olha só isso aqui. Isso aqui é você tentando voltar."</strong> Vai comentando o que acontece — as pessoas avisam, você não escuta porque está cega de tanto querer voltar. Corta para 40 segundos e o vídeo vira outro.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Post estático</span><h3>"A mulher que implora por atenção e a mulher que você quer ser não cabem no mesmo corpo"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que limita esse post</div>
+          <p>O design é bonito (gosto dele), mas justamente por ser bonito demais dá a sensação de que não foi você que fez. E a frase, apesar de ter um pouco de disrupção, já soa parecida com coisas que a internet inteira fala — ela serve para quem já te segue, mas não sai da sua bolha.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Por mais estranho que pareça, o formato <strong>print de X/Twitter</strong> alcança mais: é feio, é simples e as pessoas têm familiaridade com ele. E a frase precisa fugir do senso comum — se você já ouviu algo parecido, ela não é disruptiva o suficiente para viralizar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que parar e do que começar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Rotular o conteúdo como conselho ("o que eu faria no seu lugar")</div>
+      <div class="compare-item"><span>✕</span> Se apresentar antes de entregar o assunto</div>
+      <div class="compare-item"><span>✕</span> Vídeos de 1min30 a 2 minutos</div>
+      <div class="compare-item"><span>✕</span> Transição, fade preto e lettering animado</div>
+      <div class="compare-item"><span>✕</span> Capa de designer no lugar do frame do vídeo</div>
+      <div class="compare-item"><span>✕</span> Título ou imagem em cima do seu rosto</div>
+      <div class="compare-item"><span>✕</span> Achar que já contou sua história e não precisa repetir</div>
+      <div class="compare-item"><span>✕</span> Fechar o perfil só em "término de relacionamento"</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Empacotar tudo como experiência vivida ("o que eu fiz")</div>
+      <div class="compare-item"><span>✓</span> Entregar o assunto nos 3 primeiros segundos</div>
+      <div class="compare-item"><span>✓</span> Vídeos de 40 a 50 segundos</div>
+      <div class="compare-item"><span>✓</span> Corte seco e edição do tamanho do cenário</div>
+      <div class="compare-item"><span>✓</span> Frame do próprio vídeo como capa</div>
+      <div class="compare-item"><span>✓</span> Gravar com 40% de espaço livre acima da cabeça</div>
+      <div class="compare-item"><span>✓</span> Recontar sua história de tempos em tempos</div>
+      <div class="compare-item"><span>✓</span> Falar com toda mulher em reconstrução — te seguindo ou não</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As seis regras que valem para todo vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🎭</span><h3>Perspectiva, não conselho</h3><p>As pessoas não te seguem pelo diploma nem pelo conselho. Elas seguem a sua leitura das coisas. Conselho a pessoa pula; história ela fica pra saber o final.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📖</span><h3>Útil + História</h3><p>Dois tipos de conteúdo convivendo: o útil (prático, replicável) e o de história (pega no emocional e termina com uma conclusão útil).</p></div>
+    <div class="rule-card"><span class="rule-emoji">🌂</span><h3>Estoicismo é o guarda-chuva</h3><p>Ex, relacionamento, adolescência, universo feminino. Seu Instagram é um programa de TV — não um episódio só. Nichar demais é botar corda no pescoço.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⏱️</span><h3>40 a 50 segundos</h3><p>Quanto maior o vídeo, mais chance de pular. Retenção alta faz o Instagram levar sua mensagem para mais gente. Controlar a duração é controlar o alcance.</p></div>
+    <div class="rule-card"><span class="rule-emoji">👋</span><h3>Fale com quem não te segue</h3><p>Todo conteúdo tem que fazer sentido para quem nunca te viu. Zero contexto interno, zero "como eu falei semana passada".</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔁</span><h3>Repita sua história</h3><p>Quando você chegar em 60K, 30 mil pessoas nunca ouviram sua história. Repetir não é vício — é obrigação de quem está crescendo 200 seguidores por dia.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Três estruturas "preencha os espaços" feitas para o seu tema</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — História pessoal com conclusão útil</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"O que eu fiz quando [situação concreta que você viveu]."<br><em>Sem "oi, gente", sem apresentação. Cenário íntimo: carro, cozinha, sofá.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Contexto</div><div class="script-step-text">"Na época eu achava que [crença errada que você tinha]. E o que eu fazia era [comportamento]."<br><em>É aqui que a pessoa se reconhece. Quanto mais específico, mais ela fica.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Virada</div><div class="script-step-text">"Até que eu entendi uma coisa: [princípio em linguagem simples]."<br><em>Ainda sem citar a filosofia. Só a ideia, do jeito que uma amiga contaria.</em></div></div>
+    <div class="script-step"><div class="script-step-label">O que fiz</div><div class="script-step-text">"Aí eu fiz [ação 1], depois [ação 2], e parei de [ação 3]. E foi isso que mudou tudo."<br><em>Aqui mora a utilidade — a pessoa sai com algo pra aplicar.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Isso que eu acabei de te contar é a base do estoicismo. É o que me guia. Se você quer aprender a aplicar na prática, já me acompanha por aqui."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Plot twist (utilidade primeiro, nome depois)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Eu posso sentir saudade e não mandar mensagem."<br><em>Entra falando. Nenhuma introdução, nenhuma explicação do que vem.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Sequência</div><div class="script-step-text">"Eu posso sentir raiva e não falar o que vai me custar caro depois. Eu posso sentir medo e ainda assim [ação]."<br><em>3 a 4 frases no mesmo padrão, ritmo rápido.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Princípio</div><div class="script-step-text">"Você não escolhe o que sente. Você escolhe o que faz enquanto sente. A emoção não é o problema — o problema é ela decidir no seu lugar."</div></div>
+    <div class="script-step"><div class="script-step-label">Plot twist</div><div class="script-step-text">"Acabei de te explicar o estoicismo em 30 segundos. Sem uma palavra difícil."<br><em>É a virada que faz a pessoa querer ver de novo e mandar pra alguém.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se você quer aplicar isso na prática pra viver com mais liberdade emocional, já me acompanha por aqui."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Levantar a bola para cortar (vender sem parecer anúncio)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">Tema que está no guarda-chuva mas fora do produto. Ex: "Como parar de checar o story dele dez vezes por dia."<br><em>Nada de venda aqui. É conteúdo puro.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Conteúdo</div><div class="script-step-text">Entrega a utilidade inteira, do começo ao fim, como se não existisse produto nenhum.</div></div>
+    <div class="script-step"><div class="script-step-label">A bola</div><div class="script-step-text">"E isso é o mesmo trabalho que a gente faz quando uma mulher chega destruída depois de um término..."<br><em>A ponte natural entre o tema e o que você vende.</em></div></div>
+    <div class="script-step"><div class="script-step-label">O corte</div><div class="script-step-text">"...falando nisso, se você tá vivendo isso agora, é exatamente o que eu faço na mentoria. Link na bio." E volta pro conteúdo na mesma frase.</div></div>
+    <div class="script-step"><div class="script-step-label">Regra</div><div class="script-step-text">Nem todo vídeo precisa do corte. Às vezes a bola sobe e você deixa passar — e está tudo certo. Conteúdo dentro do guarda-chuva nunca é conteúdo perdido.</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW DE PRODUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da ideia ao post publicado — sem nunca travar por falta de tema</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Banco de histórias</h4><p>Um doc ou as Notas do iPhone com suas histórias numeradas: história 1, 2, 3...</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Grupo de WhatsApp</h4><p>Grupo só seu. Viu um tema, teve uma ideia, achou um vídeo bom? Manda pra lá na hora</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>@fake de curadoria</h4><p>Perfil que só segue e assiste o seu segmento. "Não tenho interesse" em todo o resto</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Grava 40-50s</h4><p>Cenário casual, 40% de espaço acima da cabeça, corte seco, capa = frame do vídeo</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Posta às 8h</h4><p>Todo dia, sem exceção. Você vira o programa diário de quem toma café e pega o ônibus</p></div>
+  </div>
+
+  <!-- 7. FÓRMULAS DE GANCHO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie e adapte — todos empacotados como perspectiva, nunca como conselho</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Experiência vivida:</em> "O que eu fiz quando, mesmo bloqueado de tudo, ele continuava tentando contato comigo."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Utilidade seca:</em> "Eu posso sentir saudade e não mandar mensagem." (entra falando, sem nenhuma introdução)</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Confissão:</em> "Depois do divórcio eu tinha certeza de cinco coisas. Todas erradas."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Contra o senso comum:</em> "A internet inteira romantizou a mulher que resolve tudo sozinha. Eu fui essa mulher — e vou te contar no que deu."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Bastidor da mentoria:</em> "Uma mulher me disse uma frase essa semana e eu não consegui esquecer."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Conversa de amiga:</em> "Amiga, olha só isso aqui. Isso aqui é você tentando voltar." (com a imagem ou vídeo de apoio rodando)</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Distinção perigosa:</em> "Você não quer ele de volta. Você quer o lugar que você tinha na vida dele. E são coisas bem diferentes."</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Doze conteúdos que você pode gravar já nesta semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-historia">História</div><h3>A história do divórcio — versão completa</h3><p>O conteúdo que você repete a cada 30 ou 45 dias. Sempre tem gente nova chegando e ela precisa saber quem você é.</p></div>
+    <div class="idea-card"><div class="idea-type type-historia">História</div><h3>"Estou noiva e por muito tempo achei que isso me tirava o direito de falar"</h3><p>Quebra a síndrome de impostora na frente de todo mundo. Estar bem hoje não te desconecta de quem está mal — é justamente o que prova o caminho.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"O que eu fiz quando ele continuou tentando contato"</h3><p>O mesmo conteúdo do vídeo analisado, reempacotado como história. Regrave e compare os números.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Estoicismo sem dizer "estoicismo"</h3><p>Sequência de frases úteis no mesmo padrão e o nome da filosofia só no plot twist final.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Cinco coisas que eu tinha certeza depois do divórcio"</h3><p>Uma certeza por vídeo. Cada episódio derruba uma crença e entrega uma ferramenta prática.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Print de X/Twitter com frases disruptivas</h3><p>O formato "feio" que alcança. Uma frase por slide, fora do senso comum, sem design elaborado.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Quem decide o que entra na sua vida</h3><p>"Você não controla o comportamento do outro, mas decide quais comportamentos têm acesso a você." Um princípio, um exemplo real, uma ação.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Sair do término sem sair do guarda-chuva</h3><p>Filha adolescente, mãe, amiga que não te escuta, trabalho. O mesmo olhar estoico em temas que alcançam muito mais mulheres.</p></div>
+    <div class="idea-card"><div class="idea-type type-historia">História</div><h3>"Uma coisa que eu nunca contei"</h3><p>Aquela história que você guardou por achar que não interessava a ninguém. É quase sempre a que mais conecta.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Print anônimo de mensagem de mentorada + sua leitura</h3><p>Mostra o resultado sem pitch. Prova social que não parece propaganda.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"A independência virou armadura"</h3><p>Desdobrar o gancho que já funcionou: força de verdade não é nunca precisar, é se relacionar sem se abandonar.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Resposta em vídeo a um comentário real</h3><p>Lê o comentário na tela e responde com a sua perspectiva. Conteúdo pronto que a própria audiência entrega.</p></div>
+  </div>
+
+  <!-- 9. REFERÊNCIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Referências e Modelos Mentais</h2><p>Duas imagens para carregar na cabeça toda vez que for gravar</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🎬</div>
+      <div>
+        <h3>Oney Araújo</h3>
+        <div class="ref-niche">Empreendedorismo e conteúdo</div>
+        <p>Devolveu R$47 mil para uma mentorada e nunca tinha contado — até virar conteúdo. A lição: você trabalha certo, mas se não abre a boca, ninguém sabe. Repare também no enquadramento: sempre 40% da tela livre acima da cabeça para título e imagem.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">📺</div>
+      <div>
+        <h3>O "programa de TV"</h3>
+        <div class="ref-niche">Modelo mental do seu perfil</div>
+        <p>Nenhum programa fala de um assunto só — ele tem quadros, temas, convidados, e mesmo assim é reconhecível. Seu Instagram é o programa; o estoicismo feminino é a linha editorial. E, como canal de TV, quadro que não dá audiência sai do ar: escolher tema é escolher alcance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Todo vídeo útil</div>
+      <blockquote>"Se você quer aprender a aplicar isso na prática, já me acompanha por aqui."</blockquote>
+      <div class="cta-note">Curto, no ritmo da fala, sem pausa dramática. Fecha o vídeo sem quebrar o clima.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Depois de uma história</div>
+      <blockquote>"O que me ajudou a fazer tudo isso foi a filosofia que eu sigo. Vai libertar você também."</blockquote>
+      <div class="cta-note">Vende a filosofia, não o produto. É o que faz a pessoa querer se aprofundar em você.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Quando a bola subir</div>
+      <blockquote>"Falando nisso, é exatamente o que eu faço na mentoria — link na bio."</blockquote>
+      <div class="cta-note">Só quando o assunto der o gancho natural. Uma frase e volta pro conteúdo.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Resolver a Dúvida do "Que Produto Eu Vendo?"</h2><p>A resposta é: essa não é a pergunta do Instagram</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Seu Instagram não vende o produto. Ele constrói a audiência que compra qualquer produto seu.</h3>
+      <p>Ninguém vai te seguir pelo que você vende — vão te seguir pelo que você posta. Então pare de tentar descobrir "que conteúdo eu faço se estou vendendo isso ou aquilo". O papel do seu perfil é um só: <strong>atrair o máximo de mulheres possível dentro do guarda-chuva do estoicismo feminino</strong>. Dentro dessa amostragem sempre existe uma parcela que quer ir mais fundo — e é ela que compra o e-book, o curso ou a mentoria. Quando você é autoridade e é querida, você vende o que quiser: hoje um produto sobre término, amanhã um sobre divórcio, depois um para mães, quando você for mãe. Com o tempo um deles se revela o carro-chefe, e isso você sente na prática, não decide na planilha. E quando o vídeo não tiver relação nenhuma com o que você vende, use o <strong>levantar a bola para cortar</strong>: entrega o conteúdo inteiro, acha a ponte natural e faz o CTA em uma frase só.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Passe por esses oito itens antes de apertar publicar</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira cada item</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho entrega o assunto nos 3 primeiros segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Está empacotado como experiência pessoal, e não como conselho?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Ficou entre 40 e 50 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Faz sentido para quem nunca me viu na vida?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem espaço livre acima da cabeça para o título?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A edição é simples — corte seco, sem transição e sem fade?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A capa é um frame do próprio vídeo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA no final ("já me acompanha por aqui")?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas e Sistemas</h2><p>O mínimo para nunca mais ficar sem ideia nem sem história</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Doc de histórias (Notas do iPhone ou Google Docs) — história 1, 2, 3...</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo de WhatsApp só seu — banco de pautas e áudios de ideia</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>@fake de curadoria — algoritmo treinado só no seu segmento</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Instagram Edits — títulos e legendas com a cara nativa da plataforma</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Fonte Advercase — título simples que funciona, sem parecer agência</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Aula "Criatividade Sintética" (Código Viral) — como mapear e escolher temas</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>A ordem para implementar tudo sem se perder</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Arrumar a fachada</div><div class="timeline-desc">Trocar o nome do perfil para Letícia Suevo. Reescrever a primeira linha da bio respondendo "por que esse Instagram existe". Trocar o CTA do link por um convite de acesso a você. Criar o doc de histórias e o grupo de WhatsApp. Fazer o sticker "contar a minha história". Gravar um vídeo de 40s empacotado como história.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Ritmo e formato</div><div class="timeline-desc">Um post por dia, às 8h, sem falha. Corte seco, sem transição, capa com frame do próprio vídeo, 40% de espaço acima da cabeça. Regravar os três vídeos analisados aqui com o gancho corrigido e comparar os números. Criar o @fake de curadoria e começar a treinar o algoritmo.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Abrir o guarda-chuva</div><div class="timeline-desc">Sair de "só término" e entrar em ex, adolescência, universo feminino e relacionamento — sempre com a leitura estoica por trás. Testar o formato print de X. Recontar a história do divórcio na íntegra. Assistir a aula de Criatividade Sintética e montar a lista de temas que mais se repetem no seu público.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Autoridade e monetização</div><div class="timeline-desc">Meta de 100K com conteúdo útil e perspectiva própria. Sentir qual produto vira o carro-chefe. Aplicar o "levantar a bola para cortar" nos vídeos que permitirem. Levar cada lote de conteúdo para feedback no grupo da mentoria e ir ajustando — conteúdo, feedback, implementação, de novo.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Julho 2026</div>
+
+</body>
+</html>
