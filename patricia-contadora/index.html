@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Patrícia | Primícias Contabilidade</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+  .type-noticia { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Patrícia — Primícias Contabilidade</h1>
+  <p class="hero-sub">Contadora especializada em profissionais de saúde. O nicho é excelente porque fala de dinheiro, e dinheiro é o assunto que mais prende atenção na internet. O que falta é traduzir o técnico em linguagem que qualquer pessoa entenda.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/a6_UC_slL0E" title="Análise Viral Pro — Patrícia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>14 de Agosto, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Contabilidade para Saúde</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">1/dia</div><div class="stat-label">Meta Mínima de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">40s</div><div class="stat-label">Duração Máxima</div></div>
+  <div class="stat-card"><div class="stat-number">R$</div><div class="stat-label">Valor Antes da Sigla</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de gravar qualquer vídeo novo</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Reescrever a primeira linha da bio como benefício</h3><p>A primeira linha é a única que a maioria das pessoas lê. Hoje ela descreve o serviço. Ela precisa entregar o benefício de seguir o perfil. Uma versão que funciona é <strong>"Nesse perfil eu te mostro como pagar menos imposto do que você paga hoje"</strong>. Outra versão é <strong>"Especialista em contabilidade para a área da saúde. Aqui você entende por que está pagando tanto imposto"</strong>. A pessoa lê isso e conclui que está no lugar certo.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Dizer o que é o link antes do link</h3><p>Hoje o link aparece solto e ninguém sabe para onde ele leva. Coloque uma linha acima dele explicando o que a pessoa encontra do outro lado. Exemplos: <strong>"Faça uma simulação gratuita do seu imposto"</strong> ou <strong>"Me chama no WhatsApp e descubra quanto você pode economizar"</strong>. O link é o ponto de conversão do perfil inteiro, ele não pode ficar mudo.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Remover a palavra "online" e a lista de profissões</h3><p>A palavra "online" no CEO Primícias Contabilidade não ajuda em nada e ocupa espaço útil. A lista de profissões (dentista, fisio) também sai, porque ela não contempla todo mundo que você atende. Quando a lista não é completa, é melhor falar de forma abrangente: <strong>"profissionais da saúde"</strong> cobre todos sem excluir ninguém.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Verificar a disponibilidade do @ com a palavra "contadora"</h3><p>O @ atual já está bom e o nome já diz contadora e a cidade, o que é positivo. Se estiver disponível, um @ do tipo <strong>@patriciacontadora</strong> reforça o nicho na primeira olhada. Se não estiver disponível, pode manter o atual sem problema nenhum, porque ele não atrapalha.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Ajustar o enquadramento das gravações</h3><p>O texto dos vídeos está caindo em cima do seu rosto. A partir de hoje, posicione a câmera deixando um espaço livre na parte de cima do quadro. Esse espaço é onde o texto vai morar. Em cima de você fica apenas a legenda, nada além disso.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS — VÍDEOS ANALISADOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que travou cada vídeo e como o roteiro ficaria corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>Frase na tela — "Pobre, você finalmente descobriu..."</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O texto fala de análise tributária, que é um termo do seu mundo e não do mundo de quem assiste. A pessoa lê e não se reconhece na frase. Sem identificação, ela passa o dedo e segue.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Troque o conceito por dois números que a pessoa consegue comparar sozinha. Uma versão possível é <strong>"Você descobriu que não precisava pagar 27%, e sim 9%. Me chama que eu te explico."</strong> A partir daí você abre a diferença entre receber como pessoa física e receber pelo CNPJ. O número gera identificação, a sigla não gera.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>Reforma tributária — IBS e CBS (38 segundos)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O vídeo abre com quatro siglas seguidas: IBS, CBS, ICMS, ISS, PIS, COFINS. Nenhum empreendedor sabe o que é isso de imediato, então ele sai antes do final. Além disso, o texto ficou por cima do seu rosto e os braços estavam soltos, o que dá ao vídeo um ar de aula gravada e não de conversa.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Abra pelo valor e nomeie a sigla depois. Uma versão possível é <strong>"Se você ganha R$ 1.000, pode esquecer que R$ 100 vão ficar com o governo a partir de 2027."</strong> Só depois disso você explica: <strong>"Esses R$ 100 têm nome, chamam IBS e CBS, que são siglas novas que o governo criou."</strong> Grave segurando o celular na mão, porque esse formato passa a sensação de story e deixa quem assiste mais desarmado.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>"Esse dentista fatura R$ 15.000 por mês"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O gancho começa bem, porque já traz um valor. O problema aparece logo em seguida, quando entram carnê-leão, 27,5% e INSS no teto em sequência. Esse bloco de termos afasta a pessoa exatamente no momento em que ela estava prestando atenção. O vídeo também não usa nenhum recurso visual para segurar o olho.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Mantenha o valor e traduza o resto. Uma versão possível é <strong>"Se você é dentista, ganha R$ 15.000 por mês e paga mais de R$ 3.000 de imposto, eu vou te ensinar uma forma legal de pagar até R$ 1.000."</strong> Para o visual, busque no Google uma foto de dentista com o rosto censurado e coloque na abertura. A imagem censurada gera curiosidade sozinha.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Deputada que declarou R$ 15.000 de patrimônio</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Você acertou ao começar pela notícia, isso prende. O problema é que o flip para o profissional de saúde acontece aos 7 segundos, e quem entrou pela notícia vai embora nesse ponto. O texto "A receita já sabe quanto você tem" também rouba espaço do que realmente chama atenção, que é o nome da deputada. O CTA final ("se você nunca tinha parado para pensar nisso") não pede nada útil.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Coloque o nome dela no texto de cima, porque nome de figura pública para o dedo, seja por simpatia ou por rejeição. Fique mais tempo na notícia antes do flip, explicando o que é patrimônio de um jeito simples: <strong>"Patrimônio é aquilo que você guarda, casa, carro, aplicação. Tem gente que ganha muito e não tem nada guardado."</strong> Depois disso você vira para a sua audiência. Feche pedindo compartilhamento: <strong>"Manda esse vídeo para todo médico que você conhece, porque no fim do ano isso vira dor de cabeça com a Receita."</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que sai e do que entra</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Abrir o vídeo com sigla (IBS, CBS, ISS, carnê-leão)</div>
+      <div class="compare-item"><span>✕</span> Texto por cima do seu rosto</div>
+      <div class="compare-item"><span>✕</span> Gravar com os braços soltos, em tom de aula</div>
+      <div class="compare-item"><span>✕</span> Ler roteiro inteiro no teleprompter</div>
+      <div class="compare-item"><span>✕</span> Flipar da notícia para o nicho em 7 segundos</div>
+      <div class="compare-item"><span>✕</span> Falar em percentual sem mostrar o valor em reais</div>
+      <div class="compare-item"><span>✕</span> Fechar com "se você nunca tinha parado pra pensar"</div>
+      <div class="compare-item"><span>✕</span> Bio que descreve o serviço em vez do benefício</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Abrir com o valor em reais e nomear a sigla depois</div>
+      <div class="compare-item"><span>✓</span> Deixar espaço livre no topo do quadro para o texto</div>
+      <div class="compare-item"><span>✓</span> Gravar segurando o celular na mão, estilo story</div>
+      <div class="compare-item"><span>✓</span> Usar só tópicos e falar por cima deles</div>
+      <div class="compare-item"><span>✓</span> Desenvolver a notícia antes de virar para o nicho</div>
+      <div class="compare-item"><span>✓</span> Traduzir tudo como se explicasse para uma criança</div>
+      <div class="compare-item"><span>✓</span> Fechar pedindo para mandar o vídeo para alguém</div>
+      <div class="compare-item"><span>✓</span> Bio que promete o que a pessoa ganha seguindo você</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As regras que valem para todo vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">💰</span><h3>Valor Antes da Sigla</h3><p>Primeiro você mostra o dinheiro, depois dá nome a ele. O valor chama atenção e a sigla afasta. Essa ordem muda o desempenho do vídeo inteiro.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🗣️</span><h3>Tom de Conversa</h3><p>Fale como se estivesse mandando um vídeo para uma amiga. O tom de aula cria distância. O tom de conversa deixa a pessoa desarmada.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📱</span><h3>Celular na Mão</h3><p>Gravar segurando o celular passa a sensação de story. Esse formato está performando muito mais que o vídeo montado no tripé com braços parados.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🧒</span><h3>Explique Para Uma Criança</h3><p>Sua autoridade não vem do termo técnico. Ela aparece quando você pega algo complexo e faz a pessoa entender em uma frase.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🖼️</span><h3>Use Rosto Conhecido</h3><p>Enquanto sua imagem ainda não é famosa, use a de quem já é. Foto de político, de figura pública ou de rosto censurado segura o olho nos primeiros segundos.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📤</span><h3>Conteúdo Para Encaminhar</h3><p>Quando alguém manda seu vídeo no grupo do WhatsApp, você vira a porta de entrada da pessoa na plataforma. O Instagram premia isso.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Três estruturas para preencher com os seus casos reais</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Valor Primeiro, Sigla Depois</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Se você é [profissão] e ganha R$ [valor] por mês, você provavelmente está pagando R$ [valor alto] de imposto."<br><em>Fale segurando o celular. Texto na parte de cima do quadro, longe do seu rosto.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Contraste</div><div class="script-step-text">"Dá pra pagar R$ [valor baixo] fazendo do jeito certo, e isso é 100% legal."<br><em>Aqui a pessoa já entendeu a diferença sem você ter dito uma sigla sequer.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Tradução</div><div class="script-step-text">"Essa diferença acontece porque você recebe como pessoa física. Recebendo pelo CNPJ, a conta muda."<br><em>Só agora entra o nome técnico, e sempre em uma frase curta.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Manda esse vídeo pro [profissão] que você conhece, porque ele está pagando isso hoje e não sabe."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Notícia + Análise da Contadora</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"[Nome da figura pública] declarou R$ [valor] de patrimônio. Como contadora, eu vou te dizer se eu acredito nisso."<br><em>Coloque o nome dela no texto de cima. Nome conhecido para o dedo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Desenvolvimento</div><div class="script-step-text">"Patrimônio é aquilo que a pessoa guarda: casa, carro, dinheiro aplicado. Tem gente que ganha muito e não tem nada guardado, porque gasta tudo."<br><em>Fique pelo menos 15 segundos aqui. Não vire para o seu nicho ainda.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Flip</div><div class="script-step-text">"E por que isso importa pra você, que é médico ou dentista? Porque existe o problema inverso, que é gastar mais do que a renda que você declarou."</div></div>
+    <div class="script-step"><div class="script-step-label">Utilidade</div><div class="script-step-text">"Você declarou R$ 90.000 no ano, comprou um carro de R$ 120.000 e ainda viajou. A Receita cruza isso e pergunta de onde saiu o resto."</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Manda esse vídeo pra quem precisa ver, porque no fim do ano isso vira dor de cabeça com a Receita Federal."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Os Dois Caminhos</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Dois dentistas ganham exatamente R$ 20.000 por mês. Um paga R$ 5.500 de imposto e o outro paga R$ 1.800."<br><em>Se puder, use tela dividida com duas fotos de rosto censurado.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Explicação</div><div class="script-step-text">"A diferença não é sorte e não é sonegação. A diferença está na forma como cada um recebe o dinheiro."</div></div>
+    <div class="script-step"><div class="script-step-label">Detalhe</div><div class="script-step-text">"O primeiro recebe no CPF. O segundo recebe pelo CNPJ, e por isso a alíquota dele é bem menor."<br><em>Uma frase por conceito. Nada de emendar três siglas.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se você quer saber em qual dos dois você está hoje, me chama no direct que eu faço a simulação com você."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW DE PRODUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da dúvida do cliente ao vídeo publicado</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Pegue uma dúvida real</h4><p>Uma pergunta que um cliente te fez essa semana já é o tema do vídeo</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Transforme em número</h4><p>Antes de gravar, defina qual valor em reais abre o vídeo</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Grave na mão</h4><p>Celular na mão, tópicos no lugar do roteiro, até 40 segundos</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Texto no topo</h4><p>Legenda embaixo e o texto de gancho no espaço livre de cima</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Publique e responda</h4><p>Fique 20 minutos respondendo comentário e direct logo após postar</p></div>
+  </div>
+
+  <!-- 7. FÓRMULAS DE GANCHO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie, troque os valores e grave</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Valor primeiro:</em> "Se você ganha R$ 15.000 por mês e paga mais de R$ 3.000 de imposto, esse vídeo é pra você."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Figura pública:</em> "[Nome da figura pública] declarou R$ 15.000 de patrimônio. Eu sou contadora e vou te dizer se isso faz sentido."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Comparação:</em> "Dois médicos ganham o mesmo. Um paga R$ 6.000 de imposto e o outro paga R$ 1.900. Eu vou te mostrar a diferença."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Dor + solução:</em> "Se você recebe consulta no PIX da pessoa física, você tem um problema esperando por você. Ainda dá tempo de resolver."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Se + então:</em> "Se você é dentista e ainda não abriu CNPJ, você está entregando um terço do que ganha para o governo."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Alerta com prazo:</em> "A partir de 2027 você vai pagar dois impostos novos que hoje você não paga. Vou te mostrar quanto isso custa por mês."</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Curiosidade visual:</em> "Esse dentista aqui pagava R$ 4.100 de imposto por mês." <em>(foto de dentista com rosto censurado na tela)</em></div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Temas prontos para as próximas duas semanas</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Quanto sobra?" — um episódio por profissão</h3><p>Dentista, fisioterapeuta, psicólogo, médico. Sempre o mesmo formato: faturamento, imposto hoje, imposto possível.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>CPF x CNPJ com valores na tela</h3><p>Mostre os dois cenários com o mesmo faturamento. A diferença em reais faz o vídeo ser salvo e encaminhado.</p></div>
+    <div class="idea-card"><div class="idea-type type-noticia">Notícia</div><h3>Reação a notícia de tributação</h3><p>Toda vez que sair uma medida nova, grave no mesmo dia. Foto do responsável na tela e sua análise em linguagem simples.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>5 erros que fazem o profissional de saúde pagar imposto a mais</h3><p>Um erro por slide, com o valor aproximado que cada erro custa por ano.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>O que a Receita já sabe sobre você</h3><p>Cartão, PIX, imóvel, plano de saúde. Explique o cruzamento de dados sem citar nenhum artigo de lei.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Gastei mais do que declarei. E agora?</h3><p>O tema da variação patrimonial, contado com um exemplo concreto de carro e viagem.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Print de uma simulação real</h3><p>Dados borrados, só o antes e o depois visível. Prova concreta funciona melhor que promessa.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Reforma tributária em uma frase</h3><p>"Se você ganha R$ 1.000, R$ 100 vão para o governo." Depois disso você nomeia IBS e CBS.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Checklist do que guardar para o imposto de renda</h3><p>Conteúdo de utilidade pura. Esse tipo de post fica salvo e volta a aparecer.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Me chamaram no direct" — dúvida real respondida</h3><p>Print da pergunta (sem identificar) e a resposta em 40 segundos. Gera mais perguntas no direct.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Quanto custa atrasar a declaração</h3><p>Multa em reais, sem falar em percentual. Data limite na tela como texto de topo.</p></div>
+    <div class="idea-card"><div class="idea-type type-noticia">Notícia</div><h3>Tela dividida reagindo a manchete</h3><p>Manchete de um lado, você do outro comentando. É o formato que o Oney pediu para você testar.</p></div>
+  </div>
+
+  <!-- 9. PERFIS DE REFERÊNCIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Referências Para Estudar</h2><p>Dois modelos citados na análise que você pode observar de perto</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🎯</div>
+      <div>
+        <h3>@oneyaraujo</h3>
+        <div class="ref-niche">Instagram e crescimento de audiência</div>
+        <p>Observe a bio dele antes do link. Existe uma frase explicando o que a pessoa encontra do outro lado, e é exatamente isso que falta no seu perfil. Observe também o tom da análise que você recebeu: a conversa inteira aconteceu em tom de bate-papo, não de aula. Esse é o tom que você precisa levar para os vídeos.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">📰</div>
+      <div>
+        <h3>Perfis que usam rosto famoso no gancho</h3>
+        <div class="ref-niche">Formato de notícia comentada</div>
+        <p>Você já viu vídeos de pessoas que não conhece, mas que aparecem falando de alguém que você conhece. Esse é o recurso que sustenta o alcance de quem ainda não tem rosto conhecido. Enquanto o seu rosto não é famoso, a imagem de um político ou de uma figura pública faz o trabalho de parar o dedo por você.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no fim de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo de utilidade</div>
+      <blockquote>"Manda esse vídeo pro médico ou dentista que você conhece."</blockquote>
+      <div class="cta-note">O encaminhamento no WhatsApp traz gente nova de fora da plataforma, e o Instagram premia isso.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Meio do vídeo</div>
+      <blockquote>"Dá dois toques na tela se você não sabia disso."</blockquote>
+      <div class="cta-note">Peça o like no meio, depois do gancho e antes da explicação principal. No fim a pessoa já saiu.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo com número forte</div>
+      <blockquote>"Me chama no direct que eu faço essa simulação com o seu caso."</blockquote>
+      <div class="cta-note">Use quando o vídeo mostrou uma diferença grande de valores. A pessoa quer saber onde ela está.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Vender a Consultoria sem Parecer Anúncio</h2><p>A venda acontece depois do entendimento, nunca antes</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: primeiro a pessoa entende, depois ela confia, e só então ela contrata</h3>
+      <p>Quanto mais simples você fala, mais monetizável fica o seu conteúdo. A sequência é sempre a mesma. A pessoa assiste, entende o que você disse, e conclui que <strong>"essa contadora consegue me explicar de um jeito que eu entendo"</strong>. Esse entendimento vira confiança, e a confiança é o que faz alguém colocar dinheiro na sua mão. Por isso o pitch não precisa aparecer no vídeo. Ele acontece no direct, depois que a pessoa chegou com uma dúvida sobre o próprio caso. O seu trabalho no conteúdo é fazer ela olhar o próprio contracheque e pensar <strong>"será que eu estou pagando demais?"</strong>.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Passe por cada item antes de apertar o botão</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira item por item</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O primeiro segundo tem um valor em reais, e não uma sigla?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem espaço livre no topo do quadro para o texto?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Gravei segurando o celular, em tom de conversa?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Ficou dentro de 40 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Uma pessoa que não entende de imposto entenderia isso?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Se citei sigla, ela veio depois do valor?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Pedi o like no meio, logo depois do gancho?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O final pede para encaminhar ou para chamar no direct?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O mínimo para produzir com qualidade e velocidade</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>CapCut — legenda automática e texto no topo do quadro</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Microfone de lapela — áudio limpo mesmo gravando na mão</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Google Imagens — fotos de figuras públicas e rostos censurados</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Planilha de simulação — para gerar prints de antes e depois</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Bloco de notas do celular — tópicos no lugar do roteiro inteiro</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Portal de notícias de economia — pauta nova toda semana</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>O caminho para implementar tudo sem se perder</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Arrumar o perfil e gravar o primeiro vídeo no formato novo</div><div class="timeline-desc">Reescreva a primeira linha da bio como benefício. Coloque uma frase acima do link explicando o que ele é. Tire a palavra "online" e a lista de profissões. Depois disso, grave um vídeo de 40 segundos segurando o celular, começando por um valor em reais.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Estabelecer o ritmo de um vídeo por dia</div><div class="timeline-desc">Publique pelo menos um conteúdo por dia, sem exceção. Em todos eles, o valor vem antes da sigla. Comece a série "Quanto sobra?" com uma profissão por vídeo. Reserve um dia da semana para gravar em lote e adiantar a produção.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Testar formatos e ganchos diferentes</div><div class="timeline-desc">Teste a tela dividida reagindo a notícia. Teste o gancho com figura pública. Teste a foto de rosto censurado na abertura. Grave 10 ou 20 vídeos em um único dia só para perder a vergonha e ganhar velocidade. Esse mês é para aprender, não para acertar.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Escalar o que funcionou e transformar direct em cliente</div><div class="timeline-desc">Olhe quais vídeos foram mais encaminhados e repita o formato. Suba para dois ou três conteúdos por dia. Crie um fluxo simples de atendimento no direct: pergunta, simulação e proposta. Leve as dúvidas que aparecerem para o grupo da mentoria.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Agosto 2026</div>
+
+</body>
+</html>
