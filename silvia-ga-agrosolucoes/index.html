@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Silvia | GA Agrosoluções</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-gestao { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Silvia — GA Agrosoluções</h1>
+  <p class="hero-sub">Software de gestão para fazendas, com mais de 35 anos de estrada e foco em café, grãos, frota e mão de obra. O plano abaixo mostra como sair do perfil institucional e chegar aos 50 mil seguidores com conteúdo de rotina.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/Pb4hj2vCFzc" title="Análise Viral Pro — Silvia | GA Agrosoluções" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>24 de Agosto, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Software de Gestão Agrícola</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">10-20</div><div class="stat-label">Cortes por Dia</div></div>
+  <div class="stat-card"><div class="stat-number">60s</div><div class="stat-label">Duração Máxima</div></div>
+  <div class="stat-card"><div class="stat-number">50K</div><div class="stat-label">Meta de Seguidores</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de gravar qualquer vídeo novo</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Reescrever a bio com um benefício concreto</h3><p>A bio atual diz "mais de 35 anos melhorando e prosperando a gestão de fazenda". Essa frase é abstrata e o produtor não consegue visualizar nada com ela. O benefício concreto é aquele que a pessoa enxerga na cabeça dela, como um número em reais ou uma porcentagem. Troque por algo do tipo: <strong>"Reduzimos o custo/hora da sua máquina de R$120 para R$70. Software de gestão de fazenda há 35 anos."</strong> A prova social das 18.000 famílias entra depois, nunca antes do benefício.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Deixar claro o que é o GA em toda menção</h3><p>Nos vídeos vocês falam "o GA" como se todo mundo já soubesse o que é. Quem cai de paraquedas no perfil não sabe, e a pessoa trava no meio do vídeo tentando descobrir. Sempre que citar a ferramenta, emende uma frase curta: <strong>"o GA, que é o nosso software de gestão de fazenda"</strong>. Uma frase resolve, e você não perde o espectador novo.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Cortar a vinheta do final de todos os vídeos</h3><p>Todo vídeo do perfil termina com uma tela de marca. Essa tela derruba a retenção, porque a pessoa entende que acabou e sai antes do fim. Quando muita gente sai cedo, o Instagram lê o vídeo como fraco e para de entregar. Termine o vídeo no último frame de conteúdo, com a fala do CTA. O formato de vinheta era comum em 2017 e hoje só atrapalha.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">4</div><div class="action-content"><h3>Contratar um mobile maker para o dia a dia</h3><p>Os vídeos atuais são bem produzidos e demoram para sair. Contrate uma pessoa (pode ser CLT) que filma, edita e posta pelo celular, acompanhando o diretor o dia inteiro. Ele filma reunião, visita de cliente, problema sendo resolvido, resenha, almoço, estrada. Essa pessoa entrega de 10 a 20 cortes por dia. Isso não substitui o conteúdo bonito, isso vira a segunda linha editorial do perfil.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Colocar título na tela nos cortes de reunião</h3><p>O corte da explicação sobre nota de qualidade operacional começa no meio do assunto. Quem chega ali não sabe do que se trata e desliza. Coloque um título curto na parte de cima do vídeo, como <strong>"Como fazer o seu funcionário trabalhar melhor"</strong>. O título dá contexto em meio segundo e segura a pessoa. Peça para o editor assistir a aula de títulos do Código Viral.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Trocar o CTA "solicite uma demonstração gratuita"</h3><p>Demonstração de quê? Quem não viu outro vídeo antes não tem contexto para clicar. Provavelmente o link da bio recebe pouquíssimo clique por causa disso. Troque por um convite conversacional, falado no vídeo: <strong>"Me chama no direct que eu te mostro quanto você está deixando de ganhar hoje na sua frota."</strong> A pessoa conversa primeiro e depois vira demonstração.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">7</div><div class="action-content"><h3>Parar de abrir vídeo com introdução de aula</h3><p>Vários vídeos começam com contexto histórico, do tipo "até 84, 95 o foco era mão de obra". A pessoa não entra no Instagram para assistir aula nem para ouvir conselho. Comece pelo agora e pela dor, ou puxe um inimigo em comum, como o governo, o clima, o custo do diesel ou a máquina parada. A aula entra depois, dentro do contexto.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que travou cada vídeo e como o roteiro ficaria corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>"Antigamente o foco era mão de obra, hoje é máquina"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O vídeo abre com uma linha do tempo de 1984 até hoje. A informação é boa, só que a entrega tem cara de aula. Não existe inimigo em comum, não existe tensão e não existe motivo para a pessoa continuar assistindo até o ponto interessante.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Comece pelo inimigo comum: <strong>"Entra governo, sai governo, e quem sente aqui do lado de cá é o produtor. Só que o gargalo mudou de lugar e quase ninguém percebeu."</strong> Depois entre no histórico em uma frase, e feche com o dado forte: mais de 70% do custo de uma lavoura de café hoje está na máquina.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>"O GA ajuda na visão antecipada do futuro"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O vídeo fala do que a ferramenta faz e não do resultado que ela gera. O produtor não liga se o sistema é bonito, fácil ou intuitivo. Ele quer saber quanto economiza e quanto ganha a mais. Além disso, a sigla GA aparece sem explicação nenhuma.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Traga um caso com número: <strong>"Nosso cliente faturava X por mês, colocou o GA, tampou os buracos, realocou o dinheiro e hoje fatura o dobro. O software custa R$ Y por mês. Valeu a pena ou não valeu?"</strong> Você confronta a pessoa com a conta e ela sente urgência. Estudo de caso vende, descrição de funcionalidade não vende.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>POP e nota de qualidade operacional (R$24 → R$19,20)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O conteúdo é ótimo e o momento é real, gravado dentro de uma reunião. Faltou título na tela, então quem chega no meio não entende do que se trata. O vídeo ainda termina com a vinheta da marca, e isso mata a retenção.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Coloque o título <strong>"Como fazer o seu funcionário trabalhar melhor"</strong> na parte de cima. Mantenha a explicação da nota de qualidade e do pagamento proporcional. Termine falando, sem tela final: <strong>"Se você quer isso rodando na sua fazenda, me chama no direct."</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Aproveitamento de máquina: custo/hora de R$120 para R$70</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que poderia melhorar</div>
+          <p>Esse é o vídeo mais forte do perfil e por isso teve mais visualização. O número aparece, só que ele fica solto. O produtor ouve "de R$120 para R$70" e não converte isso para o bolso dele. E de novo o vídeo termina com a vinheta.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Traduza o número para o mês: <strong>"Isso aqui, na conta do mês, dá meio milhão de reais. Se você não tem esse controle, você está deixando esse dinheiro na mesa."</strong> Depois provoque: você comprou uma máquina cara e ela não está trabalhando no que você pagou por ela. Esse nível de consciência abre o desejo de comprar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 5</span><h3>"O cliente tinha medo da equipe não se adaptar"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que poderia melhorar</div>
+          <p>O formato é excelente, porque você conta uma história real de objeção de cliente. O problema aparece em dois pontos: a sigla GA nunca é explicada e a vinheta no final derruba o vídeo bem na hora em que a história fecha.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Mantenha a estrutura exata, só ajuste a primeira menção: <strong>"ele estava com receio de usar o GA, que é o nosso software de gestão de fazenda"</strong>. Repita esse formato toda semana, porque objeção de cliente é conteúdo infinito. Cada medo que você quebra na frente da câmera é uma venda que você não precisa fazer no telefone.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 6</span><h3>"Você sabia que o pior prejuízo é o que você não enxerga?"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O gancho é uma pergunta genérica e o vídeo inteiro tem cara de anúncio desde o primeiro segundo. A pessoa percebe que entrou num comercial e pula. Depois disso, nem o conteúdo bom que vem no meio consegue segurar quem já saiu.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Comece pela cena concreta: <strong>"Seus funcionários estão parados no centro de serviço, o trator está sem manutenção e você não sabe o que está acontecendo na sua fazenda."</strong> Depois traga o caso do fulano que estava igual e resolveu. O produto entra no meio como parte da história e não como oferta na abertura.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 7</span><h3>"A colheita de café já começou. Você mede a eficiência da colhedeira?"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O vídeo abre com introdução e só depois entrega a pergunta. Quem não tem colhedeira sai na hora, e quem tem também sai, porque a abertura não promete nada específico.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Abra com a promessa direta: <strong>"Hoje eu vou te mostrar se essa colhedeira aqui está trabalhando bem ou se ela precisa de manutenção."</strong> Mostre a máquina por dentro, explique por onde o café entra e por onde sai. Gente da cidade assiste isso até o fim. No meio, você entra no custo, na perda de 20% e no software. O vídeo cresce por curiosidade e converte no final.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que parar e do que começar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Terminar o vídeo com vinheta ou tela de marca</div>
+      <div class="compare-item"><span>✕</span> Falar "o GA" sem explicar o que é a ferramenta</div>
+      <div class="compare-item"><span>✕</span> Abrir o vídeo com aula ou linha do tempo</div>
+      <div class="compare-item"><span>✕</span> Descrever funcionalidade em vez de resultado</div>
+      <div class="compare-item"><span>✕</span> Bio abstrata do tipo "prosperando a gestão"</div>
+      <div class="compare-item"><span>✕</span> Depender só de vídeo bonito com câmera e edição longa</div>
+      <div class="compare-item"><span>✕</span> Corte de reunião sem título na tela</div>
+      <div class="compare-item"><span>✕</span> CTA vago como "solicite uma demonstração gratuita"</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Terminar no último frame de conteúdo, com CTA falado</div>
+      <div class="compare-item"><span>✓</span> Explicar a sigla em uma frase, toda vez</div>
+      <div class="compare-item"><span>✓</span> Abrir com dor, cena real ou inimigo em comum</div>
+      <div class="compare-item"><span>✓</span> Falar em reais: economia, custo/hora, faturamento</div>
+      <div class="compare-item"><span>✓</span> Bio com número concreto que o produtor visualiza</div>
+      <div class="compare-item"><span>✓</span> Segunda linha editorial com celular na mão, 10 a 20 cortes/dia</div>
+      <div class="compare-item"><span>✓</span> Título curto na parte de cima em todo corte</div>
+      <div class="compare-item"><span>✓</span> CTA de conversa: "me chama no direct que eu te mostro"</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As seis regras que valem para todo vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">📱</span><h3>Segunda Linha Editorial</h3><p>O conteúdo institucional continua existindo. Ao lado dele entra o braço solto, gravado no celular, sem produção. É esse braço que traz volume e alcance.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔢</span><h3>Fale em Reais</h3><p>O produtor precisa enxergar o número. Custo/hora de R$120 para R$70, meio milhão no mês, 20% de perda na colheita. Número concreto convence mais rápido que conceito.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Inimigo em Comum</h3><p>Toda lição precisa de contexto. Puxe governo, clima, custo do diesel, máquina parada ou funcionário que dá trabalho. A dica entra depois da tensão.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🗣️</span><h3>Nunca Assuma que Sabem</h3><p>Sigla sem explicação faz a pessoa travar. Toda menção ao GA vem com uma frase curta dizendo o que ele é e o que ele resolve.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⏱️</span><h3>Até 1 Minuto</h3><p>Os cortes do dia a dia ficam entre 30 e 60 segundos. Entra no assunto, entrega o valor e fecha. Vídeo longo só quando a história justifica.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔥</span><h3>Volume Cria Aprendizado</h3><p>Com 20 vídeos por dia você descobre em um mês quais formatos funcionam. Peça os 10 mais vistos, repita o padrão e o perfil acelera sozinho.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Templates "preencha os espaços" adaptados ao agro</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Vem Comigo (curiosidade primeiro, produto no meio)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Hoje eu vou te mostrar se essa colhedeira aqui está trabalhando bem ou se ela está me fazendo perder dinheiro."<br><em>Comece andando em direção à máquina. Nada de introdução.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Curiosidade</div><div class="script-step-text">"Olha aqui, o café entra por aqui, sai por aqui, e essa peça aqui é a que mais dá problema."<br><em>Mostre a máquina por dentro. Quem é da cidade assiste isso até o fim.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Virada</div><div class="script-step-text">"Essa aqui estava com 20% a menos de capacidade. Numa colheita, 20% pode dar meio milhão de reais."<br><em>Aqui você transforma curiosidade em dor.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Produto</div><div class="script-step-text">"É muita coisa pra controlar na mão. Por isso a gente colocou tudo dentro de um sistema. Abre no celular, ó, está tudo registrado aqui."<br><em>Mostre a tela por 5 segundos, sem tour completo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se você é produtor, me chama no direct que eu te mostro como fica na sua fazenda."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Estudo de Caso com Número</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Esse produtor estava pagando R$120 por hora de máquina. Hoje ele paga R$70. Vou te contar o que mudou."</div></div>
+    <div class="script-step"><div class="script-step-label">Contexto</div><div class="script-step-text">"Quando a gente chegou lá, o trator ficava parado de manhã porque o tratorista não sabia a atividade do dia. Abastecimento demorado, manutenção atrasada, tudo drenando lucro."</div></div>
+    <div class="script-step"><div class="script-step-label">Solução</div><div class="script-step-text">"A gente colocou o GA, que é o nosso software de gestão de fazenda, e passou a medir aproveitamento de máquina todo dia."</div></div>
+    <div class="script-step"><div class="script-step-label">Resultado</div><div class="script-step-text">"Cliente antigo nosso saiu de 80% e hoje está em 90% de aproveitamento. No mês, isso dá centenas de milhares de reais."<br><em>Sempre feche o número no bolso do produtor.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Quer saber quanto você está perdendo hoje? Manda um direct que a gente faz essa conta com você."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Objeção de Cliente (o formato que já funcionou)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Fui num cliente semana passada e ele falou que não ia usar o sistema. O motivo dele foi esse aqui."</div></div>
+    <div class="script-step"><div class="script-step-label">Objeção</div><div class="script-step-text">"Ele disse: minha equipe não vai se adaptar à tecnologia, meu pessoal não está acostumado com isso."</div></div>
+    <div class="script-step"><div class="script-step-label">Resposta</div><div class="script-step-text">"Eu falei pra ele: se o seu medo é esse, pode ficar tranquilo, porque ensinar a equipe da fazenda é justamente o que a gente sabe fazer há 35 anos."</div></div>
+    <div class="script-step"><div class="script-step-label">Prova</div><div class="script-step-text">"O lançamento de dados já faz parte da rotina deles. Muda o papel pelo celular e eles conseguem consultar o que lançaram."</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se esse também é o seu receio, me chama aqui que eu te mostro como a gente treina a equipe."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Do microfone ligado de manhã até o post publicado</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Microfone às 8h</h4><p>O diretor coloca a lapela no celular e esquece que ela está lá</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Mobile maker acompanha</h4><p>Reunião, visita, estrada, problema resolvido, resenha, café</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Corta na hora</h4><p>Takes de 30 a 60 segundos, título na tela, sem vinheta</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Publica no mesmo dia</h4><p>De 10 a 20 cortes por dia, direto do celular</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Mede e repete</h4><p>Toda sexta, puxa os 10 mais vistos e repete o padrão</p></div>
+  </div>
+
+  <!-- 7. GANCHOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie e adapte — feitas para prender nos primeiros 3 segundos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Dor concreta:</em> "Seu trator está parado agora e você nem sabe. Vou te mostrar quanto isso custa por mês."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Curiosidade visual:</em> "Hoje eu vou te ensinar a saber qual grão de café pode colher e qual não pode. Vem comigo."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Inimigo em comum:</em> "Entra governo, sai governo, e no fim das contas quem paga a conta da fazenda é você."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Número que assusta:</em> "Esse produtor perdia R$500 mil por safra por causa de um detalhe na colhedeira."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Bastidor:</em> "Cheguei agora numa fazenda com um problema sério de gestão de frota. Vem ver comigo."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Desabafo:</em> "Cansei de ouvir produtor falando que funcionário dá trabalho. O problema quase nunca é o funcionário."</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Se + Então:</em> "Se você quer saber se a sua fazenda está bem gerida, olhe só uma coisa: as suas máquinas."</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Formatos e temas para gravar já nesta semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Um dia inteiro com o diretor</h3><p>Mobile maker acompanha reunião, visita de cliente e estrada. Cada momento vira um corte de 40 segundos.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Esse grão pode colher, esse não pode</h3><p>No pé de café, mostrando grão por grão. Conteúdo simples que gente de fora do agro assiste até o fim.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Objeção da semana</h3><p>Toda semana um medo real de cliente, contado como história, com a resposta que você deu na hora.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Tour por dentro da colhedeira</h3><p>Por onde o café entra, por onde sai, qual peça mais dá problema. Curiosidade pura, com o custo aparecendo no meio.</p></div>
+    <div class="idea-card"><div class="idea-type type-gestao">Gestão</div><h3>Quanto custa uma hora de máquina parada</h3><p>Conta na frente da câmera: R$120 por hora, tantas horas paradas, resultado no mês. Número na tela.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Resenha do café da fazenda</h3><p>Prova do café, conversa com quem está filmando. Puxa público que não é produtor e amplia o alcance.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>5 sinais de que sua frota está mal gerida</h3><p>Um sinal por slide, linguagem de conversa. Formato que o produtor salva e manda para o gerente.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Como o funcionário ganha mais com o POP</h3><p>Explique a nota de qualidade operacional e o pagamento proporcional. Serve para o produtor e para o operador.</p></div>
+    <div class="idea-card"><div class="idea-type type-gestao">Gestão</div><h3>De 80% para 90% de aproveitamento</h3><p>Caso real de cliente antigo, com custo/hora antes e depois. É o conteúdo que mais performou até hoje.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Erros de gestão que eu vejo toda semana</h3><p>Um erro por vídeo, gravado na fazenda do cliente, sem citar nome. Conteúdo infinito e fácil de gravar.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Consertando uma cerca e falando de gestão</h3><p>Tarefa comum do dia a dia como cenário. O produtor vê e sente que você fala a língua dele.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>O custo real da lavoura de café</h3><p>Mostre que mais de 70% do custo está ligado à máquina. Dado forte, formato de leitura rápida.</p></div>
+  </div>
+
+  <!-- 9. PERFIS DE REFERÊNCIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Modelos que já provaram que o formato funciona</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🚗</div>
+      <div>
+        <h3>Y Veículos</h3>
+        <div class="ref-niche">Venda de carros / Documentação do dia a dia</div>
+        <p>Uma equipe filma o dono o dia inteiro, sempre microfonado. Eles chegam a postar de 40 a 100 vídeos por dia. Com o volume, descobriram que os vídeos de negociação eram os que mais viralizavam e passaram a repetir esse formato. É exatamente o modelo que vocês podem aplicar com a rotina do diretor.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">☕</div>
+      <div>
+        <h3>Perfis de rotina no campo</h3>
+        <div class="ref-niche">Agro / Vida real na fazenda</div>
+        <p>Perfis que mostram colheita, maquinário e tarefas comuns puxam muita visualização de gente que não é produtora. Esse público não compra software, e mesmo assim ele curte, comenta e compartilha. Essas ações fazem o Instagram entregar o vídeo para o produtor que compra, de graça.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Vídeo de conteúdo leve</div>
+      <blockquote>"Se você é produtor, me segue aqui que todo dia eu mostro uma coisa da fazenda."</blockquote>
+      <div class="cta-note">Use nos vídeos de curiosidade e bastidor. Nada de oferta, só convite para acompanhar.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo com número forte</div>
+      <blockquote>"Manda um direct que eu faço essa conta com você e te falo quanto dá pra economizar."</blockquote>
+      <div class="cta-note">Use quando o vídeo mostrar custo/hora, perda na colheita ou aproveitamento de máquina.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Vídeo com o software na tela</div>
+      <blockquote>"Esse programa aqui eu uso todo dia. Quer saber qual é? Chama no direct que eu te mando."</blockquote>
+      <div class="cta-note">Tom de conversa de rua. A pessoa pede, e o pedido dela vale mais que qualquer anúncio.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Vender o GA sem Parecer Anúncio</h2><p>O produto entra no meio da história, nunca na abertura</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: conteúdo leve na frente, produto no meio, conta em reais no final</h3>
+      <p>O vídeo começa por curiosidade ou por dor, sem nenhuma cara de comercial. Quem entrou pelo assunto leve assiste até o fim e empurra o alcance para cima. Lá pelo meio, quando o assunto encostar em custo, perda ou controle, você fala do software em poucas frases e mostra a tela por alguns segundos. No final você fecha com a conta em reais e com o convite para o direct.</p>
+      <p style="margin-top: 10px;">A parte que mais falta hoje é a prova. Toda vez que citar o GA, traga o resultado de um cliente com número: quanto ele faturava, quanto ele passou a faturar, quanto o custo/hora caiu. O produtor não compra funcionalidade. Ele compra a diferença entre o que ele ganha hoje e o que ele pode ganhar. E não tenha vergonha de vender no Instagram, porque o concorrente não vai ter.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Passe por cada item antes de subir o corte</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira item por item</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho entrega uma promessa nos 3 primeiros segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem título curto na parte de cima da tela?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A legenda está aparecendo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O vídeo ficou entre 30 e 60 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Se citei o GA, expliquei o que ele é?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem um número em reais ou porcentagem no vídeo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O CTA está falado, sem cara de anúncio?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Removi a vinheta e a tela de marca do final?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O mínimo para o braço de conteúdo rodar todo dia</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Microfone de lapela para celular — áudio limpo no campo e na reunião</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Mobile maker (CLT ou freela) — filma, edita e posta no mesmo dia</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>CapCut no celular — corte rápido, título na tela e legenda automática</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>OpusClip — transforma reunião longa em vários cortes de 40 segundos</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Planilha dos 10 mais vistos — revisada toda sexta para achar o padrão</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Aula de títulos do Código Viral — assistida pelo editor e pelo mobile maker</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>A ordem em que as mudanças devem acontecer</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Arrumar bio e cortar a vinheta</div><div class="timeline-desc">Reescreva a bio com um número concreto e um CTA que faça sentido sozinho. Tire a tela de marca do final dos vídeos que ainda vão sair. Grave um primeiro corte de 40 segundos no celular, com título na tela.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Montar o braço de celular</div><div class="timeline-desc">Contrate ou defina o mobile maker. Compre o microfone de lapela. Coloque o diretor microfonado o dia inteiro. Comece com 5 a 10 cortes por dia, mesmo que pareçam simples demais. Refaça o vídeo da colhedeira no formato "vem comigo".</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Subir o volume e testar formatos</div><div class="timeline-desc">Chegue a 10 ou 20 cortes por dia. Alterne bastidor, objeção de cliente, número forte e curiosidade do campo. Grave a série de objeções. Comece a citar o GA sempre com a frase de explicação e sempre com um caso real.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Medir, repetir e escalar</div><div class="timeline-desc">Peça ao mobile maker os 10 vídeos mais vistos do mês e os 5 que mais viralizaram. Repita os formatos vencedores e corte o resto. Leve os melhores para o Oney analisar. Meta do período: 50 mil seguidores e demonstrações chegando pelo direct.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Agosto 2026</div>
+
+</body>
+</html>
