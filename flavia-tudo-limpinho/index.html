@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Flávia | Tudo Limpinho</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+</style>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Flávia — Tudo Limpinho</h1>
+  <p class="hero-sub">Limpeza prática de casa, com linha própria de produtos, loja na Shopee, no Mercado Livre e rede de consultoras. O conteúdo já é bom e já viraliza sozinho. O que está sobrando na mesa é o pedido: você não pede para seguir, não pede o like e o seu CTA de comentário não diz o que a pessoa vai receber. Aqui é papo de bater 1 milhão.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/s-4gbiTGpDs" title="Análise Viral Pro — Flávia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>26 de Agosto, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Limpeza e Organização</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">3x</div><div class="stat-label">Mais Seguidores por Vídeo</div></div>
+  <div class="stat-card"><div class="stat-number">2.700</div><div class="stat-label">Vídeos no Acervo</div></div>
+  <div class="stat-card"><div class="stat-number">5/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">1M</div><div class="stat-label">Projeto de Seguidores</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas</h2><p>Sete mudanças que valem mais do que qualquer conteúdo novo</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Pedir para seguir em todo vídeo, sem exceção</h3><p>Esse é o número um de tudo. O vídeo do polimento do box trouxe mil seguidores sem você pedir nada. Se você tivesse pedido, ele traria três mil. Agora imagine isso multiplicado pelos <strong>2.700 vídeos que você já postou</strong>. A frase pode ser simples: <strong>"Me segue aqui que eu ensino todos os truques para deixar sua casa um brinco."</strong> A partir de hoje isso vira regra, não opção.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Pedir o like e pedir cedo</h3><p>Abra qualquer Reels seu e olhe o gráfico do momento em que as pessoas deram like. Quando você não pede, o gráfico fica reto. Quando você pede, aparece um pico, e esse pico às vezes é maior do que todo o resto somado. Peça logo no começo, ligando o like à curiosidade: <strong>"Olha como ficou esse box depois desse produto novo. Já deixa o like porque eu vou te falar o nome dele."</strong></p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Dizer o que a pessoa vai receber no direct</h3><p>Você fala "comenta piso para receber aí no seu direct" e não diz o que ela recebe. Isso trava o comentário, porque ninguém comenta sem saber o que vem. Complete a frase e coloque uma vantagem dentro dela: <strong>"Comenta mofo que eu te mando o link com desconto do nosso removedor."</strong> O desconto cria oportunidade e o número de comentários sobe.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Legendar todos os vídeos</h3><p>Seu público é majoritariamente de mulheres, e muitas delas assistem com o bebê no colo, sem som. Uma seguidora já me escreveu pedindo exatamente isso. Quando a mulher consegue assistir até o fim, o potencial viral do vídeo sobe. Vários dos seus melhores vídeos estão sem legenda, incluindo o do espelho e o do xixi do pet.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Montar o cronograma de repostagem dos virais</h3><p>Você tem 2.700 vídeos e muita bala na agulha. Faça a lista dos que passaram de mil visualizações e têm mais de seis meses, do mais antigo para o mais recente, e reposte um a cada três dias. Para baixar sem marca d'água, clique no áudio do Reels, vá em <strong>Remix</strong> e salve no rascunho.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Mostrar o produto na tela quando falar o nome dele</h3><p>Você cita Porcelanex, Cimax, Polymax e a pessoa não sabe qual é a embalagem. Coloque um print pequeno do produto aparecendo no canto no momento em que você fala o nome. Quem vai comprar precisa reconhecer o rótulo na prateleira ou na busca da loja.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">7</div><div class="action-content"><h3>Parar de gravar direto em timelapse</h3><p>No vídeo do pet teve uma cena boa que passou rápido demais e se perdeu. Grave na velocidade normal e acelere depois na edição. Assim você escolhe o que fica rápido e o que fica no tempo real, e ainda sobra material bom para usar como gancho.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que faltou em cada um e como ele ficaria corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>Polimento do box com Polymax</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que faltou</div>
+          <p>O vídeo viralizou porque ele é satisfatório, e satisfatório é a maior vantagem do nicho de limpeza. Mesmo assim ele terminou sem pedido nenhum. Trouxe mil seguidores e podia ter trazido três mil. Faltou também a comparação visual entre o antes e o depois.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Coloque uma cena de cinco a dez segundos comparando: <strong>"Gente, a parte de baixo é o depois e a parte de cima é o antes, só para você ver a diferença."</strong> E feche pedindo: <strong>"Me segue aqui que eu ensino todos os truques para deixar sua casa um brinco."</strong> Esse vídeo já era bom, ele só precisava do pedido.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>Pia manchada recuperada com Cimax</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O vídeo começa pelo depois e o gancho perde força. Em 80% dos vídeos que não performam bem, a culpa é do gancho. Ele é tão decisivo que um gancho muito bom chega a salvar um vídeo ruim.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Dois takes rápidos na abertura: <strong>"Essa pia saiu disso daqui para isso daqui. Eu vou te falar qual produto eu usei e como você passa, pra você deixar a sua pia nova hoje."</strong> A pessoa vê a transformação inteira em três segundos e fica para descobrir como. Vale até refazer esse vídeo só para testar o gancho novo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>Limpeza do espelho com sabão de querosene</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que faltou</div>
+          <p>Espelho sempre dá muita visualização, e esse vídeo foi bem. O problema é que ele está sem legenda e sem narração. Quem está com o som desligado não entende o que está acontecendo e sai antes do fim.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Legenda na tela do começo ao fim, ou uma narração explicando: <strong>"É assim que se limpa espelho. Spray de querosene, remove a sujeira e não deixa resíduo."</strong> O tempo de permanência sobe e a entrega acompanha.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>Piso laminado — "Parece uma limpeza comum, mas o erro pode danificar seu piso"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O gancho dá uma volta antes de chegar no assunto. E o CTA final repete o mesmo problema dos outros: "comenta piso para receber aí no seu direct" sem dizer o que a pessoa vai receber.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Direto ao ponto: <strong>"Como fazer uma limpeza no piso laminado."</strong> Sem rodeio nenhum, o tema já é forte. E no final: <strong>"Comenta piso que eu te mando o nome do produto e o link com desconto."</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 5</span><h3>Xixi do pet no lugar errado — Pet Clean</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que faltou</div>
+          <p>O vídeo é ótimo e o pessoal comentou pedindo o produto. Ele está sem legenda. E teve uma cena boa que ficou em timelapse rápido demais, então ela passou e ninguém viu direito.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Legenda em tudo, e a cena acelerada gravada em velocidade normal para você ajustar depois. Aquela cena servia de gancho. Feche com os três pedidos: <strong>"Me segue, deixa o like e comenta pet que eu te mando o link."</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Colab</span><h3>"Você mora no Sul e o sol apareceu" — Remoção de mofo</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✓ O que a influenciadora fez certo</div>
+          <p>Repare como ela é sagaz. O gancho visual dela já começa no satisfatório, então não tem como pular. E o texto fala direto com quem mora no Sul, que reconhece a situação na hora. Esse é o padrão que funciona.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ O padrão para você repetir</div>
+          <p>Compare com o seu vídeo dos cinco produtos e olhe o engajamento dos dois. É o mesmo padrão. <strong>Viralização é padrão.</strong> Você observa o que funciona, repete e testa. Sempre que puder abrir com uma cena satisfatória, você já sabe que a chance é alta, porque as pessoas não abandonam aquilo que está satisfazendo o cérebro delas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que parar e do que começar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Terminar o vídeo sem pedir para seguir</div>
+      <div class="compare-item"><span>✕</span> Deixar o like por conta da sorte</div>
+      <div class="compare-item"><span>✕</span> "Comenta X para receber no seu direct" (receber o quê?)</div>
+      <div class="compare-item"><span>✕</span> Postar vídeo sem legenda</div>
+      <div class="compare-item"><span>✕</span> Começar o vídeo pelo resultado já pronto</div>
+      <div class="compare-item"><span>✕</span> Citar o nome do produto sem mostrar a embalagem</div>
+      <div class="compare-item"><span>✕</span> Gravar direto em timelapse</div>
+      <div class="compare-item"><span>✕</span> Deixar 2.700 vídeos parados sem repostar nenhum</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> "Me segue que eu ensino todos os truques" em todo vídeo</div>
+      <div class="compare-item"><span>✓</span> Pedir like no começo, ligado a uma curiosidade</div>
+      <div class="compare-item"><span>✓</span> "Comenta X que eu te mando o link com desconto"</div>
+      <div class="compare-item"><span>✓</span> Legenda em 100% dos vídeos, sem exceção</div>
+      <div class="compare-item"><span>✓</span> Abrir com o antes e depois em dois takes rápidos</div>
+      <div class="compare-item"><span>✓</span> Print do produto na tela no momento em que fala o nome</div>
+      <div class="compare-item"><span>✓</span> Gravar normal e acelerar depois, na edição</div>
+      <div class="compare-item"><span>✓</span> Cronograma de repostagem, um a cada três dias</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As seis regras que valem para cada vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">✨</span><h3>Satisfatório é a Sua Vantagem</h3><p>O nicho de limpeza tem algo que outros nichos não têm. É gostoso ver sujeira saindo. Use isso no gancho e a pessoa não consegue pular.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>O Gancho Decide Tudo</h3><p>Em 80% dos vídeos que não performam, a culpa é do gancho. Um gancho bom demais salva até vídeo ruim. Escreva o gancho antes de gravar.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🙋</span><h3>Peça as Três Coisas</h3><p>Seguir, like e o comentário do produto cabem no mesmo vídeo. É só saber o momento de cada um. Você deixou isso na mesa 2.700 vezes.</p></div>
+    <div class="rule-card"><span class="rule-emoji">💬</span><h3>Legenda Sempre</h3><p>Sua audiência é de mulheres que assistem com o bebê no colo e sem som. Legenda faz elas chegarem ao fim, e chegar ao fim aumenta o potencial viral.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔁</span><h3>Viralização é Padrão</h3><p>Observe o que funcionou, identifique o padrão e repita com tema novo. Não fique esperando o próximo viral cair do céu.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📦</span><h3>Acervo é Dinheiro Parado</h3><p>Você tem 2.700 vídeos prontos. Repostar um viral costuma render mais visualização do que a média dos conteúdos novos.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Três estruturas que já embutem os três pedidos</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Antes e Depois em Dois Takes</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Essa pia saiu disso daqui para isso daqui."<br><em>Dois takes rápidos, o antes e o depois, nos dois primeiros segundos.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Promessa</div><div class="script-step-text">"Eu vou te falar qual produto eu usei e como você passa, pra você deixar a sua pia nova hoje. Já deixa o like que eu vou te falar o nome dele."<br><em>O like entra aqui, amarrado na curiosidade do produto.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Processo</div><div class="script-step-text">A limpeza acontecendo, com legenda em cada etapa e o print do produto aparecendo no canto quando você fala o nome.</div></div>
+    <div class="script-step"><div class="script-step-label">Comparação</div><div class="script-step-text">"Olha aqui, em cima é o antes e embaixo é o depois."<br><em>Cinco a dez segundos de comparação lado a lado. Essa cena é a que faz o vídeo ser compartilhado.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Me segue aqui que eu ensino todos os truques pra deixar sua casa um brinco. E comenta pia que eu te mando o link com desconto."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — O Erro Que Estraga</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Como fazer a limpeza do piso laminado sem estufar."<br><em>Direto ao ponto, sem preâmbulo. O tema já segura sozinho.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Alerta</div><div class="script-step-text">"Muita gente faz isso aqui e danifica o piso sem perceber. Já deixa o like que eu vou te mostrar o jeito certo."</div></div>
+    <div class="script-step"><div class="script-step-label">Método</div><div class="script-step-text">"Aplica o produto, esfrega, e faz isso a cada dois metros quadrados. Logo depois que puxar, você já seca."<br><em>Uma etapa por vez, legendada.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Comenta piso que eu te mando o nome do produto com desconto. E me segue que amanhã tem mais uma."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — O Repost Repaginado</h3>
+    <div class="script-step"><div class="script-step-label">Seleção</div><div class="script-step-text">Escolha um vídeo com mais de mil visualizações e mais de seis meses de postado.<br><em>Baixe pelo Remix, clicando no áudio do próprio Reels. Salva sem marca d'água.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Gancho novo</div><div class="script-step-text">Troque as cenas iniciais pelo antes e depois em dois takes. Coloque um título diferente do original.<br><em>A mexida evita que o Instagram entenda como duplicidade.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Ajustes</div><div class="script-step-text">Adicione a legenda que faltava e o print do produto. Regrave só o final, se for o caso.</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">Grave uma única vez um "já me segue aqui" e mande sua equipe inserir esse trecho em todos os reposts.</div></div>
+  </div>
+
+  <!-- 6. OPERAÇÃO DE REPOSTAGEM -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+    <div><h2>A Operação do Acervo</h2><p>Como transformar 2.700 vídeos parados em crescimento diário</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Lista os virais</h4><p>Todo vídeo com mais de mil views e mais de 6 meses entra na planilha</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Baixa pelo Remix</h4><p>Clica no áudio do Reels, vai em Remix e salva no rascunho, sem marca d'água</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Repagina</h4><p>Gancho novo, título diferente, legenda e print do produto</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Insere os pedidos</h4><p>Seguir, like e comentário com desconto. A equipe faz isso em lote</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Programa</h4><p>Um repost a cada três dias, do mais antigo para o mais recente</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-blue); margin-top: 14px;">
+    <div class="action-number" style="background: var(--blue-soft); color: var(--blue);">!</div>
+    <div class="action-content">
+      <h3>Não tenha medo de repostar</h3>
+      <p>Acontece de um viral repostado render mais do que rendeu na primeira vez, embora isso não seja o comum. O que é comum, e é o que importa, é o repost render bem acima da média dos conteúdos novos. Você tem 2.700 vídeos, então fica tranquila com a munição.</p>
+      <p style="margin-top:12px;">Isso não substitui o conteúdo novo. Você continua postando normalmente. Se hoje você publica 23 vídeos por semana, o repost te leva com folga para cinco por dia. E se você tem equipe editando, o trabalho deles passa a ser pegar os vídeos de maior visualização e melhorar cada um com tudo que está neste plano.</p>
+    </div>
+  </div>
+
+  <!-- 7. FÓRMULAS DE GANCHO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Comece pelo satisfatório sempre que der</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Antes e depois:</em> "Essa pia saiu disso daqui para isso daqui. Vou te falar qual produto eu usei."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Satisfatório puro:</em> Rodo passando e tirando a sujeira nos dois primeiros segundos, com o texto na tela por cima.</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Contexto que identifica:</em> "Você mora no Sul e o sol apareceu? Então hoje a gente vai tirar todo o mofo do teto."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Erro que estraga:</em> "Se você limpa o piso laminado assim, você está estufando ele sem perceber."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Direto ao ponto:</em> "Como fazer a limpeza do box gastando 10 minutos."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Economia:</em> "Com apenas cinco produtos eu limpo a casa inteira. Vou te mostrar quais são."</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Situação do dia a dia:</em> "Seu pet fez xixi no lugar errado? Calma, não briga com ele. Faz isso aqui primeiro."</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Temas do seu nicho que já provaram que funcionam</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Box encardido virando cristalino</h3><p>Seu tema campeão. Refaça com o gancho de antes e depois em dois takes e com os três pedidos no lugar certo.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Mofo no teto e na parede</h3><p>Tema sazonal com identificação forte. Abra pelo contexto de quem mora em região úmida.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Um produto, um vídeo</h3><p>Cada item da sua linha ganha um Reels próprio, com o print do rótulo e o link no comentário.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Espelho sem marca de dedo</h3><p>Espelho sempre dá muita view. Refaça o que você já postou, agora com legenda e narração.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Cinco produtos para a casa inteira</h3><p>Transforme o Reels que performou bem em carrossel, um produto por slide, com uso e diluição.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Diluição certa de cada produto</h3><p>"Seis tampinhas em 450 ml." Conteúdo de altíssimo salvamento, porque a pessoa volta para conferir.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Limpeza a seco no lugar do pano</h3><p>Quebra de hábito com resultado visível. Mostre o pano sujo depois da passada.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Erros que danificam cada tipo de piso</h3><p>Laminado, vinílico, porcelanato, granito. Um vídeo para cada, mesmo formato.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Xixi de pet e outros acidentes</h3><p>Situações que toda dona de casa vive. Alto compartilhamento entre amigas.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Como um produto novo nasce</h3><p>Os testes, a parceria, a formulação. Mostra que existe critério por trás da linha.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Coifa, fogão e forno engordurados</h3><p>Gordura pesada é o satisfatório mais forte que existe. Grave em velocidade normal e acelere na edição.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Cronograma semanal de faxina</h3><p>Um dia por slide. A pessoa salva e usa a semana inteira.</p></div>
+  </div>
+
+  <!-- 9. MÉTODO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--yellow-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6h.09A1.65 1.65 0 0 0 10 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+    <div><h2>Como Nunca Mais Ficar Sem Ideia</h2><p>Os quatro passos para ter só ideia validada, e não ideia qualquer</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Aula do Código Viral</h4><p>Assista "Criatividade Sintética". Ela ensina a mapear os temas mais virais do nicho</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Lista de 30 temas</h4><p>Box, chão, mofo, gordura. Anote o que dá mais visualização no seu segmento</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Grupo só seu no WhatsApp</h4><p>Áudio no carro, link de um viral que apareceu, ideia solta. Tudo vai pra lá</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Perfil fake de limpeza</h4><p>10 perfis do Brasil e 10 da gringa. Nada além de limpeza entra ali</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-yellow); margin-top: 14px;">
+    <div class="action-number" style="background: var(--yellow-soft); color: var(--yellow);">!</div>
+    <div class="action-content">
+      <h3>Ideia todo mundo tem, ideia boa é o que é difícil</h3>
+      <p>No perfil fake você pula todo vídeo que não for de limpeza. Se você assistir outra coisa ali, você contamina o perfil e ele para de funcionar. Mantendo a disciplina, o Instagram te entrega conteúdo validado de bandeja, ou seja, vídeos em que as pessoas já curtiram, comentaram e seguiram.</p>
+      <p style="margin-top:12px;">O que você observa lá é o mecanismo inteiro. Como a pessoa abre o vídeo, onde ela pede o like, como ela fecha. Você internaliza os padrões e para de esperar o viral cair do céu. O objetivo é que cada post do dia seja forte o suficiente para alguém dizer que os seus vídeos são absurdos e que a amiga precisa ver.</p>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Os Três Pedidos de Cada Vídeo</h2><p>Cabem todos no mesmo Reels, cada um no seu momento</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">No começo — o like</div>
+      <blockquote>"Já deixa o like porque eu vou te falar o nome do produto."</blockquote>
+      <div class="cta-note">Amarre o like a uma curiosidade que só se resolve mais adiante. É o pedido que cria o pico no gráfico.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">No meio — o seguir</div>
+      <blockquote>"Eu tô testando vários produtos aqui em casa, então já me segue aqui."</blockquote>
+      <div class="cta-note">Dito no meio da ação, enquanto a pessoa está engajada no resultado. Esse é o pedido que você mais deixou passar.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">No fim — o comentário</div>
+      <blockquote>"Comenta mofo que eu te mando o link com desconto do removedor."</blockquote>
+      <div class="cta-note">Sempre diga o que a pessoa recebe. O desconto cria oportunidade e multiplica o número de comentários.</div>
+    </div>
+  </div>
+
+  <!-- 11. VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como o Conteúdo Vira Venda</h2><p>O produto aparece dentro da solução, nunca como anúncio solto</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: resultado primeiro, nome do produto depois, link no comentário</h3>
+      <p>A pessoa precisa ver a transformação antes de ouvir a marca. Quando você mostra a pia saindo de manchada para brilhando e só então diz que usou Cimax, o produto vira consequência do resultado. Coloque o print do rótulo na tela nesse momento, porque quem vai comprar precisa reconhecer a embalagem.</p>
+      <p style="margin-top:12px;">O link nunca é entregue de graça no vídeo. Ele vem pelo comentário, com a frase completa: <strong>"Comenta pia que eu te mando o link com desconto."</strong> Você ganha o comentário, que sobe o engajamento, e ganha a conversa no direct, que é onde a venda acontece de verdade.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Passe por cada item antes de apertar o botão</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira item por item</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Pedi para seguir?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Pedi o like, e pedi cedo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O CTA diz o que a pessoa vai receber no direct?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O vídeo está legendado do começo ao fim?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho abre com algo satisfatório ou com o antes e depois?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O print do produto aparece quando eu falo o nome dele?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem uma cena de comparação de 5 a 10 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Nenhuma cena boa se perdeu no timelapse?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas e Rotinas Recomendadas</h2><p>O mínimo para manter a operação rodando</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Remix do Instagram — baixar seus vídeos sem marca d'água</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Planilha de repostagem — views, data e status de cada viral</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo do WhatsApp só com você — banco de ideias</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Perfil fake de limpeza — 10 do Brasil, 10 da gringa</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Aula "Criatividade Sintética" no Código Viral</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Briefing da equipe — todos assistem esta análise antes de editar</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>A ordem para implementar tudo sem se perder</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Voltar a pedir</div><div class="timeline-desc">Todo vídeo que sair hoje já leva os três pedidos. Grave também um trecho avulso de "já me segue aqui" para a equipe inserir nos reposts. Comece a planilha com os virais do acervo.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Legenda em tudo e primeiros reposts</div><div class="timeline-desc">Nenhum vídeo sai sem legenda a partir de agora. Publique os três primeiros reposts repaginados, com gancho novo e título diferente. Assista à aula "Criatividade Sintética" e monte a lista de 30 temas.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Padronizar o gancho e subir o volume</div><div class="timeline-desc">Teste os sete ganchos deste plano. Sempre que der, abra pelo satisfatório ou pelo antes e depois em dois takes. Suba para cinco posts por dia somando conteúdo novo e repost. Coloque o print do produto em todos os vídeos que citam marca.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Rodar o acervo inteiro</div><div class="timeline-desc">Passe a equipe pelos vídeos de maior visualização, um a um, aplicando tudo que está aqui. Compare o ganho diário de seguidores antes e depois da mudança. Leve os resultados no grupo da mentoria para ajustarmos o que não funcionar.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Agosto 2026</div>
+
+</body>
+</html>
