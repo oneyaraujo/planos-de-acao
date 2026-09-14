@@ -273,7 +273,7 @@ function cardHTML(c) {
 
   return '<article class="card">' +
     '<div class="shot">' +
-      '<img src="' + c.img + '" alt="Foto do anúncio: ' + c.t.replace(/"/g, '') + '" referrerpolicy="no-referrer" loading="lazy">' +
+      '<img src="' + c.img + '" alt="Foto do anúncio: ' + c.t.replace(/"/g, '') + '" referrerpolicy="no-referrer" loading="eager">' +
       '<span class="region">' + c.b + '</span>' +
       (acima ? '<span class="over">acima do teto</span>' : '') +
     '</div>' +
