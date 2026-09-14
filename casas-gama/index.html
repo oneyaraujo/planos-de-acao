@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
 <title>Casas no Gama até 3 mil</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -272,7 +273,7 @@ function cardHTML(c) {
 
   return '<article class="card">' +
     '<div class="shot">' +
-      '<img src="' + c.img + '" alt="Foto do anúncio: ' + c.t.replace(/"/g, '') + '" loading="lazy">' +
+      '<img src="' + c.img + '" alt="Foto do anúncio: ' + c.t.replace(/"/g, '') + '" referrerpolicy="no-referrer" loading="lazy">' +
       '<span class="region">' + c.b + '</span>' +
       (acima ? '<span class="over">acima do teto</span>' : '') +
     '</div>' +
