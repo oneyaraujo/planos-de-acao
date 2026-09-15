@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-09-15T18:20:00-03:00",
+ "atualizado": "2026-09-15T13:00:00-03:00",
  "teto": 3000,
  "fontes": [
   "DF Imóveis",
@@ -15,7 +15,7 @@
    "b": "Setor Oeste",
    "al": 1450,
    "cond": 0,
-   "iptu": 29,
+   "iptu": null,
    "area": 60,
    "q": 2,
    "ban": 1,
@@ -23,7 +23,8 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-2-quartos-aluguel-setor-oeste-gama-df-quadra-24-1397295",
    "img": "https://img.dfimoveis.com.br/fotos/1397295/5b5f1913100d0dfab322be6590930f0e.webp",
-   "obs": "A casa está reformada e pronta para morar. O portal informa um IPTU proporcional de cerca de R$ 29 por mês, o que mantém o custo total bem abaixo do teto."
+   "obs": "Casa reformada, pronta para morar.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-1421614",
@@ -39,7 +40,8 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-2-quartos-aluguel-setor-sul-gama-df-quadra-1-conjunto-h-1421614",
    "img": "https://img.dfimoveis.com.br/fotos/1421614/d282155fa2157cff06e2bd6c70ea3ea7.webp",
-   "obs": "São 2 quartos, sendo um deles suíte, e 4 vagas de garagem em 156 m². O mesmo imóvel também aparece na OLX pelo mesmo valor, então dá para tentar o contato direto."
+   "obs": "2 quartos sendo 1 suíte, 4 vagas de garagem.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-1404103",
@@ -51,11 +53,12 @@
    "area": 90,
    "q": 2,
    "ban": 1,
-   "vg": 6,
+   "vg": 1,
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-2-quartos-aluguel-setor-sul-gama-df-quadra-2-1404103",
    "img": "https://img.dfimoveis.com.br/fotos/1404103/ab6cc67b0f0ea2ddd9cbe4c11f8e7b6f.webp",
-   "obs": "O anúncio informa 6 vagas de garagem em 90 m², o que é bastante espaço de estacionamento para o preço. A casa tem 2 quartos e 1 banheiro."
+   "obs": "2 quartos, 1 banheiro e 1 vaga.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-1419327",
@@ -71,7 +74,8 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-2-quartos-aluguel-setor-sul-gama-df-quadra-6-conjunto-c-1419327",
    "img": "https://img.dfimoveis.com.br/fotos/1419327/a27669b842e5d03c5fc80036a414d052.webp",
-   "obs": "A mesma casa está anunciada na OLX pelo mesmo valor de R$ 1.020. Vale um bom custo-benefício para quem precisa de pouco espaço."
+   "obs": "Anunciada também na OLX pelo mesmo valor.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-1298390",
@@ -87,7 +91,8 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-3-quartos-aluguel-setor-oeste-gama-df-quadra-31-1298390",
    "img": "https://img.dfimoveis.com.br/fotos/1298390/d86c4c0d365b68c05b6e872a55839661.webp",
-   "obs": "Esta é a casa de 3 quartos mais barata da lista inteira. O anúncio não informa vaga de garagem, então confirme esse ponto antes de visitar."
+   "obs": "Três quartos pelo menor preço da lista.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-1405757",
@@ -103,7 +108,8 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-3-quartos-aluguel-setor-sul-gama-df-quadra-6-conjunto-d-1405757",
    "img": "https://img.dfimoveis.com.br/fotos/1405757/e740f88e4c20aecf5c8015ccf4863187.webp",
-   "obs": "O valor bruto é R$ 3.080 e o anúncio dá desconto de pontualidade que leva o aluguel para R$ 2.800. A energia é compartilhada e a água é individual."
+   "obs": "Valor bruto R$ 3.080. O anúncio oferece desconto de pontualidade que leva o aluguel a R$ 2.800. Energia compartilhada, água individual.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-1423095",
@@ -119,7 +125,8 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-4-quartos-aluguel-setor-norte-gama-df-quadra-2-1423095",
    "img": "https://img.dfimoveis.com.br/fotos/1423095/7cd8bdf2a43cf162df3b9b67dbc80025.webp",
-   "obs": "A casa fica em esquina, tem ambientes amplos e 3 vagas de garagem. Ela é a opção com mais quartos dentro do teto."
+   "obs": "Posição de esquina, ambientes amplos e área de garagem grande.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-1422570",
@@ -135,7 +142,25 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-3-quartos-aluguel-setor-sul-gama-df-quadra-3-conjunto-c-1422570",
    "img": "https://img.dfimoveis.com.br/fotos/1422570/90e66b94a5c56e2e366ca3619f946742.webp",
-   "obs": "São 3 quartos, 2 banheiros e 3 vagas em 100 m² por R$ 2.000. A localização no Setor Sul é boa e o preço fica R$ 1.000 abaixo do teto."
+   "obs": "3 quartos e 3 vagas, boa localização no Setor Sul.",
+   "desde": "2026-09-14"
+  },
+  {
+   "id": "dfi-1422632",
+   "t": "Casa de 3 quartos amplos com suíte",
+   "b": "Setor Norte",
+   "al": 2600,
+   "cond": 0,
+   "iptu": null,
+   "area": 120,
+   "q": 3,
+   "ban": 2,
+   "vg": 1,
+   "f": "DF Imóveis",
+   "u": "https://www.dfimoveis.com.br/imovel/casa-3-quartos-aluguel-setor-norte-gama-df-quadra-1-conjunto-h-1422632",
+   "img": "https://img.dfimoveis.com.br/fotos/1422632/84d76971db8fc418ab0969abbe082aa0.webp",
+   "obs": "Valor bruto R$ 2.860 com desconto de pontualidade para R$ 2.600. Próximo ao Senac e à Feira Azul. Tem escritório e parte superior liberada só para depósito.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-1299285",
@@ -151,7 +176,8 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-2-quartos-aluguel-setor-sul-gama-df-quadra-2-conjunto-b-1299285",
    "img": "https://img.dfimoveis.com.br/fotos/1299285/88d88ea992f6ff0c986151b9836476ee.webp",
-   "obs": "A casa é compacta, com 70 m² e 1 vaga coberta. O anúncio já está no portal há bastante tempo."
+   "obs": "Casa compacta com 1 vaga coberta.",
+   "desde": "2026-09-14"
   },
   {
    "id": "dfi-995506",
@@ -167,7 +193,8 @@
    "f": "DF Imóveis",
    "u": "https://www.dfimoveis.com.br/imovel/casa-2-quartos-aluguel-setor-sul-gama-df-quadra-10-conjunto-i-995506",
    "img": "https://img.dfimoveis.com.br/fotos/995506/d2073d159aa1623c767f283e0519e1ad.webp",
-   "obs": "Este é o menor aluguel da lista, com 92 m² e 2 vagas. O anúncio é antigo no portal, então vale ligar antes para confirmar se ainda está disponível."
+   "obs": "Anúncio antigo no portal. Vale confirmar se ainda está disponível.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1535326199",
@@ -183,11 +210,12 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/alugo-quadra-48-setor-leste-gama-df-casa-de-esquina-03-quartos-1535326199",
    "img": "https://img.olx.com.br/thumbs700x500/88/881621206520370.webp",
-   "obs": "O anúncio foi atualizado ontem, então o contato tende a responder rápido. São 3 quartos e 4 vagas em 150 m² por R$ 2.000."
+   "obs": "Anúncio mais recente da lista. 3 quartos e 4 vagas por R$ 2.000.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1529887563",
-   "t": "Casa de 1 quarto na Rua Rodobelo",
+   "t": "Casa de 1 quarto na Ponte Alta Norte",
    "b": "Ponte Alta Norte",
    "al": 2400,
    "cond": 0,
@@ -197,9 +225,10 @@
    "ban": 1,
    "vg": 3,
    "f": "OLX",
-   "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/alugo-exelente-casa-na-rua-rodobelo-1529887563",
+   "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/alugo-excelente-casa-de-1-quarto-1529887563",
    "img": "https://img.olx.com.br/thumbs700x500/16/160676676988919.webp",
-   "obs": "O valor cheio é R$ 2.600 e o anunciante está pedindo R$ 2.400. O anúncio foi reescrito no dia 13 de setembro e agora informa a Rua Rodobelo, que é a região de condomínios da Ponte Alta Norte."
+   "obs": "Anunciada por R$ 2.600 e reduzida para R$ 2.400. Direto com o proprietário.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1534076445",
@@ -215,7 +244,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/aluga-se-casa-de-4-quartos-no-setor-central-do-gama-1534076445",
    "img": "https://img.olx.com.br/thumbs700x500/68/684647446667442.webp",
-   "obs": "O aluguel normal é R$ 2.500 e o anunciante criou uma promoção de entrada, com R$ 2.300 no primeiro mês e R$ 2.100 do segundo ao sexto mês. A partir do sétimo mês o valor volta para R$ 2.500, que é o número que usei aqui."
+   "obs": "Direto com o proprietário, sem taxa de imobiliária.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1531544303",
@@ -231,7 +261,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/alugo-casa-no-gama-sul-q9-1531544303",
    "img": "https://img.olx.com.br/thumbs700x500/10/105658806559440.webp",
-   "obs": "O negócio é direto com o proprietário, sem taxa de imobiliária. O IPTU de R$ 350 entra por fora e leva o custo mensal para R$ 1.950."
+   "obs": "Direto com o proprietário. O IPTU de R$ 350 entra por fora do aluguel.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1529254958",
@@ -247,7 +278,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/aluga-se-casa-1529254958",
    "img": "https://img.olx.com.br/thumbs700x500/39/398634433662219.webp",
-   "obs": "Esta é a maior área útil entre as casas dentro do teto, com 300 m² e 5 vagas. Repare que são só 2 quartos, apesar do tamanho."
+   "obs": "Maior área útil entre as casas dentro do teto. Direto com o proprietário.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1528366423",
@@ -263,7 +295,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/casa-para-locacao-setor-leste-gama-df-1528366423",
    "img": "https://img.olx.com.br/thumbs700x500/52/527656919460150.webp",
-   "obs": "Com o IPTU de R$ 210 somado, o custo mensal chega a R$ 2.920. A margem em relação ao teto fica apertada."
+   "obs": "Com o IPTU de R$ 210 o custo mensal fica em R$ 2.920.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1528050998",
@@ -279,7 +312,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/casa-para-aluguel-com-2-quartos-e-garagem-no-setor-leste-1528050998",
    "img": "https://img.olx.com.br/thumbs700x500/16/162667445721459.webp",
-   "obs": "O IPTU é simbólico, de R$ 10 por mês. São 70 m² com 2 quartos e 2 vagas por R$ 1.200."
+   "obs": "IPTU simbólico de R$ 10 por mês.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1525242607",
@@ -295,7 +329,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/aluga-se-casa-no-gama-1525242607",
    "img": "https://img.olx.com.br/thumbs700x500/55/555650793278321.webp",
-   "obs": "O negócio é direto com o proprietário. O anúncio é enxuto e não informa a metragem, então pergunte a área antes de marcar a visita."
+   "obs": "Direto com o proprietário.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1525120850",
@@ -311,7 +346,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/casa-na-qd-42-setor-leste-do-gama-df-1525120850",
    "img": "https://img.olx.com.br/thumbs700x500/84/849620927896660.webp",
-   "obs": "São 2 quartos e 2 banheiros em 80 m². Ter dois banheiros nessa faixa de preço é incomum na lista."
+   "obs": "2 quartos e 2 banheiros em 80 m².",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1524036373",
@@ -327,7 +363,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/alugo-casa-3-quartos-no-setor-leste-do-gama-1524036373",
    "img": "https://img.olx.com.br/thumbs700x500/37/374623670523660.webp",
-   "obs": "O IPTU de R$ 400 é o mais alto da lista e leva o custo mensal para R$ 2.400. Mesmo assim o total continua abaixo do teto."
+   "obs": "Com o IPTU de R$ 400 o custo mensal fica em R$ 2.400.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1523094331",
@@ -343,7 +380,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/aluga-se-excelente-casa-setor-central-gama-df-1523094331",
    "img": "https://img.olx.com.br/thumbs700x500/68/687688312185398.webp",
-   "obs": "São 3 quartos, 2 banheiros e 3 vagas em 100 m², com IPTU de apenas R$ 12. O Setor Central concentra comércio e transporte, o que ajuda quem não dirige."
+   "obs": "Direto com o proprietário. 3 quartos, 2 banheiros e 3 vagas.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1522967346",
@@ -359,7 +397,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/alugo-casa-em-condominio-fechado-com-portaria-24-hs-1522967346",
    "img": "https://img.olx.com.br/thumbs700x500/31/317693794096566.webp",
-   "obs": "Este é o único anúncio em condomínio fechado bem abaixo do teto, com portaria 24 horas. O anúncio não informa a taxa de condomínio, então pergunte esse valor antes de visitar."
+   "obs": "Único anúncio em condomínio fechado bem abaixo do teto. O anúncio não informa a taxa de condomínio, então pergunte antes de visitar.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1513824715",
@@ -375,7 +414,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/quadra-16-setor-leste-casa-de-fundos-1513824715",
    "img": "https://img.olx.com.br/thumbs700x500/17/175633773155861.webp",
-   "obs": "A casa fica nos fundos do lote e o anúncio não informa vaga de garagem. Para os seus pais isso pode significar dividir a entrada com os moradores da frente."
+   "obs": "Casa de fundos, sem vaga informada.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1511619009",
@@ -391,7 +431,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/casa-em-setor-leste-gama-brasilia-1511619009",
    "img": "https://img.olx.com.br/thumbs700x500/60/604632538673920.webp",
-   "obs": "O valor cheio é R$ 920 e o anunciante está pedindo R$ 820. São apenas 50 m², então o espaço é bem limitado."
+   "obs": "Anunciada por R$ 920 e reduzida para R$ 820.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1528041104",
@@ -407,24 +448,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/casa-3-comodos-amplos-1528041104",
    "img": "https://img.olx.com.br/thumbs700x500/87/879636790928575.webp",
-   "obs": "Esta continua sendo a opção mais barata da Ponte Alta, com 70 m² e cinco vagas. O negócio é direto com o proprietário."
-  },
-  {
-   "id": "olx-1533089001",
-   "t": "Casa de 1 quarto na Quadra 9, Conjunto J",
-   "b": "Setor Sul",
-   "al": 800,
-   "cond": 0,
-   "iptu": 0,
-   "area": 78,
-   "q": 1,
-   "ban": 1,
-   "vg": 1,
-   "f": "OLX",
-   "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/aluguel-casa-78m-no-setor-sul-do-gama-1533089001",
-   "img": "https://img.olx.com.br/thumbs700x500/52/529696805897771.webp",
-   "obs": "O aluguel é R$ 850 e cai para R$ 800 com pagamento antecipado, sem condomínio e sem IPTU. A casa tem um quarto grande, pintura nova e relógios de água e luz individuais, mas o anunciante exige comprovante de renda acima de três salários mínimos e nome limpo.",
-   "novo": true
+   "obs": "Opção mais barata na Ponte Alta. Direto com o proprietário.",
+   "desde": "2026-09-14"
   },
   {
    "id": "iw-3046072621",
@@ -440,11 +465,12 @@
    "f": "Imovelweb",
    "u": "https://www.imovelweb.com.br/propriedades/alugo-casa-de-03-quartos.-3046072621.html",
    "img": "https://imgbr.imovelwebcdn.com/avisos/2/30/46/07/26/21/360x266/7228359311.jpg",
-   "obs": "São 100 m² construídos em um lote de 300 m². O título fala em 3 quartos e o cadastro do portal registra 2, então confirme esse número com a anunciante."
+   "obs": "São 100 m² construídos em lote de 300 m². Anunciada como 3 quartos no título e 2 no cadastro do portal, então confirme com a anunciante.",
+   "desde": "2026-09-14"
   },
   {
    "id": "olx-1524902295",
-   "t": "Casa de 2 quartos em condomínio",
+   "t": "Casa de 2 quartos na Ponte Alta",
    "b": "Ponte Alta",
    "al": 2800,
    "cond": 250,
@@ -456,7 +482,8 @@
    "f": "OLX",
    "u": "https://df.olx.com.br/distrito-federal-e-regiao/imoveis/alugo-casa-de-2-quartos-na-ponte-alta-1524902295",
    "img": "https://img.olx.com.br/thumbs700x500/85/851628674648685.webp",
-   "obs": "O aluguel de R$ 2.800 mais o condomínio de R$ 250 levam o total a R$ 3.050. Isso passa R$ 50 do teto, mas entrou na lista porque a oferta de casa em condomínio na Ponte Alta é escassa."
+   "obs": "Aluguel de R$ 2.800 mais condomínio de R$ 250, o que leva o total a R$ 3.050. Fica R$ 50 acima do teto.",
+   "desde": "2026-09-14"
   },
   {
    "id": "iw-3043854139",
@@ -472,7 +499,8 @@
    "f": "Imovelweb",
    "u": "https://www.imovelweb.com.br/propriedades/casa-em-ponte-alta-gama-brasilia-df-de-450m-2-3043854139.html",
    "img": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/85/41/39/360x266/7149548070.jpg",
-   "obs": "A casa fica em condomínio fechado na Via Vicinal 341, com 450 m² de lote e 4 vagas. O total de R$ 3.490 passa do teto, e ela entrou porque é a opção mais barata em condomínio na Ponte Alta."
+   "obs": "Casa em condomínio fechado na Via Vicinal 341. O total de R$ 3.490 passa do teto, mas é a opção mais barata em condomínio na Ponte Alta.",
+   "desde": "2026-09-14"
   }
  ]
 }
