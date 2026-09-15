@@ -142,10 +142,34 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
 .carimbo.velho{color:var(--warn)}
 .tag-novo{position:absolute;left:10px;bottom:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;background:var(--accent);color:var(--surface);padding:4px 9px;border-radius:6px;font-weight:600}
 
+.btn-novas{
+  display:inline-flex;align-items:center;gap:7px;font:inherit;font-size:13px;font-weight:600;
+  border:1px solid var(--accent);background:transparent;color:var(--accent);
+  padding:6px 14px;border-radius:999px;cursor:pointer;transition:.14s;white-space:nowrap;
+}
+.btn-novas svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.btn-novas:hover{background:var(--accent-soft)}
+.btn-novas[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.btn-novas[aria-pressed="true"]:hover{opacity:.9}
+.btn-novas:focus-visible,.btn-vistos:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn-vistos{
+  font:inherit;font-size:12px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-3);
+  padding:5px 11px;border-radius:999px;cursor:pointer;transition:.14s;white-space:nowrap;
+}
+.btn-vistos:hover{border-color:var(--ink-2);color:var(--ink-2)}
+.card.visto{opacity:.6}
+.card.visto:hover{opacity:1}
+.card.visto .shot::after{
+  content:"visto";position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;
+  padding:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+  color:#fff;background:linear-gradient(to top,rgba(10,14,10,.55),transparent 42%);
+}
+
 @media (max-width:560px){
   .top-inner{padding-block:22px 18px}
   .stats{gap:18px}
   .grid{grid-template-columns:1fr}
+  .btn-novas{order:-1}
   .count{margin-left:0;width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -172,6 +196,11 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
 
 <div class="filters">
   <div class="wrap filters-inner">
+    <button class="btn-novas" id="btn-novas" aria-pressed="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+      Novidades primeiro
+    </button>
+    <button class="btn-vistos" id="btn-vistos" hidden>Desmarcar vistas</button>
     <div class="fgroup" id="f-regiao">
       <span class="flabel">Região</span>
     </div>
@@ -185,6 +214,7 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
     <div class="fgroup">
       <span class="flabel">Ordenar</span>
       <select id="ordem" aria-label="Ordenar resultados">
+        <option value="recentes">Adicionadas mais recentemente</option>
         <option value="orcamento">Melhor pelo orçamento</option>
         <option value="preco-asc">Menor custo mensal</option>
         <option value="preco-desc">Maior custo mensal</option>
@@ -208,6 +238,7 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
       <li>As casas do Gama em quadra comum quase nunca têm taxa de condomínio, então o custo mensal da maioria dos cards é só o aluguel. Onde o anúncio informou condomínio ou IPTU, o valor aparece ao lado do preço e já está somado no custo mensal.</li>
       <li>Dois anúncios do DF Imóveis trabalham com desconto de pontualidade. O sobrado do Setor Sul tem aluguel bruto de R$ 3.080 e cai para R$ 2.800 pagando em dia. A casa do Setor Norte tem bruto de R$ 2.860 e cai para R$ 2.600.</li>
       <li>A Ponte Alta tem pouquíssima oferta abaixo de R$ 3.000. A maior parte das casas de condomínio de lá está entre R$ 5.000 e R$ 8.500, por isso só três opções da região entraram aqui.</li>
+      <li>O botão "Novidades primeiro" coloca no topo o que a busca encontrou mais recentemente, e cada card mostra há quantos dias aquele anúncio está na lista. Quando você abre um anúncio, o card fica marcado como visto e escurece um pouco, para você saber onde parou na próxima vez. Essa marcação fica salva só no navegador que você estiver usando.</li>
       <li>Anúncio de portal sai do ar sem aviso. Ligue antes de se deslocar, principalmente nos anúncios mais antigos, como o do Setor Sul por R$ 720.</li>
     </ul>
     <p>Fontes consultadas:</p>
@@ -232,7 +263,15 @@ const MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','ag
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
 
 let DADOS = [], TETO = 3000, ATUALIZADO = null;
-let regiaoSel = 'Todas', quartosMin = 0, ordem = 'orcamento';
+let regiaoSel = 'Todas', quartosMin = 0, ordem = 'recentes';
+let vistos = new Set();
+try { vistos = new Set(JSON.parse(localStorage.getItem('casas-vistas') || '[]')); } catch (e) {}
+function salvarVistos() { try { localStorage.setItem('casas-vistas', JSON.stringify([...vistos])); } catch (e) {} }
+const HOJE = new Date(); HOJE.setHours(0,0,0,0);
+function diasDesde(iso) { if (!iso) return 999; const d = new Date(iso + 'T00:00:00'); return Math.round((HOJE - d) / 86400000); }
+let cargaInicial = false;
+function ehNovo(c) { return !cargaInicial && diasDesde(c.desde) <= 1; }
+function rotuloEntrada(n) { return n <= 0 ? 'entrou hoje' : n === 1 ? 'entrou ontem' : 'na lista há ' + n + ' dias'; }
 const custo = c => c.al + c.cond + (c.iptu || 0);
 
 function spec(icon, txt) { return '<span class="spec">' + ICONS[icon] + txt + '</span>'; }
@@ -240,6 +279,8 @@ function spec(icon, txt) { return '<span class="spec">' + ICONS[icon] + txt + '<
 function cardHTML(c) {
   const total = custo(c);
   const acima = total > TETO;
+  const dias = diasDesde(c.desde);
+  const visto = vistos.has(c.u);
   const linhas = [];
   if (c.cond) linhas.push('condomínio ' + brl(c.cond));
   if (c.iptu) linhas.push('IPTU ' + brl(c.iptu));
@@ -249,11 +290,11 @@ function cardHTML(c) {
   if (c.ban) specs += spec('banho', c.ban + (c.ban > 1 ? ' banheiros' : ' banheiro'));
   if (c.vg) specs += spec('vaga', c.vg + (c.vg > 1 ? ' vagas' : ' vaga'));
   if (c.area) specs += spec('area', c.area + ' m²');
-  return '<article class="card">' +
+  return '<article class="card' + (visto ? ' visto' : '') + '" data-u="' + c.u + '">' +
     '<div class="shot">' +
       '<img src="' + c.img + '" referrerpolicy="no-referrer" loading="eager" alt="Foto do anúncio: ' + c.t.replace(/"/g, '') + '">' +
       '<span class="region">' + c.b + '</span>' +
-      (c.novo ? '<span class="tag-novo">novo</span>' : '') +
+      (ehNovo(c) ? '<span class="tag-novo">' + (dias <= 0 ? 'novo hoje' : 'novo ontem') + '</span>' : '') +
       (acima ? '<span class="over">acima do teto</span>' : '') +
     '</div>' +
     '<div class="body">' +
@@ -266,7 +307,7 @@ function cardHTML(c) {
       '<p class="obs">' + c.obs + '</p>' +
     '</div>' +
     '<div class="foot">' +
-      '<span class="src">' + c.f + '</span>' +
+      '<span class="src">' + c.f + ' · ' + rotuloEntrada(dias) + '</span>' +
       '<a class="go" href="' + c.u + '" target="_blank" rel="noopener">Ver anúncio' +
       '<svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>' +
     '</div>' +
@@ -278,6 +319,7 @@ function render() {
     (regiaoSel === 'Todas' || c.b === regiaoSel) &&
     (quartosMin === 0 || (c.q || 0) >= quartosMin));
   const ord = {
+    'recentes': (a, b) => diasDesde(a.desde) - diasDesde(b.desde) || custo(b) - custo(a),
     'orcamento': (a, b) => (custo(a) > TETO) - (custo(b) > TETO) || custo(b) - custo(a),
     'preco-asc': (a, b) => custo(a) - custo(b),
     'preco-desc': (a, b) => custo(b) - custo(a),
@@ -285,7 +327,13 @@ function render() {
     'quartos-desc': (a, b) => (b.q || 0) - (a.q || 0) || custo(a) - custo(b)
   }[ordem];
   lista.sort(ord);
-  document.getElementById('grid').innerHTML = lista.map(cardHTML).join('');
+  const grid = document.getElementById('grid');
+  grid.innerHTML = lista.map(cardHTML).join('');
+  grid.querySelectorAll('.go').forEach(a => a.addEventListener('click', () => {
+    const card = a.closest('.card');
+    vistos.add(card.dataset.u); salvarVistos(); card.classList.add('visto');
+    atualizarBotaoVistos();
+  }));
   document.getElementById('vazio').hidden = lista.length > 0;
   document.getElementById('contador').textContent = lista.length
     ? lista.length + (lista.length === 1 ? ' casa' : ' casas') + ' · de ' +
@@ -317,7 +365,7 @@ function resumo() {
   const vals = dentro.map(custo).sort((a, b) => a - b);
   const med = vals.length % 2 ? vals[(vals.length - 1) / 2]
     : Math.round((vals[vals.length / 2 - 1] + vals[vals.length / 2]) / 2);
-  const novos = DADOS.filter(c => c.novo).length;
+  const novos = DADOS.filter(ehNovo).length;
   document.getElementById('s-total').textContent = DADOS.length;
   document.getElementById('s-dentro').textContent = dentro.length;
   document.getElementById('s-min').textContent = brl(vals[0]);
@@ -329,9 +377,29 @@ function resumo() {
   document.getElementById('carimbo').textContent =
     'Atualizado ' + quando + ', ' + d.getDate() + ' de ' + MESES[d.getMonth()] + ', às ' +
     String(d.getHours()).padStart(2, '0') + 'h' + String(d.getMinutes()).padStart(2, '0') + '.' +
-    (novos ? ' ' + novos + (novos === 1 ? ' anúncio novo desde ontem.' : ' anúncios novos desde ontem.') : '');
+    (novos ? ' ' + novos + (novos === 1 ? ' casa nova nas últimas 24 horas.' : ' casas novas nas últimas 24 horas.') : '');
   document.getElementById('carimbo').classList.toggle('velho', dias >= 3);
 }
+
+const btnNovas = document.getElementById('btn-novas');
+const selOrdem = document.getElementById('ordem');
+function sincronizarBotaoNovas() {
+  btnNovas.setAttribute('aria-pressed', ordem === 'recentes' ? 'true' : 'false');
+}
+btnNovas.addEventListener('click', () => {
+  ordem = 'recentes'; selOrdem.value = 'recentes'; sincronizarBotaoNovas(); render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+const btnVistos = document.getElementById('btn-vistos');
+function atualizarBotaoVistos() {
+  const n = DADOS.filter(c => vistos.has(c.u)).length;
+  btnVistos.hidden = n === 0;
+  btnVistos.textContent = 'Desmarcar ' + n + (n === 1 ? ' vista' : ' vistas');
+}
+btnVistos.addEventListener('click', () => {
+  vistos.clear(); salvarVistos(); atualizarBotaoVistos(); render();
+});
 
 document.querySelectorAll('.chip[data-q]').forEach(b => {
   b.addEventListener('click', () => {
@@ -340,13 +408,14 @@ document.querySelectorAll('.chip[data-q]').forEach(b => {
     render();
   });
 });
-document.getElementById('ordem').addEventListener('change', e => { ordem = e.target.value; render(); });
+selOrdem.addEventListener('change', e => { ordem = e.target.value; sincronizarBotaoNovas(); render(); });
 
 fetch('dados.json?t=' + Date.now())
   .then(r => r.json())
   .then(j => {
     DADOS = j.imoveis; TETO = j.teto || 3000; ATUALIZADO = j.atualizado;
-    montarFiltroRegiao(); resumo(); render();
+    cargaInicial = new Set(DADOS.map(c => c.desde)).size === 1;
+    montarFiltroRegiao(); resumo(); sincronizarBotaoNovas(); atualizarBotaoVistos(); render();
   })
   .catch(() => {
     document.getElementById('vazio').hidden = false;
