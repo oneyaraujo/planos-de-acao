@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Júnior | Aprovação de Crédito e Milhas</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Hero Video */
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Júnior — Aprovação de Crédito e Milhas</h1>
+  <p class="hero-sub">Especialista em aprovação de crédito, cartões black e benefícios. O projeto completo para sair do morno, provocar de verdade e chegar aos 100 mil seguidores até o final do ano.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/DDjispyCfNk" title="Análise Viral Pro — Júnior" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>21 de Setembro, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Cartões, Crédito e Milhas</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">3/dia</div><div class="stat-label">Meta de Posts</div></div>
+  <div class="stat-card"><div class="stat-number">40s</div><div class="stat-label">Duração Ideal</div></div>
+  <div class="stat-card"><div class="stat-number">100K</div><div class="stat-label">Meta do Ano</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de gravar qualquer vídeo novo</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Refazer a foto de perfil com o rosto mais próximo</h3><p>Na foto atual você aparece longe demais e o seu rosto se perde na miniatura. Refaça a foto mantendo a ideia dos cartões na mão, porém com o enquadramento bem mais fechado. O seu rosto precisa ocupar a maior parte do círculo, e os cartões entram como apoio visual. Em uma foto de perfil de 40 pixels, quem está longe vira uma mancha.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Tirar a vírgula de "especialista em aprovação de crédito"</h3><p>A vírgula que está nessa linha da bio não cumpre nenhuma função e atrapalha a leitura. Remova ela e deixe a frase correndo limpa. A bio é o primeiro teste de profissionalismo que o visitante faz com você, e detalhe errado em bio de especialista em crédito pesa mais do que em qualquer outro nicho.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Trocar "os 12 códigos" por uma promessa clara</h3><p>A expressão "os 12 códigos" é vaga demais e abre dúvida em vez de curiosidade. Quem lê não sabe se são códigos virais, códigos de milhas ou códigos de cartão. Troque por <strong>"Como aprovar o seu crédito"</strong>, que já entrega a promessa inteira em quatro palavras e soa como algo fácil de fazer. Sempre que puder, escolha a versão que parece mais simples para quem está do outro lado.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Revisar o texto do link da bio com a mesma lógica</h3><p>O link atual repete "os 12 códigos da aprovação de crédito", que carrega o mesmo problema da linha anterior. Reescreva a página de destino com a promessa de resultado na frente, e deixe o número de passos como detalhe interno. A pessoa clica pela promessa e só depois se interessa pelo método.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Subir a frequência para pelo menos um post por dia</h3><p>O seu último vídeo tinha dois dias quando a análise foi feita, e esse intervalo derruba o ritmo de entrega. O mínimo aceitável é um vídeo por dia, e o ideal para quem quer 100 mil seguidores em poucos meses é chegar a três por dia. Nos dias em que você postou mais de uma vez, a conta respondeu melhor.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Separar (ou amarrar) o conteúdo da Tatui Games</h3><p>Os vídeos de abertura de caixa de Pokémon e de divulgação da loja estão soltos dentro de um perfil que fala de cartão e crédito. Quem começou a te seguir por benefícios pode achar que você mudou de nicho e parar de te seguir. Toda vez que a loja aparecer, amarre no assunto principal: <strong>"olha o que chegou aqui para você passar no cartão black e ainda ganhar ponto"</strong>.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS — VÍDEOS ANALISADOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que travou cada vídeo e como o roteiro ficaria corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>"Esse é o melhor banco para financiar imóvel"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O formato de comparação é excelente, só que o vídeo não engatou porque o gancho era morno. Você começou pelo banco de financiamento de imóvel, e quase todo mundo já sabe que a resposta é a Caixa. Abrir com uma informação que o público já tem significa abrir sem dizer nenhuma novidade. A parte mais forte, o cartão roxinho que deixa a pessoa sem limite e sem benefício, ficou lá no final, onde pouca gente chegou.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Pegue o trecho do roxinho e <strong>cole no começo do vídeo</strong>. Abra com a provocação: <strong>"esse aqui é o pior cartão do Brasil e quase todo mundo tem ele na carteira"</strong>. O Nubank está na mão de praticamente todo brasileiro, então a provocação atinge quase todo mundo que passa o dedo. Depois disso você entra na sequência dos melhores. Faça essa edição hoje mesmo e programe a publicação para a semana que vem, às 8h ou 9h da manhã, porque se deixar para depois você esquece.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>Abertura de caixas Pokémon — "Que será que chegou?"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O vídeo é longo e começa igual ao jeito que termina, então ele vira muito fácil de pular. O gancho textual "abrindo um tesouro em 2026" não diz que tesouro é esse e não combina com nada que aparece na tela. Durante boa parte do vídeo a sequência é "nada, nada, próximo", sem nenhum motivo para a pessoa continuar assistindo.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Ache a cena em que você <strong>vibra de verdade</strong> e jogue esse pedacinho para o começo. A pessoa vê a sua reação, quer entender de onde ela veio, e aí volta a assistir a abertura inteira para encontrar aquele momento. O gancho textual precisa corroborar o visual: <strong>"abrindo a caixa atrás da carta rara do Pikachu"</strong> funciona porque casa com o que está na tela. Vale lembrar que quem assiste nem sempre é colecionador, muita gente entra só pela reação.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>"Meu cartão black mudou minha vida" — aeroporto de Brasília</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O gancho é fraquíssimo e, pior do que isso, ele não casa com o conteúdo. Você abre dizendo que o cartão mudou a sua vida, e logo depois o vídeo fala de um cliente da assessoria travado esperando aprovação. São dois assuntos diferentes colados um no outro, e quem assiste fica sem entender o que o cartão tem a ver com o diagnóstico do cliente.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Comece com uma brincadeira provocativa. Você entra na sala VIP com o Nubank na mão: <strong>"gente, olha só, entrei aqui com esse cartão"</strong>, faz a cara de decepção, e então corrige: <strong>"brincadeira, peguei o cartão errado, é esse daqui e eu consegui ele muito fácil"</strong>. Depois você mostra o benefício de verdade e fecha convidando para o direct: "me manda um direct que eu faço uma análise do seu caso". A brincadeira entrega o mesmo ponto e ainda prende quem tem o cartão roxinho.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 4</span><h3>"O banco já decidiu seu limite antes de você pedir"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>Esse vídeo é diferente dos de comparação porque ele não entrega utilidade, ele entrega conselho. Você diz que a maioria faz tudo errado, que movimenta pouco, que não constrói relacionamento e que culpa o Serasa, só que em momento nenhum você mostra o que fazer. A sensação que fica no final é a de ter ouvido uma opinião, não a de ter aprendido um caminho.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Abra direto na controvérsia: <strong>"o Serasa não é o culpado por você não ter limite"</strong>, com os cartões bons na mão. Em seguida entregue um protocolo numerado: <strong>passo 1, pare de pagar tudo no débito e no Pix; passo 2, passe tudo o que puder no crédito; passo 3, mantenha isso por três meses; passo 4, procure o seu gerente ou me chama que eu resolvo para você</strong>. Feche contando que é assim que você faz com os seus clientes: aumenta a movimentação e o banco mesmo oferece um cartão melhor.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 5</span><h3>"Bom dia, a loja já está aberta" — Tatui Games</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O vídeo é um aviso de funcionamento da loja dentro de um perfil que fala de cartão e crédito. Quem te segue por causa de benefício não se interessa por games, e quem gosta de games não veio parar aqui por esse motivo. Além disso, o perfil corre o risco de ser lido pelo algoritmo e pelo público como uma conta que mudou de assunto.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Inverta a ordem: <strong>crie conteúdo primeiro e mostre a loja no final</strong>. Pegue uma carta e abra com "você sabe quanto vale essa carta aqui?". Conte a história da carta, prenda o interesse, e só no fim você pega o celular, vai andando e mostra a fachada: "é aqui na Tatui Games". Sempre que der, amarre no cartão: comprar colecionável no crédito é passagem para ponto e milha.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que parar e do que começar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Abrir vídeo com informação que todo mundo já sabe</div>
+      <div class="compare-item"><span>✕</span> Deixar a parte mais provocativa para o final</div>
+      <div class="compare-item"><span>✕</span> Gancho que não casa com o conteúdo do vídeo</div>
+      <div class="compare-item"><span>✕</span> Conteúdo de conselho sem passo a passo</div>
+      <div class="compare-item"><span>✕</span> Vídeos de 7 segundos apostando em retenção alta</div>
+      <div class="compare-item"><span>✕</span> Mostrar todas as comparações de uma vez na tela</div>
+      <div class="compare-item"><span>✕</span> Postar vídeo da loja de games sem amarrar no nicho</div>
+      <div class="compare-item"><span>✕</span> Ficar dois dias ou mais sem publicar nada</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Abrir com gancho negativo: "esse é o pior cartão"</div>
+      <div class="compare-item"><span>✓</span> Colocar a cena mais forte nos 3 primeiros segundos</div>
+      <div class="compare-item"><span>✓</span> Fazer o gancho prometer exatamente o que o vídeo entrega</div>
+      <div class="compare-item"><span>✓</span> Transformar todo conselho em protocolo numerado</div>
+      <div class="compare-item"><span>✓</span> Trabalhar na faixa de 40 segundos para ganhar entrega</div>
+      <div class="compare-item"><span>✓</span> Revelar um item por vez, criando retenção</div>
+      <div class="compare-item"><span>✓</span> Ligar todo conteúdo da loja a cartão, ponto e milha</div>
+      <div class="compare-item"><span>✓</span> Publicar de um a três vídeos por dia, sem falha</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>As regras que valem para cada vídeo daqui em diante</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🔥</span><h3>Gancho Negativo</h3><p>O gancho provocativo chama muito mais atenção do que o gancho informativo. Um gancho bom salva um vídeo ruim, e um gancho ruim mata um vídeo bom.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Utilidade, Não Conselho</h3><p>Conselho gera concordância e passa direto. Protocolo gera salvamento. Sempre termine dizendo o que a pessoa faz amanhã de manhã.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⏱️</span><h3>Mire nos 40 Segundos</h3><p>Vídeo de 7 segundos com retenção de 100% não entrega igual a um de 40 segundos. Para o Instagram, são coisas completamente diferentes.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🃏</span><h3>Revele Um Por Vez</h3><p>Nas comparações, nunca mostre todos os cartões de uma vez. Cada item aparecendo sozinho segura a pessoa até o último.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🧲</span><h3>Nubank Como Isca</h3><p>Quase todo brasileiro tem o cartão roxinho. Toda provocação que envolve ele atinge um público enorme de uma vez só.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔄</span><h3>De Um a Três Por Dia</h3><p>Um post por dia é o mínimo. Três por dia é o ritmo de quem quer 100 mil seguidores até dezembro. Programe com antecedência.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO PRONTOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Três templates para preencher e gravar ainda esta semana</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Comparação em Três Colunas</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Foge desse cartão aqui se você quer limite alto."<br><em>Você aparece embaixo, e as três colunas ficam na parte de cima: FUJA, FÁCIL DE APROVAR e MELHORES. Comece sempre pela coluna FUJA.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Sequência</div><div class="script-step-text">Um cartão aparece por vez na coluna certa, enquanto você explica em uma frase o motivo.<br><em>Nunca jogue todos de uma vez. A revelação item por item é o que segura a pessoa até o final.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Virada</div><div class="script-step-text">"Agora o que quase ninguém sabe: esse aqui é fácil de aprovar e entrega quase o mesmo benefício."<br><em>A coluna do meio é onde mora o conteúdo que as pessoas salvam.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Comenta aqui qual cartão você tem hoje que eu te digo se vale trocar."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Protocolo Passo a Passo</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"O Serasa não é o culpado por você não ter limite."<br><em>Grave com os cartões bons na mão. A frase precisa soar controversa logo de cara.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Culpado</div><div class="script-step-text">"O verdadeiro problema é o seu relacionamento com o banco. Você paga tudo no Pix e no débito, e o banco não vê movimentação nenhuma no seu nome."</div></div>
+    <div class="script-step"><div class="script-step-label">Protocolo</div><div class="script-step-text">"Passo 1, pare de pagar no débito. Passo 2, passe tudo o que puder no crédito. Passo 3, mantenha por três meses. Passo 4, procure o seu gerente."<br><em>Fale os passos numerados, com número na tela.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Prova</div><div class="script-step-text">"É exatamente isso que eu faço com os meus clientes. A gente aumenta a movimentação e o próprio banco oferece um cartão melhor."</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se você quer que eu faça isso por você, manda um direct com a palavra CRÉDITO."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Brincadeira com o Cartão Errado</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Você conversa com o Nubank, galera? Olha só."<br><em>Você na entrada da sala VIP, com o cartão roxinho na mão.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Virada</div><div class="script-step-text">"Brincadeira, gente, peguei o cartão errado. É esse daqui, na verdade."<br><em>Troca de cartão na frente da câmera. É o momento que prende.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Benefício</div><div class="script-step-text">"Com ele eu entro em sala VIP em qualquer aeroporto, e eu consegui esse cartão muito fácil."<br><em>Mostre o ambiente enquanto fala.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Se você quer um desses, me manda um direct que eu faço a análise do seu perfil."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW DE PRODUÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da ideia ao post programado — o caminho completo</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Escolhe o alvo</h4><p>Decide qual cartão ou banco vai levar a provocação do dia</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Escreve o gancho</h4><p>Monta a primeira frase no modo negativo, antes de gravar</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Grava em 40s</h4><p>Celular no tripé, lapela ligada, cartões à mão para mostrar</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Edita a revelação</h4><p>Coloca os itens aparecendo um por vez, com legenda na tela</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Programa o post</h4><p>Agenda para 8h ou 9h da manhã e já prepara o próximo</p></div>
+  </div>
+
+  <!-- 7. FÓRMULAS DE GANCHO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie, adapte e teste — todas construídas para provocar</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Gancho negativo:</em> "Esse aqui é o pior cartão do Brasil e quase todo mundo tem ele na carteira." (mostre o roxinho antes de falar qualquer outra coisa)</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Culpado errado:</em> "O Serasa não é o culpado por você não ter limite. O culpado é outro e você vai ficar bravo quando eu falar."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Fuja disso:</em> "Foge desse cartão aqui se você quer limite alto. Eu explico em 30 segundos por quê."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Segredo do banco:</em> "O banco já decidiu o seu limite antes de você pedir, e eu vou te mostrar como virar essa decisão."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Brincadeira visual:</em> "Você conversa com o Nubank, galera? Olha só." (entrando na sala VIP com o cartão errado na mão)</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Facilidade:</em> "Esse cartão black aqui é muito mais fácil de aprovar do que você imagina, e ninguém te contou isso."</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Erro comum:</em> "Se você paga tudo no Pix, o banco te enxerga como cliente sem valor. É por isso que o seu limite não sobe."</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Temas prontos para encher as próximas duas semanas</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Fuja / Fácil de Aprovar / Melhores</h3><p>Três colunas na tela, um cartão aparecendo por vez. Comece pela coluna FUJA para provocar logo no primeiro segundo.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>O protocolo dos três meses</h3><p>Passo a passo para melhorar o relacionamento com o banco e destravar limite. Formato numerado, com número grande na tela.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Esse é o pior cartão para..."</h3><p>Um episódio por finalidade: milhas, sala VIP, financiamento, seguro viagem. Sempre abrindo pelo pior e não pelo melhor.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Diagnóstico de cliente travado</h3><p>Filme você analisando o caso real de um cliente. Mostra o serviço funcionando sem precisar anunciar o serviço.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Peguei o cartão errado</h3><p>A brincadeira da sala VIP, do restaurante, do hotel. O mesmo gancho funciona em vários cenários diferentes.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Os cartões que aprovam com score baixo</h3><p>Um card por cartão, com o requisito real de cada um. Conteúdo de salvar, ótimo para alcance de perfil novo.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Quanto custa a anuidade que você não vê</h3><p>Abra com "você está pagando por um cartão que acha gratuito" e mostre onde a cobrança se esconde.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Milha na prática</h3><p>Mostre uma passagem real emitida com pontos e conte de qual gasto do dia a dia aqueles pontos vieram.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Ligação com o gerente</h3><p>Grave (com autorização) o momento de negociar limite ou isenção. Pouquíssima gente mostra isso acontecendo.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Testei a sala VIP com o cartão mais barato</h3><p>Formato de teste prático. A curiosidade de saber se funciona segura a pessoa até o final.</p></div>
+    <div class="idea-card"><div class="idea-type type-hotel">Loja</div><h3>Carta cara passada no crédito</h3><p>Pegue uma carta valiosa da Tatui Games e mostre quantos pontos aquela compra geraria. Amarra a loja ao nicho principal.</p></div>
+    <div class="idea-card"><div class="idea-type type-hotel">Loja</div><h3>Você sabe quanto vale essa carta?</h3><p>Conteúdo de curiosidade primeiro, fachada da loja só no final. Cria conteúdo, mostra a loja — nessa ordem.</p></div>
+  </div>
+
+  <!-- 9. REFERÊNCIAS E AULAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Aulas e Referências para Estudar</h2><p>O material do Código Viral que resolve exatamente os seus pontos fracos</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🪝</div>
+      <div>
+        <h3>Aula de Gancho Negativo</h3>
+        <div class="ref-niche">Código Viral — aula nova</div>
+        <p>É a aula que resolve o seu maior problema hoje. O gancho negativo provoca em vez de informar, e provocar chama muito mais atenção do que dizer qual banco é melhor para financiar casa própria. Assista antes de gravar o próximo vídeo.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">⚖️</div>
+      <div>
+        <h3>Aula de Comparação</h3>
+        <div class="ref-niche">Código Viral — formatos gamificados</div>
+        <p>O formato de comparação é o que mais combina com o seu nicho, e a aula traz várias variações gamificadas dele. Você já acertou o formato, falta ajustar a ordem de revelação e a força da abertura.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🧠</div>
+      <div>
+        <h3>Aula de Criatividade Sintética</h3>
+        <div class="ref-niche">Código Viral — pesquisa de conteúdo</div>
+        <p>Essa aula ensina a localizar os conteúdos mais virais do nicho de milhas e cartões: quais formatos rodam, quais temas repetem e o que o público está buscando agora. Depois dela você não fica mais sem ideia de conteúdo.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">📊</div>
+      <div>
+        <h3>Teste do Gancho Recolado</h3>
+        <div class="ref-niche">Experimento prático desta semana</div>
+        <p>Pegue o vídeo dos melhores bancos, corte o trecho do roxinho e cole no começo. Programe para a semana que vem, às 8h. Compare as visualizações com a versão original e traga o resultado para a mentoria.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GUIA DE CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">CTA de serviço</div>
+      <blockquote>"Me manda um direct que eu faço a análise do seu perfil de crédito."</blockquote>
+      <div class="cta-note">O seu cliente quer que alguém resolva por ele. Esse é o CTA que gera dinheiro.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">CTA de engajamento</div>
+      <blockquote>"Comenta qual cartão você tem hoje que eu te digo se vale trocar."</blockquote>
+      <div class="cta-note">Use nos vídeos de comparação. Comentário com dúvida real alimenta o próximo conteúdo.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">CTA de retenção</div>
+      <blockquote>"E não esquece de deixar o like, porque o pior ainda vem no final."</blockquote>
+      <div class="cta-note">Coloque no meio do vídeo, nunca no fim. Ele segura quem estava prestes a pular.</div>
+    </div>
+  </div>
+
+  <!-- 11. MONETIZAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Monetização — Serviço no Lugar de Curso</h2><p>O ajuste mais importante do seu projeto de 100 mil</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>O seu cliente não quer aprender, ele quer que alguém resolva</h3>
+      <p>Na sua ficha você escreveu que quer monetizar o conteúdo, e a leitura natural seria montar um curso. Seja realista sobre quem é o seu público: quem busca cartão black e limite alto tem uma certa condição financeira e não está no momento de assistir aula. Esse cliente prefere pagar alguém, mandar os documentos e receber o resultado pronto.</p>
+      <p style="margin-top:10px">O caminho aqui é <strong>consultoria e prestação de serviço</strong>. Você faz o diagnóstico, cuida do relacionamento com o banco e entrega a aprovação. Existe gente que compraria um curso de aprovação de crédito, só que esse público é pequeno demais para sustentar o crescimento que você quer. O encaixe entre a oferta e o perfil do cliente é o que decide se o perfil vira faturamento.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST DE GRAVAÇÃO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Passe por cada item antes de soltar o vídeo</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Confira item por item</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho provoca ou só informa?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A parte mais forte está nos 3 primeiros segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho entrega o que o vídeo realmente mostra?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O vídeo ficou na faixa de 40 segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Os itens aparecem um por vez, e não todos juntos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem um passo a passo aplicável, e não só conselho?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem pedido de like no meio do vídeo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Se falou de Pokémon, amarrou em cartão ou ponto?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O mínimo para manter três vídeos por dia sem travar</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Agendador do Instagram — programar posts para 8h e 9h</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>CapCut — revelação item por item nas comparações</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Microfone de lapela — áudio limpo mesmo em aeroporto</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Tripé de celular — gravar sozinho, sem depender de ninguém</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Sessão de fotos — nova foto de perfil com os cartões</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Código Viral — aulas de gancho negativo, comparação e criatividade sintética</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>A ordem exata para implementar tudo sem se perder</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Arrumar o perfil e fazer a edição do teste</div><div class="timeline-desc">Tire a vírgula da bio, troque "os 12 códigos" por "como aprovar o seu crédito" e refaça a foto com o rosto mais próximo. Depois pegue o vídeo dos melhores bancos, corte o trecho do roxinho, cole no começo e já deixe programado para a semana que vem às 8h. Se não programar agora, você esquece.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Assistir as aulas e travar o ritmo</div><div class="timeline-desc">Assista as aulas de gancho negativo, comparação e criatividade sintética no Código Viral. Comece a publicar pelo menos um vídeo por dia, com gancho escrito antes de gravar. Grave o primeiro vídeo no formato de três colunas (fuja, fácil de aprovar, melhores).</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Subir para dois ou três por dia e testar protocolos</div><div class="timeline-desc">Transforme os conteúdos de conselho em protocolos numerados. Grave a brincadeira do cartão errado em dois cenários diferentes. Traga o conteúdo da Tatui Games sempre amarrado em ponto e milha. Compare o desempenho do vídeo com gancho recolado contra o original.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Estruturar a assessoria e escalar</div><div class="timeline-desc">Monte a oferta de consultoria e prestação de serviço com preço e processo definidos. Coloque o CTA de direct em todo vídeo de protocolo. Analise quais ganchos negativos deram mais alcance e repita o padrão vencedor. Meta: 100 mil seguidores até o final do ano.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Setembro 2026</div>
+
+</body>
+</html>
