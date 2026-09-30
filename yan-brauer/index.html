@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Yan Brauer | Vídeos com IA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 28px;
+    line-height: 1.65;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+
+  /* Hero video */
+  .hero-sub { margin-bottom: 20px; }
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Yan Brauer — Vídeos com IA</h1>
+  <p class="hero-sub">Videomaker e criador de conteúdo com inteligência artificial. Vende prompts, desafio, uma academia de IA e pacotes de produção de vídeo. A produção já é impecável. O próximo passo é transformar essa habilidade em conteúdo útil para chegar a 100K seguidores.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/hx2iZHAmi6E" title="Análise Viral Pro — Yan Brauer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>30 de Setembro, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Inteligência Artificial / Audiovisual</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">Ações Urgentes</div></div>
+  <div class="stat-card"><div class="stat-number">1/dia</div><div class="stat-label">Vídeo Útil por Dia</div></div>
+  <div class="stat-card"><div class="stat-number">100K</div><div class="stat-label">Meta de Seguidores</div></div>
+  <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Foco em Utilidade</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de qualquer outra coisa</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Trocar a primeira frase da bio por um benefício</h3><p>A frase atual fala que você foi um dos escolhidos do Geração de Valor. Quem chega no perfil lê isso e pensa "e daí, o que eu ganho com isso?". A primeira linha precisa dizer por que a pessoa deveria continuar assistindo seus vídeos. Exemplo: <strong>"Te ensino a criar vídeos com IA do jeito mais simples."</strong> A conquista do GV pode virar um post fixado, que já existe.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Deixar o link como a única coisa clicável da bio</h3><p>Hoje a bio tem o @ do Flávio Augusto e o @ da sua esposa. Cada @ é uma saída do seu perfil. A pessoa clica, vai assistir o Flávio e não volta mais. Se não existir uma exigência contratual, remova os dois. Todo o foco da bio deve ir para o seu link.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Adicionar "Inteligência Artificial" no campo nome</h3><p>Coloque um traço depois do seu nome e escreva o tema do perfil: <strong>"Yan Brauer | Inteligência Artificial"</strong>. Isso cria uma dupla confirmação. A pessoa vê o vídeo de IA, abre o perfil e confirma na hora que ali tem mais conteúdo de IA.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">4</div><div class="action-content"><h3>Usar a chamada do link para a sua própria oferta</h3><p>A frase "Faça vídeos com IA clicando no link abaixo" está boa. Ela pode apontar direto para a sua academia, para a pessoa conhecer seus programas ao clicar. A chamada da bio deve vender o seu produto e nada além dele.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Simplificar o nome do curso</h3><p>O nome atual da academia é longo e difícil de falar em vídeo. Um nome difícil trava a fala e a pessoa não consegue lembrar depois. Teste algo curto, como "IA Academy", desde que o nome esteja livre.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">6</div><div class="action-content"><h3>Assistir o Módulo 1 do Código Viral</h3><p>Os seus vídeos ainda não usam os códigos virais. O módulo 1 tem os 12 códigos e se resolve rápido. Dê atenção especial à aula de <strong>criatividade sintética</strong>, que ensina a localizar os vídeos mais virais do seu segmento e descobrir os temas que as pessoas já querem ver.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">7</div><div class="action-content"><h3>Ligar a automação de direct nos tutoriais</h3><p>Ao ensinar uma trend, feche com "comenta PROMPT que eu te mando no direct". A entrega só acontece para quem segue o perfil. É isso que está por trás dos perfis que dizem ter ganhado 10 mil seguidores em uma semana. A estratégia é válida. Use com transparência, sem vender a ideia de que foi mágica.</p></div><div class="action-tag">Esta semana</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Seus Vídeos Analisados</h2><p>O que estava errado e como ficaria o vídeo corrigido</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 1</span><h3>"Nem Lula nem Bolsonaro vão mudar a sua vida"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>O gancho verbal é fraco: "Lula é de esquerda, Bolsonaro é de direita". O cenário feito com IA ficou poluído, com prints em cima de prints. O conteúdo é um conselho que as pessoas já ouviram muitas vezes, então não tem nada de novo. Política ainda divide o público, porque a galera torce por político como torce por time de futebol, e a conversa desfoca do que você quer passar.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Você é especialista em IA, então use isso no gancho visual: <strong>coloque Lula e Bolsonaro na cena</strong>, sentados um de cada lado ou discutindo ao fundo. Outra opção é abrir lendo o comentário mais duro que recebeu, como o que chamou o vídeo de "discursinho raso". Melhor ainda é trocar política por um vídeo útil. Por exemplo: <strong>"Como eu coloquei dois políticos na mesma cena usando IA."</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 2</span><h3>"O planeta Terra foi exterminado pela IA" (cena no deserto)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>A cena é incrível e fecha contrato com qualquer cliente. No Instagram, porém, ela fala só de você e não entrega nada para quem assiste. O público reconhece a estética de filme, mas não se identifica e não aprende nada. A melhor parte do vídeo, quando você bebe água e cospe areia, ficou escondida no meio.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Abra com o momento mais forte: <strong>você bebendo água e cuspindo areia</strong>. Depois transforme em tutorial: "Essa cena levou X minutos pra fazer com IA. Vou te mostrar o passo a passo." Feche com "comenta DESERTO que eu te mando o prompt no direct". Assim o mesmo material vira portfólio, conteúdo útil e ganho de seguidor.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Vídeo 3</span><h3>Vídeos de humor e "me coloquei na cena"</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que estava errado</div>
+          <p>São vídeos gostosos de fazer e de postar, mas o espectador pergunta "o que tem aqui pra mim?". Eles não contam uma história, não informam, não ensinam e não apresentam uma oferta. Um ex-mentorado que fazia só isso ganhou cerca de 20 mil seguidores e travou, porque o conteúdo não tinha conversa com o público.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como deveria ser</div>
+          <p>Todo vídeo precisa de uma intenção. Ele deve <strong>ensinar</strong> (tutorial, prompt, técnica), <strong>gerar identificação</strong> (um assunto que todo mundo está comentando) ou <strong>apresentar uma oferta</strong> dentro de uma cena. Você pode continuar fazendo esses vídeos de vez em quando. A carga de crescimento, porém, deve ficar em cima dos conteúdos úteis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que manter e do que mudar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Bio que fala da sua conquista no lugar do benefício</div>
+      <div class="compare-item"><span>✕</span> @ de outras pessoas na bio (saída do perfil)</div>
+      <div class="compare-item"><span>✕</span> Vídeos de reflexão e conselho como base do perfil</div>
+      <div class="compare-item"><span>✕</span> Política e temas que dividem o público</div>
+      <div class="compare-item"><span>✕</span> Cena bonita que fala só de você</div>
+      <div class="compare-item"><span>✕</span> Começar o vídeo explicando o contexto devagar</div>
+      <div class="compare-item"><span>✕</span> Deixar uma trend passar sem fazer o tutorial</div>
+      <div class="compare-item"><span>✕</span> Ser "light" demais no gancho</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Bio com benefício: "Te ensino a criar vídeos com IA"</div>
+      <div class="compare-item"><span>✓</span> Link da bio como único clique possível</div>
+      <div class="compare-item"><span>✓</span> Tutoriais, prompts e técnicas que a pessoa replica na hora</div>
+      <div class="compare-item"><span>✓</span> Entrar nos assuntos que todo mundo já está comentando</div>
+      <div class="compare-item"><span>✓</span> Cena que ensina algo ou apresenta a sua oferta</div>
+      <div class="compare-item"><span>✓</span> Colocar o ápice do vídeo no primeiro segundo</div>
+      <div class="compare-item"><span>✓</span> Ser o primeiro a ensinar cada trend nova</div>
+      <div class="compare-item"><span>✓</span> Gancho forte nos três níveis: visual, verbal e texto</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>Regras de ouro para cada vídeo daqui pra frente</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">🎯</span><h3>Utilidade Acima de Tudo</h3><p>Conteúdo útil informa ou ensina algo novo. A pessoa assiste e já consegue replicar. Acertar um vídeo útil é muito mais fácil que acertar uma reflexão.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>Gancho em 3 Níveis</h3><p>O gancho visual é o que a pessoa vê. O gancho verbal é a primeira frase que você fala. O gancho de texto é o título na tela. Os três precisam parar o dedo.</p></div>
+    <div class="rule-card"><span class="rule-emoji">⚡</span><h3>Velocidade nas Trends</h3><p>Saiu uma trend que todo mundo está fazendo? Ensine primeiro. Você pode fazer a trend e depois usar o próprio vídeo para ensinar. Isso rende dois conteúdos.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔥</span><h3>Ápice no Começo</h3><p>Pegue o momento mais forte do vídeo e coloque no primeiro segundo. A pessoa vê o que acontece e fica para entender como chegou nisso.</p></div>
+    <div class="rule-card"><span class="rule-emoji">💬</span><h3>Entre na Conversa</h3><p>Use os assuntos que já estão na cabeça das pessoas. A IA permite colocar qualquer situação em cena. Você se insere no assunto e costura a sua oferta dentro dele.</p></div>
+    <div class="rule-card"><span class="rule-emoji">📱</span><h3>Textura de Celular</h3><p>Vídeo com cara de celular conversa mais no Instagram que vídeo com cara de cinema. A qualidade técnica importa menos que a narrativa que você conta.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Templates "preencha os espaços" baseados na análise</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — Tutorial de Trend com Prompt no Direct</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">Abra com o resultado final da trend rodando na tela. "Todo mundo tá postando esse vídeo e ninguém ensina como faz. Eu vou te mostrar."<br><em>O resultado pronto é o gancho visual. Não comece explicando.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Passo 1</div><div class="script-step-text">"Primeiro você abre o [ferramenta] e sobe [foto / frame]."<br><em>Grave a tela. Mostre exatamente onde clicar.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Passo 2</div><div class="script-step-text">"Depois você cola esse prompt aqui. É ele que faz [o efeito principal]."<br><em>Mostre o prompt de relance, sem deixar legível por completo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Resultado</div><div class="script-step-text">"Olha como ficou." Mostre o antes e depois lado a lado.</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Comenta PROMPT que eu te mando ele completo no direct." <em>A automação só entrega para quem segue o perfil.</em></div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Cena Viral + Oferta (anúncio orgânico)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">Use o frame de um vídeo que está viralizando e coloque você na cena com IA (Higgsfield, por exemplo). Você "se levanta" e fala: "Caramba, essa foi por pouco."<br><em>A pessoa reconhece o vídeo viral e para para ver.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Virada</div><div class="script-step-text">"A primeira parte foi feita com IA. Eu consigo juntar um vídeo real com inteligência artificial desse jeito."</div></div>
+    <div class="script-step"><div class="script-step-label">Oferta</div><div class="script-step-text">"Na minha academia de IA você aprende a fazer isso do zero. O tutorial desse vídeo já está lá dentro."</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"O link tá na bio. Clica agora e assiste."</div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — Entrando no Assunto do Momento</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">Mostre logo de cara o assunto que todo mundo está comentando, recriado com IA.<br><em>Exemplo usado pelo Oney: a disputa entre os dez players da Black e o outro grupo do mercado, feita no Sora.</em></div></div>
+    <div class="script-step"><div class="script-step-label">História</div><div class="script-step-text">Construa uma cena curta em que o público se reconhece, com uma piada interna que a sua audiência entende.<br><em>Piada interna gera comentário de quem "pegou a referência".</em></div></div>
+    <div class="script-step"><div class="script-step-label">Oferta</div><div class="script-step-text">No clímax da cena, a sua oferta aparece como a solução para o conflito.</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Quer aprender a fazer cenas assim? Link na bio."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da trend ao post publicado — passo a passo</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Caçar a trend</h4><p>Abra o Reels e os virais do nicho. Ache o vídeo que todo mundo está fazendo</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Recriar com IA</h4><p>Faça a sua versão da trend e salve o passo a passo e o prompt</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Gravar o tutorial</h4><p>Grave a tela + você no celular. Ápice do vídeo no primeiro segundo</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Ligar a automação</h4><p>Palavra-chave no comentário → prompt no direct para quem segue</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Publicar e repetir</h4><p>Poste a trend e o tutorial. Uma trend rende dois vídeos</p></div>
+  </div>
+
+  <!-- 7. GANCHOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie e adapte — projetados para prender nos primeiros 3 segundos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Trend:</em> "Esse vídeo tá em todo lugar e ninguém te ensina a fazer. Eu te mostro em 40 segundos."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Ápice primeiro:</em> Abra com você cuspindo areia no deserto. "Essa cena custou zero reais. Olha como eu fiz."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Alerta útil:</em> "Em pouco tempo vai ficar impossível saber o que é real. Aprende agora a identificar um vídeo feito com IA."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Mentira do mercado:</em> "Ninguém ganhou 10 mil seguidores só conectando o Instagram numa IA. Vou te mostrar o que realmente acontece."</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Comentário como gancho:</em> Leia na tela o comentário mais duro que recebeu. "Me chamaram de raso. Então olha isso aqui."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Erro comum:</em> "Você tá usando o prompt errado e é por isso que o seu vídeo de IA fica com cara de falso."</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Assunto do momento:</em> Recrie com IA a notícia que todo mundo está comentando hoje e abra com essa cena, sem explicação.</div></div>
+  </div>
+
+  <!-- 8. BANCO DE IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Formatos e temas prontos para gravar já na próxima semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Tutorial da Trend" — um por trend nova</h3><p>Toda trend que viralizar vira um tutorial com prompt no direct. O meme dos meninos dançando já tinha gente pedindo o tutorial nos comentários.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Como eu fiz a cena do deserto</h3><p>Reaproveite o vídeo do "planeta exterminado". Mostre o bastidor de cada etapa e entregue o prompt no direct.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Como identificar um vídeo feito com IA</h3><p>Formato do vídeo do Paulo IA, que passou de 1,4 milhão de compartilhamentos. Conteúdo que protege as pessoas é muito compartilhado.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Você dentro de um vídeo viral</h3><p>Pegue o frame de um vídeo que está bombando, coloque você na cena e faça a virada para a sua academia.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Cena com IA expondo as bets</h3><p>Bet é um assunto que todo mundo comenta e ainda não aparece no seu perfil. Crie uma cena ou brincadeira mostrando quem realmente ganha com a aposta.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>5 prompts que eu mais uso</h3><p>Cada slide mostra um resultado e o nome do prompt. O prompt completo vai no direct para quem comentar.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>A verdade sobre "ganhei 10 mil seguidores com IA"</h3><p>Explique a automação de direct com transparência. Isso posiciona você como alguém honesto no meio de tanta promessa.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Quanto custa um vídeo com IA</h3><p>Mostre um projeto de cliente, quanto tempo levou e qual ferramenta usou. Atrai quem quer contratar seus pacotes de produção.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Ferramenta nova testada em 40 segundos</h3><p>Saiu ferramenta ou atualização nova? Teste e mostre o resultado antes de todo mundo. Velocidade é o seu diferencial.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Antes e depois com IA</h3><p>Pegue uma foto comum de um seguidor e transforme numa cena de cinema. Peça fotos nos comentários para gerar engajamento.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Recriei a notícia do dia com IA"</h3><p>Todo dia, o assunto mais comentado recriado numa cena curta. Você entra na conversa sem precisar tomar partido.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>Erros que deixam o vídeo de IA com cara de falso</h3><p>Formato certo vs errado, com imagem de cada erro e da correção. Conteúdo muito salvo.</p></div>
+  </div>
+
+  <!-- 9. REFERÊNCIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Inspire-se nesses criadores que usam a mesma estratégia</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">🤖</div>
+      <div>
+        <h3>Paulo IA</h3>
+        <div class="ref-niche">Inteligência artificial / Vídeos com IA</div>
+        <p>O vídeo dele que foi parar no Fantástico mostrava que em pouco tempo vai ficar quase impossível saber o que é real. O vídeo foi muito salvo e passou de 1,4 milhão de compartilhamentos porque é útil. Cada compartilhamento em grupo de WhatsApp leva gente nova para o perfil.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🎬</div>
+      <div>
+        <h3>Oney Araújo</h3>
+        <div class="ref-niche">Viralização / Cenas com IA + oferta</div>
+        <p>Na Black, recriou com IA a disputa que todo o mercado estava comentando e colocou a oferta no clímax da cena, com uma piada interna que o público pegou. Também usa uma cena de filme conhecida para contar a história do Código Viral e reposta de tempos em tempos para os seguidores novos.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>O que falar no final de cada tipo de vídeo</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Tutorial / Trend</div>
+      <blockquote>"Comenta PROMPT que eu te mando no direct."</blockquote>
+      <div class="cta-note">A automação entrega só para quem segue. É o CTA que mais gera seguidor.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Cena com oferta</div>
+      <blockquote>"O tutorial desse vídeo tá na minha academia. Link na bio."</blockquote>
+      <div class="cta-note">Use quando o vídeo mostra o que a pessoa aprende a fazer lá dentro.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Conteúdo informativo</div>
+      <blockquote>"Manda esse vídeo pra quem ainda acredita em tudo que vê."</blockquote>
+      <div class="cta-note">Pede compartilhamento, que é o que mais aumenta o alcance.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Como Vender a Academia sem Parecer Anúncio</h2><p>A oferta entra dentro da cena, e não depois dela</p></div>
+  </div>
+
+  <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+    <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">!</div>
+    <div class="action-content">
+      <h3>Regra: entre no assunto primeiro e costure a oferta dentro dele</h3>
+      <p>Um vídeo que só fala do produto tem dificuldade de alcançar gente nova. A saída é usar a sua habilidade de IA para <strong>entrar numa conversa que já existe</strong> (uma trend, uma notícia, uma disputa do mercado) e fazer a sua oferta aparecer como parte da cena. Exemplo: você entra num vídeo viral, a cena vira e você diz "a primeira parte foi IA, e o tutorial disso está na minha academia". O vídeo já chega com cara de viral, e a oferta chega junto. Os pacotes de produção (R$ 6 mil a R$ 30 mil) se vendem pelos bastidores e pelo portfólio.</p>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar</h2><p>Olhe isso ANTES de postar cada vídeo</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Passe por cada item antes de publicar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O vídeo ensina, informa ou apresenta uma oferta?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho visual para o dedo no primeiro segundo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A primeira frase falada é forte?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem título ou legenda de gancho na tela?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O ápice do vídeo está no começo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O tema é algo que as pessoas já estão comentando?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Tem CTA no final (prompt no direct ou link na bio)?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A automação de direct está ligada para essa palavra?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O mínimo para produzir e crescer com IA</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Código Viral — Módulo 1 e aula de criatividade sintética</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Higgsfield — colocar você dentro de frames de vídeos virais</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Automação de direct — entrega do prompt só para quem segue</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Aba Reels e busca do nicho — caçar trends todo dia</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Gravador de tela — mostrar o passo a passo dos tutoriais</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Celular — gravar com textura nativa do Instagram</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Passo a passo para implementar tudo sem se perder</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Arrumar a bio</div><div class="timeline-desc">Trocar a primeira frase pelo benefício. Remover os @ do Flávio Augusto e da esposa. Adicionar "Inteligência Artificial" no campo nome. Apontar a chamada do link para a sua academia. Gravar o primeiro tutorial de trend.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Um vídeo útil por dia</div><div class="timeline-desc">Assistir o Módulo 1 do Código Viral e a aula de criatividade sintética. Configurar a automação de direct. Postar pelo menos um tutorial, prompt ou técnica por dia, sem falha.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Entrar nas conversas</div><div class="timeline-desc">Testar o formato "você dentro do vídeo viral" com virada para a academia. Recriar os assuntos do momento com IA, incluindo o tema das bets. Simplificar o nome do curso.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mês 1+</div><div class="timeline-title">Escalar rumo aos 100K</div><div class="timeline-desc">Ver quais tutoriais geraram mais seguidores pela automação e repetir o formato. Ser o primeiro a ensinar cada trend nova. Usar os bastidores para vender os pacotes de produção.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Setembro 2026</div>
+
+</body>
+</html>
