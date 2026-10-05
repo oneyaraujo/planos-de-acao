@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação — Thelma Baniski | Menopausa com Humor</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --card: #ffffff;
+    --card-border: #e8e8ed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* Instagram palette */
+    --ig-purple: #833AB4;
+    --ig-pink: #E1306C;
+    --ig-orange: #F77737;
+    --ig-yellow: #FCAF45;
+    --ig-blue: #405DE6;
+    --ig-gradient: linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #F77737, #FCAF45);
+    --ig-gradient-soft: linear-gradient(135deg, rgba(64,93,230,0.08), rgba(131,58,180,0.08), rgba(225,48,108,0.08), rgba(247,119,55,0.08));
+
+    /* Semantic colors */
+    --green: #00C853;
+    --green-soft: rgba(0, 200, 83, 0.08);
+    --red: #E1306C;
+    --red-soft: rgba(225, 48, 108, 0.07);
+    --yellow: #F77737;
+    --yellow-soft: rgba(247, 119, 55, 0.07);
+    --blue: #405DE6;
+    --blue-soft: rgba(64, 93, 230, 0.07);
+    --purple: #833AB4;
+    --purple-soft: rgba(131, 58, 180, 0.07);
+    --pink: #E1306C;
+    --pink-soft: rgba(225, 48, 108, 0.07);
+    --cyan: #00B4D8;
+    --cyan-soft: rgba(0, 180, 216, 0.07);
+    --orange: #F77737;
+    --orange-soft: rgba(247, 119, 55, 0.07);
+
+    --text: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #8e8e9a;
+    --text-dim: #b0b0b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 56px 40px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--ig-gradient);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ig-gradient);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 620px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-video { max-width: 680px; margin: 0 auto 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 3px solid transparent; background-image: linear-gradient(#fff, #fff), var(--ig-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
+  .hero-video iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg { color: var(--ig-purple); opacity: 0.6; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: -28px auto 0;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ig-gradient);
+  }
+
+  .stat-number { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .stat-card:nth-child(1) .stat-number { color: var(--ig-pink); }
+  .stat-card:nth-child(2) .stat-number { color: var(--ig-purple); }
+  .stat-card:nth-child(3) .stat-number { color: var(--ig-orange); }
+  .stat-card:nth-child(4) .stat-number { color: var(--ig-blue); }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Section Headers */
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; margin-top: 48px; }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .section-header p { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Action Cards */
+  .priority-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 18px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .action-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+
+  .action-number {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .action-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; color: var(--text); }
+  .action-content p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+  .action-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+
+  .urgency-now .action-number { background: var(--red-soft); color: var(--red); }
+  .urgency-now .action-tag { background: var(--red-soft); color: var(--red); }
+  .urgency-week .action-number { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-week .action-tag { background: var(--yellow-soft); color: var(--yellow); }
+  .urgency-soon .action-number { background: var(--blue-soft); color: var(--blue); }
+  .urgency-soon .action-tag { background: var(--blue-soft); color: var(--blue); }
+
+  /* Compare Grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .compare-col {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .compare-col h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-col.bad h3 { color: var(--red); }
+  .compare-col.good h3 { color: var(--green); }
+
+  .compare-item { display: flex; align-items: start; gap: 10px; padding: 7px 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; }
+  .compare-item span { flex-shrink: 0; font-size: 13px; }
+
+  /* Rules Grid */
+  .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .rule-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px; text-align: center;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .rule-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .rule-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
+  .rule-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .rule-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Ideas Grid */
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .idea-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); transition: all 0.2s ease;
+  }
+
+  .idea-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+  .idea-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; padding: 4px 10px; border-radius: 6px;
+  }
+
+  .idea-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
+  .idea-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .type-reels { background: var(--pink-soft); color: var(--pink); }
+  .type-carousel { background: var(--purple-soft); color: var(--purple); }
+  .type-series { background: var(--cyan-soft); color: var(--cyan); }
+  .type-bastidor { background: var(--orange-soft); color: var(--orange); }
+  .type-hotel { background: var(--blue-soft); color: var(--blue); }
+
+  /* Hooks */
+  .hooks-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+  .hook-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: start; gap: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .hook-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--ig-gradient); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px; font-weight: 800;
+  }
+
+  .hook-text { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+  .hook-text em { color: var(--ig-purple); font-style: normal; font-weight: 700; }
+
+  /* Before/After */
+  .before-after-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+  .ba-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .ba-header {
+    padding: 16px 22px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--card-border); background: var(--bg-soft);
+  }
+
+  .ba-header .ba-video-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
+    background: var(--purple-soft); color: var(--purple);
+  }
+
+  .ba-header h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  .ba-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .ba-col { padding: 18px 22px; }
+  .ba-col:first-child { border-right: 1px solid var(--card-border); }
+
+  .ba-col-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; display: flex;
+    align-items: center; gap: 6px;
+  }
+
+  .ba-col:first-child .ba-col-label { color: var(--red); }
+  .ba-col:last-child .ba-col-label { color: var(--green); }
+
+  .ba-col p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .ba-col p strong { color: var(--text); font-weight: 600; }
+
+  /* Script Templates */
+  .script-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+    margin-bottom: 14px;
+  }
+
+  .script-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+
+  .script-step {
+    display: flex; gap: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .script-step:last-child { border-bottom: none; }
+
+  .script-step-label {
+    flex-shrink: 0; width: 90px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; padding-top: 2px;
+  }
+
+  .script-step:nth-child(1) .script-step-label { color: var(--ig-pink); }
+  .script-step:nth-child(2) .script-step-label { color: var(--ig-purple); }
+  .script-step:nth-child(3) .script-step-label { color: var(--ig-orange); }
+  .script-step:nth-child(4) .script-step-label { color: var(--ig-blue); }
+  .script-step:nth-child(5) .script-step-label { color: var(--green); }
+
+  .script-step-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+  .script-step-text em { color: var(--text-muted); font-style: italic; font-size: 12.5px; }
+
+  /* Workflow */
+  .workflow {
+    display: flex; gap: 0; align-items: stretch;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+  }
+
+  .workflow-step {
+    flex: 1; padding: 20px 16px; text-align: center;
+    position: relative; border-right: 1px solid var(--card-border);
+  }
+
+  .workflow-step:last-child { border-right: none; }
+
+  .workflow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: var(--text-dim);
+    z-index: 1; background: var(--card); padding: 2px;
+  }
+
+  .workflow-step:last-child::after { display: none; }
+
+  .workflow-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: var(--ig-gradient);
+  }
+
+  .workflow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .workflow-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Reference Profiles */
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .ref-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 22px;
+    box-shadow: var(--card-shadow); display: flex; gap: 16px; align-items: start;
+  }
+
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .ref-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .ref-card .ref-niche { font-size: 12px; color: var(--ig-purple); font-weight: 600; margin-bottom: 6px; }
+  .ref-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* CTA Guide */
+  .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .cta-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 20px;
+    box-shadow: var(--card-shadow); text-align: center;
+  }
+
+  .cta-when {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px; padding: 4px 12px;
+    border-radius: 6px; display: inline-block;
+  }
+
+  .cta-card:nth-child(1) .cta-when { background: var(--purple-soft); color: var(--purple); }
+  .cta-card:nth-child(2) .cta-when { background: var(--pink-soft); color: var(--pink); }
+  .cta-card:nth-child(3) .cta-when { background: var(--orange-soft); color: var(--orange); }
+
+  .cta-card blockquote {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    line-height: 1.5; font-style: italic; margin-bottom: 8px;
+  }
+
+  .cta-card .cta-note { font-size: 12px; color: var(--text-muted); }
+
+  /* Checklist */
+  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .check-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: var(--ig-purple); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .check-item.done { background: var(--green-soft); border-color: var(--green); }
+  .check-item.done .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.done .check-box::after { content: '✓'; color: #fff; font-size: 13px; font-weight: 700; }
+
+  /* Filming Checklist */
+  .filming-checklist {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 24px; box-shadow: var(--card-shadow);
+  }
+
+  .filming-checklist h3 {
+    font-size: 15px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+
+  .filming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .filming-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; user-select: none; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .filming-item:hover { background: var(--bg-soft); }
+
+  .filming-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--text-dim); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .filming-item.done .filming-check { background: var(--ig-purple); border-color: var(--ig-purple); }
+  .filming-item.done .filming-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+  .filming-item.done { color: var(--text-muted); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+
+  .timeline::before {
+    content: ''; position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--ig-gradient); border-radius: 2px;
+  }
+
+  .timeline-item { position: relative; padding: 0 0 28px 24px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute; left: -23px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { border-color: var(--ig-pink); background: var(--pink-soft); }
+  .timeline-item:nth-child(2) .timeline-dot { border-color: var(--ig-purple); background: var(--purple-soft); }
+  .timeline-item:nth-child(3) .timeline-dot { border-color: var(--ig-orange); background: var(--orange-soft); }
+  .timeline-item:nth-child(4) .timeline-dot { border-color: var(--ig-blue); background: var(--blue-soft); }
+
+  .timeline-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .timeline-item:nth-child(1) .timeline-label { color: var(--ig-pink); }
+  .timeline-item:nth-child(2) .timeline-label { color: var(--ig-purple); }
+  .timeline-item:nth-child(3) .timeline-label { color: var(--ig-orange); }
+  .timeline-item:nth-child(4) .timeline-label { color: var(--ig-blue); }
+
+  .timeline-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .timeline-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 36px 40px; font-size: 13px;
+    color: var(--text-muted); border-top: 1px solid var(--card-border);
+    max-width: 1200px; margin: 0 auto; background: var(--bg);
+  }
+
+  .footer strong { background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 24px; }
+    .hero h1 { font-size: 28px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .main { padding: 24px 20px 60px; }
+    .ideas-grid, .compare-grid, .checklist-grid, .rules-grid, .ref-grid, .cta-grid, .filming-grid { grid-template-columns: 1fr; }
+    .ba-body { grid-template-columns: 1fr; }
+    .ba-col:first-child { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow { flex-direction: column; }
+    .workflow-step { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .workflow-step::after { display: none; }
+    .action-card { grid-template-columns: auto 1fr; }
+    .action-tag { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Viral Pro — Análise de Perfil
+  </div>
+  <h1>Plano de Ação<br>Thelma Baniski — Menopausa com Humor</h1>
+  <p class="hero-sub">Criadora de conteúdo de humor sobre menopausa, em espanhol, para mulheres 45+ da América Latina e da Espanha. Quase 400 mil seguidores e audiência fiel. O plano abaixo mostra como transformar essa audiência em renda com afiliados, sem curso, sem comunidade e sem atendimento.</p>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/_VYabsB9gHI" title="Análise Viral Pro — Thelma Baniski" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>5 de Outubro, 2026</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mentoria com Oney Araújo e Cabral</div>
+    <div class="hero-meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nicho: Menopausa + Achadinhos</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-number">~400K</div><div class="stat-label">Seguidoras</div></div>
+  <div class="stat-card"><div class="stat-number">€1.000</div><div class="stat-label">Meta Mensal</div></div>
+  <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Níveis de Monetização</div></div>
+  <div class="stat-card"><div class="stat-number">Nov</div><div class="stat-label">Black Friday</div></div>
+</div>
+
+<div class="main">
+
+  <!-- 1. CORREÇÕES IMEDIATAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--red-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Correções Imediatas do Perfil</h2><p>Faça essas mudanças antes de qualquer outra coisa</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card urgency-now"><div class="action-number">1</div><div class="action-content"><h3>Trocar o link da bio do Thelmaflix para um link de produtos</h3><p>O Thelmaflix está gratuito e mesmo assim as mulheres não entram. O link da bio passa a levar para os seus achadinhos: uma página simples com a sua coleção de produtos e o convite para o seu grupo de ofertas. A esposa do Walter usa só um Linktree com dois botões e fatura cerca de R$ 20 mil por mês.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">2</div><div class="action-content"><h3>Acrescentar "universo feminino" na segunda linha da bio</h3><p>A primeira linha continua dizendo que você fala de menopausa com humor. A segunda linha abre espaço para falar de beleza, roupas, casa e tudo que a mulher 45+ compra. Isso avisa a seguidora (e as marcas) que você vai indicar produtos, sem mudar o seu nicho.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-now"><div class="action-number">3</div><div class="action-content"><h3>Dar um nome leve para a página de produtos</h3><p>A sugestão do Oney é <strong>"Achadinhos da Thelma"</strong>. Em espanhol, teste algo como <strong>"Los Hallazgos de Thelma"</strong> e confira qual termo as criadoras de achadinhos da Argentina e do México usam. O nome precisa soar rápido e barato, porque é isso que faz a pessoa clicar.</p></div><div class="action-tag">Fazer agora</div></div>
+    <div class="action-card urgency-week"><div class="action-number">4</div><div class="action-content"><h3>Gravar e fixar 2 ou 3 vídeos usando produtos</h3><p>As marcas recusam a afiliação porque não encontram vídeos seus mostrando produto. Grave os cosméticos coreanos e as roupas que você já tem em casa e fixe esses vídeos no topo do perfil. Os seus vídeos de humor continuam saindo normalmente depois disso.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-week"><div class="action-number">5</div><div class="action-content"><h3>Esquecer a conta de anúncios hackeada</h3><p>O Cabral explicou que, quando a Meta libera uma conta depois de um hack, ela costuma performar muito pior, porque o algoritmo aprendeu um público errado. Para afiliado você não vai precisar de anúncio. Se um dia precisar, o caminho é criar um portfólio comercial novo do zero.</p></div><div class="action-tag">Esta semana</div></div>
+    <div class="action-card urgency-soon"><div class="action-number">6</div><div class="action-content"><h3>Pegar o link de afiliada do Código Viral com a Mari</h3><p>Muitas pessoas perguntam se você viralizou com o Código Viral e algumas até pediram para comprar o acesso de você. Com o link de afiliada da Hotmart, cada venda que vier dessas conversas gera R$ 65 de comissão para você. É só responder com o link.</p></div><div class="action-tag">Em breve</div></div>
+  </div>
+
+  <!-- 2. ANTES vs DEPOIS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div><h2>Antes vs Depois — Sua Monetização</h2><p>O que travou as vendas até agora e como fica daqui pra frente</p></div>
+  </div>
+
+  <div class="before-after-grid">
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Produto 1</span><h3>Thelmaflix (app de conteúdos sobre menopausa)</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>O nome "Flix" passa a ideia de muita coisa para assistir. A mulher com um sintoma quer uma resposta rápida, e a sensação de ter que consumir um catálogo inteiro afasta a compra. O Oney comparou com comprar um livro de 700 páginas. Ninguém pagou e, mesmo de graça, as inscrições não vieram.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como fica</div>
+          <p>O link da bio deixa de vender conteúdo e passa a indicar <strong>produtos baratos que você usa de verdade</strong>. As 2.500 mulheres que fizeram o teste da menopausa mostram que o seu público clica quando a promessa é rápida. Se um dia voltar a vender infoproduto, ele precisa ser curto e barato, no estilo do antigo Código da Menopausa, que vendeu cerca de €1.200.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Produto 2</span><h3>Indicações na Amazon e o capacete de LED</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que travou</div>
+          <p>Você colocou produtos caros. O capacete de LED custa €700, e a lista da Amazon tinha itens de preço alto. As pessoas entraram no link, mas não compraram. Na internet a pessoa procura o baratinho.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como fica</div>
+          <p>Priorizar <strong>produtos baratos e em alta</strong>, principalmente skincare coreano, roupas da Shein e utilidades da casa. Dar preferência aos que saem de armazém na Espanha ou da China, que chegam sem a dor de cabeça da alfândega dos Estados Unidos. Um produto barato e viral vende muito mais que um produto caro e bom.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-header"><span class="ba-video-tag">Modelo</span><h3>Curso e comunidade versus afiliado</h3></div>
+      <div class="ba-body">
+        <div class="ba-col">
+          <div class="ba-col-label">✕ O que não combina com você</div>
+          <p>Você deixou claro que não quer contato com o público, não quer comunidade no WhatsApp e não quer obrigação de encontros. Você também não é médica, então não pode vender consulta nem protocolo. Curso e mentoria exigem exatamente o que você não quer fazer.</p>
+        </div>
+        <div class="ba-col">
+          <div class="ba-col-label">✓ Como fica</div>
+          <p><strong>Afiliado é vender e pronto.</strong> Você grava os vídeos de manhã, em casa, como já faz. O suporte, a entrega e a troca ficam com a loja. O grupo de WhatsApp é só de ofertas, então só você fala. A Nicole tem o mesmo perfil que você e foi por esse caminho.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CERTO vs ERRADO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><h2>Certo vs Errado — Guia Visual</h2><p>Referência rápida do que manter e do que mudar</p></div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pare de fazer</h3>
+      <div class="compare-item"><span>✕</span> Vender produto com nome que soa pesado ou demorado</div>
+      <div class="compare-item"><span>✕</span> Indicar produtos caros (€200, €700)</div>
+      <div class="compare-item"><span>✕</span> Aceitar produto que vem dos Estados Unidos e trava na alfândega</div>
+      <div class="compare-item"><span>✕</span> Pagar anúncio para vender como afiliada</div>
+      <div class="compare-item"><span>✕</span> Tentar recuperar a conta de anúncios hackeada</div>
+      <div class="compare-item"><span>✕</span> Colocar o link uma vez e nunca mais falar dele</div>
+      <div class="compare-item"><span>✕</span> Entrar em agência que coloca você em publi de marca duvidosa</div>
+      <div class="compare-item"><span>✕</span> Usar o Wi-Fi do hotel para entrar nas contas</div>
+    </div>
+    <div class="compare-col good">
+      <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Comece a fazer</h3>
+      <div class="compare-item"><span>✓</span> Chamar a página de "achadinhos" ou algo igualmente leve</div>
+      <div class="compare-item"><span>✓</span> Indicar o baratinho que está em alta</div>
+      <div class="compare-item"><span>✓</span> Priorizar Shein, Temu, Shopee e TikTok Shop com envio da China ou da Espanha</div>
+      <div class="compare-item"><span>✓</span> Vender no orgânico: vídeo + ManyChat + link na bio</div>
+      <div class="compare-item"><span>✓</span> Criar um portfólio novo do zero, se um dia precisar de anúncio</div>
+      <div class="compare-item"><span>✓</span> Lembrar do link e do grupo em todo vídeo de produto</div>
+      <div class="compare-item"><span>✓</span> Proteger a confiança da sua audiência indicando só o que você usa</div>
+      <div class="compare-item"><span>✓</span> Continuar os vídeos de humor sobre menopausa</div>
+    </div>
+  </div>
+
+  <!-- 4. ESTRATÉGIA DE CONTEÚDO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div><h2>Estratégia de Conteúdo</h2><p>Regras de ouro para monetizar sem perder o seu estilo</p></div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card"><span class="rule-emoji">😂</span><h3>O Humor Continua</h3><p>Você não precisa mudar de nicho. Os vídeos de humor sobre menopausa trazem as seguidoras, e os vídeos de produto transformam essas seguidoras em compradoras.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔥</span><h3>Produto com Hype</h3><p>O que separa quem vende muito de quem vende pouco são duas coisas. A primeira é escolher um produto que já está em alta, como o skincare coreano puxado pelos doramas.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🪝</span><h3>Gancho Forte</h3><p>A segunda coisa é o gancho. O gancho que mais para o dedo nesse formato é mostrar o produto e dizer que comprou: "¿Ves esto? Lo compré y…".</p></div>
+    <div class="rule-card"><span class="rule-emoji">🌸</span><h3>Sintoma + Solução</h3><p>Ligue o que a mulher sente na menopausa ao produto que ajuda. Pele mais seca leva ao hidratante coreano. Calor leva ao ventilador portátil. Você continua dentro do seu tema.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🔁</span><h3>Várias Versões do Mesmo Vídeo</h3><p>Grave o mesmo produto com ganchos diferentes. Uma criadora do Brasil faz 14 vídeos por dia do mesmo produto no TikTok Shop. Basta um viralizar para vender muito.</p></div>
+    <div class="rule-card"><span class="rule-emoji">🎛️</span><h3>Remix Continua Valendo</h3><p>Você viralizou com remix e ensinou a Gabi, que passou dos 100 mil. Use o remix também para os vídeos de produto: reaja a uma tendência e mostre o seu achadinho.</p></div>
+  </div>
+
+  <!-- 5. ROTEIROS-MODELO -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div><h2>Roteiros-Modelo Prontos</h2><p>Falas em espanhol, para você gravar do jeito que já grava</p></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 1 — "Lo compré y…" (achadinho com ManyChat)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"¿Ves esto? Lo compré por [precio] y no puedo creer lo que hizo con mi piel."<br><em>Produto na mão, perto da câmera, já no primeiro segundo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Problema</div><div class="script-step-text">"Desde que llegó la menopausia, mi piel está [seca / flácida / opaca] y ya probé de todo."<br><em>Aqui entra o seu humor. Exagere o sintoma como você faz nos vídeos.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Prova</div><div class="script-step-text">"Mira cómo lo uso: [aplicação rápida]. Y mira cómo queda."<br><em>Mostre o uso de verdade, de perto, em 10 a 15 segundos.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Comenta PIEL y te mando el link por mensaje."<br><em>Configure a palavra no ManyChat antes de postar.</em></div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 2 — Convite para o grupo de ofertas</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Acabo de encontrar [producto] a menos de [precio] y se va a agotar rapidísimo."</div></div>
+    <div class="script-step"><div class="script-step-label">Mostrar</div><div class="script-step-text">"Es este. [1 frase sobre por qué te gusta]."<br><em>Seja rápida. O vídeo serve para despertar o desejo.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Escassez</div><div class="script-step-text">"Ya lo puse en mi grupo de ofertas, que es donde aviso primero de estas cosas."</div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Toca el link de mi bio y te mando el producto." <em>O link leva direto ao grupo, e a última mensagem do grupo é esse produto.</em></div></div>
+  </div>
+
+  <div class="script-card">
+    <h3>📋 Modelo 3 — "Mis compras de la semana" (link na bio)</h3>
+    <div class="script-step"><div class="script-step-label">Gancho</div><div class="script-step-text">"Mi marido dice que compro demasiado por internet. Vamos a ver si tiene razón."<br><em>Abra as caixas que chegaram. Os entregadores já conhecem a Thelma.</em></div></div>
+    <div class="script-step"><div class="script-step-label">Sequência</div><div class="script-step-text">Produto → "Este sí vale la pena porque [razón]" ou "Este no lo vuelvo a comprar".<br><em>Ritmo rápido. 3 a 5 segundos por produto.</em></div></div>
+    <div class="script-step"><div class="script-step-label">CTA</div><div class="script-step-text">"Los que sí valen la pena están en el link de mi bio, junto con todo lo que ya les recomendé."</div></div>
+  </div>
+
+  <!-- 6. WORKFLOW -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div><h2>Workflow de Produção Diário</h2><p>Da escolha do produto ao link que gera comissão</p></div>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step"><div class="workflow-num">1</div><h4>Escolhe o produto</h4><p>Algo barato e em alta, que você usa ou que chegou em casa</p></div>
+    <div class="workflow-step"><div class="workflow-num">2</div><h4>Gera o link</h4><p>Pega o link de afiliada na Shein, Shopee, Temu ou TikTok Shop</p></div>
+    <div class="workflow-step"><div class="workflow-num">3</div><h4>Grava 2 a 3 versões</h4><p>Mesmo produto, ganchos diferentes, de manhã em casa</p></div>
+    <div class="workflow-step"><div class="workflow-num">4</div><h4>Publica e distribui</h4><p>Reels com ManyChat, TikTok com carrinho, produto na página da bio</p></div>
+    <div class="workflow-step"><div class="workflow-num">5</div><h4>Posta no grupo</h4><p>A mesma oferta vai para o grupo de WhatsApp, que só você usa</p></div>
+  </div>
+
+  <!-- 7. GANCHOS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--orange-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    <div><h2>Fórmulas de Gancho Prontas</h2><p>Copie e adapte — projetados para prender nos primeiros 3 segundos</p></div>
+  </div>
+
+  <div class="hooks-list">
+    <div class="hook-item"><div class="hook-icon">1</div><div class="hook-text"><em>Achadinho:</em> "¿Ves esto? Lo compré por menos de 10 euros y ahora no salgo de casa sin él."</div></div>
+    <div class="hook-item"><div class="hook-icon">2</div><div class="hook-text"><em>Sintoma + produto:</em> "Si con la menopausia tu piel se volvió un desierto, tienes que ver lo que encontré."</div></div>
+    <div class="hook-item"><div class="hook-icon">3</div><div class="hook-text"><em>Negativo:</em> "Deja de gastar 200 euros en cremas. Esta coreana cuesta 12 y funciona mejor."</div></div>
+    <div class="hook-item"><div class="hook-icon">4</div><div class="hook-text"><em>Humor:</em> "Los sofocos me tenían loca hasta que encontré esto en Shein." (Você suando de forma exagerada antes de mostrar o produto.)</div></div>
+    <div class="hook-item"><div class="hook-icon">5</div><div class="hook-text"><em>Prova social:</em> "Me preguntaron 300 veces qué uso en la cara. Aquí está todo."</div></div>
+    <div class="hook-item"><div class="hook-icon">6</div><div class="hook-text"><em>Visual com IA:</em> Comece com uma cena impossível criada por IA usando o produto, como o Oney sugeriu com o barbeador, e então corte para você mostrando o produto de verdade.</div></div>
+    <div class="hook-item"><div class="hook-icon">7</div><div class="hook-text"><em>Black Friday:</em> "Esto lo vas a querer en Black Friday. Te aviso primero en mi grupo."</div></div>
+  </div>
+
+  <!-- 8. IDEIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--cyan-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+    <div><h2>Banco de Ideias de Conteúdo</h2><p>Formatos e temas prontos para gravar já esta semana</p></div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Minha rotina de skincare coreano aos 50+</h3><p>Você já compra muito skincare coreano. Mostre os passos e o resultado na sua pele. O Oney e a Nicole elogiaram a sua pele, e isso vira prova.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>"Lo que llegó hoy"</h3><p>Você compra tudo pela internet e recebe entrega todo dia. Abra as caixas e diga se vale a pena. Formato contínuo e fácil de gravar.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Um produto para cada sintoma</h3><p>Sofocos, insônia, pele seca, queda de cabelo. Cada vídeo liga um sintoma a um produto barato que ajuda no dia a dia.</p></div>
+    <div class="idea-card"><div class="idea-type type-carousel">Carrossel</div><h3>"5 cosas de Shein que valen la pena después de los 45"</h3><p>Cada slide com a foto da peça e uma frase de opinião. As seguidoras salvam e pedem o link.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Roupas para o dia a dia da mulher 45+</h3><p>A Nicole vende muito com roupas que o público dela usa. Mostre como você combina peças baratas para sair com o seu marido.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Preparativos do casamento em dezembro</h3><p>Vestido, maquiagem, cuidados com a pele antes do grande dia. Conteúdo pessoal que abre espaço para muitos produtos.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>"Caro vs barato"</h3><p>Compare um creme caro com um coreano barato e mostre que o barato entrega. É o formato que mais conversa com quem busca o baratinho.</p></div>
+    <div class="idea-card"><div class="idea-type type-series">Série</div><h3>Contagem regressiva da Black Friday</h3><p>Durante novembro, um achadinho por dia com o convite para o grupo de ofertas, onde você avisa primeiro.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Utilidades da casa que facilitam a vida</h3><p>A Nicole vendeu um robô aspirador e ganhou cerca de R$ 500 com uma venda. Mostre o que funciona na sua casa.</p></div>
+    <div class="idea-card"><div class="idea-type type-bastidor">Bastidor</div><h3>Impressão 3D como hobby</h3><p>As pessoas gostam de assistir. Use como conteúdo leve e para mostrar a sua personalidade, sem tentar vender as peças.</p></div>
+    <div class="idea-card"><div class="idea-type type-reels">Reels</div><h3>Humor de menopausa com produto no final</h3><p>O mesmo vídeo de humor que você já faz, terminando com "y lo que me salvó fue esto".</p></div>
+    <div class="idea-card"><div class="idea-type type-hotel">Live</div><h3>Live de compras no TikTok Shop</h3><p>O Cabral comprou duas vezes por causa de lives. Teste depois que estiver confortável com os vídeos: mostre o produto e responda as dúvidas de tamanho e uso.</p></div>
+  </div>
+
+  <!-- 9. REFERÊNCIAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+    <div><h2>Perfis de Referência</h2><p>Inspire-se em quem já ganha dinheiro com esse modelo</p></div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-avatar">👗</div>
+      <div>
+        <h3>Nicole</h3>
+        <div class="ref-niche">Afiliada Shein / Achadinhos</div>
+        <p>Também não gosta de curso nem de responder suporte. Já ganhou mais de R$ 20 mil em roupas, recebe produtos da Shein para divulgar e vende com vídeo + ManyChat + link na bio. O Oney vai pedir para ela mandar um áudio explicando como começou e como passou pela recusa das marcas.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🧴</div>
+      <div>
+        <h3>Dai (esposa do Walter)</h3>
+        <div class="ref-niche">Skincare coreano / Shopee</div>
+        <p>Fatura cerca de R$ 20 mil por mês com poucos seguidores. Usa um Linktree simples com dois botões: a coleção dela na Shopee e o "Clube da Dai", um grupo de WhatsApp só de ofertas. Viralizou vários vídeos de skincare coreano.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🛒</div>
+      <div>
+        <h3>Criadora do TikTok Shop</h3>
+        <div class="ref-niche">TikTok Shop / Versões de gancho</div>
+        <p>Grava 14 vídeos por dia do mesmo produto, cada um com um gancho diferente. Quando um viraliza, vende muito. Depois mostra o painel de ganhos, que o TikTok deixa visível, e vende um curso ensinando o método.</p>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-avatar">🎛️</div>
+      <div>
+        <h3>Gabi Tubes</h3>
+        <div class="ref-niche">Relacionamento / Remix</div>
+        <p>Assistiu à sua aula de remix duas vezes, aplicou e passou dos 100 mil seguidores. Ela é a prova de que o seu jeito de viralizar funciona, inclusive para outras pessoas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. CTAs -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div><h2>Guia de CTAs por Situação</h2><p>Os três destinos para onde você leva a seguidora</p></div>
+  </div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-when">Nível 1 — ManyChat</div>
+      <blockquote>"Comenta ROBOT y te lo mando por mensaje."</blockquote>
+      <div class="cta-note">Para um produto específico. O comentário também ajuda o vídeo a distribuir mais.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Nível 1 — Link na bio</div>
+      <blockquote>"Lo agregué al link de mi bio, junto con todo lo que ya les recomendé."</blockquote>
+      <div class="cta-note">Ressuscita a página de achadinhos em todo vídeo de produto.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-when">Nível 2 — Grupo de ofertas</div>
+      <blockquote>"Toca el link y te mando el producto."</blockquote>
+      <div class="cta-note">O link leva ao grupo. Quem entra recebe esse produto e todas as próximas ofertas.</div>
+    </div>
+  </div>
+
+  <!-- 11. TÉCNICA DE VENDA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--pink-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+    <div><h2>Os 3 Níveis de Monetização</h2><p>Comece pelo primeiro e suba quando estiver confortável</p></div>
+  </div>
+
+  <div class="priority-grid">
+    <div class="action-card" style="border-left: 3px solid var(--ig-pink);">
+      <div class="action-number" style="background: var(--pink-soft); color: var(--pink);">1</div>
+      <div class="action-content">
+        <h3>Nível 1 — Vídeo orgânico + ManyChat + link na bio</h3>
+        <p>Você mostra o produto no Reels ou no TikTok e pede para comentar uma palavra. O ManyChat manda o link automaticamente. No TikTok, o produto aparece no <strong>carrinho laranja</strong> do próprio post, e o seu TikTok Shop já está liberado. Afiliado vende no orgânico: o Cabral explicou que pagar R$ 30 de anúncio para ganhar R$ 5 de comissão não fecha a conta.</p>
+      </div>
+    </div>
+    <div class="action-card" style="border-left: 3px solid var(--ig-purple);">
+      <div class="action-number" style="background: var(--purple-soft); color: var(--purple);">2</div>
+      <div class="action-content">
+        <h3>Nível 2 — Grupo de WhatsApp só de ofertas</h3>
+        <p>O grupo é fechado: só você publica e as pessoas no máximo reagem. Cada vídeo novo traz pessoas novas para o grupo, e as que já estão lá recebem a oferta também. Com o tempo, o grupo concentra as suas compradoras. Esse é o nível que fez a esposa do Walter chegar a R$ 20 mil por mês, e o Oney acredita que no mercado de língua espanhola ele ainda está pouco explorado. Quem entrar agora sai na frente.</p>
+      </div>
+    </div>
+    <div class="action-card" style="border-left: 3px solid var(--ig-orange);">
+      <div class="action-number" style="background: var(--orange-soft); color: var(--orange);">3</div>
+      <div class="action-content">
+        <h3>Nível 3 — Ensinar outras mulheres (opcional, no futuro)</h3>
+        <p>Você já ensina de graça e a Gabi chegou aos 100 mil com a sua aula. Quando você estiver ganhando com comissão, pode mostrar o resultado e ensinar o método em um produto curto e gravado, sem comunidade nem encontros. Enquanto isso, indique o Código Viral pelo seu link de afiliada.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--green-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+    <div><h2>Checklist Antes de Publicar um Vídeo de Produto</h2><p>Olhe isso antes de postar cada achadinho</p></div>
+  </div>
+
+  <div class="filming-checklist">
+    <h3>✅ Passe por cada item antes de publicar</h3>
+    <div class="filming-grid">
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O produto é barato e está em alta?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Ele é enviado da China ou da Espanha, sem alfândega dos EUA?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O produto aparece na mão nos 3 primeiros segundos?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O gancho para o dedo de quem não te conhece?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Mostrei o produto sendo usado de verdade?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>A palavra do ManyChat está configurada?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>O produto já está na página da bio e no grupo?</div>
+      <div class="filming-item" onclick="this.classList.toggle('done')"><div class="filming-check"></div>Gravei pelo menos uma segunda versão com outro gancho?</div>
+    </div>
+  </div>
+
+  <!-- 13. FERRAMENTAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--blue-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div><h2>Ferramentas Recomendadas</h2><p>O mínimo para começar a ganhar comissão</p></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Programas de afiliado — Shein, Shopee, Temu e Amazon</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>TikTok Shop — já liberado, falta estudar o carrinho</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>ManyChat — envia o link automático por direct</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Linktree (ou similar) — página "Achadinhos da Thelma"</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Grupo de WhatsApp só de ofertas — só você publica</div>
+    <div class="check-item" onclick="this.classList.toggle('done')"><div class="check-box"></div>Link de afiliada do Código Viral (Hotmart) — pedir à Mari</div>
+  </div>
+
+  <!-- 14. CRONOGRAMA -->
+  <div class="section-header">
+    <div class="section-icon" style="background: var(--purple-soft);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Cronograma de Execução</h2><p>Tudo pronto antes da Black Friday de novembro</p></div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Hoje</div><div class="timeline-title">Abrir o caminho</div><div class="timeline-desc">Acrescentar "universo feminino" na bio. Pedir o link do Código Viral à Mari. Cadastrar-se nos programas de afiliado da Shein, da Shopee e da Temu. Ouvir o áudio da Nicole quando chegar.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 1</div><div class="timeline-title">Montar a estrutura</div><div class="timeline-desc">Criar a página "Achadinhos da Thelma" e trocar o link da bio. Configurar o ManyChat. Criar o grupo de ofertas no WhatsApp. Gravar e fixar 2 ou 3 vídeos com produtos que você já tem em casa, mesmo antes de ter todos os links.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Semana 2-3</div><div class="timeline-title">Testar produtos e ganchos</div><div class="timeline-desc">Publicar vídeos de produto todos os dias, intercalados com o humor de menopausa. Gravar o mesmo produto com ganchos diferentes. Estudar o TikTok Shop e começar a usar o carrinho. Anotar quais produtos geram mais comentários.</div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Novembro</div><div class="timeline-title">Colher na Black Friday</div><div class="timeline-desc">Contagem regressiva com um achadinho por dia e chamada para o grupo, onde você avisa as ofertas primeiro. Na Black Friday as pessoas estão esperando uma boa oferta para comprar. Meta: chegar aos €1.000 por mês em comissão.</div></div>
+  </div>
+
+</div>
+
+<div class="footer">Plano de ação gerado a partir da análise de perfil — <strong>Viral Pro</strong> com Oney Araújo — Outubro 2026</div>
+
+</body>
+</html>
