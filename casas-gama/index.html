@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Casas no Gama até 3 mil</title>
+<title>Casas no Gama</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
@@ -166,6 +166,7 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
 }
 
 @media (max-width:560px){
+  .filters{position:static}
   .top-inner{padding-block:22px 18px}
   .stats{gap:18px}
   .grid{grid-template-columns:1fr}
@@ -173,23 +174,43 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
   .count{margin-left:0;width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- abas ---------- */
+.tabs{background:var(--surface);border-bottom:1px solid var(--line)}
+.tabs-inner{display:flex;gap:6px;padding-block:12px 0;overflow-x:auto}
+.tab{font:inherit;font-size:14px;font-weight:600;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--ink-3);padding:8px 14px 11px;cursor:pointer;white-space:nowrap;display:inline-flex;gap:8px;align-items:baseline}
+.tab .tn{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-3)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+.tab[aria-selected="true"] .tn{color:var(--accent)}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
+.loc{font-size:12.5px;color:var(--ink-3);margin:-4px 0 0}
+.antes{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-decoration:line-through}
+.baixou{color:var(--accent)}
 </style>
 
 </head>
 <body>
+<nav class="tabs" aria-label="Escolha entre alugar e comprar">
+  <div class="wrap tabs-inner" role="tablist">
+    <button class="tab" role="tab" id="tab-alugar" data-aba="alugar" aria-selected="true">Alugar<span class="tn" id="tn-alugar"></span></button>
+    <button class="tab" role="tab" id="tab-comprar" data-aba="comprar" aria-selected="false">Comprar<span class="tn" id="tn-comprar"></span></button>
+  </div>
+</nav>
+
 <header class="top">
   <div class="wrap top-inner">
     <div>
-      <p class="eyebrow">Gama · Ponte Alta · Distrito Federal</p>
-      <h1>Casas para alugar até 3 mil</h1>
-      <p class="sub">Busca automática diária nos portais DF Imóveis, OLX, Imovelweb e Wimoveis. O teto de R$ 3.000 considera aluguel mais condomínio. Cada card leva direto para o anúncio, onde ficam as demais fotos e o contato.</p>
+      <p class="eyebrow" id="eyebrow">Gama · Ponte Alta · Distrito Federal</p>
+      <h1 id="titulo">Casas para alugar até 3 mil</h1>
+      <p class="sub" id="sub"></p>
       <p class="carimbo" id="carimbo">Carregando…</p>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n" id="s-total">29</div><div class="l">anúncios</div></div>
-      <div class="stat"><div class="n" id="s-dentro">27</div><div class="l">dentro do teto</div></div>
-      <div class="stat"><div class="n" id="s-min">R$ 720</div><div class="l">mais barato</div></div>
-      <div class="stat"><div class="n" id="s-med">R$ 1.950</div><div class="l">mediana</div></div>
+      <div class="stat"><div class="n" id="s1">–</div><div class="l" id="l1">anúncios</div></div>
+      <div class="stat"><div class="n" id="s2">–</div><div class="l" id="l2">dentro do teto</div></div>
+      <div class="stat"><div class="n" id="s3">–</div><div class="l" id="l3">mais barato</div></div>
+      <div class="stat"><div class="n" id="s4">–</div><div class="l" id="l4">mediana</div></div>
     </div>
   </div>
 </header>
@@ -201,6 +222,12 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
       Novidades primeiro
     </button>
     <button class="btn-vistos" id="btn-vistos" hidden>Desmarcar vistas</button>
+    <div class="fgroup" id="f-tipo" hidden>
+      <span class="flabel">Tipo</span>
+      <button class="chip" data-tipo="Todos" aria-pressed="true">Todos</button>
+      <button class="chip" data-tipo="Casa" aria-pressed="false">Casas</button>
+      <button class="chip" data-tipo="Apartamento" aria-pressed="false">Apartamentos</button>
+    </div>
     <div class="fgroup" id="f-regiao">
       <span class="flabel">Região</span>
     </div>
@@ -213,14 +240,7 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
     </div>
     <div class="fgroup">
       <span class="flabel">Ordenar</span>
-      <select id="ordem" aria-label="Ordenar resultados">
-        <option value="recentes">Adicionadas mais recentemente</option>
-        <option value="orcamento">Melhor pelo orçamento</option>
-        <option value="preco-asc">Menor custo mensal</option>
-        <option value="preco-desc">Maior custo mensal</option>
-        <option value="area-desc">Maior área</option>
-        <option value="quartos-desc">Mais quartos</option>
-      </select>
+      <select id="ordem" aria-label="Ordenar resultados"></select>
     </div>
     <div class="count" id="contador"></div>
   </div>
@@ -228,131 +248,206 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
 
 <main class="wrap">
   <div class="grid" id="grid"></div>
-  <div class="empty" id="vazio" hidden>Nenhuma casa com esses filtros. Solte um dos filtros para ver mais.</div>
+  <div class="empty" id="vazio" hidden>Nenhum imóvel com esses filtros. Solte um dos filtros para ver mais.</div>
 </main>
 
 <footer>
   <div class="wrap foot-inner">
     <h3>Antes de visitar, confira estes pontos</h3>
-    <ul>
-      <li>As casas do Gama em quadra comum quase nunca têm taxa de condomínio, então o custo mensal da maioria dos cards é só o aluguel. Onde o anúncio informou condomínio ou IPTU, o valor aparece ao lado do preço e já está somado no custo mensal.</li>
-      <li>Dois anúncios do DF Imóveis trabalham com desconto de pontualidade. O sobrado do Setor Sul tem aluguel bruto de R$ 3.080 e cai para R$ 2.800 pagando em dia. A casa do Setor Norte tem bruto de R$ 2.860 e cai para R$ 2.600.</li>
-      <li>A Ponte Alta tem pouquíssima oferta abaixo de R$ 3.000. A maior parte das casas de condomínio de lá está entre R$ 5.000 e R$ 8.500, por isso só três opções da região entraram aqui.</li>
-      <li>O botão "Novidades primeiro" coloca no topo o que a busca encontrou mais recentemente, e cada card mostra há quantos dias aquele anúncio está na lista. Quando você abre um anúncio, o card fica marcado como visto e escurece um pouco, para você saber onde parou na próxima vez. Essa marcação fica salva só no navegador que você estiver usando.</li>
-      <li>Anúncio de portal sai do ar sem aviso. Ligue antes de se deslocar, principalmente nos anúncios mais antigos, como o do Setor Sul por R$ 720.</li>
-    </ul>
+    <ul id="dicas"></ul>
     <p>Fontes consultadas:</p>
-    <div class="sources">
-      <a href="https://www.dfimoveis.com.br/aluguel/df/gama/casa" target="_blank" rel="noopener">DF Imóveis · Gama</a>
-      <a href="https://www.dfimoveis.com.br/aluguel/df/gama/ponte-alta/casa" target="_blank" rel="noopener">DF Imóveis · Ponte Alta</a>
-      <a href="https://www.olx.com.br/imoveis/aluguel/casas/estado-df/distrito-federal-e-regiao/brasilia/ra-ii---gama?pe=3000" target="_blank" rel="noopener">OLX · Gama até 3 mil</a>
-      <a href="https://www.imovelweb.com.br/casas-aluguel-gama-df.html" target="_blank" rel="noopener">Imovelweb · Gama</a>
-      <a href="https://www.wimoveis.com.br/aluguel/casas/df/gama" target="_blank" rel="noopener">Wimoveis · Gama</a>
-    </div>
+    <div class="sources" id="fontes"></div>
   </div>
 </footer>
 
 <script>
 const ICONS = {
   quarto: '<svg viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18"/><path d="M6 10V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><path d="M12 10V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>',
+  suite: '<svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg>',
   banho: '<svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3Z"/><path d="M7 12V6a2 2 0 0 1 4 0"/><path d="M7 19l-1 2"/><path d="M17 19l1 2"/></svg>',
   vaga: '<svg viewBox="0 0 24 24"><path d="M5 16h14"/><path d="M6 16V12l2-4h8l2 4v4"/><circle cx="8" cy="17" r="1.4"/><circle cx="16" cy="17" r="1.4"/></svg>',
   area: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 4v16"/><path d="M4 9h16"/></svg>'
 };
+const SETA = '<svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>';
 const MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
-
-let DADOS = [], TETO = 3000, ATUALIZADO = null;
-let regiaoSel = 'Todas', quartosMin = 0, ordem = 'recentes';
-let vistos = new Set();
-try { vistos = new Set(JSON.parse(localStorage.getItem('casas-vistas') || '[]')); } catch (e) {}
-function salvarVistos() { try { localStorage.setItem('casas-vistas', JSON.stringify([...vistos])); } catch (e) {} }
+const mil = n => n >= 1000 && n % 1000 === 0 ? 'R$ ' + (n / 1000).toLocaleString('pt-BR') + ' mil' : brl(n);
 const HOJE = new Date(); HOJE.setHours(0,0,0,0);
 function diasDesde(iso) { if (!iso) return 999; const d = new Date(iso + 'T00:00:00'); return Math.round((HOJE - d) / 86400000); }
-let cargaInicial = false;
-function ehNovo(c) { return !cargaInicial && diasDesde(c.desde) <= 1; }
 function rotuloEntrada(n) { return n <= 0 ? 'entrou hoje' : n === 1 ? 'entrou ontem' : 'na lista há ' + n + ' dias'; }
-const custo = c => c.al + c.cond + (c.iptu || 0);
-
 function spec(icon, txt) { return '<span class="spec">' + ICONS[icon] + txt + '</span>'; }
+function plural(n, s, p) { return n + ' ' + (n === 1 ? s : p); }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function lerVistos(chave) { try { return new Set(JSON.parse(localStorage.getItem(chave) || '[]')); } catch (e) { return new Set(); } }
+function gravarVistos(chave, set) { try { localStorage.setItem(chave, JSON.stringify([...set])); } catch (e) {} }
+function mediana(v) { if (!v.length) return 0; v = [...v].sort((a, b) => a - b); const m = Math.floor(v.length / 2); return v.length % 2 ? v[m] : Math.round((v[m - 1] + v[m]) / 2); }
+
+/* ---------- configuração de cada aba ---------- */
+const ABAS = {
+  alugar: {
+    arquivo: 'dados.json', chaveVistos: 'casas-vistas', unidade: ['casa', 'casas'], temTipo: false,
+    eyebrow: 'Gama · Ponte Alta · Distrito Federal',
+    titulo: 'Casas para alugar até 3 mil',
+    sub: 'Busca automática diária nos portais DF Imóveis, OLX, Imovelweb e Wimoveis. O teto de R$ 3.000 considera aluguel mais condomínio. Cada card leva direto para o anúncio, onde ficam as demais fotos e o contato.',
+    valor: c => c.al + c.cond + (c.iptu || 0),
+    ordens: [['recentes','Adicionadas mais recentemente'],['orcamento','Melhor pelo orçamento'],['preco-asc','Menor custo mensal'],['preco-desc','Maior custo mensal'],['area-desc','Maior área'],['quartos-desc','Mais quartos']],
+    dicas: [
+      'As casas do Gama em quadra comum quase nunca têm taxa de condomínio, então o custo mensal da maioria dos cards é só o aluguel. Onde o anúncio informou condomínio ou IPTU, o valor aparece ao lado do preço e já está somado no custo mensal.',
+      'Alguns anúncios do DF Imóveis trabalham com desconto de pontualidade. Nesses casos o card mostra o valor com desconto, e o valor cheio aparece na observação.',
+      'A Ponte Alta tem pouquíssima oferta abaixo de R$ 3.000. A maior parte das casas de condomínio de lá passa de R$ 5.000, por isso entram também algumas opções da região que ficam pouco acima do teto.',
+      'O botão "Novidades primeiro" coloca no topo o que a busca encontrou mais recentemente, e cada card mostra há quantos dias aquele anúncio está na lista. Quando você abre um anúncio, o card fica marcado como visto e escurece um pouco. Essa marcação fica salva só no navegador que você estiver usando.',
+      'Anúncio de portal sai do ar sem aviso. Ligue antes de se deslocar, principalmente nos anúncios mais antigos.'
+    ],
+    fontes: [['DF Imóveis · Gama','https://www.dfimoveis.com.br/aluguel/df/gama/casa'],['DF Imóveis · Ponte Alta','https://www.dfimoveis.com.br/aluguel/df/gama/ponte-alta/casa'],['OLX · Gama até 3 mil','https://www.olx.com.br/imoveis/aluguel/casas/estado-df/distrito-federal-e-regiao/brasilia/ra-ii---gama?pe=3000'],['Imovelweb · Gama','https://www.imovelweb.com.br/casas-aluguel-gama-df.html'],['Wimoveis · Gama','https://www.wimoveis.com.br/aluguel/casas/df/gama']],
+    stats(D, teto) {
+      const dentro = D.filter(c => this.valor(c) <= teto).map(c => this.valor(c));
+      return [[D.length,'anúncios'],[dentro.length,'dentro do teto'],[dentro.length ? brl(Math.min(...dentro)) : '–','mais barato'],[dentro.length ? brl(mediana(dentro)) : '–','mediana']];
+    },
+    card(c, teto) {
+      const total = this.valor(c);
+      const linhas = [];
+      if (c.cond) linhas.push('condomínio ' + brl(c.cond));
+      if (c.iptu) linhas.push('IPTU ' + brl(c.iptu));
+      let specs = '';
+      if (c.q) specs += spec('quarto', plural(c.q, 'quarto', 'quartos'));
+      if (c.ban) specs += spec('banho', plural(c.ban, 'banheiro', 'banheiros'));
+      if (c.vg) specs += spec('vaga', plural(c.vg, 'vaga', 'vagas'));
+      if (c.area) specs += spec('area', c.area + ' m²');
+      return {
+        preco: '<span class="cur">R$</span>' + total.toLocaleString('pt-BR'),
+        extra: linhas.length ? linhas.join('<br>') : 'sem condomínio',
+        acima: total > teto, specs, loc: ''
+      };
+    }
+  },
+  comprar: {
+    arquivo: 'dados-venda.json', chaveVistos: 'venda-vistos', unidade: ['imóvel', 'imóveis'], temTipo: true,
+    eyebrow: 'Gama · Ponte Alta · Distrito Federal',
+    titulo: 'Casas e apartamentos à venda até 500 mil',
+    sub: 'Busca automática diária nos portais DF Imóveis, OLX, Imovelweb e Wimoveis, cobrindo todos os setores do Gama e a Ponte Alta. O teto é o preço de venda de R$ 500.000. Cada card leva direto para o anúncio, onde ficam as demais fotos e o contato.',
+    valor: c => c.preco,
+    ordens: [['recentes','Adicionados mais recentemente'],['preco-asc','Menor preço'],['preco-desc','Maior preço'],['m2-asc','Menor preço por m²'],['area-desc','Maior área'],['quartos-desc','Mais quartos']],
+    dicas: [
+      'Nos anúncios de casa em condomínio da Ponte Alta, a área informada às vezes é a do lote e às vezes é a área construída. Pergunte as duas medidas antes de comparar preços.',
+      'Quando o anúncio fala em ágio ou repasse, o valor pode ser só a entrada, e o comprador assume o saldo do financiamento. O card avisa quando isso aparece no anúncio.',
+      'Boa parte das casas de condomínio da Ponte Alta fica em área ainda em regularização. Antes de fechar negócio, peça a documentação do lote e confirme se o imóvel aceita financiamento bancário.',
+      'O mesmo imóvel costuma aparecer em mais de um portal. A busca junta os repetidos e mantém a versão com mais informação, mas pode sobrar algum par parecido.',
+      'O botão "Novidades primeiro" coloca no topo o que a busca encontrou mais recentemente. Quando você abre um anúncio, o card fica marcado como visto e escurece um pouco. Essa marcação fica salva só no navegador que você estiver usando.'
+    ],
+    fontes: [['DF Imóveis · casas no Gama','https://www.dfimoveis.com.br/venda/df/gama/casa?valorfinal=500000'],['DF Imóveis · apartamentos no Gama','https://www.dfimoveis.com.br/venda/df/gama/apartamento?valorfinal=500000'],['OLX · Ponte Alta','https://www.olx.com.br/imoveis/venda/casas/estado-df/distrito-federal-e-regiao/brasilia/ra-ii---gama?q=ponte%20alta&pe=500000'],['OLX · Gama','https://www.olx.com.br/imoveis/venda/estado-df/distrito-federal-e-regiao/brasilia/ra-ii---gama?pe=500000'],['Imovelweb · Ponte Alta','https://www.imovelweb.com.br/casas-venda-ponte-alta-gama-df.html']],
+    stats(D) {
+      const casas = D.filter(c => c.tipo === 'Casa').length;
+      return [[D.length,'anúncios'],[casas,'casas'],[D.length - casas,'apartamentos'],[D.length ? mil(mediana(D.map(c => c.preco))) : '–','preço mediano']];
+    },
+    card(c) {
+      const linhas = [];
+      if (c.antes && c.antes > c.preco) linhas.push('<span class="antes">' + mil(c.antes) + '</span> <span class="baixou">baixou</span>');
+      if (c.cond) linhas.push('condomínio ' + brl(c.cond));
+      if (c.iptu) linhas.push('IPTU ' + brl(c.iptu));
+      if (c.area && !linhas.length) linhas.push(brl(Math.round(c.preco / c.area)) + ' por m²');
+      let specs = '';
+      if (c.q) specs += spec('quarto', plural(c.q, 'quarto', 'quartos'));
+      if (c.su) specs += spec('suite', plural(c.su, 'suíte', 'suítes'));
+      if (c.ban) specs += spec('banho', plural(c.ban, 'banheiro', 'banheiros'));
+      if (c.vg) specs += spec('vaga', plural(c.vg, 'vaga', 'vagas'));
+      if (c.area) specs += spec('area', c.area + ' m²');
+      return {
+        preco: '<span class="cur">R$</span>' + c.preco.toLocaleString('pt-BR'),
+        extra: linhas.join('<br>'), acima: false, specs, loc: c.loc || ''
+      };
+    }
+  }
+};
+
+/* ---------- estado ---------- */
+const EST = {};
+for (const k in ABAS) EST[k] = { carregado: false, D: [], teto: 0, atualizado: null, cargaInicial: false,
+  regiao: 'Todas', tipo: 'Todos', quartos: 0, ordem: 'recentes', vistos: lerVistos(ABAS[k].chaveVistos) };
+let aba = 'alugar';
+const $ = id => document.getElementById(id);
+
+function ehNovo(e, c) { return !e.cargaInicial && diasDesde(c.desde) <= 1; }
 
 function cardHTML(c) {
-  const total = custo(c);
-  const acima = total > TETO;
+  const cfg = ABAS[aba], e = EST[aba];
+  const k = cfg.card(c, e.teto);
   const dias = diasDesde(c.desde);
-  const visto = vistos.has(c.u);
-  const linhas = [];
-  if (c.cond) linhas.push('condomínio ' + brl(c.cond));
-  if (c.iptu) linhas.push('IPTU ' + brl(c.iptu));
-  const extra = linhas.length ? linhas.join('<br>') : 'sem condomínio';
-  let specs = '';
-  if (c.q) specs += spec('quarto', c.q + (c.q > 1 ? ' quartos' : ' quarto'));
-  if (c.ban) specs += spec('banho', c.ban + (c.ban > 1 ? ' banheiros' : ' banheiro'));
-  if (c.vg) specs += spec('vaga', c.vg + (c.vg > 1 ? ' vagas' : ' vaga'));
-  if (c.area) specs += spec('area', c.area + ' m²');
-  return '<article class="card' + (visto ? ' visto' : '') + '" data-u="' + c.u + '">' +
+  const visto = e.vistos.has(c.u);
+  const regiaoTag = aba === 'comprar' ? (c.tipo === 'Apartamento' ? 'Apto · ' : '') + c.b : c.b;
+  return '<article class="card' + (visto ? ' visto' : '') + '" data-u="' + esc(c.u) + '">' +
     '<div class="shot">' +
-      '<img src="' + c.img + '" referrerpolicy="no-referrer" loading="eager" alt="Foto do anúncio: ' + c.t.replace(/"/g, '') + '">' +
-      '<span class="region">' + c.b + '</span>' +
-      (ehNovo(c) ? '<span class="tag-novo">' + (dias <= 0 ? 'novo hoje' : 'novo ontem') + '</span>' : '') +
-      (acima ? '<span class="over">acima do teto</span>' : '') +
+      (c.img ? '<img src="' + esc(c.img) + '" referrerpolicy="no-referrer" loading="' + (aba === 'alugar' ? 'eager' : 'lazy') + '" alt="Foto do anúncio: ' + esc(c.t) + '">' : '') +
+      '<span class="region">' + esc(regiaoTag) + '</span>' +
+      (ehNovo(e, c) ? '<span class="tag-novo">' + (dias <= 0 ? 'novo hoje' : 'novo ontem') + '</span>' : '') +
+      (k.acima ? '<span class="over">acima do teto</span>' : '') +
     '</div>' +
     '<div class="body">' +
-      '<div class="price-row">' +
-        '<div class="price"><span class="cur">R$</span>' + total.toLocaleString('pt-BR') + '</div>' +
-        '<div class="extra">' + extra + '</div>' +
-      '</div>' +
-      '<h2 class="t">' + c.t + '</h2>' +
-      '<div class="specs">' + specs + '</div>' +
-      '<p class="obs">' + c.obs + '</p>' +
+      '<div class="price-row"><div class="price">' + k.preco + '</div><div class="extra">' + k.extra + '</div></div>' +
+      '<h2 class="t">' + esc(c.t) + '</h2>' +
+      (k.loc ? '<p class="loc">' + esc(k.loc) + '</p>' : '') +
+      '<div class="specs">' + k.specs + '</div>' +
+      '<p class="obs">' + esc(c.obs) + '</p>' +
     '</div>' +
-    '<div class="foot">' +
-      '<span class="src">' + c.f + ' · ' + rotuloEntrada(dias) + '</span>' +
-      '<a class="go" href="' + c.u + '" target="_blank" rel="noopener">Ver anúncio' +
-      '<svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>' +
-    '</div>' +
+    '<div class="foot"><span class="src">' + esc(c.f) + ' · ' + rotuloEntrada(dias) + '</span>' +
+      '<a class="go" href="' + esc(c.u) + '" target="_blank" rel="noopener">Ver anúncio' + SETA + '</a></div>' +
   '</article>';
 }
 
-function render() {
-  let lista = DADOS.filter(c =>
-    (regiaoSel === 'Todas' || c.b === regiaoSel) &&
-    (quartosMin === 0 || (c.q || 0) >= quartosMin));
+function filtrada() {
+  const cfg = ABAS[aba], e = EST[aba];
+  const v = c => cfg.valor(c);
+  let lista = e.D.filter(c =>
+    (e.regiao === 'Todas' || c.b === e.regiao) &&
+    (!cfg.temTipo || e.tipo === 'Todos' || c.tipo === e.tipo) &&
+    (e.quartos === 0 || (c.q || 0) >= e.quartos));
+  const m2 = c => c.area ? v(c) / c.area : Infinity;
   const ord = {
-    'recentes': (a, b) => diasDesde(a.desde) - diasDesde(b.desde) || custo(b) - custo(a),
-    'orcamento': (a, b) => (custo(a) > TETO) - (custo(b) > TETO) || custo(b) - custo(a),
-    'preco-asc': (a, b) => custo(a) - custo(b),
-    'preco-desc': (a, b) => custo(b) - custo(a),
+    'recentes': (a, b) => diasDesde(a.desde) - diasDesde(b.desde) || v(a) - v(b),
+    'orcamento': (a, b) => (v(a) > e.teto) - (v(b) > e.teto) || v(b) - v(a),
+    'preco-asc': (a, b) => v(a) - v(b),
+    'preco-desc': (a, b) => v(b) - v(a),
+    'm2-asc': (a, b) => m2(a) - m2(b),
     'area-desc': (a, b) => (b.area || 0) - (a.area || 0),
-    'quartos-desc': (a, b) => (b.q || 0) - (a.q || 0) || custo(a) - custo(b)
-  }[ordem];
-  lista.sort(ord);
-  const grid = document.getElementById('grid');
-  grid.innerHTML = lista.map(cardHTML).join('');
+    'quartos-desc': (a, b) => (b.q || 0) - (a.q || 0) || v(a) - v(b)
+  }[e.ordem];
+  return lista.sort(ord);
+}
+
+const LOTE = 60;
+let mostrando = LOTE;
+function render(reset) {
+  const cfg = ABAS[aba], e = EST[aba];
+  if (reset !== false) mostrando = LOTE;
+  const lista = filtrada();
+  const grid = $('grid');
+  grid.innerHTML = lista.slice(0, mostrando).map(cardHTML).join('') +
+    (lista.length > mostrando ? '<div style="grid-column:1/-1;text-align:center;padding:8px 0"><button class="btn-novas" id="mais" aria-pressed="false">Mostrar mais ' + Math.min(LOTE, lista.length - mostrando) + ' de ' + (lista.length - mostrando) + ' restantes</button></div>' : '');
   grid.querySelectorAll('.go').forEach(a => a.addEventListener('click', () => {
     const card = a.closest('.card');
-    vistos.add(card.dataset.u); salvarVistos(); card.classList.add('visto');
+    e.vistos.add(card.dataset.u); gravarVistos(cfg.chaveVistos, e.vistos); card.classList.add('visto');
     atualizarBotaoVistos();
   }));
-  document.getElementById('vazio').hidden = lista.length > 0;
-  document.getElementById('contador').textContent = lista.length
-    ? lista.length + (lista.length === 1 ? ' casa' : ' casas') + ' · de ' +
-      brl(Math.min(...lista.map(custo))) + ' a ' + brl(Math.max(...lista.map(custo)))
-    : 'nenhuma casa';
+  const mais = $('mais');
+  if (mais) mais.addEventListener('click', () => { mostrando += LOTE; render(false); });
+  $('vazio').hidden = lista.length > 0;
+  const vals = lista.map(c => cfg.valor(c));
+  $('contador').textContent = lista.length
+    ? plural(lista.length, cfg.unidade[0], cfg.unidade[1]) + ' · de ' + brl(Math.min(...vals)) + ' a ' + brl(Math.max(...vals))
+    : 'nenhum resultado';
 }
 
 function montarFiltroRegiao() {
-  const box = document.getElementById('f-regiao');
+  const e = EST[aba], box = $('f-regiao');
   box.querySelectorAll('.chip').forEach(c => c.remove());
-  const conta = r => DADOS.filter(x => x.b === r).length;
-  const regioes = ['Todas', ...[...new Set(DADOS.map(c => c.b))].sort((a, b) => conta(b) - conta(a) || a.localeCompare(b))];
+  const conta = r => e.D.filter(x => x.b === r).length;
+  const regioes = ['Todas', ...[...new Set(e.D.map(c => c.b))].sort((a, b) => conta(b) - conta(a) || a.localeCompare(b))];
+  if (!regioes.includes(e.regiao)) e.regiao = 'Todas';
   regioes.forEach(r => {
     const b = document.createElement('button');
-    b.className = 'chip';
-    b.textContent = r;
-    b.setAttribute('aria-pressed', r === regiaoSel ? 'true' : 'false');
+    b.className = 'chip'; b.textContent = r;
+    b.setAttribute('aria-pressed', r === e.regiao ? 'true' : 'false');
     b.addEventListener('click', () => {
-      regiaoSel = r;
+      e.regiao = r;
       box.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b ? 'true' : 'false'));
       render();
     });
@@ -361,67 +456,90 @@ function montarFiltroRegiao() {
 }
 
 function resumo() {
-  const dentro = DADOS.filter(c => custo(c) <= TETO);
-  const vals = dentro.map(custo).sort((a, b) => a - b);
-  const med = vals.length % 2 ? vals[(vals.length - 1) / 2]
-    : Math.round((vals[vals.length / 2 - 1] + vals[vals.length / 2]) / 2);
-  const novos = DADOS.filter(ehNovo).length;
-  document.getElementById('s-total').textContent = DADOS.length;
-  document.getElementById('s-dentro').textContent = dentro.length;
-  document.getElementById('s-min').textContent = brl(vals[0]);
-  document.getElementById('s-med').textContent = brl(med);
-  const d = new Date(ATUALIZADO);
-  const hoje = new Date();
-  const dias = Math.floor((hoje - d) / 86400000);
+  const cfg = ABAS[aba], e = EST[aba];
+  cfg.stats(e.D, e.teto).forEach(([n, l], i) => { $('s' + (i + 1)).textContent = n; $('l' + (i + 1)).textContent = l; });
+  const d = new Date(e.atualizado);
+  const dias = Math.floor((new Date() - d) / 86400000);
   const quando = dias <= 0 ? 'hoje' : dias === 1 ? 'ontem' : 'há ' + dias + ' dias';
-  document.getElementById('carimbo').textContent =
+  const novos = e.D.filter(c => ehNovo(e, c)).length;
+  $('carimbo').textContent = isNaN(d) ? '' :
     'Atualizado ' + quando + ', ' + d.getDate() + ' de ' + MESES[d.getMonth()] + ', às ' +
     String(d.getHours()).padStart(2, '0') + 'h' + String(d.getMinutes()).padStart(2, '0') + '.' +
-    (novos ? ' ' + novos + (novos === 1 ? ' casa nova nas últimas 24 horas.' : ' casas novas nas últimas 24 horas.') : '');
-  document.getElementById('carimbo').classList.toggle('velho', dias >= 3);
+    (novos ? ' ' + novos + (novos === 1 ? ' anúncio novo nas últimas 24 horas.' : ' anúncios novos nas últimas 24 horas.') : '');
+  $('carimbo').classList.toggle('velho', dias >= 3);
 }
 
-const btnNovas = document.getElementById('btn-novas');
-const selOrdem = document.getElementById('ordem');
-function sincronizarBotaoNovas() {
-  btnNovas.setAttribute('aria-pressed', ordem === 'recentes' ? 'true' : 'false');
+function atualizarBotaoVistos() {
+  const e = EST[aba];
+  const n = e.D.filter(c => e.vistos.has(c.u)).length;
+  $('btn-vistos').hidden = n === 0;
+  $('btn-vistos').textContent = 'Desmarcar ' + n + (n === 1 ? ' visto' : ' vistos');
 }
-btnNovas.addEventListener('click', () => {
-  ordem = 'recentes'; selOrdem.value = 'recentes'; sincronizarBotaoNovas(); render();
+
+function sincronizarControles() {
+  const cfg = ABAS[aba], e = EST[aba];
+  $('ordem').innerHTML = cfg.ordens.map(([v, t]) => '<option value="' + v + '">' + t + '</option>').join('');
+  $('ordem').value = e.ordem;
+  $('btn-novas').setAttribute('aria-pressed', e.ordem === 'recentes' ? 'true' : 'false');
+  $('f-tipo').hidden = !cfg.temTipo;
+  document.querySelectorAll('.chip[data-tipo]').forEach(c => c.setAttribute('aria-pressed', c.dataset.tipo === e.tipo ? 'true' : 'false'));
+  document.querySelectorAll('.chip[data-q]').forEach(c => c.setAttribute('aria-pressed', +c.dataset.q === e.quartos ? 'true' : 'false'));
+}
+
+function montarCabecalho() {
+  const cfg = ABAS[aba];
+  $('eyebrow').textContent = cfg.eyebrow;
+  $('titulo').textContent = cfg.titulo;
+  $('sub').textContent = cfg.sub;
+  $('dicas').innerHTML = cfg.dicas.map(t => '<li>' + esc(t) + '</li>').join('');
+  $('fontes').innerHTML = cfg.fontes.map(([t, u]) => '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(t) + '</a>').join('');
+  document.title = cfg.titulo;
+  document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.aba === aba ? 'true' : 'false'));
+}
+
+function carregar(k) {
+  const e = EST[k];
+  if (e.carregado) return Promise.resolve();
+  return fetch(ABAS[k].arquivo + '?t=' + Date.now()).then(r => r.json()).then(j => {
+    e.D = j.imoveis; e.teto = j.teto; e.atualizado = j.atualizado; e.carregado = true;
+    e.cargaInicial = new Set(e.D.map(c => c.desde)).size === 1;
+    $('tn-' + k).textContent = e.D.length;
+  });
+}
+
+function abrir(k) {
+  aba = k;
+  try { history.replaceState(null, '', '#' + k); } catch (err) {}
+  montarCabecalho(); sincronizarControles();
+  $('grid').innerHTML = ''; $('vazio').hidden = true; $('carimbo').textContent = 'Carregando…'; $('contador').textContent = '';
+  carregar(k).then(() => {
+    if (aba !== k) return;
+    montarFiltroRegiao(); resumo(); atualizarBotaoVistos(); render();
+  }).catch(() => {
+    $('vazio').hidden = false;
+    $('vazio').textContent = 'Não consegui carregar a lista agora. Recarregue a página em alguns instantes.';
+  });
+}
+
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => { if (t.dataset.aba !== aba) { abrir(t.dataset.aba); } }));
+$('btn-novas').addEventListener('click', () => {
+  EST[aba].ordem = 'recentes'; sincronizarControles(); render();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
-const btnVistos = document.getElementById('btn-vistos');
-function atualizarBotaoVistos() {
-  const n = DADOS.filter(c => vistos.has(c.u)).length;
-  btnVistos.hidden = n === 0;
-  btnVistos.textContent = 'Desmarcar ' + n + (n === 1 ? ' vista' : ' vistas');
-}
-btnVistos.addEventListener('click', () => {
-  vistos.clear(); salvarVistos(); atualizarBotaoVistos(); render();
+$('btn-vistos').addEventListener('click', () => {
+  const e = EST[aba]; e.vistos.clear(); gravarVistos(ABAS[aba].chaveVistos, e.vistos); atualizarBotaoVistos(); render();
 });
+document.querySelectorAll('.chip[data-q]').forEach(b => b.addEventListener('click', () => {
+  EST[aba].quartos = +b.dataset.q; sincronizarControles(); render();
+}));
+document.querySelectorAll('.chip[data-tipo]').forEach(b => b.addEventListener('click', () => {
+  EST[aba].tipo = b.dataset.tipo; sincronizarControles(); render();
+}));
+$('ordem').addEventListener('change', ev => { EST[aba].ordem = ev.target.value; sincronizarControles(); render(); });
 
-document.querySelectorAll('.chip[data-q]').forEach(b => {
-  b.addEventListener('click', () => {
-    quartosMin = +b.dataset.q;
-    document.querySelectorAll('.chip[data-q]').forEach(c => c.setAttribute('aria-pressed', c === b ? 'true' : 'false'));
-    render();
-  });
-});
-selOrdem.addEventListener('change', e => { ordem = e.target.value; sincronizarBotaoNovas(); render(); });
-
-fetch('dados.json?t=' + Date.now())
-  .then(r => r.json())
-  .then(j => {
-    DADOS = j.imoveis; TETO = j.teto || 3000; ATUALIZADO = j.atualizado;
-    cargaInicial = new Set(DADOS.map(c => c.desde)).size === 1;
-    montarFiltroRegiao(); resumo(); sincronizarBotaoNovas(); atualizarBotaoVistos(); render();
-  })
-  .catch(() => {
-    document.getElementById('vazio').hidden = false;
-    document.getElementById('vazio').textContent = 'Não consegui carregar a lista agora. Recarregue a página em alguns instantes.';
-  });
-
+const inicial = location.hash === '#comprar' ? 'comprar' : 'alugar';
+abrir(inicial);
+carregar(inicial === 'alugar' ? 'comprar' : 'alugar').catch(() => {});
 </script>
 </body>
 </html>
