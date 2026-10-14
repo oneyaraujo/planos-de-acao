@@ -20,6 +20,7 @@
   --accent-soft:#E4F0E8;
   --warn:#8A5A11;
   --warn-soft:#F6EDDC;
+  --fav:#C9405A;
   --shadow:0 1px 2px rgba(25,30,25,.06), 0 8px 24px -12px rgba(25,30,25,.18);
   --radius:14px;
   --display:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;
@@ -40,6 +41,7 @@
     --accent-soft:#1B2E24;
     --warn:#D9A855;
     --warn-soft:#2E2617;
+    --fav:#F2748B;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
   }
 }
@@ -56,6 +58,7 @@
   --accent-soft:#1B2E24;
   --warn:#D9A855;
   --warn-soft:#2E2617;
+  --fav:#F2748B;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
 }
 *{box-sizing:border-box}
@@ -81,6 +84,7 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,4.4vw,40px);l
 .filters{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .filters-inner{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;padding-block:14px}
 .fgroup{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fgroup[hidden],.btn-novas[hidden]{display:none}
 .fgroup > .flabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .chip{
   font:inherit;font-size:13px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-2);
@@ -107,7 +111,21 @@ main{padding-block:26px 40px}
   position:absolute;left:10px;top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
   text-transform:uppercase;background:rgba(10,14,10,.78);color:#fff;padding:4px 9px;border-radius:6px;backdrop-filter:blur(4px);
 }
-.over{position:absolute;right:10px;top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--warn);color:#fff;padding:4px 9px;border-radius:6px}
+.over{position:absolute;right:10px;top:54px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--warn);color:#fff;padding:4px 9px;border-radius:6px}
+.fav{
+  position:absolute;right:10px;top:10px;z-index:3;width:36px;height:36px;padding:0;
+  display:grid;place-items:center;border:0;border-radius:999px;cursor:pointer;
+  background:rgba(10,14,10,.52);backdrop-filter:blur(4px);
+  transition:transform .14s ease, background .14s ease;
+}
+.fav svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transition:fill .14s ease, stroke .14s ease}
+.fav:hover{background:rgba(10,14,10,.72);transform:scale(1.07)}
+.fav[aria-pressed="true"] svg{fill:var(--fav);stroke:var(--fav)}
+.fav:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.card.fav-on{border-color:var(--fav)}
+.card.inativo{opacity:.78}
+.card.inativo .shot img{filter:grayscale(.55)}
+.over.fora{background:rgba(25,30,25,.84)}
 .body{padding:16px 16px 0;display:flex;flex-direction:column;gap:10px;flex:1}
 .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
 .price{font-family:var(--display);font-weight:700;font-size:25px;line-height:1;letter-spacing:-.015em;font-variant-numeric:tabular-nums}
@@ -163,6 +181,7 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
   content:"visto";position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;
   padding:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
   color:#fff;background:linear-gradient(to top,rgba(10,14,10,.55),transparent 42%);
+  pointer-events:none;
 }
 
 @media (max-width:560px){
@@ -183,6 +202,8 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
 .tab:hover{color:var(--ink)}
 .tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
 .tab[aria-selected="true"] .tn{color:var(--accent)}
+.tab-fav[aria-selected="true"]{color:var(--fav);border-bottom-color:var(--fav)}
+.tab-fav[aria-selected="true"] .tn{color:var(--fav)}
 .tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
 .loc{font-size:12.5px;color:var(--ink-3);margin:-4px 0 0}
 .antes{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-decoration:line-through}
@@ -195,6 +216,7 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
   <div class="wrap tabs-inner" role="tablist">
     <button class="tab" role="tab" id="tab-alugar" data-aba="alugar" aria-selected="true">Alugar<span class="tn" id="tn-alugar"></span></button>
     <button class="tab" role="tab" id="tab-comprar" data-aba="comprar" aria-selected="false">Comprar<span class="tn" id="tn-comprar"></span></button>
+    <button class="tab tab-fav" role="tab" id="tab-favoritos" data-aba="favoritos" aria-selected="false">Favoritos<span class="tn" id="tn-favoritos"></span></button>
   </div>
 </nav>
 
@@ -231,14 +253,14 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
     <div class="fgroup" id="f-regiao">
       <span class="flabel">Região</span>
     </div>
-    <div class="fgroup">
+    <div class="fgroup" id="f-quartos">
       <span class="flabel">Quartos</span>
       <button class="chip" data-q="0" aria-pressed="true">Todos</button>
       <button class="chip" data-q="2" aria-pressed="false">2+</button>
       <button class="chip" data-q="3" aria-pressed="false">3+</button>
       <button class="chip" data-q="4" aria-pressed="false">4+</button>
     </div>
-    <div class="fgroup">
+    <div class="fgroup" id="f-ordem">
       <span class="flabel">Ordenar</span>
       <select id="ordem" aria-label="Ordenar resultados"></select>
     </div>
@@ -255,7 +277,7 @@ footer ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);display:g
   <div class="wrap foot-inner">
     <h3>Antes de visitar, confira estes pontos</h3>
     <ul id="dicas"></ul>
-    <p>Fontes consultadas:</p>
+    <p id="p-fontes">Fontes consultadas:</p>
     <div class="sources" id="fontes"></div>
   </div>
 </footer>
@@ -269,6 +291,7 @@ const ICONS = {
   area: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 4v16"/><path d="M4 9h16"/></svg>'
 };
 const SETA = '<svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>';
+const CORACAO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4 4.3 12.7a4.7 4.7 0 0 1 6.6-6.6l1.1 1.1 1.1-1.1a4.7 4.7 0 1 1 6.6 6.6Z"/></svg>';
 const MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
 const mil = n => n >= 1000 && n % 1000 === 0 ? 'R$ ' + (n / 1000).toLocaleString('pt-BR') + ' mil' : brl(n);
@@ -280,6 +303,13 @@ function plural(n, s, p) { return n + ' ' + (n === 1 ? s : p); }
 function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function lerVistos(chave) { try { return new Set(JSON.parse(localStorage.getItem(chave) || '[]')); } catch (e) { return new Set(); } }
 function gravarVistos(chave, set) { try { localStorage.setItem(chave, JSON.stringify([...set])); } catch (e) {} }
+const CHAVE_FAV = 'imoveis-favoritos';
+let FAVS = (function () {
+  try { const o = JSON.parse(localStorage.getItem(CHAVE_FAV) || '{}'); return (o && typeof o === 'object' && !Array.isArray(o)) ? o : {}; }
+  catch (e) { return {}; }
+})();
+function gravarFavs() { try { localStorage.setItem(CHAVE_FAV, JSON.stringify(FAVS)); } catch (e) {} }
+function ehFav(u) { return Object.prototype.hasOwnProperty.call(FAVS, u); }
 function mediana(v) { if (!v.length) return 0; v = [...v].sort((a, b) => a - b); const m = Math.floor(v.length / 2); return v.length % 2 ? v[m] : Math.round((v[m - 1] + v[m]) / 2); }
 
 /* ---------- configuração de cada aba ---------- */
@@ -296,6 +326,7 @@ const ABAS = {
       'Alguns anúncios do DF Imóveis trabalham com desconto de pontualidade. Nesses casos o card mostra o valor com desconto, e o valor cheio aparece na observação.',
       'A Ponte Alta tem pouquíssima oferta abaixo de R$ 3.000. A maior parte das casas de condomínio de lá passa de R$ 5.000, por isso entram também algumas opções da região que ficam pouco acima do teto.',
       'O botão "Novidades primeiro" coloca no topo o que a busca encontrou mais recentemente, e cada card mostra há quantos dias aquele anúncio está na lista. Quando você abre um anúncio, o card fica marcado como visto e escurece um pouco. Essa marcação fica salva só no navegador que você estiver usando.',
+      'O coração no canto da foto guarda o imóvel na aba Favoritos, que junta o que você marcou no aluguel e na venda. Essa lista fica salva só no navegador que você estiver usando.',
       'Anúncio de portal sai do ar sem aviso. Ligue antes de se deslocar, principalmente nos anúncios mais antigos.'
     ],
     fontes: [['DF Imóveis · Gama','https://www.dfimoveis.com.br/aluguel/df/gama/casa'],['DF Imóveis · Ponte Alta','https://www.dfimoveis.com.br/aluguel/df/gama/ponte-alta/casa'],['OLX · Gama até 3 mil','https://www.olx.com.br/imoveis/aluguel/casas/estado-df/distrito-federal-e-regiao/brasilia/ra-ii---gama?pe=3000'],['Imovelweb · Gama','https://www.imovelweb.com.br/casas-aluguel-gama-df.html'],['Wimoveis · Gama','https://www.wimoveis.com.br/aluguel/casas/df/gama']],
@@ -332,7 +363,8 @@ const ABAS = {
       'Quando o anúncio fala em ágio ou repasse, o valor pode ser só a entrada, e o comprador assume o saldo do financiamento. O card avisa quando isso aparece no anúncio.',
       'Boa parte das casas de condomínio da Ponte Alta fica em área ainda em regularização. Antes de fechar negócio, peça a documentação do lote e confirme se o imóvel aceita financiamento bancário.',
       'O mesmo imóvel costuma aparecer em mais de um portal. A busca junta os repetidos e mantém a versão com mais informação, mas pode sobrar algum par parecido.',
-      'O botão "Novidades primeiro" coloca no topo o que a busca encontrou mais recentemente. Quando você abre um anúncio, o card fica marcado como visto e escurece um pouco. Essa marcação fica salva só no navegador que você estiver usando.'
+      'O botão "Novidades primeiro" coloca no topo o que a busca encontrou mais recentemente. Quando você abre um anúncio, o card fica marcado como visto e escurece um pouco. Essa marcação fica salva só no navegador que você estiver usando.',
+      'O coração no canto da foto guarda o imóvel na aba Favoritos, que junta o que você marcou no aluguel e na venda.'
     ],
     fontes: [['DF Imóveis · casas no Gama','https://www.dfimoveis.com.br/venda/df/gama/casa?valorfinal=500000'],['DF Imóveis · apartamentos no Gama','https://www.dfimoveis.com.br/venda/df/gama/apartamento?valorfinal=500000'],['OLX · Ponte Alta','https://www.olx.com.br/imoveis/venda/casas/estado-df/distrito-federal-e-regiao/brasilia/ra-ii---gama?q=ponte%20alta&pe=500000'],['OLX · Gama','https://www.olx.com.br/imoveis/venda/estado-df/distrito-federal-e-regiao/brasilia/ra-ii---gama?pe=500000'],['Imovelweb · Ponte Alta','https://www.imovelweb.com.br/casas-venda-ponte-alta-gama-df.html']],
     stats(D) {
@@ -368,18 +400,23 @@ const $ = id => document.getElementById(id);
 
 function ehNovo(e, c) { return !e.cargaInicial && diasDesde(c.desde) <= 1; }
 
-function cardHTML(c) {
-  const cfg = ABAS[aba], e = EST[aba];
+function cardHTML(c, abaC, opts) {
+  abaC = abaC || aba; opts = opts || {};
+  const cfg = ABAS[abaC], e = EST[abaC];
   const k = cfg.card(c, e.teto);
   const dias = diasDesde(c.desde);
   const visto = e.vistos.has(c.u);
-  const regiaoTag = aba === 'comprar' ? (c.tipo === 'Apartamento' ? 'Apto · ' : '') + c.b : c.b;
-  return '<article class="card' + (visto ? ' visto' : '') + '" data-u="' + esc(c.u) + '">' +
+  const favorito = ehFav(c.u);
+  const rotuloFav = favorito ? 'Tirar dos favoritos' : 'Guardar nos favoritos';
+  const regiaoTag = abaC === 'comprar' ? (c.tipo === 'Apartamento' ? 'Apto · ' : '') + c.b : c.b;
+  return '<article class="card' + (visto ? ' visto' : '') + (favorito ? ' fav-on' : '') + (opts.inativo ? ' inativo' : '') +
+      '" data-u="' + esc(c.u) + '" data-aba="' + abaC + '">' +
     '<div class="shot">' +
-      (c.img ? '<img src="' + esc(c.img) + '" referrerpolicy="no-referrer" loading="' + (aba === 'alugar' ? 'eager' : 'lazy') + '" alt="Foto do anúncio: ' + esc(c.t) + '">' : '') +
+      (c.img ? '<img src="' + esc(c.img) + '" referrerpolicy="no-referrer" loading="' + (abaC === 'alugar' ? 'eager' : 'lazy') + '" alt="Foto do anúncio: ' + esc(c.t) + '">' : '') +
       '<span class="region">' + esc(regiaoTag) + '</span>' +
+      '<button class="fav" type="button" aria-pressed="' + (favorito ? 'true' : 'false') + '" aria-label="' + rotuloFav + '" title="' + rotuloFav + '">' + CORACAO + '</button>' +
       (ehNovo(e, c) ? '<span class="tag-novo">' + (dias <= 0 ? 'novo hoje' : 'novo ontem') + '</span>' : '') +
-      (k.acima ? '<span class="over">acima do teto</span>' : '') +
+      (opts.inativo ? '<span class="over fora">saiu do ar</span>' : (k.acima ? '<span class="over">acima do teto</span>' : '')) +
     '</div>' +
     '<div class="body">' +
       '<div class="price-row"><div class="price">' + k.preco + '</div><div class="extra">' + k.extra + '</div></div>' +
@@ -413,20 +450,72 @@ function filtrada() {
   return lista.sort(ord);
 }
 
+function ligarCards(grid) {
+  grid.querySelectorAll('.go').forEach(a => a.addEventListener('click', () => {
+    const card = a.closest('.card'), k = card.dataset.aba, e = EST[k];
+    e.vistos.add(card.dataset.u); gravarVistos(ABAS[k].chaveVistos, e.vistos); card.classList.add('visto');
+    atualizarBotaoVistos();
+  }));
+  grid.querySelectorAll('.fav').forEach(btn => btn.addEventListener('click', ev => {
+    ev.preventDefault(); ev.stopPropagation();
+    const card = btn.closest('.card'), u = card.dataset.u, k = card.dataset.aba;
+    if (ehFav(u)) {
+      delete FAVS[u];
+    } else {
+      const c = (EST[k].D || []).find(x => x.u === u);
+      if (!c) return;
+      FAVS[u] = { u: u, aba: k, c: c, quando: new Date().toISOString().slice(0, 10) };
+    }
+    gravarFavs();
+    const on = ehFav(u);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    const rot = on ? 'Tirar dos favoritos' : 'Guardar nos favoritos';
+    btn.setAttribute('aria-label', rot); btn.title = rot;
+    card.classList.toggle('fav-on', on);
+    atualizarContagemFav();
+    if (aba === 'favoritos') { resumo(); render(); }
+  }));
+}
+
+function listaFavoritos() {
+  return Object.keys(FAVS).map(u => {
+    const f = FAVS[u], e = EST[f.aba];
+    const vivo = e && e.carregado ? e.D.find(c => c.u === u) : null;
+    return { aba: f.aba, c: vivo || f.c, ativo: !!vivo };
+  }).filter(x => x.c && ABAS[x.aba]).sort((a, b) =>
+    (a.ativo ? 0 : 1) - (b.ativo ? 0 : 1) ||
+    (a.aba === 'alugar' ? 0 : 1) - (b.aba === 'alugar' ? 0 : 1) ||
+    ABAS[a.aba].valor(a.c) - ABAS[b.aba].valor(b.c));
+}
+
+function atualizarContagemFav() {
+  const n = Object.keys(FAVS).length;
+  $('tn-favoritos').textContent = n || '';
+}
+
+function renderFavoritos() {
+  const itens = listaFavoritos();
+  const grid = $('grid');
+  grid.innerHTML = itens.map(x => cardHTML(x.c, x.aba, { inativo: !x.ativo })).join('');
+  ligarCards(grid);
+  $('vazio').textContent = 'Você ainda não guardou nenhum favorito. Toque no coração no canto da foto de qualquer card para trazer o imóvel para cá.';
+  $('vazio').hidden = itens.length > 0;
+  $('contador').textContent = itens.length ? plural(itens.length, 'favorito', 'favoritos') : '';
+}
+
 const LOTE = 60;
 let mostrando = LOTE;
+const VAZIO_PADRAO = $('vazio').textContent;
 function render(reset) {
+  if (aba === 'favoritos') { renderFavoritos(); return; }
   const cfg = ABAS[aba], e = EST[aba];
+  $('vazio').textContent = VAZIO_PADRAO;
   if (reset !== false) mostrando = LOTE;
   const lista = filtrada();
   const grid = $('grid');
-  grid.innerHTML = lista.slice(0, mostrando).map(cardHTML).join('') +
+  grid.innerHTML = lista.slice(0, mostrando).map(c => cardHTML(c)).join('') +
     (lista.length > mostrando ? '<div style="grid-column:1/-1;text-align:center;padding:8px 0"><button class="btn-novas" id="mais" aria-pressed="false">Mostrar mais ' + Math.min(LOTE, lista.length - mostrando) + ' de ' + (lista.length - mostrando) + ' restantes</button></div>' : '');
-  grid.querySelectorAll('.go').forEach(a => a.addEventListener('click', () => {
-    const card = a.closest('.card');
-    e.vistos.add(card.dataset.u); gravarVistos(cfg.chaveVistos, e.vistos); card.classList.add('visto');
-    atualizarBotaoVistos();
-  }));
+  ligarCards(grid);
   const mais = $('mais');
   if (mais) mais.addEventListener('click', () => { mostrando += LOTE; render(false); });
   $('vazio').hidden = lista.length > 0;
@@ -455,9 +544,30 @@ function montarFiltroRegiao() {
   });
 }
 
+function aplicarStats(dados) {
+  for (let i = 1; i <= 4; i++) {
+    const caixa = $('s' + i).parentElement;
+    if (dados[i - 1]) { $('s' + i).textContent = dados[i - 1][0]; $('l' + i).textContent = dados[i - 1][1]; caixa.hidden = false; }
+    else caixa.hidden = true;
+  }
+}
+
+function resumoFavoritos() {
+  const itens = listaFavoritos();
+  const nAluguel = itens.filter(x => x.aba === 'alugar').length;
+  aplicarStats([[itens.length, 'favoritos'], [nAluguel, 'de aluguel'], [itens.length - nAluguel, 'de venda']]);
+  const fora = itens.filter(x => !x.ativo).length;
+  $('carimbo').textContent = itens.length
+    ? 'Esta lista fica salva só no navegador que você está usando.' +
+      (fora ? ' ' + fora + (fora === 1 ? ' anúncio já saiu do ar.' : ' anúncios já saíram do ar.') : '')
+    : 'Toque no coração de qualquer card para guardar o imóvel aqui.';
+  $('carimbo').classList.toggle('velho', fora > 0);
+}
+
 function resumo() {
+  if (aba === 'favoritos') { resumoFavoritos(); return; }
   const cfg = ABAS[aba], e = EST[aba];
-  cfg.stats(e.D, e.teto).forEach(([n, l], i) => { $('s' + (i + 1)).textContent = n; $('l' + (i + 1)).textContent = l; });
+  aplicarStats(cfg.stats(e.D, e.teto));
   const d = new Date(e.atualizado);
   const dias = Math.floor((new Date() - d) / 86400000);
   const quando = dias <= 0 ? 'hoje' : dias === 1 ? 'ontem' : 'há ' + dias + ' dias';
@@ -470,6 +580,7 @@ function resumo() {
 }
 
 function atualizarBotaoVistos() {
+  if (aba === 'favoritos') { $('btn-vistos').hidden = true; return; }
   const e = EST[aba];
   const n = e.D.filter(c => e.vistos.has(c.u)).length;
   $('btn-vistos').hidden = n === 0;
@@ -477,6 +588,9 @@ function atualizarBotaoVistos() {
 }
 
 function sincronizarControles() {
+  const ehFavs = aba === 'favoritos';
+  ['btn-novas', 'f-tipo', 'f-regiao', 'f-quartos', 'f-ordem'].forEach(id => { $(id).hidden = ehFavs; });
+  if (ehFavs) { $('btn-vistos').hidden = true; return; }
   const cfg = ABAS[aba], e = EST[aba];
   $('ordem').innerHTML = cfg.ordens.map(([v, t]) => '<option value="' + v + '">' + t + '</option>').join('');
   $('ordem').value = e.ordem;
@@ -486,7 +600,32 @@ function sincronizarControles() {
   document.querySelectorAll('.chip[data-q]').forEach(c => c.setAttribute('aria-pressed', +c.dataset.q === e.quartos ? 'true' : 'false'));
 }
 
+const FAVCFG = {
+  eyebrow: 'Sua lista · salva neste navegador',
+  titulo: 'Favoritos',
+  sub: 'Aqui ficam os imóveis que você marcou com o coração, tanto os de aluguel quanto os de venda. Os de aluguel aparecem primeiro, e dentro de cada grupo a ordem é do mais barato para o mais caro.',
+  dicas: [
+    'Para guardar um imóvel, toque no coração que fica no canto superior direito da foto. Para tirar, toque de novo. Você pode fazer isso tanto na aba Alugar quanto na aba Comprar.',
+    'A lista fica salva só no navegador que você estiver usando. Se você abrir o painel no celular, os favoritos marcados no computador não vão aparecer lá.',
+    'Quando um anúncio favoritado sai do portal, o card continua aqui com o aviso "saiu do ar", em cinza. Ele guarda os dados do dia em que você marcou, para você não perder a referência de preço.',
+    'O coração é independente da marcação de visto. Um imóvel pode estar favoritado e ainda assim aparecer escurecido porque você já abriu o anúncio.'
+  ]
+};
+
 function montarCabecalho() {
+  if (aba === 'favoritos') {
+    $('eyebrow').textContent = FAVCFG.eyebrow;
+    $('titulo').textContent = FAVCFG.titulo;
+    $('sub').textContent = FAVCFG.sub;
+    $('dicas').innerHTML = FAVCFG.dicas.map(t => '<li>' + esc(t) + '</li>').join('');
+    $('p-fontes').hidden = true; $('fontes').innerHTML = '';
+    document.querySelector('footer h3').textContent = 'Como funcionam os favoritos';
+    document.title = 'Favoritos · Casas no Gama';
+    document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.aba === aba ? 'true' : 'false'));
+    return;
+  }
+  $('p-fontes').hidden = false;
+  document.querySelector('footer h3').textContent = 'Antes de visitar, confira estes pontos';
   const cfg = ABAS[aba];
   $('eyebrow').textContent = cfg.eyebrow;
   $('titulo').textContent = cfg.titulo;
@@ -512,9 +651,11 @@ function abrir(k) {
   try { history.replaceState(null, '', '#' + k); } catch (err) {}
   montarCabecalho(); sincronizarControles();
   $('grid').innerHTML = ''; $('vazio').hidden = true; $('carimbo').textContent = 'Carregando…'; $('contador').textContent = '';
-  carregar(k).then(() => {
+  const pronto = k === 'favoritos' ? Promise.all([carregar('alugar'), carregar('comprar')]) : carregar(k);
+  pronto.then(() => {
     if (aba !== k) return;
-    montarFiltroRegiao(); resumo(); atualizarBotaoVistos(); render();
+    if (k !== 'favoritos') montarFiltroRegiao();
+    resumo(); atualizarBotaoVistos(); atualizarContagemFav(); render();
   }).catch(() => {
     $('vazio').hidden = false;
     $('vazio').textContent = 'Não consegui carregar a lista agora. Recarregue a página em alguns instantes.';
@@ -537,9 +678,10 @@ document.querySelectorAll('.chip[data-tipo]').forEach(b => b.addEventListener('c
 }));
 $('ordem').addEventListener('change', ev => { EST[aba].ordem = ev.target.value; sincronizarControles(); render(); });
 
-const inicial = location.hash === '#comprar' ? 'comprar' : 'alugar';
+atualizarContagemFav();
+const inicial = location.hash === '#comprar' ? 'comprar' : location.hash === '#favoritos' ? 'favoritos' : 'alugar';
 abrir(inicial);
-carregar(inicial === 'alugar' ? 'comprar' : 'alugar').catch(() => {});
+if (inicial !== 'favoritos') carregar(inicial === 'alugar' ? 'comprar' : 'alugar').then(atualizarContagemFav).catch(() => {});
 </script>
 </body>
 </html>
